@@ -7516,35 +7516,277 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
-<ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<h1 id="Architektur-&amp;-Techstack-von-Webanwendungen">Architektur &amp; Techstack von Webanwendungen<a class="anchor-link" href="#Architektur-&amp;-Techstack-von-Webanwendungen">¶</a></h1><img alt="No description has been provided for this image" src="Techstack_Architecture.webp" style="width:280px; height:280px;"/>
+<h2 id="Architekturen">Architekturen<a class="anchor-link" href="#Architekturen">¶</a></h2><p>Im Kontext von Software bezeichnet Architektur die grundlegende Struktur und Organisation eines Softwaresystems. Sie umfasst Entscheidungen über Komponenten, deren Beziehungen zueinander, die Kommunikationswege und die übergreifenden Entwurfsmuster. Die Softwarearchitektur legt fest, wie die einzelnen Teile des Systems interagieren, welche Technologien und Frameworks eingesetzt werden, und stellt sicher, dass das System wartbar, erweiterbar und effizient bleibt. Architekturentscheidungen berücksichtigen häufig auch nicht-funktionale Anforderungen wie Skalierbarkeit, Sicherheit, Zuverlässigkeit und Performance.</p>
+<p>Hier ist eine kurze Zusammenfassung der Architekturen für Webanwendungen:</p>
+<h3 id="1.-Monolithische-Architektur">1. <strong>Monolithische Architektur</strong><a class="anchor-link" href="#1.-Monolithische-Architektur">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Traditionelles E-Commerce-System.</li>
+<li><strong>Vorteile</strong>: Einfachheit, geringere Infrastrukturkosten.</li>
+<li><strong>Nachteile</strong>: Schwer skalierbar, langsame Entwicklung.</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
-</ol>
+<h3 id="2.-Microservices-Architektur">2. <strong>Microservices-Architektur</strong><a class="anchor-link" href="#2.-Microservices-Architektur">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Social-Media-Netzwerk mit separaten Diensten.</li>
+<li><strong>Vorteile</strong>: Hohe Skalierbarkeit, Flexibilität, Resilienz.</li>
+<li><strong>Nachteile</strong>: Hohe Komplexität, Orchestrierung nötig, Datenkonsistenz schwierig.</li>
+</ul>
+<h3 id="3.-Serverless-Architektur">3. <strong>Serverless-Architektur</strong><a class="anchor-link" href="#3.-Serverless-Architektur">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Echtzeit-Datenverarbeitung (z. B. AWS Lambda).</li>
+<li><strong>Vorteile</strong>: Kosteneffizient, automatische Skalierung, schnelle Entwicklung.</li>
+<li><strong>Nachteile</strong>: Abhängigkeit von Cloud-Anbietern, Latenzzeiten (Cold Starts).</li>
+</ul>
+<h3 id="4.-Single-Page-Application-(SPA)">4. <strong>Single-Page Application (SPA)</strong><a class="anchor-link" href="#4.-Single-Page-Application-(SPA)">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Projektmanagement-Tool (z. B. Trello).</li>
+<li><strong>Vorteile</strong>: Schnelle UX, offline-fähig, leicht auf Mobile übertragbar.</li>
+<li><strong>Nachteile</strong>: SEO-Herausforderungen, längere Initial-Ladezeit.</li>
+</ul>
+<h3 id="5.-Progressive-Web-Application-(PWA)">5. <strong>Progressive Web Application (PWA)</strong><a class="anchor-link" href="#5.-Progressive-Web-Application-(PWA)">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Twitter Lite.</li>
+<li><strong>Vorteile</strong>: Plattformunabhängig, offline-fähig, kosteneffizient.</li>
+<li><strong>Nachteile</strong>: Eingeschränkter API-Zugriff, Unterschiede je nach Browser.</li>
+</ul>
+<h3 id="6.-Jamstack-Architektur">6. <strong>Jamstack-Architektur</strong><a class="anchor-link" href="#6.-Jamstack-Architektur">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: Statischer Blog mit dynamischen Inhalten über API.</li>
+<li><strong>Vorteile</strong>: Schnelle Ladezeiten, sicher, gut skalierbar.</li>
+<li><strong>Nachteile</strong>: Weniger dynamisch, lange Build-Zeiten.</li>
+</ul>
+<h3 id="7.-Multi-Page-Application-(MPA)">7. <strong>Multi-Page Application (MPA)</strong><a class="anchor-link" href="#7.-Multi-Page-Application-(MPA)">¶</a></h3><ul>
+<li><strong>Beispiel</strong>: CMS-Website wie WordPress.</li>
+<li><strong>Vorteile</strong>: SEO-freundlich, einfache Navigation, hohe Browser-Kompatibilität.</li>
+<li><strong>Nachteile</strong>: Langsame Benutzererfahrung, hohe Serverlast.</li>
+</ul>
+<p>Die Wahl der Architektur hängt von den spezifischen Anforderungen und Einschränkungen der Anwendung ab.</p>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Es gibt verschiedene Architekturansätze für Webanwendungen, die sich in Struktur, Funktionalität und Entwicklungsansatz unterscheiden. Jede Architektur hat ihre eigenen Vor- und Nachteile und eignet sich je nach Anwendungsfall unterschiedlich gut. Hier sind die wichtigsten Architekturen von Webanwendungen:</p>
+<h3 id="1.-Monolithische-Architektur">1. <strong>Monolithische Architektur</strong><a class="anchor-link" href="#1.-Monolithische-Architektur">¶</a></h3><p>In der monolithischen Architektur sind alle Teile der Anwendung (UI, Business-Logik, Datenbank) in einem einzigen, zusammenhängenden Codebasis vereint und werden als ein einziges Deployment-Paket bereitgestellt.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Ein traditionelles E-Commerce-System, bei dem das gesamte System in einer einzigen Anwendung läuft und von einem einzigen Server bereitgestellt wird.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Einfachheit</strong>: Einfach zu entwickeln, testen und bereitstellen, da nur eine einzige Anwendung verwaltet wird.</li>
+<li><strong>Geringere Komplexität</strong>: Alle Module sind in einem einzigen Code-Repository, was die Verwaltung und das Debuggen vereinfacht.</li>
+<li><strong>Geringere Infrastrukturkosten</strong>: Da alle Komponenten auf einem Server laufen, werden oft weniger Ressourcen benötigt.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Skalierbarkeit</strong>: Schwer skalierbar, da die gesamte Anwendung repliziert werden muss, selbst wenn nur ein Teil (z. B. die Datenbank) mehr Ressourcen benötigt.</li>
+<li><strong>Deployment</strong>: Ein Fehler in einem Teil der Anwendung kann die gesamte Anwendung lahmlegen.</li>
+<li><strong>Langsame Entwicklung</strong>: Änderungen an einem Modul können unbeabsichtigte Auswirkungen auf andere Module haben, was zu einer langsameren Entwicklung führen kann.</li>
+</ul>
+<hr/>
+<h3 id="2.-Microservices-Architektur">2. <strong>Microservices-Architektur</strong><a class="anchor-link" href="#2.-Microservices-Architektur">¶</a></h3><p>In einer Microservices-Architektur wird die Anwendung in unabhängige, lose gekoppelte Dienste aufgeteilt, die separat entwickelt, bereitgestellt und skaliert werden können. Jeder Service hat in der Regel seine eigene Datenbank und ist für eine bestimmte Funktion verantwortlich.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Ein Social-Media-Netzwerk, bei dem die Dienste für Nutzerprofile, Posts, Benachrichtigungen und Suchfunktion separat entwickelt und verwaltet werden.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Skalierbarkeit</strong>: Jeder Microservice kann unabhängig skaliert werden, basierend auf seinen Anforderungen.</li>
+<li><strong>Flexibilität</strong>: Verschiedene Technologien können für verschiedene Services verwendet werden, die am besten für deren Bedürfnisse geeignet sind.</li>
+<li><strong>Resilienz</strong>: Ein Fehler in einem Microservice beeinträchtigt nicht notwendigerweise die gesamte Anwendung.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Komplexität</strong>: Erhöhte Komplexität bei der Entwicklung und Verwaltung von mehreren Services, einschließlich der Notwendigkeit eines guten Kommunikationsmechanismus.</li>
+<li><strong>Deployment</strong>: Mehrere Services bedeuten oft, dass eine umfassendere Orchestrierung wie Kubernetes oder Docker Swarm notwendig ist.</li>
+<li><strong>Datenkonsistenz</strong>: Herausforderungen bei der Aufrechterhaltung der Datenkonsistenz über verschiedene Datenbanken hinweg.</li>
+</ul>
+<hr/>
+<h3 id="3.-Serverless-Architektur">3. <strong>Serverless-Architektur</strong><a class="anchor-link" href="#3.-Serverless-Architektur">¶</a></h3><p>In einer Serverless-Architektur wird die Infrastruktur von einem Cloud-Anbieter verwaltet, und der Entwickler konzentriert sich auf das Schreiben der Geschäftslogik. Anwendungen bestehen aus Funktionen, die nur ausgeführt werden, wenn sie benötigt werden (Event-Driven-Architecture).</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Ein System zur Echtzeit-Datenverarbeitung, das auf AWS Lambda basiert und bei bestimmten Ereignissen (z. B. wenn eine Datei hochgeladen wird) Funktionen ausführt.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Kosteneffizienz</strong>: Abrechnung erfolgt nur für die tatsächliche Ausführungszeit, was Kosten spart.</li>
+<li><strong>Skalierbarkeit</strong>: Automatische Skalierung, da der Anbieter für die Verwaltung der Infrastruktur sorgt.</li>
+<li><strong>Schnelle Entwicklung</strong>: Der Fokus liegt nur auf der Geschäftslogik, wodurch Entwicklungszeit gespart wird.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Abhängigkeit von Cloud-Anbietern</strong>: Bindung an bestimmte Cloud-Anbieter und deren API-Struktur.</li>
+<li><strong>Eingeschränkte Kontrolle</strong>: Weniger Kontrolle über die Infrastruktur und begrenzte Anpassungsmöglichkeiten.</li>
+<li><strong>Latenzzeit</strong>: Bei nicht häufig genutzten Funktionen kann es eine kleine Verzögerung geben, die als „Cold Start“ bezeichnet wird.</li>
+</ul>
+<hr/>
+<h3 id="4.-Single-Page-Application-(SPA)">4. <strong>Single-Page Application (SPA)</strong><a class="anchor-link" href="#4.-Single-Page-Application-(SPA)">¶</a></h3><p>SPAs laden die gesamte Anwendung in einem einzigen HTML-Dokument, und die Navigation erfolgt durch dynamische Aktualisierungen von Teilbereichen der Seite. SPAs kommunizieren oft über eine API mit dem Backend und nutzen Technologien wie AJAX oder WebSockets.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Ein Projektmanagement-Tool wie Trello oder Asana, das in einer einzigen Seite läuft und verschiedene Komponenten (z. B. Boards, Listen, Karten) dynamisch nachlädt.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Benutzererfahrung</strong>: Reibungslose, schnelle Benutzererfahrung ohne ständige Nachladen der Seite.</li>
+<li><strong>Offline-Fähigkeit</strong>: SPAs können mit lokalen Caches und Service-Worker-Technologien auch offline funktionieren.</li>
+<li><strong>Mobile Anwendungen</strong>: Einfacher Übergang zu mobilen Plattformen, da die Logik im Frontend zentriert ist.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>SEO</strong>: Schwieriger zu optimieren für Suchmaschinen, da der Inhalt dynamisch geladen wird.</li>
+<li><strong>Ladezeit</strong>: Initiale Ladezeit kann höher sein, da die gesamte Anwendung geladen wird.</li>
+<li><strong>Browser-Kompatibilität</strong>: Komplexe SPAs können je nach Browser Unterschiede im Verhalten aufweisen.</li>
+</ul>
+<hr/>
+<h3 id="5.-Progressive-Web-Application-(PWA)">5. <strong>Progressive Web Application (PWA)</strong><a class="anchor-link" href="#5.-Progressive-Web-Application-(PWA)">¶</a></h3><p>PWAs kombinieren die Vorteile von SPAs mit mobilen Anwendungen. Sie laufen im Browser, können aber wie native Apps auf dem Smartphone installiert und offline verwendet werden.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Twitter Lite, eine PWA-Version von Twitter, die im Browser oder als App genutzt werden kann und offline funktioniert.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Plattformunabhängigkeit</strong>: PWAs laufen in jedem modernen Browser und funktionieren auf mobilen Geräten wie eine native App.</li>
+<li><strong>Offline-Fähigkeit</strong>: Durch Nutzung von Service Workern können PWAs Inhalte auch offline bereitstellen.</li>
+<li><strong>Kostenersparnis</strong>: Einmalige Entwicklung für alle Plattformen anstelle von separaten mobilen und Web-Versionen.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Eingeschränkter Zugriff auf Geräte-APIs</strong>: Nicht alle Funktionen (z. B. Hardwarezugriff) sind auf allen Geräten oder Browsern möglich.</li>
+<li><strong>Browser-Abhängigkeit</strong>: Unterschiedliche Browser können PWAs unterschiedlich unterstützen.</li>
+<li><strong>SEO und Performance</strong>: Ähnlich wie bei SPAs können auch PWAs Herausforderungen in der SEO und Performance haben.</li>
+</ul>
+<hr/>
+<h3 id="6.-Jamstack-Architektur">6. <strong>Jamstack-Architektur</strong><a class="anchor-link" href="#6.-Jamstack-Architektur">¶</a></h3><p>Jamstack basiert auf der Trennung von Frontend und Backend, wobei der Frontend-Code statisch generiert wird und Inhalte über APIs und Microservices eingebunden werden. Die Buchstaben „JAM“ stehen für JavaScript, APIs und Markup.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Ein Blog oder Content-Website, die auf statischen Seiten basiert und nur für dynamische Inhalte API-Aufrufe durchführt, z. B. mit Next.js oder Gatsby.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>Performance</strong>: Sehr schnell, da statische Seiten direkt vom CDN bereitgestellt werden.</li>
+<li><strong>Sicherheit</strong>: Geringere Angriffsfläche, da kein Backend direkt verfügbar ist.</li>
+<li><strong>Skalierbarkeit</strong>: Automatische Skalierbarkeit, da nur statische Dateien ausgeliefert werden.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Einschränkungen bei dynamischen Inhalten</strong>: Für häufige Updates oder sehr dynamische Inhalte ist Jamstack weniger geeignet.</li>
+<li><strong>Build-Zeit</strong>: Bei großen Websites kann die Build-Zeit, um neue Inhalte zu generieren, hoch sein.</li>
+<li><strong>Komplexität bei hybriden Ansätzen</strong>: Die Kombination von statischen und dynamischen Inhalten kann zusätzliche Komplexität erfordern.</li>
+</ul>
+<hr/>
+<h3 id="7.-Multi-Page-Application-(MPA)">7. <strong>Multi-Page Application (MPA)</strong><a class="anchor-link" href="#7.-Multi-Page-Application-(MPA)">¶</a></h3><p>Eine Multi-Page Application lädt für jede Seite eine neue HTML-Datei. Jede Interaktion, die eine andere Seite benötigt, führt zu einem vollständigen Neuladen der Seite.</p>
+<h4 id="Beispiel">Beispiel<a class="anchor-link" href="#Beispiel">¶</a></h4><p>Traditionelle CMS-basierte Websites wie WordPress-Seiten, bei denen jede Seite separat geladen wird.</p>
+<h4 id="Vorteile">Vorteile<a class="anchor-link" href="#Vorteile">¶</a></h4><ul>
+<li><strong>SEO-freundlich</strong>: Jede Seite hat eine eigene URL und kann leicht für Suchmaschinen optimiert werden.</li>
+<li><strong>Einfache Navigation</strong>: Benutzer können mithilfe der URL gezielt auf jede Seite zugreifen.</li>
+<li><strong>Browser-Kompatibilität</strong>: Standardstruktur für Webanwendungen, die in allen Browsern gut funktioniert.</li>
+</ul>
+<h4 id="Nachteile">Nachteile<a class="anchor-link" href="#Nachteile">¶</a></h4><ul>
+<li><strong>Langsamere Benutzererfahrung</strong>: Da die Seite für jede Navigation neu geladen wird, kann die Benutzererfahrung langsamer sein.</li>
+<li><strong>Erhöhter Server-Aufwand</strong>: Jede Anfrage erfordert einen neuen Seitenaufruf und kann die Serverlast erhöhen.</li>
+<li><strong>Komplexere Benutzerinteraktionen</strong>: Dynamische und interaktive Benutzerinteraktionen können schwerer zu implementieren sein als in SPAs.</li>
+</ul>
+<hr/>
+<p>Jede Architektur hat ihre Stärken und Schwächen, und die Wahl hängt von den spezifischen Anforderungen der Anwendung, dem erwarteten Nutzerverhalten, den Budget- und Zeitvorgaben ab.</p>
+</details>
+<h2 id="Beliebte-Techstacks">Beliebte Techstacks<a class="anchor-link" href="#Beliebte-Techstacks">¶</a></h2><p>Ein <em>Techstack</em> im Software-Kontext bezeichnet die Kombination von Technologien, Programmiersprachen, Frameworks, Tools und Diensten, die verwendet werden, um eine Softwareanwendung oder -plattform zu entwickeln, zu betreiben und zu verwalten. Er setzt sich meist aus dem Backend (Server-seitige Logik, z.B. Node.js, Python, .NET), dem Frontend (Client-seitige Darstellung, z.B. React, Angular, Vue.js) und der Datenbank (z.B. PostgreSQL, MongoDB) zusammen. Der Techstack gibt Aufschluss darüber, welche Technologien zusammenarbeiten, um die Funktionalität, Performance und Skalierbarkeit der Software sicherzustellen.</p>
+<p>Hier ist eine kurze, stichpunktartige Zusammenfassung der aktuellen beliebten Tech-Stacks:</p>
+<h3 id="1.-MEAN-Stack-(MongoDB,-Express.js,-Angular,-Node.js)">1. <strong>MEAN Stack (MongoDB, Express.js, Angular, Node.js)</strong><a class="anchor-link" href="#1.-MEAN-Stack-(MongoDB,-Express.js,-Angular,-Node.js)">¶</a></h3><ul>
+<li><strong>Backend</strong>: Node.js, Express.js</li>
+<li><strong>Frontend</strong>: Angular</li>
+<li><strong>Datenbank</strong>: MongoDB (NoSQL)</li>
+<li><strong>Vorteile</strong>: Einheitliche Programmiersprache (JavaScript), moderne Architektur, hohe Skalierbarkeit</li>
+<li><strong>Einsatz</strong>: Echtzeitkommunikation, Single-Page-Anwendungen, APIs</li>
+</ul>
+<h3 id="2.-MERN-Stack-(MongoDB,-Express.js,-React,-Node.js)">2. <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong><a class="anchor-link" href="#2.-MERN-Stack-(MongoDB,-Express.js,-React,-Node.js)">¶</a></h3><ul>
+<li><strong>Backend</strong>: Node.js, Express.js</li>
+<li><strong>Frontend</strong>: React</li>
+<li><strong>Datenbank</strong>: MongoDB (NoSQL)</li>
+<li><strong>Vorteile</strong>: Flexibilität bei der UI, Wiederverwendbare Komponenten, schnelle Datenaktualisierung</li>
+<li><strong>Einsatz</strong>: Social Media, Dashboards, interaktive UIs</li>
+</ul>
+<h3 id="3.-LAMP-Stack-(Linux,-Apache,-MySQL,-PHP)">3. <strong>LAMP Stack (Linux, Apache, MySQL, PHP)</strong><a class="anchor-link" href="#3.-LAMP-Stack-(Linux,-Apache,-MySQL,-PHP)">¶</a></h3><ul>
+<li><strong>Backend</strong>: PHP</li>
+<li><strong>Webserver</strong>: Apache</li>
+<li><strong>Datenbank</strong>: MySQL (relational)</li>
+<li><strong>Betriebssystem</strong>: Linux</li>
+<li><strong>Vorteile</strong>: Stabilität, Open-Source, bewährte Lösung</li>
+<li><strong>Einsatz</strong>: CMS, Blogs, Unternehmenswebsites</li>
+</ul>
+<h3 id="4.-JAMstack-(JavaScript,-APIs,-Markup)">4. <strong>JAMstack (JavaScript, APIs, Markup)</strong><a class="anchor-link" href="#4.-JAMstack-(JavaScript,-APIs,-Markup)">¶</a></h3><ul>
+<li><strong>Frontend</strong>: JavaScript</li>
+<li><strong>Backend</strong>: APIs (serverlos)</li>
+<li><strong>Markup</strong>: Statische Seiten</li>
+<li><strong>Vorteile</strong>: Schnelle Ladezeiten, hohe Skalierbarkeit, bessere Sicherheit</li>
+<li><strong>Einsatz</strong>: Blogs, Marketingseiten, Portfolio-Seiten</li>
+</ul>
+<h3 id="5.-.NET-Stack-(C%23,-ASP.NET-Core,-Azure)">5. <strong>.NET Stack (C#, ASP.NET Core, Azure)</strong><a class="anchor-link" href="#5.-.NET-Stack-(C%23,-ASP.NET-Core,-Azure)">¶</a></h3><ul>
+<li><strong>Backend</strong>: ASP.NET Core</li>
+<li><strong>Programmiersprache</strong>: C#</li>
+<li><strong>Cloud</strong>: Azure</li>
+<li><strong>Vorteile</strong>: Hohe Performance, Cross-Platform, Sicherheitsfunktionen</li>
+<li><strong>Einsatz</strong>: Unternehmensanwendungen, APIs, komplexe Backend-Systeme</li>
+</ul>
+<h3 id="Fazit:">Fazit:<a class="anchor-link" href="#Fazit:">¶</a></h3><ul>
+<li><strong>MERN/MEAN</strong>: Für moderne Webanwendungen mit JavaScript.</li>
+<li><strong>JAMstack</strong>: Für schnelle, skalierbare, statische Websites.</li>
+<li><strong>LAMP</strong>: Für klassische Webanwendungen und Content-Management-Systeme.</li>
+<li><strong>.NET</strong>: Für robuste, skalierbare Unternehmenslösungen.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Die Wahl des Tech-Stacks ist eine der wichtigsten Entscheidungen bei der Softwareentwicklung, da sie direkten Einfluss auf die Skalierbarkeit, Wartbarkeit, Sicherheit und Performance einer Anwendung hat. Hier ist eine detailliertere Erklärung der aktuell beliebtesten Tech-Stacks und ihrer Anwendungsfälle:</p>
+<h3 id="1.-MEAN-Stack-(MongoDB,-Express.js,-Angular,-Node.js)">1. <strong>MEAN Stack (MongoDB, Express.js, Angular, Node.js)</strong><a class="anchor-link" href="#1.-MEAN-Stack-(MongoDB,-Express.js,-Angular,-Node.js)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong><ul>
+<li><strong>MongoDB:</strong> Eine NoSQL-Datenbank, die sich durch Flexibilität und Skalierbarkeit auszeichnet. Sie speichert Daten in JSON-ähnlichen Dokumenten und eignet sich hervorragend für dynamische Datenmodelle.</li>
+<li><strong>Express.js:</strong> Ein minimalistisches und flexibles Web-Framework für Node.js, das eine einfache Verwaltung von Routen und Middleware ermöglicht.</li>
+<li><strong>Angular:</strong> Ein Frontend-Framework von Google, das eine strukturierte Lösung für die Erstellung von Single-Page-Anwendungen (SPAs) bietet. Es verwendet TypeScript und ist bekannt für seine Zwei-Wege-Datenbindung und umfangreiche Entwickler-Tools.</li>
+<li><strong>Node.js:</strong> Ein JavaScript-basiertes Backend-Framework, das serverseitige JavaScript-Anwendungen ausführt und aufgrund seiner hohen Performance und Skalierbarkeit oft für Echtzeitanwendungen und APIs verwendet wird.</li>
+</ul>
+</li>
+<li><strong>Vorteile:</strong><ul>
+<li><strong>Einheitliche Sprache:</strong> Da sowohl das Frontend als auch das Backend in JavaScript entwickelt werden, müssen Entwickler nur eine Sprache beherrschen, was die Lernkurve reduziert.</li>
+<li><strong>Moderne Architektur:</strong> Der Stack ist ideal für moderne Webanwendungen und SPAs, bei denen schnelle Interaktivität und Datenaktualisierungen erforderlich sind.</li>
+<li><strong>Skalierbarkeit:</strong> Besonders geeignet für Anwendungen, die schnell skalieren müssen, da Node.js eine hohe Performance in stark parallelen Prozessen bietet.</li>
+</ul>
+</li>
+<li><strong>Einsatzgebiete:</strong> Echtzeitkommunikation (Chats, Benachrichtigungen), Single-Page-Anwendungen (SPAs), RESTful APIs.</li>
+</ul>
+<h3 id="2.-MERN-Stack-(MongoDB,-Express.js,-React,-Node.js)">2. <strong>MERN Stack (MongoDB, Express.js, React, Node.js)</strong><a class="anchor-link" href="#2.-MERN-Stack-(MongoDB,-Express.js,-React,-Node.js)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong><ul>
+<li><strong>MongoDB:</strong> Siehe oben.</li>
+<li><strong>Express.js:</strong> Siehe oben.</li>
+<li><strong>React.js:</strong> Eine JavaScript-Bibliothek von Facebook, die zur Erstellung von Benutzeroberflächen verwendet wird. React ist komponentenbasiert und ermöglicht es Entwicklern, wiederverwendbare UI-Elemente zu erstellen. React ist bekannt für seine Virtual DOM-Technologie, die die Performance von dynamischen Webanwendungen erheblich verbessert.</li>
+<li><strong>Node.js:</strong> Siehe oben.</li>
+</ul>
+</li>
+<li><strong>Vorteile:</strong><ul>
+<li><strong>Flexible UI:</strong> Im Vergleich zu Angular bietet React mehr Flexibilität bei der Gestaltung der Benutzeroberfläche. Entwickler können entscheiden, wie sie die Anwendung strukturieren möchten.</li>
+<li><strong>Wiederverwendbare Komponenten:</strong> Die komponentenbasierte Struktur von React erleichtert das Wiederverwenden von Code und spart Entwicklungszeit.</li>
+<li><strong>Echtzeit-Datenaktualisierung:</strong> React ermöglicht eine schnelle Reaktion auf Datenänderungen ohne komplette Seitenaktualisierungen, was es ideal für dynamische Webanwendungen macht.</li>
+</ul>
+</li>
+<li><strong>Einsatzgebiete:</strong> Social Media Apps, Dashboard-Anwendungen, interaktive Benutzeroberflächen.</li>
+</ul>
+<h3 id="3.-LAMP-Stack-(Linux,-Apache,-MySQL,-PHP)">3. <strong>LAMP Stack (Linux, Apache, MySQL, PHP)</strong><a class="anchor-link" href="#3.-LAMP-Stack-(Linux,-Apache,-MySQL,-PHP)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong><ul>
+<li><strong>Linux:</strong> Ein Open-Source-Betriebssystem, das als Grundlage für Server- und Webanwendungen dient. Es bietet Stabilität und Sicherheit.</li>
+<li><strong>Apache:</strong> Ein weit verbreiteter Webserver, der HTTP-Anfragen verarbeitet und mit verschiedenen Programmiersprachen zusammenarbeitet.</li>
+<li><strong>MySQL:</strong> Eine der beliebtesten relationalen Datenbanken, die für strukturierte Daten und komplexe Abfragen verwendet wird.</li>
+<li><strong>PHP:</strong> Eine serverseitige Skriptsprache, die hauptsächlich für die Entwicklung von dynamischen Webanwendungen und Content-Management-Systemen (wie WordPress) genutzt wird.</li>
+</ul>
+</li>
+<li><strong>Vorteile:</strong><ul>
+<li><strong>Stabilität und Sicherheit:</strong> Der LAMP-Stack ist ein bewährtes Setup, das seit vielen Jahren in der Webentwicklung eingesetzt wird. Es bietet Stabilität und viele Tools für die Verwaltung von Webanwendungen.</li>
+<li><strong>Kostenlos und Open-Source:</strong> Alle Komponenten des LAMP-Stacks sind Open-Source und kostenlos, was ihn besonders für kleine Unternehmen und Startups attraktiv macht.</li>
+<li><strong>Reife und Community:</strong> Es gibt eine riesige Entwicklergemeinschaft, die viele Ressourcen und Tutorials zur Verfügung stellt.</li>
+</ul>
+</li>
+<li><strong>Einsatzgebiete:</strong> Content-Management-Systeme (CMS), Blogs, Unternehmenswebsites, Foren.</li>
+</ul>
+<h3 id="4.-JAMstack-(JavaScript,-APIs,-Markup)">4. <strong>JAMstack (JavaScript, APIs, Markup)</strong><a class="anchor-link" href="#4.-JAMstack-(JavaScript,-APIs,-Markup)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong><ul>
+<li><strong>JavaScript:</strong> Wie bei anderen modernen Webtechnologien wird JavaScript für die interaktive Benutzeroberfläche und die dynamische Logik auf der Seite verwendet.</li>
+<li><strong>APIs:</strong> JAMstack setzt auf serverlose Architekturen, bei denen alle Backend-Operationen über APIs abgewickelt werden. Dies kann mit verschiedenen externen Diensten wie Datenbanken, Authentifizierung und Zahlungsdiensten erfolgen.</li>
+<li><strong>Markup:</strong> Statt dynamischer Seiteninhalte werden statische Seiten mit generierten Markup-Dateien ausgeliefert, was zu schnelleren Ladezeiten führt.</li>
+</ul>
+</li>
+<li><strong>Vorteile:</strong><ul>
+<li><strong>Geschwindigkeit:</strong> Da viele Daten statisch vorgerendert und über APIs geladen werden, sind JAMstack-Anwendungen sehr schnell und bieten eine ausgezeichnete Benutzererfahrung.</li>
+<li><strong>Skalierbarkeit:</strong> Da statische Seiten auf Content Delivery Networks (CDNs) ausgeliefert werden, lassen sich JAMstack-Anwendungen sehr leicht skalieren.</li>
+<li><strong>Sicherheit:</strong> Weniger serverseitige Logik bedeutet weniger Angriffsflächen.</li>
+</ul>
+</li>
+<li><strong>Einsatzgebiete:</strong> Blogs, Marketingseiten, E-Commerce-Seiten, Portfolio-Seiten.</li>
+</ul>
+<h3 id="5.-.NET-Stack-(C%23,-ASP.NET-Core,-Azure)">5. <strong>.NET Stack (C#, ASP.NET Core, Azure)</strong><a class="anchor-link" href="#5.-.NET-Stack-(C%23,-ASP.NET-Core,-Azure)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong><ul>
+<li><strong>C#:</strong> Eine objektorientierte Programmiersprache, die von Microsoft entwickelt wurde und sich hervorragend für die Entwicklung von Unternehmenslösungen eignet.</li>
+<li><strong>ASP.NET Core:</strong> Ein leistungsstarkes Framework für Webanwendungen, das eine schnelle Entwicklung von APIs und Websites ermöglicht. Es ist plattformübergreifend und kann auf Windows, Linux und macOS betrieben werden.</li>
+<li><strong>Azure:</strong> Microsofts Cloud-Plattform, die eine breite Palette von Diensten für Infrastruktur, Datenbanken, Anwendungen und mehr bietet.</li>
+</ul>
+</li>
+<li><strong>Vorteile:</strong><ul>
+<li><strong>Leistung:</strong> ASP.NET Core ist bekannt für seine hohe Performance und Skalierbarkeit, was es ideal für große Unternehmen und hochperformante Anwendungen macht.</li>
+<li><strong>Cross-Platform:</strong> Mit .NET Core können Anwendungen auf verschiedenen Betriebssystemen ausgeführt werden, was die Flexibilität erhöht.</li>
+<li><strong>Sicherheit:</strong> Microsoft bietet robuste Sicherheitsfunktionen für die Entwicklung von sicheren Anwendungen.</li>
+</ul>
+</li>
+<li><strong>Einsatzgebiete:</strong> Unternehmensanwendungen, SaaS-Produkte, APIs, komplexe Backend-Systeme.</li>
+</ul>
+<h3 id="Fazit:">Fazit:<a class="anchor-link" href="#Fazit:">¶</a></h3><p>Die Wahl des Tech-Stacks hängt von verschiedenen Faktoren wie Projektanforderungen, Budget, Team-Erfahrung und Skalierbarkeit ab. Aktuell sind insbesondere <strong>MERN</strong> (React.js) und <strong>MEAN</strong> (Angular) für moderne Webanwendungen sehr beliebt, weil sie eine vollständige JavaScript-Lösung für Frontend und Backend bieten. <strong>JAMstack</strong> gewinnt auch an Popularität, insbesondere für Websites, die schnelle Ladezeiten und einfache Skalierbarkeit benötigen. Für komplexe und skalierbare Unternehmenslösungen bleibt der <strong>.NET Stack</strong> eine ausgezeichnete Wahl.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Spielerisch-eine-Architektur-w%C3%A4hlen">Spielerisch eine Architektur wählen<a class="anchor-link" href="#Spielerisch-eine-Architektur-w%C3%A4hlen">¶</a></h2><p>Hier ist ein Beispiel, das eine spielerische Entscheidungsfindung für eine Webanwendungsarchitektur ermöglicht. Es enthält eine interaktive, Frage-basierte Auswahl, die den Benutzer durch die wichtigsten Merkmale der Architekturen führt und am Ende eine Empfehlung gibt.</p>
 </div>
 </div>
 </div>
@@ -7556,276 +7798,69 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbconvert in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (7.16.4)
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (6.1.0)
-Requirement already satisfied: defusedxml in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.7.1)
-Requirement already satisfied: importlib-metadata&gt;=3.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (8.2.0)
-Requirement already satisfied: jinja2&gt;=3.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.1.4)
-Requirement already satisfied: jupyter-core&gt;=4.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.7.2)
-Requirement already satisfied: jupyterlab-pygments in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.3.0)
-Requirement already satisfied: markupsafe&gt;=2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.1.5)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.10.0)
-Requirement already satisfied: nbformat&gt;=5.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.10.4)
-Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (24.1)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.5.1)
-Requirement already satisfied: pygments&gt;=2.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.18.0)
-Requirement already satisfied: tinycss2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.3.0)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.14.3)
-Requirement already satisfied: six&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (1.16.0)
-Requirement already satisfied: webencodings in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (0.5.1)
-Requirement already satisfied: zipp&gt;=0.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from importlib-metadata&gt;=3.6-&gt;nbconvert) (3.19.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core&gt;=4.7-&gt;nbconvert) (4.2.2)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert) (8.6.2)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (4.23.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;nbconvert) (2.5)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.19.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (2.9.0.post0)
-Requirement already satisfied: pyzmq&gt;=23.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (26.1.0)
-Requirement already satisfied: tornado&gt;=6.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (6.4.1)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbformat in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (5.10.4)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (4.23.0)
-Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.7.2)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.14.3)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.19.1)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat) (4.2.2)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Architektur-Auswahl-Notebook</span>
+<span class="c1"># Ziel: Benutzerfreundliche Entscheidungsfindung für eine Webanwendungsarchitektur</span>
 
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
+<span class="c1"># Import notwendiger Bibliotheken</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
+<span class="c1"># Begrüßung und Einführung</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"### Willkommen zur spielerischen Auswahl einer Webanwendungsarchitektur!"</span><span class="p">))</span>
+<span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"Beantworte die folgenden Fragen, um eine Architektur zu finden, die zu deinem Projekt passt."</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
+<span class="c1"># Eingabefragen</span>
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Wie wichtig ist die Skalierbarkeit?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Sehr wichtig"</span><span class="p">,</span> <span class="s2">"Mittelwichtig"</span><span class="p">,</span> <span class="s2">"Eher unwichtig"</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Welche Kontrolle benötigst du über die Infrastruktur?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Vollständige Kontrolle"</span><span class="p">,</span> <span class="s2">"Mittlere Kontrolle"</span><span class="p">,</span> <span class="s2">"Kaum Kontrolle"</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Soll die Anwendung offline funktionieren?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Ja"</span><span class="p">,</span> <span class="s2">"Nein"</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Welche Art von Benutzerinteraktion ist vorgesehen?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Interaktiv mit hoher Leistung"</span><span class="p">,</span> <span class="s2">"Standard"</span><span class="p">,</span> <span class="s2">"Wenig interaktiv"</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Wie flexibel muss die Anwendung bezüglich neuer Technologien sein?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Sehr flexibel"</span><span class="p">,</span> <span class="s2">"Mittel"</span><span class="p">,</span> <span class="s2">"Kaum wichtig"</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Ist SEO für die Anwendung entscheidend?"</span><span class="p">,</span> <span class="p">[</span><span class="s2">"Ja"</span><span class="p">,</span> <span class="s2">"Nicht so wichtig"</span><span class="p">]),</span>
+<span class="p">]</span>
+
+<span class="c1"># Antwortverarbeitung</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="c1"># Fragewidgets erstellen</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+    <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">RadioButtons</span><span class="p">(</span>
+        <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+        <span class="n">disabled</span><span class="o">=</span><span class="kc">False</span>
     <span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
+<span class="c1"># Architekturentscheidungslogik</span>
+<span class="k">def</span> <span class="nf">recommend_architecture</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="c1"># Antwortwerte sammeln</span>
+    <span class="n">user_answers</span> <span class="o">=</span> <span class="p">[</span><span class="n">answer</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
     
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
+    <span class="c1"># Empfehlung basierend auf Antworten</span>
+    <span class="k">if</span> <span class="n">user_answers</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"Sehr wichtig"</span><span class="p">,</span> <span class="s2">"Vollständige Kontrolle"</span><span class="p">,</span> <span class="s2">"Nein"</span><span class="p">,</span> <span class="s2">"Interaktiv mit hoher Leistung"</span><span class="p">,</span> <span class="s2">"Sehr flexibel"</span><span class="p">,</span> <span class="s2">"Nicht so wichtig"</span><span class="p">]:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Microservices-Architektur"</span>
+    <span class="k">elif</span> <span class="n">user_answers</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"Mittelwichtig"</span><span class="p">,</span> <span class="s2">"Mittlere Kontrolle"</span><span class="p">,</span> <span class="s2">"Ja"</span><span class="p">,</span> <span class="s2">"Interaktiv mit hoher Leistung"</span><span class="p">,</span> <span class="s2">"Mittel"</span><span class="p">,</span> <span class="s2">"Nicht so wichtig"</span><span class="p">]:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Single-Page Application (SPA)"</span>
+    <span class="k">elif</span> <span class="n">user_answers</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"Sehr wichtig"</span><span class="p">,</span> <span class="s2">"Kaum Kontrolle"</span><span class="p">,</span> <span class="s2">"Nein"</span><span class="p">,</span> <span class="s2">"Wenig interaktiv"</span><span class="p">,</span> <span class="s2">"Kaum wichtig"</span><span class="p">,</span> <span class="s2">"Ja"</span><span class="p">]:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Jamstack-Architektur"</span>
+    <span class="k">elif</span> <span class="n">user_answers</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"Sehr wichtig"</span><span class="p">,</span> <span class="s2">"Mittlere Kontrolle"</span><span class="p">,</span> <span class="s2">"Ja"</span><span class="p">,</span> <span class="s2">"Standard"</span><span class="p">,</span> <span class="s2">"Mittel"</span><span class="p">,</span> <span class="s2">"Ja"</span><span class="p">]:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Progressive Web Application (PWA)"</span>
+    <span class="k">elif</span> <span class="n">user_answers</span> <span class="o">==</span> <span class="p">[</span><span class="s2">"Eher unwichtig"</span><span class="p">,</span> <span class="s2">"Vollständige Kontrolle"</span><span class="p">,</span> <span class="s2">"Nein"</span><span class="p">,</span> <span class="s2">"Wenig interaktiv"</span><span class="p">,</span> <span class="s2">"Kaum wichtig"</span><span class="p">,</span> <span class="s2">"Ja"</span><span class="p">]:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Multi-Page Application (MPA)"</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">recommendation</span> <span class="o">=</span> <span class="s2">"Monolithische Architektur"</span>
     
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
+    <span class="c1"># Empfehlung ausgeben</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"**Empfohlene Architektur:** </span><span class="si">{</span><span class="n">recommendation</span><span class="si">}</span><span class="s2">"</span><span class="p">))</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Diese Architektur könnte zu deinem Projekt passen!"</span><span class="p">))</span>
 
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
+<span class="c1"># Button zur Entscheidung</span>
+<span class="n">decision_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Entscheidung anzeigen"</span><span class="p">)</span>
+<span class="n">decision_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">recommend_architecture</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
-</ul>
-</li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
-</li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
-</ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
+<span class="c1"># Button anzeigen</span>
+<span class="n">display</span><span class="p">(</span><span class="n">decision_button</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7837,115 +7872,110 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<h3 id="Willkommen-zur-spielerischen-Auswahl-einer-Webanwendungsarchitektur!">Willkommen zur spielerischen Auswahl einer Webanwendungsarchitektur!<a class="anchor-link" href="#Willkommen-zur-spielerischen-Auswahl-einer-Webanwendungsarchitektur!">¶</a></h3>
 </div>
 </div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>Beantworte die folgenden Fragen, um eine Architektur zu finden, die zu deinem Projekt passt.</p>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
+<pre>Wie wichtig ist die Skalierbarkeit?
 </pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Sehr wichtig', 'Mittelwichtig', 'Eher unwichtig'), value='Sehr wichtig')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Welche Kontrolle benötigst du über die Infrastruktur?
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Vollständige Kontrolle', 'Mittlere Kontrolle', 'Kaum Kontrolle'), value='Vollständige K…</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Soll die Anwendung offline funktionieren?
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Ja', 'Nein'), value='Ja')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Welche Art von Benutzerinteraktion ist vorgesehen?
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Interaktiv mit hoher Leistung', 'Standard', 'Wenig interaktiv'), value='Interaktiv mit …</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Wie flexibel muss die Anwendung bezüglich neuer Technologien sein?
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Sehr flexibel', 'Mittel', 'Kaum wichtig'), value='Sehr flexibel')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Ist SEO für die Anwendung entscheidend?
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>RadioButtons(options=('Ja', 'Nicht so wichtig'), value='Ja')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Button(description='Entscheidung anzeigen', style=ButtonStyle())</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p><strong>Empfohlene Architektur:</strong> Monolithische Architektur</p>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-OutputArea-output" data-mime-type="text/markdown" tabindex="0">
+<p>Diese Architektur könnte zu deinem Projekt passen!</p>
 </div>
 </div>
 </div>
@@ -7957,11 +7987,12 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
+<h3 id="Funktionsweise-des-Notebooks">Funktionsweise des Notebooks<a class="anchor-link" href="#Funktionsweise-des-Notebooks">¶</a></h3><ol>
+<li><strong>Fragen</strong>: Der Benutzer beantwortet mehrere Fragen, die auf den Anforderungen und Zielen der Webanwendung basieren (z. B. Skalierbarkeit, Kontrolle, SEO).</li>
+<li><strong>Architekturentscheidungslogik</strong>: Basierend auf den Antworten wird eine Architektur empfohlen.</li>
+<li><strong>Ausgabe</strong>: Der Benutzer erhält eine Empfehlung, die den passenden Architekturansatz für das Projekt vorschlägt.</li>
 </ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<p>Dieses Notebook kann leicht angepasst werden, um weitere Kriterien und Architekturen hinzuzufügen.</p>
 </div>
 </div>
 </div>

@@ -7516,8 +7516,232 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
+<h1 id="Rollen">Rollen<a class="anchor-link" href="#Rollen">¶</a></h1><img alt="No description has been provided for this image" src="Roles.webp" style="width:280px; height:280px;"/>
+<ul>
+<li>Verschiedene Rollen sind entscheidend für den Erfolg von Software-Projekten.</li>
+<li>Rollen variieren je nach Vorgehensmodell (Wasserfallmodell vs. agile Arbeitsweisen).</li>
+<li>Rollen stellen sicher, dass Projektanforderungen erfüllt werden.</li>
+<li>Bieten klare Verantwortlichkeiten und Arbeitsstrukturen.</li>
+<li>Detaillierte Analyse der relevanten Rollen im Wasserfallmodell und in agilen Arbeitsweisen.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>In Software-Projekten sind die verschiedenen Rollen entscheidend, um den Erfolg des Projekts sicherzustellen. Diese Rollen variieren je nach gewähltem Vorgehensmodell, insbesondere zwischen traditionellen Wasserfallmodellen und modernen agilen Arbeitsweisen. Die Rollen innerhalb eines Projekts stellen sicher, dass die verschiedenen Anforderungen des Projekts erfüllt werden, indem sie klare Verantwortlichkeiten und Arbeitsstrukturen bieten. Hier wird eine detaillierte Analyse der relevanten Rollen sowohl im Wasserfallmodell als auch in der agilen Arbeitsweise gegeben.</p>
+</details>
+<h3 id="Wasserfallmodell">Wasserfallmodell<a class="anchor-link" href="#Wasserfallmodell">¶</a></h3><ul>
+<li><strong>Projektmanager</strong>: Planung, Durchführung und Überwachung des Projekts, Risikomanagement, Fortschrittsberichterstattung.</li>
+<li><strong>Business Analyst</strong>: Erfassung und Übersetzung von Anforderungen in technische Spezifikationen.</li>
+<li><strong>Architekt</strong>: Entwurf der Softwarearchitektur, Sicherstellung der technischen Standards.</li>
+<li><strong>Entwickler</strong>: Programmierung der Software basierend auf Spezifikationen.</li>
+<li><strong>Tester (QA)</strong>: Durchführung von Tests zur Sicherstellung der Qualität.</li>
+<li><strong>Technischer Schriftsteller</strong>: Erstellung von Dokumentationen (Handbücher, Anleitungen).</li>
+<li><strong>Stakeholder</strong>: Personen mit Interesse am Projekt, geben Anforderungen vor.</li>
+<li><strong>Release-Manager</strong>: Koordination der Softwarebereitstellung.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<h3 id="Wasserfallmodell">Wasserfallmodell<a class="anchor-link" href="#Wasserfallmodell">¶</a></h3><p>Das Wasserfallmodell ist ein traditionelles Projektmanagementmodell, das sich durch eine lineare, sequenzielle und planbare Vorgehensweise auszeichnet. Jede Phase des Projekts muss abgeschlossen sein, bevor die nächste beginnt, und es gibt wenig Raum für Änderungen nach dem Beginn jeder Phase. In diesem Modell gibt es mehrere Schlüsselrollen, die dafür sorgen, dass das Projekt erfolgreich abgeschlossen wird:</p>
+<h4 id="1.-Projektmanager">1. <strong>Projektmanager</strong><a class="anchor-link" href="#1.-Projektmanager">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Projektmanager übernimmt die Gesamtverantwortung für das Projekt und stellt sicher, dass alle Phasen von der Planung bis zur Auslieferung erfolgreich umgesetzt werden. Er ist der Hauptverantwortliche dafür, dass das Projekt innerhalb des Zeitrahmens und Budgets bleibt und die definierten Ziele erreicht werden.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Planung</strong>: Der Projektmanager plant das Projekt, erstellt einen Zeitplan, setzt Meilensteine und stellt sicher, dass alle Ressourcen und Fähigkeiten zur Verfügung stehen.</li>
+<li><strong>Risikomanagement</strong>: Risiken werden identifiziert und Lösungen zur Minimierung dieser Risiken entwickelt.</li>
+<li><strong>Stakeholder-Management</strong>: Er kommuniziert regelmäßig mit den Stakeholdern und sorgt dafür, dass ihre Anforderungen und Erwartungen berücksichtigt werden.</li>
+<li><strong>Kontrolle</strong>: Der Projektmanager überwacht den Fortschritt und stellt sicher, dass das Projekt rechtzeitig und im Budgetrahmen bleibt.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2.-Business-Analyst">2. <strong>Business Analyst</strong><a class="anchor-link" href="#2.-Business-Analyst">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Business Analyst fungiert als Brücke zwischen den technischen und geschäftlichen Anforderungen. Er analysiert die Bedürfnisse der Stakeholder und übersetzt diese in technische Anforderungen.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Erhebung und Analyse der Anforderungen</strong>: Der Business Analyst arbeitet eng mit den Stakeholdern zusammen, um deren Bedürfnisse und Erwartungen zu verstehen.</li>
+<li><strong>Erstellung von Spezifikationen</strong>: Basierend auf der Analyse erstellt der Business Analyst detaillierte Dokumentationen, die den Entwicklern als Grundlage dienen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3.-Architekt">3. <strong>Architekt</strong><a class="anchor-link" href="#3.-Architekt">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Softwarearchitekt ist dafür verantwortlich, eine technische Lösung zu entwerfen, die den funktionalen und nicht-funktionalen Anforderungen des Projekts entspricht.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Design der Architektur</strong>: Der Architekt entwirft die Softwarearchitektur und stellt sicher, dass sie den Skalierungsanforderungen, der Wartbarkeit und der Performance entspricht.</li>
+<li><strong>Technische Entscheidungen treffen</strong>: Der Architekt trifft alle wichtigen technischen Entscheidungen, insbesondere in Bezug auf Plattformen, Frameworks und Tools.</li>
+<li><strong>Überprüfung der Architektur</strong>: Er stellt sicher, dass die Architektur während des gesamten Entwicklungsprozesses eingehalten wird.</li>
+</ul>
+</li>
+</ul>
+<h4 id="4.-Entwickler">4. <strong>Entwickler</strong><a class="anchor-link" href="#4.-Entwickler">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Entwickler sind für die tatsächliche Programmierung der Software verantwortlich, die auf den festgelegten Spezifikationen basiert.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Code-Entwicklung</strong>: Entwickler schreiben den Code gemäß den Anforderungen und der Architektur.</li>
+<li><strong>Fehlerbehebung und Optimierung</strong>: Entwickler müssen Fehler im Code beheben und die Performance verbessern.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5.-Tester-(QA)">5. <strong>Tester (QA)</strong><a class="anchor-link" href="#5.-Tester-(QA)">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der QA-Tester ist für die Qualitätssicherung zuständig, um sicherzustellen, dass die Software fehlerfrei und von hoher Qualität ist.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Testplanung und Durchführung</strong>: Tester erstellen Testpläne und führen verschiedene Arten von Tests durch, wie z.B. Unit-Tests, Integrationstests und Abnahmetests.</li>
+<li><strong>Fehlerberichterstattung</strong>: Tester dokumentieren Fehler und arbeiten mit Entwicklern zusammen, um diese zu beheben.</li>
+</ul>
+</li>
+</ul>
+<h4 id="6.-Technischer-Schriftsteller">6. <strong>Technischer Schriftsteller</strong><a class="anchor-link" href="#6.-Technischer-Schriftsteller">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der technische Schriftsteller erstellt alle notwendigen Dokumentationen für die Software, die von Benutzern und Entwicklern genutzt werden.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Dokumentation der Software</strong>: Der technische Schriftsteller erstellt Handbücher, Benutzeranleitungen, Systemdokumentationen und andere relevante Dokumente.</li>
+<li><strong>Klare Kommunikation</strong>: Es ist seine Aufgabe, komplexe technische Details in eine leicht verständliche Sprache zu übersetzen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="7.-Stakeholder">7. <strong>Stakeholder</strong><a class="anchor-link" href="#7.-Stakeholder">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Stakeholder sind Personen oder Gruppen, die ein Interesse am Projekt haben, wie z.B. Kunden, Investoren, Endbenutzer oder das Management.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Anforderungen und Erwartungen</strong>: Stakeholder stellen die Anforderungen an das Projekt und überwachen die Entwicklung, um sicherzustellen, dass ihre Bedürfnisse erfüllt werden.</li>
+</ul>
+</li>
+</ul>
+<h4 id="8.-Release-Manager">8. <strong>Release-Manager</strong><a class="anchor-link" href="#8.-Release-Manager">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Release-Manager ist dafür zuständig, dass die Softwareversionen korrekt bereitgestellt und ausgeliefert werden.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Release-Planung und Koordination</strong>: Der Release-Manager koordiniert die Veröffentlichung von Softwareversionen, überprüft, ob alle Komponenten integriert sind, und überwacht die Bereitstellung.</li></ul></li></ul></details>
+
+
+
+
+<h3 id="Agile-Arbeitsweise">Agile Arbeitsweise<a class="anchor-link" href="#Agile-Arbeitsweise">¶</a></h3><ul>
+<li><strong>Product Owner</strong>: Definition und Priorisierung der Produktanforderungen.</li>
+<li><strong>Scrum Master</strong>: Unterstützung bei der Umsetzung agiler Praktiken, Beseitigung von Hindernissen.</li>
+<li><strong>Entwicklungsteam</strong>: Selbstorganisierte Entwickler, arbeiten an den Sprintzielen.</li>
+<li><strong>Tester (QA)</strong>: Integration der Qualitätssicherung während der gesamten Entwicklung.</li>
+<li><strong>UX/UI-Designer</strong>: Gestaltung der Benutzererfahrung und -oberfläche.</li>
+<li><strong>Stakeholder</strong>: Ähnlich wie im Wasserfallmodell, beeinflussen die Produktvision.</li>
+<li><strong>DevOps-Engineer</strong>: Automatisierung und Optimierung der Bereitstellung und des Betriebs.</li>
+<li><strong>Business Analyst</strong>: Unterstützung des Product Owners mit Markt- und Benutzerkenntnissen.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Agile Arbeitsmethoden konzentrieren sich auf Flexibilität, kontinuierliche Verbesserung und enge Zusammenarbeit im Team. Im Gegensatz zum Wasserfallmodell, das eine starre Planung und sequenzielle Umsetzung verfolgt, ist die agile Methodik iterativ und fördert schnelle Feedbackzyklen, Anpassungen und Änderungen während des gesamten Entwicklungsprozesses. Die wichtigsten Rollen in einem agilen Team sind:</p>
+<h4 id="1.-Product-Owner">1. <strong>Product Owner</strong><a class="anchor-link" href="#1.-Product-Owner">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Product Owner ist die Hauptansprechperson für das Produkt und stellt sicher, dass die Produktanforderungen korrekt erfasst, priorisiert und umgesetzt werden.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Produktvision und Backlog-Management</strong>: Der Product Owner definiert die Produktvision und erstellt und pflegt das Produkt-Backlog (Liste von Anforderungen).</li>
+<li><strong>Priorisierung von Aufgaben</strong>: Er priorisiert die Aufgaben im Backlog, um sicherzustellen, dass die wichtigsten und wertvollsten Features zuerst entwickelt werden.</li>
+<li><strong>Stakeholder-Management</strong>: Der Product Owner ist die Schnittstelle zwischen den Stakeholdern und dem Entwicklungsteam.</li>
+</ul>
+</li>
+</ul>
+<h4 id="2.-Scrum-Master">2. <strong>Scrum Master</strong><a class="anchor-link" href="#2.-Scrum-Master">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Scrum Master ist der Facilitator des Scrum-Teams und sorgt dafür, dass Scrum-Praktiken eingehalten werden.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Coaching und Unterstützung</strong>: Der Scrum Master unterstützt das Team dabei, sich kontinuierlich zu verbessern und Hindernisse zu beseitigen.</li>
+<li><strong>Moderation von Meetings</strong>: Er moderiert Scrum-Meetings wie Daily Stand-ups, Sprint-Planungen und Retrospektiven.</li>
+</ul>
+</li>
+</ul>
+<h4 id="3.-Entwicklungsteam">3. <strong>Entwicklungsteam</strong><a class="anchor-link" href="#3.-Entwicklungsteam">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Das Entwicklungsteam ist selbstorganisiert und verantwortlich für die Umsetzung der Produktanforderungen.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Softwareentwicklung</strong>: Die Teammitglieder entwickeln die Software während eines Sprints und arbeiten eng mit dem Product Owner und dem Scrum Master zusammen.</li>
+<li><strong>Kontinuierliche Verbesserung</strong>: Das Team ist für die Verbesserung seiner Arbeitsweise verantwortlich und strebt nach höherer Effizienz und Qualität.</li>
+</ul>
+</li>
+</ul>
+<h4 id="4.-Tester-(QA)">4. <strong>Tester (QA)</strong><a class="anchor-link" href="#4.-Tester-(QA)">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Tester sind in den gesamten Entwicklungsprozess integriert und arbeiten eng mit den Entwicklern zusammen, um kontinuierliche Qualität zu gewährleisten.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Testen während des Sprints</strong>: Im Gegensatz zum Wasserfallmodell, bei dem Tests oft später durchgeführt werden, arbeiten Tester in agilen Teams eng mit Entwicklern zusammen, um kontinuierlich Tests durchzuführen.</li>
+</ul>
+</li>
+</ul>
+<h4 id="5.-UX/UI-Designer">5. <strong>UX/UI-Designer</strong><a class="anchor-link" href="#5.-UX/UI-Designer">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: UX/UI-Designer sorgen dafür, dass das Produkt benutzerfreundlich und ästhetisch ansprechend ist.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Benutzerzentriertes Design</strong>: Sie arbeiten eng mit dem Product Owner und den Entwicklern zusammen, um sicherzustellen, dass die Benutzeroberfläche einfach zu bedienen und auf die Bedürfnisse der Benutzer abgestimmt ist.</li>
+</ul>
+</li>
+</ul>
+<h4 id="6.-DevOps-Engineer">6. <strong>DevOps-Engineer</strong><a class="anchor-link" href="#6.-DevOps-Engineer">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der DevOps-Engineer optimiert den Entwicklungs- und Bereitstellungsprozess, um sicherzustellen, dass neue Softwarefunktionen schnell und zuverlässig bereitgestellt werden können.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Automatisierung der Bereitstellung</strong>: Er automatisiert den Build-, Test- und Bereitstellungsprozess und stellt sicher, dass die Software nahtlos in Produktionsumgebungen überführt werden kann.</li>
+</ul>
+</li>
+</ul>
+<h4 id="7.-Business-Analyst">7. <strong>Business Analyst</strong><a class="anchor-link" href="#7.-Business-Analyst">¶</a></h4><ul>
+<li><strong>Verantwortung</strong>: Der Business Analyst unterstützt den Product Owner, indem er die Markt- und Benutzeranforderungen analysiert und die Kommunikation mit den Stakeholdern fördert.</li>
+<li><strong>Aufgaben</strong>:<ul>
+<li><strong>Anforderungsanalyse</strong>: Der Business Analyst hilft dabei, die Anforderungen zu verfeinern und sicherzustellen, dass alle relevanten Stakeholder gehört werden.</li></ul></li></ul></details>
+
+
+
+
+<h3 id="Management--und-F%C3%BChrungsrollen">Management- und Führungsrollen<a class="anchor-link" href="#Management--und-F%C3%BChrungsrollen">¶</a></h3><ul>
+<li><p><strong>Wasserfallmodell</strong>:</p>
+<ul>
+<li><strong>Projektmanager</strong>: Hierarchische Führung, Koordination der Phasen und Ressourcen.</li>
+<li><strong>Teamleiter</strong>: Technische Anleitung und Unterstützung der Teammitglieder.</li>
+</ul>
+</li>
+<li><p><strong>Agile Arbeitsweise</strong>:</p>
+<ul>
+<li><strong>Scrum Master</strong>: Teamführung durch agile Praktiken und Unterstützung der Selbstorganisation.</li>
+<li><strong>People Lead/Team Lead</strong>: Mentoring und Entwicklung der Teammitglieder.</li>
+<li><strong>Product Owner</strong>: Führt das Team durch Priorisierung und Stakeholder-Kommunikation.</li>
+<li><strong>Agile Coach</strong>: Unterstützung bei der Einführung und Verbesserung agiler Praktiken.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><ul>
+<li><strong>Wasserfallmodell</strong>: Hierarchische, strukturierte Führung.</li>
+<li><strong>Agile Arbeitsweise</strong>: Unterstützende, teamorientierte Führung mit Fokus auf Selbstorganisation und kontinuierliche Verbesserung.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Im Kontext der Softwareentwicklung und Projektarbeit gibt es verschiedene Management- und Führungsrollen, die jeweils unterschiedliche Aufgaben und Verantwortlichkeiten übernehmen. Diese Rollen können je nach Arbeitsweise (Wasserfallmodell vs. agile Methoden) variieren. Hier eine detaillierte Beschreibung der jeweiligen Rollen:</p>
+<hr/>
+<h4 id="Wasserfallmodell"><strong>Wasserfallmodell</strong><a class="anchor-link" href="#Wasserfallmodell">¶</a></h4><p>Das <strong>Wasserfallmodell</strong> ist ein traditionelles, lineares Projektmanagement-Modell, bei dem Phasen in einer festen Reihenfolge ablaufen. Es wird oft bei Projekten eingesetzt, bei denen Anforderungen und Lösungen im Vorfeld klar definiert sind.</p>
+<ol>
+<li><p><strong>Projektmanager</strong></p>
+<ul>
+<li><strong>Hierarchische Führung</strong>: Der Projektmanager ist in der Regel die zentrale Führungsfigur im Wasserfallmodell. Er oder sie ist für die Gesamtkoordination des Projekts verantwortlich und trifft die Entscheidungen hinsichtlich der Planung, Ressourcen und Zeitrahmen.</li>
+<li><strong>Koordination der Phasen und Ressourcen</strong>: Der Projektmanager sorgt dafür, dass die verschiedenen Phasen des Projekts (z.B. Analyse, Design, Implementierung, Testen) gemäß der festgelegten Reihenfolge ausgeführt werden. Dabei muss er alle Ressourcen effizient managen, um sicherzustellen, dass das Projekt innerhalb des Budgets und Zeitrahmens abgeschlossen wird.</li>
+<li><strong>Kommunikation</strong>: Der Projektmanager hält alle relevanten Stakeholder auf dem Laufenden und übernimmt die Kommunikation zwischen den verschiedenen Abteilungen und Teams.</li>
+</ul>
+</li>
+<li><p><strong>Teamleiter</strong></p>
+<ul>
+<li><strong>Technische Anleitung</strong>: Der Teamleiter übernimmt eine technische Führungsrolle. Er sorgt dafür, dass das Team die technischen Anforderungen und Standards versteht und umsetzt. Dies kann die Auswahl geeigneter Technologien oder Tools sowie die Überwachung der Qualität des entwickelten Produkts umfassen.</li>
+<li><strong>Unterstützung der Teammitglieder</strong>: Der Teamleiter ist in engem Kontakt mit den Teammitgliedern, unterstützt sie bei technischen Herausforderungen und sorgt dafür, dass das Team effizient arbeitet. Er hilft, Konflikte zu lösen und stellt sicher, dass die Teammitglieder ihre Aufgaben verstehen und ihre Fähigkeiten weiterentwickeln.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h4 id="Agile-Arbeitsweise"><strong>Agile Arbeitsweise</strong><a class="anchor-link" href="#Agile-Arbeitsweise">¶</a></h4><p>Im Gegensatz zum Wasserfallmodell fördert die <strong>agile Arbeitsweise</strong> Flexibilität, Selbstorganisation und schnelle Anpassung an sich ändernde Anforderungen. Es gibt mehrere spezialisierte Führungsrollen, die das agile Team unterstützen und die Prozesse steuern.</p>
+<ol>
+<li><p><strong>Scrum Master</strong></p>
+<ul>
+<li><strong>Teamführung durch agile Praktiken</strong>: Der Scrum Master ist die Schlüsselrolle innerhalb eines Scrum-Teams. Er oder sie sorgt dafür, dass das Team die Scrum-Praktiken versteht und korrekt anwendet, wie zum Beispiel regelmäßige Scrum-Meetings (Daily Standups, Sprint Planning, Retrospectives). Der Scrum Master ist in erster Linie ein <strong>Servant Leader</strong>, der den Teammitgliedern hilft, ihre Arbeit effizient zu erledigen.</li>
+<li><strong>Unterstützung der Selbstorganisation</strong>: Der Scrum Master ermutigt das Team, eigenständig zu arbeiten, indem er Hindernisse beseitigt, die das Team daran hindern könnten, seine Ziele zu erreichen. Er sorgt dafür, dass das Team Verantwortung übernimmt und kontinuierlich Verbesserungen anstrebt.</li>
+</ul>
+</li>
+<li><p><strong>People Lead / Team Lead</strong></p>
+<ul>
+<li><strong>Mentoring und Entwicklung</strong>: Der People Lead oder Team Lead ist oft eine Mischung aus Manager und Mentor. Diese Rolle fokussiert sich stark auf die <strong>persönliche und berufliche Entwicklung</strong> der Teammitglieder. Der People Lead ist dafür verantwortlich, sicherzustellen, dass die Teammitglieder die nötige Unterstützung erhalten, um sich in ihrer Rolle zu entfalten und ihre Fähigkeiten auszubauen.</li>
+<li><strong>Förderung von Zusammenarbeit und Teamgeist</strong>: Der People Lead arbeitet eng mit dem Team zusammen, fördert eine positive Teamkultur und stellt sicher, dass die Kommunikation und Zusammenarbeit innerhalb des Teams effektiv sind.</li>
+</ul>
+</li>
+<li><p><strong>Product Owner</strong></p>
+<ul>
+<li><strong>Führung durch Priorisierung und Stakeholder-Kommunikation</strong>: Der Product Owner ist verantwortlich für die Definition und Priorisierung der Produktanforderungen und -funktionen. Er fungiert als Bindeglied zwischen dem Entwicklungsteam und den Stakeholdern (z.B. Kunden, Management). Der Product Owner stellt sicher, dass das Team an den wichtigsten und wertvollsten Features arbeitet.</li>
+<li><strong>Vision und Zielsetzung</strong>: Der Product Owner ist der Visionär des Projekts und sorgt dafür, dass das Produkt den Erwartungen und Anforderungen der Stakeholder entspricht. Er muss das Team durch die ständige Anpassung der Prioritäten und die klare Kommunikation der Ziele führen.</li>
+</ul>
+</li>
+<li><p><strong>Agile Coach</strong></p>
+<ul>
+<li><strong>Unterstützung bei der Einführung agiler Praktiken</strong>: Der Agile Coach ist eine erfahrene Führungskraft, die das Team bei der Einführung und kontinuierlichen Verbesserung agiler Methoden unterstützt. Diese Rolle wird häufig in Organisationen benötigt, die von traditionellen zu agilen Arbeitsweisen wechseln.</li>
+<li><strong>Förderung der agilen Werte und Prinzipien</strong>: Der Agile Coach hilft dabei, ein tiefes Verständnis für agile Werte wie <strong>Transparenz</strong>, <strong>Feedback</strong>, <strong>Anpassungsfähigkeit</strong> und <strong>Kundenzentrierung</strong> zu entwickeln. Diese Werte müssen nicht nur im Team, sondern auch auf der organisatorischen Ebene verankert werden.</li>
+<li><strong>Methodenvielfalt und Prozessoptimierung</strong>: Der Agile Coach hat umfangreiche Erfahrung mit verschiedenen agilen Methoden und hilft den Teams, die am besten geeigneten Praktiken und Prozesse zu implementieren. Er sorgt dafür, dass kontinuierliche Verbesserungen erzielt werden und dass das Team effektiv auf Veränderungen reagieren kann.</li>
+</ul>
+</li>
+</ol>
+<hr/>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Die Management- und Führungsrollen in einem Projektteam hängen stark von der gewählten Arbeitsweise ab. Im traditionellen Wasserfallmodell liegt der Fokus auf einer hierarchischen Struktur, klaren Phasen und der Koordination von Ressourcen. In einem agilen Umfeld hingegen übernehmen die Führungskräfte rollenbasierte Aufgaben, die das Team unterstützen, selbstorganisiert zu arbeiten, kontinuierlich zu lernen und sich an sich ändernde Anforderungen anzupassen. Beide Ansätze erfordern unterschiedliche Führungsfähigkeiten und -techniken, wobei das agile Umfeld oft stärker auf Mentoring, Coaching und das Erlernen von Praktiken ausgerichtet ist.</p>
+</details>
 </div>
 </div>
 </div>
@@ -7528,23 +7752,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
-<ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
-</ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
-</ol>
+<h2 id="Rollenvorschlag-spielerisch-ermitteln">Rollenvorschlag spielerisch ermitteln<a class="anchor-link" href="#Rollenvorschlag-spielerisch-ermitteln">¶</a></h2><p>Um das Beispiel zu erweitern und alle relevanten Rollen aus dem Wasserfallmodell und der agilen Arbeitsweise zu berücksichtigen, können wir den Entscheidungsbaum anpassen, sodass auch jede Rolle berücksichtigt wird. Außerdem fügen wir mehr Fragen hinzu, um sicherzustellen, dass wir eine differenzierte Auswahl der besten Rolle für den Nutzer treffen. Hier ist ein Vorschlag:</p>
 </div>
 </div>
 </div>
@@ -7556,7 +7764,103 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+
+<span class="c1"># Erweiterte Fragen und mögliche Antworten</span>
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Magst du es, in einem Team zu arbeiten und Prozesse zu koordinieren?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Hast du Spaß an der Analyse von Problemen und der Erarbeitung von Lösungen?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Bist du gerne kreativ und kümmerst dich um das Design von Benutzeroberflächen?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Interessierst du dich für Software-Architektur und langfristige technische Entscheidungen?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Magst du es, Verantwortung für die Qualität der Software zu übernehmen und Tests zu erstellen?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Bist du ein guter Kommunikator und kannst du zwischen verschiedenen Interessengruppen vermitteln?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Bist du eine Person, die es liebt, die Anforderungen eines Produkts zu definieren und die Vision voranzutreiben?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Hast du Interesse an der kontinuierlichen Verbesserung von Prozessen und Teamdynamik?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Liebst du es, technische Probleme zu lösen und Lösungen zu implementieren?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+    <span class="p">(</span><span class="s2">"Magst du es, neue Features zu entwerfen und dafür Verantwortung zu übernehmen?"</span><span class="p">,</span> <span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">]),</span>
+<span class="p">]</span>
+
+<span class="c1"># Alle Rollen</span>
+<span class="n">roles</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">'Projektmanager'</span><span class="p">:</span> <span class="s2">"Du solltest dich für die Rolle des Projektmanagers interessieren, wenn du gerne koordinierst und ein gutes Auge für Details und Zeitpläne hast."</span><span class="p">,</span>
+    <span class="s1">'Business Analyst'</span><span class="p">:</span> <span class="s2">"Als Business Analyst bist du die Brücke zwischen den Stakeholdern und dem Entwicklungsteam, wenn du gut in der Analyse von Anforderungen bist."</span><span class="p">,</span>
+    <span class="s1">'UX/UI-Designer'</span><span class="p">:</span> <span class="s2">"Wenn du kreatives Design liebst und ein Interesse an Benutzererfahrungen hast, könnte die Rolle des UX/UI-Designers zu dir passen."</span><span class="p">,</span>
+    <span class="s1">'Architekt'</span><span class="p">:</span> <span class="s2">"Als Architekt hast du die Verantwortung für die langfristige technische Ausrichtung eines Projekts. Du solltest ein gutes Verständnis für Softwarearchitektur mitbringen."</span><span class="p">,</span>
+    <span class="s1">'Tester (QA)'</span><span class="p">:</span> <span class="s2">"Wenn du gerne sicherstellst, dass Software fehlerfrei ist und gerne Tests durchführst, könnte die Rolle des Testers passend sein."</span><span class="p">,</span>
+    <span class="s1">'Stakeholder-Kommunikator'</span><span class="p">:</span> <span class="s2">"Wenn du gerne zwischen verschiedenen Interessengruppen vermittelst und sicherstellst, dass alle Anforderungen erfüllt werden, dann könnte diese Rolle gut zu dir passen."</span><span class="p">,</span>
+    <span class="s1">'Product Owner'</span><span class="p">:</span> <span class="s2">"In der Rolle des Product Owners bist du dafür verantwortlich, die Produktvision zu definieren, Anforderungen zu priorisieren und das Team auf die wichtigsten Aufgaben zu fokussieren."</span><span class="p">,</span>
+    <span class="s1">'Scrum Master'</span><span class="p">:</span> <span class="s2">"Als Scrum Master kümmerst du dich darum, dass das Team agil arbeitet, Hindernisse beseitigt und die Scrum-Praktiken fördert."</span><span class="p">,</span>
+    <span class="s1">'Entwickler'</span><span class="p">:</span> <span class="s2">"Wenn du gerne Code schreibst und technische Probleme löst, könnte die Rolle des Entwicklers zu dir passen."</span><span class="p">,</span>
+    <span class="s1">'Release-Manager'</span><span class="p">:</span> <span class="s2">"Als Release-Manager bist du dafür verantwortlich, dass Softwareversionen pünktlich und ohne Fehler in Produktion gehen. Wenn du gut in der Koordination und Planung bist, könnte diese Rolle zu dir passen."</span><span class="p">,</span>
+    <span class="s1">'DevOps Engineer'</span><span class="p">:</span> <span class="s2">"In der Rolle des DevOps Engineers integrierst du Entwicklung und Betrieb und automatisierst Prozesse, damit die Software kontinuierlich und effizient bereitgestellt wird."</span><span class="p">,</span>
+    <span class="s1">'Technischer Schriftsteller'</span><span class="p">:</span> <span class="s2">"Wenn du komplexe technische Konzepte einfach erklären kannst, könnte die Rolle des technischen Schriftstellers ideal für dich sein."</span><span class="p">,</span>
+    <span class="s1">'Agile Coach'</span><span class="p">:</span> <span class="s2">"Wenn du ein erfahrener Agile-Praktiker bist und Teams bei der Einführung agiler Arbeitsweisen unterstützen möchtest, könnte die Rolle des Agile Coaches zu dir passen."</span><span class="p">,</span>
+    <span class="s1">'Team Lead'</span><span class="p">:</span> <span class="s2">"In der Rolle des Team Leads unterstützt du die Teammitglieder, förderst Zusammenarbeit und Weiterentwicklung und sorgst dafür, dass die Arbeit effizient durchgeführt wird."</span>
+<span class="p">}</span>
+
+<span class="c1"># Funktionsweise des Spiels</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">on_button_clicked</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="c1"># Sammeln der Antworten</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="n">selected_answer</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">answers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
+    
+    <span class="c1"># Weiter zur nächsten Frage oder Ergebnis anzeigen</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
+        <span class="n">ask_question</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">show_result</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">ask_question</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
+    <span class="c1"># Frage anzeigen</span>
+    <span class="n">question_label</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># Mögliche Antworten</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">selected_answer</span><span class="o">.</span><span class="n">options</span> <span class="o">=</span> <span class="n">options</span>
+
+<span class="c1"># Zeige das Ergebnis</span>
+<span class="k">def</span> <span class="nf">show_result</span><span class="p">():</span>
+    <span class="c1"># Einfache Logik zur Bestimmung der besten Rolle basierend auf den Antworten</span>
+    <span class="n">role</span> <span class="o">=</span> <span class="s1">''</span>
+    <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span> <span class="ow">and</span> <span class="n">answers</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Projektmanager'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'UX/UI-Designer'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Architekt'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Tester (QA)'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Product Owner'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Scrum Master'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Entwickler'</span>
+    <span class="k">elif</span> <span class="n">answers</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'Ja'</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'DevOps Engineer'</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">role</span> <span class="o">=</span> <span class="s1">'Business Analyst'</span>
+    
+    <span class="n">result_label</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Basierend auf deinen Antworten scheint die Rolle des </span><span class="si">{</span><span class="n">role</span><span class="si">}</span><span class="s2"> am besten zu dir zu passen.</span><span class="se">\n\n</span><span class="si">{</span><span class="n">roles</span><span class="p">[</span><span class="n">role</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+
+<span class="c1"># GUI für das interaktive Quiz</span>
+<span class="n">question_label</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">selected_answer</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">'Ja'</span><span class="p">,</span> <span class="s1">'Nein'</span><span class="p">],</span> <span class="n">description</span><span class="o">=</span><span class="s2">"Antwort:"</span><span class="p">)</span>
+<span class="n">button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Weiter"</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="n">on_button_clicked</span><span class="p">)</span>
+
+<span class="c1"># Start mit der ersten Frage</span>
+<span class="n">ask_question</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Anzeigen der Widgets</span>
+<span class="n">display</span><span class="p">(</span><span class="n">question_label</span><span class="p">,</span> <span class="n">selected_answer</span><span class="p">,</span> <span class="n">button</span><span class="p">)</span>
+
+<span class="c1"># Platz für das Ergebnis</span>
+<span class="n">result_label</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="s2">""</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">result_label</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7569,92 +7873,25 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbconvert in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (7.16.4)
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (6.1.0)
-Requirement already satisfied: defusedxml in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.7.1)
-Requirement already satisfied: importlib-metadata&gt;=3.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (8.2.0)
-Requirement already satisfied: jinja2&gt;=3.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.1.4)
-Requirement already satisfied: jupyter-core&gt;=4.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.7.2)
-Requirement already satisfied: jupyterlab-pygments in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.3.0)
-Requirement already satisfied: markupsafe&gt;=2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.1.5)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.10.0)
-Requirement already satisfied: nbformat&gt;=5.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.10.4)
-Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (24.1)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.5.1)
-Requirement already satisfied: pygments&gt;=2.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.18.0)
-Requirement already satisfied: tinycss2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.3.0)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.14.3)
-Requirement already satisfied: six&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (1.16.0)
-Requirement already satisfied: webencodings in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (0.5.1)
-Requirement already satisfied: zipp&gt;=0.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from importlib-metadata&gt;=3.6-&gt;nbconvert) (3.19.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core&gt;=4.7-&gt;nbconvert) (4.2.2)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert) (8.6.2)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (4.23.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;nbconvert) (2.5)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.19.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (2.9.0.post0)
-Requirement already satisfied: pyzmq&gt;=23.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (26.1.0)
-Requirement already satisfied: tornado&gt;=6.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (6.4.1)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
+<pre>Label(value='Magst du es, in einem Team zu arbeiten und Prozesse zu koordinieren?')</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbformat in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (5.10.4)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (4.23.0)
-Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.7.2)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.14.3)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.19.1)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat) (4.2.2)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
+<pre>Dropdown(description='Antwort:', options=('Ja', 'Nein'), value='Ja')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Button(description='Weiter', style=ButtonStyle())</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='')</pre>
 </div>
 </div>
 </div>
@@ -7666,302 +7903,23 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
-</ul>
+<h3 id="Wie-funktioniert-das-Spiel?">Wie funktioniert das Spiel?<a class="anchor-link" href="#Wie-funktioniert-das-Spiel?">¶</a></h3><ol>
+<li><p><strong>Fragen stellen</strong>: Das Spiel stellt der Person nacheinander Fragen, die auf ihre Präferenzen und Stärken abzielen. Zum Beispiel wird gefragt, ob die Person gerne in einem Team arbeitet oder kreative Aufgaben wie Design übernimmt.</p>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
+<li><p><strong>Antworten sammeln</strong>: Der Benutzer wählt auf jeder Seite eine der Optionen ("Ja" oder "Nein").</p>
 </li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
-</ul>
+<li><p><strong>Ergebnis anzeigen</strong>: Am Ende des Spiels wird aufgrund der Antworten eine Rolle empfohlen. Die einfache Logik zur Bestimmung der Rolle basiert auf den ersten Antworten. Diese Logik könnte beliebig erweitert werden, um differenziertere Ergebnisse zu liefern.</p>
+</li>
+<li><p><strong>Rollenbeschreibung</strong>: Für jede empfohlene Rolle wird eine kurze Erklärung angezeigt, die beschreibt, warum diese Rolle aufgrund der gegebenen Antworten geeignet ist.</p>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<h3 id="M%C3%B6gliche-Erweiterungen">Mögliche Erweiterungen<a class="anchor-link" href="#M%C3%B6gliche-Erweiterungen">¶</a></h3><ul>
+<li><strong>Mehrere Rollenoptionen</strong>: Statt nur einer Rolle am Ende könnten mehrere Rollen vorgeschlagen werden, basierend auf den Antworten des Benutzers.</li>
+<li><strong>Weitere Fragen</strong>: Weitere Fragen könnten hinzugefügt werden, um eine genauere Zuordnung zu ermöglichen.</li>
+<li><strong>Interaktive Visualisierung</strong>: Eine fortschrittliche Visualisierung könnte entwickelt werden, die eine direkte Übereinstimmung der Antworten mit den empfohlenen Rollen anzeigt.</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
-</ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<p>Diese Methode fördert auf spielerische Weise die Selbstreflexion über die eigenen Stärken und Präferenzen und kann gleichzeitig helfen, eine passende Rolle in einem Software-Projekt zu identifizieren.</p>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Das interaktive Jupyter-Notebook-Quiz bietet eine spielerische Möglichkeit, herauszufinden, welche Rolle man in einem Software-Projekt einnehmen könnte, basierend auf den eigenen Vorlieben und Stärken. Es kann leicht angepasst oder erweitert werden, um weitere Fragen und differenziertere Logik hinzuzufügen.</p>
 </div>
 </div>
 </div>

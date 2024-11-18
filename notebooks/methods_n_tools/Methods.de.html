@@ -7516,452 +7516,384 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
+<h1 id="Methoden-in-der-Software-Entwicklung">Methoden in der Software-Entwicklung<a class="anchor-link" href="#Methoden-in-der-Software-Entwicklung">¶</a></h1><img alt="No description has been provided for this image" src="methods.webp" style="width:280px; height:280px;"/>
+<p>Hier ist eine detailliertere Erklärung der einzelnen Methoden – Wasserfall, Lean, Agile, Scrum und Kanban – sowie ihrer Unterschiede und Gemeinsamkeiten:</p>
+<h3 id="1.-Wasserfall-Modell">1. Wasserfall-Modell<a class="anchor-link" href="#1.-Wasserfall-Modell">¶</a></h3><p><strong>Modelltyp</strong>: Sequentielles, lineares Modell</p>
+<p><strong>Grundprinzip</strong>:</p>
+<ul>
+<li>Phasen in festgelegter Reihenfolge</li>
+<li>Rückkehr zu früheren Phasen schwierig und teuer</li>
+</ul>
+<p><strong>Phasen</strong>:</p>
 <ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
+<li><strong>Anforderungsanalyse</strong> – Anforderungen mit Kunden festlegen und dokumentieren.</li>
+<li><strong>Design (Entwurf)</strong> – Systemarchitektur und Funktionalität entwerfen.</li>
+<li><strong>Implementierung</strong> – Entwicklung und Programmierung des Systems.</li>
+<li><strong>Test (Qualitätssicherung)</strong> – System testen und Fehler beheben.</li>
+<li><strong>Bereitstellung und Wartung</strong> – System übergeben und Fehler beheben, Anpassungen vornehmen.</li>
 </ol>
-<p>You can use the following libraries:</p>
+<p><strong>Vorteile</strong>:</p>
 <ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<li>Klare Struktur und Planung</li>
+<li>Umfassende Dokumentation</li>
+<li>Gut für stabile, festgelegte Anforderungen</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
+<p><strong>Nachteile</strong>:</p>
+<ul>
+<li>Wenig Flexibilität</li>
+<li>Spätes Kundenfeedback</li>
+<li>Hoher Planungsaufwand</li>
+</ul>
+<p><strong>Einsatzbereich</strong>: Projekte mit klaren Anforderungen, häufig in regulierten Branchen (z. B. Maschinenbau, Pharma).</p>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Das Wasserfall-Modell ist eines der ältesten und traditionellsten Modelle im Projektmanagement. Es wird auch als <strong>sequentielles oder lineares Modell</strong> bezeichnet, da die Arbeitsschritte in klar definierter Reihenfolge nacheinander durchlaufen werden. In diesem Modell ist jede Phase des Projekts genau abgegrenzt und baut auf der vorhergehenden Phase auf. Das macht es schwer, zu einem früheren Schritt zurückzukehren, da solche Rückschritte oft mit hohen Kosten und einem erheblichen Zeitaufwand verbunden sind.</p>
+<p><strong>Grundprinzip</strong>:<br/>
+Das Wasserfall-Modell basiert auf der Idee, dass der Projektablauf in eine lineare Abfolge von Phasen gegliedert ist. Jede Phase hat ihren eigenen Zweck und wird abgeschlossen, bevor die nächste beginnt. Die Struktur ist vergleichbar mit einer Kaskade, bei der jeder Abschnitt das Fundament für den nächsten bildet. Dadurch entsteht eine klare Struktur, die eine detaillierte Planung und Dokumentation ermöglicht, aber auch wenig Raum für Änderungen bietet, sobald eine Phase abgeschlossen ist.</p>
+<p><strong>Phasen des Wasserfall-Modells</strong>:<br/>
+Das Wasserfall-Modell gliedert den Projektablauf in mehrere aufeinanderfolgende Phasen:</p>
 <ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbconvert in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (7.16.4)
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (6.1.0)
-Requirement already satisfied: defusedxml in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.7.1)
-Requirement already satisfied: importlib-metadata&gt;=3.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (8.2.0)
-Requirement already satisfied: jinja2&gt;=3.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.1.4)
-Requirement already satisfied: jupyter-core&gt;=4.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.7.2)
-Requirement already satisfied: jupyterlab-pygments in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.3.0)
-Requirement already satisfied: markupsafe&gt;=2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.1.5)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.10.0)
-Requirement already satisfied: nbformat&gt;=5.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.10.4)
-Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (24.1)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.5.1)
-Requirement already satisfied: pygments&gt;=2.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.18.0)
-Requirement already satisfied: tinycss2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.3.0)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.14.3)
-Requirement already satisfied: six&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (1.16.0)
-Requirement already satisfied: webencodings in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (0.5.1)
-Requirement already satisfied: zipp&gt;=0.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from importlib-metadata&gt;=3.6-&gt;nbconvert) (3.19.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core&gt;=4.7-&gt;nbconvert) (4.2.2)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert) (8.6.2)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (4.23.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;nbconvert) (2.5)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.19.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (2.9.0.post0)
-Requirement already satisfied: pyzmq&gt;=23.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (26.1.0)
-Requirement already satisfied: tornado&gt;=6.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (6.4.1)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbformat in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (5.10.4)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (4.23.0)
-Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.7.2)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.14.3)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.19.1)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat) (4.2.2)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
-</ul>
+<li><p><strong>Anforderungsanalyse</strong>:<br/>
+In der ersten Phase werden die Anforderungen an das Projekt in Zusammenarbeit mit dem Kunden detailliert festgelegt und dokumentiert. Ziel dieser Phase ist es, ein klares und vollständiges Bild davon zu haben, was das Projekt erreichen soll. Am Ende der Anforderungsanalyse entsteht eine detaillierte Spezifikation, die als verbindliche Grundlage für die nächsten Schritte dient.</p>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
+<li><p><strong>Design (Entwurf)</strong>:<br/>
+Basierend auf den Anforderungen wird ein detaillierter Entwurf des Systems erstellt. Diese Phase umfasst die Planung der Systemarchitektur, die Strukturierung der einzelnen Module und die Definition der Schnittstellen. Der Entwurf beschreibt die Funktionalität, Struktur und Architektur des Systems und dient als Vorlage für die spätere Implementierung.</p>
 </li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
-</ul>
+<li><p><strong>Implementierung (Programmierung)</strong>:<br/>
+In der Implementierungsphase wird das System auf Grundlage des Entwurfs entwickelt. Hier wird der Code geschrieben und das System technisch umgesetzt. Die Entwickler folgen dem Design und sorgen dafür, dass alle Funktionen und Module korrekt umgesetzt werden. Am Ende dieser Phase steht das fertig entwickelte System.</p>
+</li>
+<li><p><strong>Test (Qualitätssicherung)</strong>:<br/>
+Nach der Implementierung wird das System ausführlich getestet, um sicherzustellen, dass es den Anforderungen entspricht und fehlerfrei funktioniert. Dabei werden verschiedene Tests durchgeführt, wie etwa Funktionstests, Integrationstests und Akzeptanztests. Fehler und Abweichungen von den Anforderungen werden in dieser Phase identifiziert und behoben.</p>
+</li>
+<li><p><strong>Bereitstellung und Wartung</strong>:<br/>
+Nach Abschluss der Testphase wird das System an den Kunden übergeben und in der realen Umgebung installiert. In der Wartungsphase werden Fehlerbehebungen durchgeführt und Anpassungen vorgenommen, falls sich die Anforderungen ändern oder neue Anforderungen entstehen. Diese Phase stellt sicher, dass das System langfristig stabil und funktionsfähig bleibt.</p>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<p><strong>Vorteile des Wasserfall-Modells</strong>:</p>
+<ul>
+<li><p><strong>Klare Struktur und Planung</strong>:<br/>
+Durch die feste Abfolge der Phasen entsteht eine klare Struktur und eine präzise Planung. Bereits zu Beginn des Projekts gibt es eine detaillierte Roadmap, die die Arbeitsschritte und Meilensteine vorgibt.</p>
+</li>
+<li><p><strong>Umfassende Dokumentation</strong>:<br/>
+Da jede Phase genau dokumentiert wird, bietet das Wasserfall-Modell eine hohe Nachvollziehbarkeit. Die Dokumentation erleichtert es den Beteiligten, sich einen Überblick über den Projektstatus zu verschaffen und ermöglicht eine einfachere Übergabe, falls das Projektteam wechselt.</p>
+</li>
+<li><p><strong>Geeignet für stabile Anforderungen</strong>:<br/>
+Das Modell eignet sich besonders, wenn die Anforderungen zu Projektbeginn klar definiert und stabil sind. Bei Projekten, bei denen wenig Flexibilität erforderlich ist, bietet das Wasserfall-Modell eine zuverlässige Struktur.</p>
+</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
+<p><strong>Nachteile des Wasserfall-Modells</strong>:</p>
+<ul>
+<li><p><strong>Mangelnde Flexibilität</strong>:<br/>
+Anpassungen während der Entwicklung sind im Wasserfall-Modell schwer umzusetzen und oft kostspielig. Ein Rückschritt zu einer vorherigen Phase ist meist aufwendig und wird daher vermieden.</p>
+</li>
+<li><p><strong>Spätes Kundenfeedback</strong>:<br/>
+Da das Endprodukt erst nach der Implementierung vorliegt, besteht das Risiko, dass der Kunde erst spät erkennt, dass das System möglicherweise nicht seinen Erwartungen entspricht. Dies erhöht das Risiko von Missverständnissen und Enttäuschungen.</p>
+</li>
+<li><p><strong>Hoher Planungsaufwand</strong>:<br/>
+Das Modell erfordert eine intensive Planung und eine präzise Anforderungsspezifikation im Vorfeld, was zeitaufwendig sein kann. Zudem kann eine fehlerhafte Spezifikation schwerwiegende Auswirkungen haben, da spätere Anpassungen kostspielig und zeitintensiv sind.</p>
+</li>
 </ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
+<p><strong>Einsatzbereiche des Wasserfall-Modells</strong>:<br/>
+Das Wasserfall-Modell wird häufig in Bereichen eingesetzt, in denen die Anforderungen klar und festgelegt sind und wenig Änderungen erwartet werden. Dazu gehören insbesondere <strong>regulierte Branchen</strong> wie der Maschinenbau und die Pharmaindustrie, in denen eine gründliche Dokumentation und eine verlässliche Struktur erforderlich sind. In solchen Umgebungen bietet das Modell eine verlässliche Methodik zur Projektumsetzung, die die Einhaltung von Normen und Standards unterstützt.</p>
+</details>
+<hr/>
+<h3 id="2.-Lean-Ansatz">2. Lean-Ansatz<a class="anchor-link" href="#2.-Lean-Ansatz">¶</a></h3><ul>
+<li><strong>Ursprung</strong>: Toyota-Produktionsphilosophie</li>
+<li><strong>Ziel</strong>: Maximierung des Kundenwerts durch Reduzierung von Verschwendung</li>
+<li><strong>Anwendung</strong>: Produktion und Softwareentwicklung</li>
 </ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
+<p><strong>Grundprinzipien:</strong></p>
+<ol>
+<li><strong>Kundenzentrierter Wert</strong>: Nur Aktivitäten, die Kundenwert schaffen, sind wertvoll.</li>
+<li><strong>Fluss und Pull-Prinzip</strong>: Arbeit erfolgt nur bei Nachfrage; Prozesse laufen ohne Unterbrechungen.</li>
+<li><strong>Kontinuierliche Verbesserung (Kaizen)</strong>: Ständiges Optimieren durch alle Beteiligten.</li>
+<li><strong>Verschwendungsminimierung</strong>: Beseitigung aller nicht wertschöpfenden Aktivitäten.</li>
 </ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<p><strong>Verschwendungsarten:</strong></p>
+<ul>
+<li>Überproduktion, Wartezeiten, Transport, Bestände, Bewegung, Überarbeitung, Fehler/Nacharbeit</li>
+</ul>
+<p><strong>Lean im Softwarekontext:</strong></p>
+<ul>
+<li><strong>MVP</strong>: Schnell lieferbare, kleinste funktionsfähige Produktversion für schnelles Kundenfeedback</li>
+</ul>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li>Weniger Verschwendung, kundenorientiert, effiziente Ressourcennutzung</li>
+</ul>
+<p><strong>Nachteile:</strong></p>
+<ul>
+<li>Erfordert Kulturwandel, hohe Disziplin und Anpassungsbereitschaft</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Der Lean-Ansatz ist ein Managementansatz, der ursprünglich aus der <strong>Toyota-Produktionsphilosophie</strong> stammt. Ziel dieser Philosophie ist es, den <strong>Wert für den Kunden zu maximieren</strong>, indem alle Aktivitäten und Prozesse darauf ausgerichtet werden, Verschwendung zu reduzieren und die Effizienz zu steigern. Dabei wird Verschwendung als jede Tätigkeit verstanden, die keinen direkten Mehrwert für den Kunden schafft. Lean findet sowohl in der industriellen Fertigung als auch zunehmend in der <strong>Softwareentwicklung</strong> Anwendung, wo es Teams dabei hilft, effizienter zu arbeiten und schneller auf Kundenbedürfnisse einzugehen.</p>
+<p><strong>Die Grundprinzipien des Lean-Ansatzes</strong> umfassen folgende Punkte:</p>
+<ol>
+<li><p><strong>Wert aus Kundensicht bestimmen</strong>: Der Kunde wird als Maßstab für die Wertschöpfung definiert. Nur Aktivitäten, die direkt zum Kundenwert beitragen, gelten als wertvoll. Dieser Fokus hilft dabei, ressourcenintensive, aber wertlose Tätigkeiten zu vermeiden und die Kundenbedürfnisse ins Zentrum zu stellen.</p>
+</li>
+<li><p><strong>Fluss-Prinzip und Pull-Steuerung</strong>: Der Lean-Ansatz verfolgt das Prinzip, dass Arbeit nur dann erledigt wird, wenn tatsächlich eine Nachfrage besteht (Pull-Prinzip), anstatt eine Vorproduktion durchzuführen. Ziel ist ein reibungsloser Ablauf (Fluss), bei dem Aufgaben ohne Verzögerungen oder Engpässe abgeschlossen werden. So wird sichergestellt, dass Prozesse kontinuierlich fortlaufen und es zu minimalen Wartezeiten kommt.</p>
+</li>
+<li><p><strong>Kontinuierliche Verbesserung (Kaizen)</strong>: Lean legt großen Wert auf Kaizen, den kontinuierlichen Verbesserungsprozess. Alle Beteiligten sind dazu angehalten, stetig nach Potenzialen zur Optimierung zu suchen und diese umzusetzen. Dadurch wird der Ansatz dynamisch und anpassungsfähig, was eine nachhaltige Effizienzsteigerung ermöglicht.</p>
+</li>
+<li><p><strong>Eliminierung von Verschwendung</strong>: Lean zielt auf die konsequente Beseitigung aller Formen von Verschwendung ab, die den Prozess behindern oder unnötige Kosten verursachen. Im Rahmen dieser Philosophie werden sämtliche nicht wertschöpfenden Tätigkeiten ausfindig gemacht und entfernt.</p>
+</li>
+</ol>
+<p><strong>Die verschiedenen Arten der Verschwendung im Lean-Kontext</strong> umfassen:</p>
+<ul>
+<li><strong>Überproduktion</strong>: Herstellung von mehr Produkten, als aktuell benötigt werden, was unnötige Kosten verursacht.</li>
+<li><strong>Wartezeiten</strong>: Zeitverlust durch Engpässe oder Verzögerungen, die den Prozess verlangsamen.</li>
+<li><strong>Transport</strong>: Überflüssige Bewegung von Materialien, Informationen oder Ressourcen zwischen verschiedenen Orten.</li>
+<li><strong>Bestände</strong>: Lagerung von Materialien oder Zwischenprodukten, die derzeit nicht benötigt werden, was Kapital bindet.</li>
+<li><strong>Bewegung</strong>: Überflüssige Bewegungen von Mitarbeitern oder Maschinen, die nicht zur Wertschöpfung beitragen.</li>
+<li><strong>Überarbeitung</strong>: Durchführen von Arbeitsschritten, die über das Notwendige hinausgehen und Ressourcen binden.</li>
+<li><strong>Fehler und Nacharbeit</strong>: Aufwand, der für die Behebung von Fehlern nachträglich erforderlich ist und wertvolle Zeit und Kosten in Anspruch nimmt.</li>
+</ul>
+<p><strong>Lean im Softwarekontext</strong> setzt auf das Konzept des <strong>Minimum Viable Product (MVP)</strong>, also die kleinste funktionsfähige Version eines Produkts, die so früh wie möglich an den Kunden ausgeliefert wird. Durch die Auslieferung des MVPs wird schnell Feedback vom Kunden eingeholt, was es dem Team erlaubt, das Produkt kontinuierlich weiterzuentwickeln und auf die spezifischen Bedürfnisse und Wünsche der Zielgruppe abzustimmen.</p>
+<p><strong>Vorteile des Lean-Ansatzes</strong>:</p>
+<ul>
+<li><strong>Reduzierte Verschwendung</strong>: Durch den Fokus auf wertschöpfende Tätigkeiten werden Ressourcen effizienter genutzt und Kosten gesenkt.</li>
+<li><strong>Kundenzentrierung</strong>: Lean legt Wert auf die schnelle Anpassung an Kundenanforderungen, was die Zufriedenheit und Marktfähigkeit steigert.</li>
+<li><strong>Effiziente Ressourcennutzung</strong>: Da nur produziert wird, was tatsächlich benötigt wird, werden unnötige Arbeitsschritte und Ressourcen verschwendet.</li>
+</ul>
+<p><strong>Nachteile des Lean-Ansatzes</strong>:</p>
+<ul>
+<li><strong>Kulturwandel erforderlich</strong>: Lean erfordert ein grundsätzliches Umdenken in Unternehmen und stößt häufig auf Widerstände, insbesondere in traditionell strukturierten Organisationen.</li>
+<li><strong>Erfordert hohe Disziplin</strong>: Lean setzt eine konsequente Einhaltung der Prinzipien und Bereitschaft zur ständigen Verbesserung voraus, was sowohl Führungskräfte als auch Mitarbeitende herausfordert.</li></ul></details>
+
+
+<hr/>
+<h3 id="3.-Agile-Ansatz">3. Agile-Ansatz<a class="anchor-link" href="#3.-Agile-Ansatz">¶</a></h3><p><strong>Agile – Überblick:</strong></p>
+<ul>
+<li>Überbegriff für Methoden mit Fokus auf Flexibilität und iterative Entwicklung</li>
+<li>Basis: <a href="https://agilemanifesto.org"><strong>Agiles Manifest</strong></a> mit 4 Werten und 12 Prinzipien</li>
+</ul>
+<p><strong>Grundwerte des Agile Manifests:</strong></p>
+<ol>
+<li><strong>Individuen &amp; Interaktionen</strong> über Prozesse &amp; Werkzeuge</li>
+<li><strong>Funktionierende Software</strong> über umfassende Dokumentation</li>
+<li><strong>Zusammenarbeit mit dem Kunden</strong> über Vertragsverhandlungen</li>
+<li><strong>Reagieren auf Veränderungen</strong> über Befolgen eines Plans</li>
+</ol>
+<p><strong>Wichtige Prinzipien:</strong></p>
+<ul>
+<li>Regelmäßige, kurze Lieferintervalle</li>
+<li>Kundenfeedback kontinuierlich einholen und integrieren</li>
+<li>Cross-functional und selbstorganisierte Teams</li>
+<li>Fortschrittsmessung anhand funktionierender Software</li>
+</ul>
+<p><strong>Iterative &amp; Inkrementelle Entwicklung:</strong></p>
+<ul>
+<li>Kurze Zyklen („Sprints“) von 1–4 Wochen</li>
+<li>Funktionierendes Produktinkrement wird regelmäßig präsentiert und angepasst</li>
+</ul>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li>Hohe Flexibilität und schnelle Anpassung</li>
+<li>Regelmäßiges Kundenfeedback</li>
+<li>Motivierte Teams durch Selbstorganisation</li>
+</ul>
+<p><strong>Nachteile:</strong></p>
+<ul>
+<li>Hoher Bedarf an Selbstorganisation und Disziplin</li>
+<li>Hoher Kommunikationsaufwand</li>
+<li>Abhängigkeit vom aktiven Kundenfeedback</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Agile ist ein <strong>Überbegriff für verschiedene Methoden und Vorgehensweisen</strong> im Projektmanagement und in der Softwareentwicklung, die alle auf <strong>Flexibilität, Zusammenarbeit und iterative Entwicklung</strong> setzen. Agile Methoden bieten einen Rahmen, der es Teams ermöglicht, sich an wechselnde Anforderungen anzupassen und kontinuierlich funktionierende Software bereitzustellen. Diese Ansätze basieren auf den Prinzipien des <strong>Agilen Manifests</strong>, das einen Leitfaden für agile Arbeitsweisen bietet. Das Agile Manifest, 2001 von einer Gruppe führender Softwareentwickler veröffentlicht, definiert vier zentrale Werte und zwölf Prinzipien, die als Grundgerüst für agiles Arbeiten dienen.</p>
+<h3 id="Die-vier-Grundwerte-des-Agile-Manifests">Die vier Grundwerte des Agile Manifests<a class="anchor-link" href="#Die-vier-Grundwerte-des-Agile-Manifests">¶</a></h3><ol>
+<li><strong>Individuen und Interaktionen</strong> stehen über Prozessen und Werkzeugen: Der Fokus liegt auf der Zusammenarbeit und dem Austausch zwischen den Teammitgliedern, da diese als entscheidend für den Projekterfolg angesehen werden.</li>
+<li><strong>Funktionierende Software</strong> steht über umfassender Dokumentation: Ziel ist es, schnell ein lauffähiges Produkt zu liefern und dabei Dokumentation auf das notwendige Minimum zu beschränken.</li>
+<li><strong>Zusammenarbeit mit dem Kunden</strong> steht über Vertragsverhandlungen: Agile Methoden fördern den kontinuierlichen Dialog mit dem Kunden, um das Produkt stetig an dessen Bedürfnisse anzupassen.</li>
+<li><strong>Reagieren auf Veränderungen</strong> steht über dem Befolgen eines Plans: Anstatt starre Pläne zu verfolgen, geht es bei Agile darum, flexibel auf veränderte Anforderungen zu reagieren und diese im Projekt zu berücksichtigen.</li>
+</ol>
+<h3 id="Die-zw%C3%B6lf-Prinzipien-des-Agile-Manifests">Die zwölf Prinzipien des Agile Manifests<a class="anchor-link" href="#Die-zw%C3%B6lf-Prinzipien-des-Agile-Manifests">¶</a></h3><p>Zu den wichtigsten Prinzipien zählen:</p>
+<ul>
+<li><strong>Regelmäßige Lieferung</strong>: Agile Projekte zielen darauf ab, in kurzen, regelmäßigen Abständen (sogenannten „Sprints“) neue, funktionsfähige Versionen des Produkts zu liefern.</li>
+<li><strong>Einholen und Einbeziehen von Kundenfeedback</strong>: Feedback vom Kunden wird regelmäßig eingefordert und in die Weiterentwicklung des Produkts integriert, um sicherzustellen, dass es den Anforderungen entspricht.</li>
+<li><strong>Cross-functional und selbstorganisierte Teams</strong>: Agile Teams bestehen aus verschiedenen Experten (z. B. Entwickler, Designer und Tester), die eigenverantwortlich und selbstorganisierend zusammenarbeiten.</li>
+<li><strong>Messung des Fortschritts anhand der funktionierenden Software</strong>: Der tatsächliche Stand des Projekts wird daran gemessen, wie viel funktionierende Software bereits geliefert wurde.</li>
+</ul>
+<h3 id="Iterative-und-inkrementelle-Entwicklung">Iterative und inkrementelle Entwicklung<a class="anchor-link" href="#Iterative-und-inkrementelle-Entwicklung">¶</a></h3><p>Agile Methoden setzen auf eine <strong>iterative und inkrementelle Entwicklungsweise</strong>. Dabei wird das Projekt in kurze Entwicklungszyklen oder „Sprints“ unterteilt, die in der Regel zwischen ein und vier Wochen dauern. Am Ende eines jeden Sprints wird ein funktionierendes Produktinkrement präsentiert, das an die Stakeholder oder Kunden weitergegeben wird. Auf Basis dieses Feedbacks wird das Produkt kontinuierlich optimiert und weiterentwickelt. Diese flexible Herangehensweise ermöglicht es den Teams, zeitnah auf Änderungen zu reagieren und die Produktqualität stetig zu verbessern.</p>
+<h3 id="Vorteile-der-agilen-Arbeitsweise">Vorteile der agilen Arbeitsweise<a class="anchor-link" href="#Vorteile-der-agilen-Arbeitsweise">¶</a></h3><ul>
+<li><strong>Hohe Flexibilität und Anpassungsfähigkeit</strong>: Durch den iterativen Ansatz kann das Produkt jederzeit an veränderte Marktanforderungen oder neue Kundenwünsche angepasst werden.</li>
+<li><strong>Regelmäßiges Kundenfeedback</strong>: Der kontinuierliche Austausch mit dem Kunden sorgt dafür, dass das entwickelte Produkt den Erwartungen entspricht und zur Zufriedenheit des Kunden beiträgt.</li>
+<li><strong>Motivierte und selbstorganisierte Teams</strong>: Agile Methoden fördern Eigenverantwortung und Selbstorganisation, was zu einem hohen Maß an Teamengagement und Motivation führen kann.</li>
+</ul>
+<h3 id="Herausforderungen-und-Nachteile">Herausforderungen und Nachteile<a class="anchor-link" href="#Herausforderungen-und-Nachteile">¶</a></h3><ul>
+<li><strong>Erhöhtes Maß an Selbstorganisation und Disziplin</strong>: Agiles Arbeiten erfordert von den Teammitgliedern ein hohes Maß an Selbstdisziplin, Eigenverantwortung und Teamgeist.</li>
+<li><strong>Hoher Kommunikationsaufwand</strong>: Regelmäßiges Feedback und Abstimmungsmeetings wie das Daily Stand-up sind notwendig, um alle Beteiligten auf dem aktuellen Stand zu halten.</li>
+<li><strong>Abhängigkeit vom aktiven Kundenfeedback</strong>: Der agile Prozess setzt eine regelmäßige und konstruktive Mitarbeit des Kunden voraus. Falls der Kunde nicht kontinuierlich eingebunden wird, können die Fortschritte stagnieren und das Produkt entspricht möglicherweise nicht den tatsächlichen Anforderungen.</li></ul></details>
+
+
+<hr/>
+<h3 id="4.-Scrum">4. Scrum<a class="anchor-link" href="#4.-Scrum">¶</a></h3><p><strong>Scrum: Agiles Framework</strong></p>
+<ul>
+<li><strong>Ziel</strong>: Verbesserte Zusammenarbeit, Transparenz und Produktivität in Teams durch strukturierte Prozesse.</li>
+<li><strong>Bekannteste agile Methode</strong>: Häufig genutzt in der Softwareentwicklung.</li>
+</ul>
+<p><strong>Struktur und Rollen</strong>:</p>
+<ol>
+<li><strong>Product Owner</strong>: Verantwortlich für Produktvision und Priorisierung des Product Backlogs.</li>
+<li><strong>Scrum Master</strong>: Unterstützt Team, moderiert Meetings, beseitigt Hindernisse.</li>
+<li><strong>Entwicklungsteam</strong>: Selbstorganisiert, liefert fertiges Produktinkrement pro Sprint.</li>
+</ol>
+<p><strong>Sprint-Ablauf</strong>:</p>
+<ul>
+<li><strong>Sprint Planning</strong>: Aufgaben und Ziele für den Sprint festlegen.</li>
+<li><strong>Daily Standups</strong>: Tägliches Update zum Fortschritt und Problemen.</li>
+<li><strong>Sprint Review</strong>: Präsentation und Feedback zum Produktinkrement.</li>
+<li><strong>Sprint Retrospektive</strong>: Reflexion und Optimierung des Arbeitsprozesses.</li>
+</ul>
+<p><strong>Vorteile</strong>:</p>
+<ul>
+<li>Strukturierte Abläufe, klare Rollen und Verantwortlichkeiten.</li>
+<li>Kontinuierliche Verbesserung durch regelmäßige Retrospektiven.</li>
+</ul>
+<p><strong>Nachteile</strong>:</p>
+<ul>
+<li>Kann für kleine Teams/Projekte zu komplex wirken.</li>
+<li>Hohe Disziplin erforderlich, um die Prozesse einzuhalten.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Scrum ist ein spezielles agiles Framework, das auf <strong>fest definierten Rollen, klar strukturierten Prozessen und wiederholbaren Abläufen</strong> basiert. Es hat das Ziel, die <strong>Zusammenarbeit, Transparenz und Produktivität in Teams</strong> zu verbessern und ermöglicht es Teams, komplexe Projekte durch schrittweise, inkrementelle Fortschritte zu bewältigen. Scrum gehört zu den bekanntesten und am weitesten verbreiteten Methoden des agilen Projektmanagements und wird häufig zur Organisation und Durchführung von Entwicklungsprojekten eingesetzt.</p>
+<p><strong>Struktur und Rollen in Scrum</strong>:<br/>
+Scrum ist klar durch drei zentrale Rollen definiert, die gemeinsam das Team bilden und unterschiedliche Verantwortlichkeiten tragen:</p>
+<ol>
+<li><p><strong>Product Owner</strong>: Der Product Owner ist für die Produktvision und -strategie verantwortlich. Diese Person definiert und priorisiert die Anforderungen im <strong>Product Backlog</strong>, das alle gewünschten Funktionen und Verbesserungen enthält. Der Product Owner entscheidet, was in den einzelnen Sprints entwickelt wird, und sorgt dafür, dass das Team stets den größten Mehrwert für den Kunden liefert.</p>
+</li>
+<li><p><strong>Scrum Master</strong>: Der Scrum Master agiert als Coach und Unterstützer des Teams. Er sorgt dafür, dass die Prinzipien und Regeln von Scrum eingehalten werden, und hilft, Hindernisse (sogenannte „Impediments“) zu beseitigen, die den Entwicklungsprozess beeinträchtigen könnten. Der Scrum Master moderiert Meetings und fördert die kontinuierliche Verbesserung des Teams. Seine Rolle ist es, das Team zu schützen und die Effizienz der Zusammenarbeit zu steigern.</p>
+</li>
+<li><p><strong>Entwicklungsteam</strong>: Das Entwicklungsteam ist eine selbstorganisierte Gruppe von Fachleuten, die in jedem Sprint ein <strong>fertiges, funktionsfähiges Produktinkrement</strong> liefern. Sie entscheiden selbst, wie die Arbeit erledigt wird, und tragen die Verantwortung dafür, die Anforderungen des Product Owners umzusetzen. Das Team arbeitet eng zusammen, um die Sprint-Ziele zu erreichen und die geforderte Qualität sicherzustellen.</p>
+</li>
+</ol>
+<p><strong>Ablauf eines Sprints</strong>:<br/>
+Ein Sprint ist ein fester Zeitraum, meist von zwei bis vier Wochen, in dem das Team eine vorab festgelegte Anzahl von Anforderungen umsetzt. Der Ablauf eines Sprints folgt einem klaren Muster:</p>
+<ul>
+<li><p><strong>Sprint Planning</strong>: Zu Beginn jedes Sprints planen das Entwicklungsteam und der Product Owner, welche Anforderungen aus dem Product Backlog im nächsten Sprint bearbeitet werden sollen. Dabei werden die Ziele des Sprints und die Arbeitsschritte festgelegt.</p>
+</li>
+<li><p><strong>Daily Standups</strong>: Diese kurzen täglichen Meetings (maximal 15 Minuten) bieten dem Team eine Gelegenheit, sich über den Fortschritt auszutauschen und mögliche Hindernisse zu identifizieren. Jedes Teammitglied gibt an, was es gestern erledigt hat, was es heute plant und ob es Probleme gibt.</p>
+</li>
+<li><p><strong>Sprint Review</strong>: Am Ende des Sprints findet eine Sprint Review statt, bei der das Entwicklungsteam die erledigten Aufgaben und das entstandene Produktinkrement präsentiert. Der Product Owner und andere Stakeholder geben Feedback, das in zukünftige Sprints einfließt.</p>
+</li>
+<li><p><strong>Sprint Retrospektive</strong>: In der Retrospektive analysiert das Team, wie der letzte Sprint ablief, und identifiziert Bereiche zur Verbesserung. Dies trägt zur kontinuierlichen Weiterentwicklung des Teams und zur Optimierung der Arbeitsweise bei.</p>
+</li>
+</ul>
+<p><strong>Vorteile von Scrum</strong>:<br/>
+Scrum bietet mehrere Vorteile, die besonders bei der Entwicklung komplexer Produkte und in dynamischen Umfeldern geschätzt werden:</p>
+<ul>
+<li><strong>Strukturierte und wiederholbare Abläufe</strong>: Durch die festen Rollen und klaren Prozesse hat das Team eine hohe Orientierung, und regelmäßige Meetings fördern die Transparenz und Abstimmung.</li>
+<li><strong>Fokus auf kontinuierliche Verbesserung</strong>: Die Retrospektiven am Ende jedes Sprints ermöglichen es, den Arbeitsprozess zu reflektieren und kontinuierlich zu optimieren.</li>
+<li><strong>Klare Aufgabenverteilung und Verantwortlichkeiten</strong>: Durch die Aufteilung der Rollen und regelmäßige Kommunikation wissen alle Teammitglieder, was von ihnen erwartet wird und wie sie zum Erfolg des Projekts beitragen können.</li>
+</ul>
+<p><strong>Nachteile von Scrum</strong>:<br/>
+Trotz der zahlreichen Vorteile gibt es auch einige Herausforderungen und mögliche Nachteile:</p>
+<ul>
+<li><strong>Starrheit bei kleinen Projekten</strong>: Die Struktur und Disziplin, die Scrum erfordert, kann für sehr kleine Teams oder Projekte als unnötig komplex und schwerfällig empfunden werden.</li>
+<li><strong>Hohe Disziplin erforderlich</strong>: Scrum verlangt, dass sich alle Teammitglieder aktiv an den Prozess halten und die Meetings regelmäßig besuchen. Ein Mangel an Disziplin oder Engagement kann die Effizienz des Frameworks beeinträchtigen und zu Missverständnissen führen.</li>
+</ul>
+<p>Zusammenfassend lässt sich sagen, dass Scrum eine bewährte Methode ist, um komplexe Projekte agil und strukturiert zu organisieren. Die klare Rollenverteilung, die regelmäßigen Meetings und die kontinuierliche Verbesserung machen Scrum zu einem wertvollen Werkzeug, das jedoch Disziplin und Engagement vom gesamten Team verlangt.</p>
+</details>
+<hr/>
+<h3 id="5.-Kanban">5. Kanban<a class="anchor-link" href="#5.-Kanban">¶</a></h3><p><strong>Ziele</strong>:</p>
+<ul>
+<li>Visualisierung des Workflows</li>
+<li>Frühzeitiges Erkennen von Engpässen</li>
+</ul>
+<p><strong>Grundprinzipien</strong>:</p>
+<ol>
+<li><strong>Visualisierung des Arbeitsflusses</strong>: Aufgaben werden auf einem Kanban-Board dargestellt (z. B. "To Do", "In Progress", "Done").</li>
+<li><strong>Begrenzung laufender Arbeiten (WIP)</strong>: Beschränkung der parallelen Aufgaben, um Überlastung zu vermeiden.</li>
+<li><strong>Kontinuierlicher Fluss</strong>: Flexible, fortlaufende Bearbeitung von Aufgaben ohne feste Iterationen.</li>
+</ol>
+<p><strong>Vorteile</strong>:</p>
+<ul>
+<li>Transparenz und Übersicht durch das visuelle Board</li>
+<li>Flexibel anpassbar ohne feste Zeitvorgaben</li>
+<li>Stetiger Workflow und hohe Anpassungsfähigkeit</li>
+</ul>
+<p><strong>Nachteile</strong>:</p>
+<ul>
+<li>Risiko von Chaos ohne feste Struktur</li>
+<li>Hohe Eigenverantwortung im Team erforderlich</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Kanban ist ein weiteres agiles Framework, das sich besonders durch seine Methode der <strong>visuellen Prozesssteuerung</strong> auszeichnet. Im Kern von Kanban steht die Visualisierung des <strong>Arbeitsablaufs</strong>, bei dem alle Aufgaben und Arbeitsschritte klar und übersichtlich dargestellt werden. Auf diese Weise können Engpässe, die den Arbeitsfluss behindern, frühzeitig identifiziert und behoben werden. Durch den Fokus auf kontinuierliche Verbesserung eignet sich Kanban insbesondere für Projekte, die flexible, fließende Abläufe benötigen.</p>
+<p><strong>Die Grundprinzipien von Kanban</strong> umfassen:</p>
+<ol>
+<li><p><strong>Visualisierung des Arbeitsflusses</strong>: Die Arbeitsprozesse werden auf einem sogenannten Kanban-Board dargestellt. Diese visuelle Darstellung teilt die Aufgaben typischerweise in Spalten wie "Zu erledigen" (To Do), "In Bearbeitung" (In Progress) und "Erledigt" (Done) ein. Durch diese Transparenz können alle Teammitglieder den aktuellen Status jeder Aufgabe leicht nachvollziehen und identifizieren, wo Aufgaben feststecken könnten.</p>
+</li>
+<li><p><strong>Begrenzung der laufenden Arbeiten (WIP)</strong>: Kanban setzt bewusst eine Obergrenze für die Anzahl an Aufgaben, die gleichzeitig bearbeitet werden dürfen. Dies wird als WIP (Work in Progress) bezeichnet. Durch diese Begrenzung wird vermieden, dass das Team überlastet wird oder dass Engpässe im Arbeitsfluss entstehen, die das Voranschreiten des gesamten Projekts behindern könnten.</p>
+</li>
+<li><p><strong>Fokus auf den kontinuierlichen Fluss</strong>: Im Gegensatz zu anderen agilen Methoden, die in Iterationen oder Sprints organisiert sind, fördert Kanban einen kontinuierlichen Arbeitsfluss. Aufgaben werden stets unmittelbar nach Beendigung der vorherigen in Angriff genommen, wodurch ein gleichmäßiger, ununterbrochener Fortschritt ermöglicht wird. Dies schafft Flexibilität und stellt sicher, dass der Workflow dynamisch und anpassungsfähig bleibt.</p>
+</li>
+</ol>
+<p><strong>Vorteile von Kanban</strong>:</p>
+<ul>
+<li><strong>Transparenz und Übersichtlichkeit</strong>: Das visuelle Kanban-Board bietet eine klare Übersicht über alle laufenden, geplanten und abgeschlossenen Aufgaben. Dies verbessert das Verständnis und die Kommunikation innerhalb des Teams.</li>
+<li><strong>Einfache Anpassung an den aktuellen Bedarf</strong>: Da Kanban keine festgelegten Iterationen erfordert, kann das Team den Arbeitsablauf flexibel an sich ändernde Anforderungen und Prioritäten anpassen, ohne den gesamten Prozess umstellen zu müssen.</li>
+<li><strong>Kontinuierlicher Workflow und hohe Flexibilität</strong>: Kanban fördert einen kontinuierlichen Arbeitsfluss, der es dem Team ermöglicht, Aufgaben zu priorisieren und sofort nach Abschluss einer anderen Aufgabe in Angriff zu nehmen.</li>
+</ul>
+<p><strong>Nachteile von Kanban</strong>:</p>
+<ul>
+<li><strong>Potenzielle Gefahr von Chaos ohne feste Struktur oder Disziplin</strong>: Da Kanban sehr flexibel ist und keine festen Iterationen vorschreibt, kann es in einem unorganisierten Team oder ohne klare Rollen und Verantwortlichkeiten schnell chaotisch werden.</li>
+<li><strong>Hohe Eigenverantwortung erforderlich</strong>: Da Kanban keine spezifische Prozessstruktur vorgibt, müssen die Teammitglieder eigenverantwortlich dafür sorgen, dass der Arbeitsablauf geordnet bleibt. Dies setzt eine disziplinierte Arbeitsweise und ein starkes Verantwortungsbewusstsein im Team voraus.</li></ul></details>
+
+
+<hr/>
+<h3 id="Die-Methoden-&amp;-Cynefin">Die Methoden &amp; Cynefin<a class="anchor-link" href="#Die-Methoden-&amp;-Cynefin">¶</a></h3><p><strong>Wasserfall (Einfacher Kontext)</strong></p>
+<ul>
+<li><strong>Geeignet für:</strong> Klare, stabile Projekte</li>
+<li><strong>Vorgehensweise:</strong> Lineare Abfolge, vorhersehbare Anforderungen</li>
+</ul>
+<p><strong>Lean (Komplizierter Kontext)</strong></p>
+<ul>
+<li><strong>Geeignet für:</strong> Effiziente Projekte mit stabilen Anforderungen</li>
+<li><strong>Vorgehensweise:</strong> Eliminierung von Verschwendung, Optimierung durch Expertenwissen</li>
+</ul>
+<p><strong>Scrum (Komplexer Kontext)</strong></p>
+<ul>
+<li><strong>Geeignet für:</strong> Projekte mit hoher Unsicherheit und sich ändernden Anforderungen</li>
+<li><strong>Vorgehensweise:</strong> Iterative Entwicklung in Sprints, schnelles Feedback</li>
+</ul>
+<p><strong>Kanban (Komplizierter bis komplexer Kontext)</strong></p>
+<ul>
+<li><strong>Geeignet für:</strong> Flexiblen Arbeitsfluss, sowohl für stabile als auch dynamische Aufgaben</li>
+<li><strong>Vorgehensweise:</strong> Visuelle Steuerung, kontinuierlicher Fluss statt fester Iterationen</li>
+</ul>
+<p><strong>Agile Modelle allgemein (Komplexer Kontext)</strong></p>
+<ul>
+<li><strong>Geeignet für:</strong> Projekte mit unklaren und dynamischen Anforderungen</li>
+<li><strong>Vorgehensweise:</strong> Flexibilität, kundenorientierte Anpassungen, iterative Verbesserung</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Hier ist eine Zusammenfassung der Modelle und ihre Einordnung im Cynefin-Modell:</p>
+<h3 id="1.-Wasserfallmodell-(Einfacher-Kontext)">1. <strong>Wasserfallmodell</strong> (Einfacher Kontext)<a class="anchor-link" href="#1.-Wasserfallmodell-(Einfacher-Kontext)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong> Das Wasserfallmodell eignet sich für <strong>einfache und vorhersehbare</strong> Projekte, bei denen klare und stabile Anforderungen existieren und die Abfolge der Schritte gut bekannt ist.</li>
+<li><strong>Cynefin-Einordnung:</strong> Im <strong>einfachen Bereich</strong> angewandt, bei dem Ursache-Wirkungs-Zusammenhänge eindeutig und beständig sind, und das Management durch Best Practices erfolgt.</li>
+</ul>
+<h3 id="2.-Lean-(Komplizierter-Kontext)">2. <strong>Lean</strong> (Komplizierter Kontext)<a class="anchor-link" href="#2.-Lean-(Komplizierter-Kontext)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong> Lean-Methoden werden oft in Projekten verwendet, die <strong>effizient und mit hohem Wert für den Kunden</strong> umgesetzt werden müssen. Diese Projekte benötigen oft Analyse und Erfahrung, um den besten Weg zu finden, aber die Anforderungen sind relativ stabil.</li>
+<li><strong>Cynefin-Einordnung:</strong> Im <strong>komplizierten Bereich</strong>, wo Ursache-Wirkungs-Zusammenhänge verständlich sind, aber Expertenwissen erfordern. Lean ermöglicht das Identifizieren und Eliminieren von Verschwendung durch bewährte Methoden und Optimierung.</li>
+</ul>
+<h3 id="3.-Scrum-(Komplexer-Kontext)">3. <strong>Scrum</strong> (Komplexer Kontext)<a class="anchor-link" href="#3.-Scrum-(Komplexer-Kontext)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong> Scrum eignet sich für Projekte mit <strong>hoher Unsicherheit und ständigen Veränderungen</strong>, bei denen Feedback wichtig ist. Hier werden durch iterative Zyklen (Sprints) regelmäßig Anpassungen vorgenommen, um auf sich entwickelnde Anforderungen und neue Erkenntnisse zu reagieren.</li>
+<li><strong>Cynefin-Einordnung:</strong> Im <strong>komplexen Bereich</strong>, wo Ursache-Wirkungs-Beziehungen erst im Nachhinein sichtbar sind. Hier fördert Scrum Experimente und iterative Entwicklung, um wertvolle Erkenntnisse zu gewinnen.</li>
+</ul>
+<h3 id="4.-Kanban-(Komplizierter-bis-komplexer-Kontext)">4. <strong>Kanban</strong> (Komplizierter bis komplexer Kontext)<a class="anchor-link" href="#4.-Kanban-(Komplizierter-bis-komplexer-Kontext)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong> Kanban wird eingesetzt, um den <strong>Arbeitsfluss visuell darzustellen und flexibel</strong> an Veränderungen anzupassen. Es eignet sich sowohl für stabilere Aufgaben (kompliziert) als auch für dynamische Umgebungen (komplex).</li>
+<li><strong>Cynefin-Einordnung:</strong> Primär im <strong>komplizierten Bereich</strong>, kann aber auch im komplexen Bereich effektiv sein, da es auf visuelle Steuerung und ständigen Fluss anstatt auf feste Iterationen setzt.</li>
+</ul>
+<h3 id="5.-Agile-Modelle-allgemein-(Komplexer-Kontext)">5. <strong>Agile Modelle allgemein</strong> (Komplexer Kontext)<a class="anchor-link" href="#5.-Agile-Modelle-allgemein-(Komplexer-Kontext)">¶</a></h3><ul>
+<li><strong>Beschreibung:</strong> Agile Methoden sind für <strong>Projekte mit hoher Unsicherheit und sich schnell ändernden Anforderungen</strong> geeignet, da sie auf Flexibilität und Feedback setzen. Dies schließt Scrum, Kanban und ähnliche Methoden ein, die iteratives Arbeiten und eine kundenorientierte Anpassung fördern.</li>
+<li><strong>Cynefin-Einordnung:</strong> Im <strong>komplexen Bereich</strong>, da agile Methoden es ermöglichen, neue Ideen und Lösungsansätze zu entwickeln und anzupassen, wenn die Ursache-Wirkung-Zusammenhänge schwer vorhersagbar sind.</li>
+</ul>
+<h3 id="Zusammenfassung:">Zusammenfassung:<a class="anchor-link" href="#Zusammenfassung:">¶</a></h3><p>Das Cynefin-Modell zeigt, dass die Wahl des Vorgehensmodells vom Kontext und der Komplexität des Projekts abhängt:</p>
+<ul>
+<li><strong>Einfach:</strong> Wasserfall – ideal für klare und stabile Projekte.</li>
+<li><strong>Kompliziert:</strong> Lean und Kanban – effizient für Projekte mit klaren, aber nicht einfachen Anforderungen.</li>
+<li><strong>Komplex:</strong> Scrum und agile Methoden – optimal für Projekte, bei denen Anforderungen unklar sind und Flexibilität erforderlich ist.</li>
+</ul>
+<p>Durch die Verwendung des Cynefin-Modells kann das geeignete Vorgehensmodell auf Grundlage des Projektkontexts gewählt werden, um besser auf Komplexität und Unsicherheit zu reagieren.</p>
+</details>
 </div>
 </div>
 </div>
