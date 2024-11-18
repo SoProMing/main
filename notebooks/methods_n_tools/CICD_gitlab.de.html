@@ -7516,414 +7516,471 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
+<h1 id="Software-Projekt-mit-gitlab">Software-Projekt mit gitlab<a class="anchor-link" href="#Software-Projekt-mit-gitlab">¶</a></h1><img alt="No description has been provided for this image" src="Gitlab.webp" style="width:280px; height:280px;"/>
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h3 id="%F0%9F%92%A1-WiP">💡 WiP<a class="anchor-link" href="#%F0%9F%92%A1-WiP">¶</a></h3><p>Die hier erklärten Schritte sind aktuell noch ungetestet.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
+<p>Hier eine kurze und stichpunktartige Zusammenfassung, wie GitLab für ein Webapp-Softwareprojekt mit .NET genutzt werden kann:</p>
 <ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
+<li><p><strong>Repository einrichten</strong>:</p>
 <ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<li>Erstelle ein GitLab-Repository für den Code.</li>
+<li>Struktur: <code>/src</code>, <code>/tests</code>, <code>/docs</code> für saubere Organisation.</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
+</li>
+<li><p><strong>CI/CD-Pipeline</strong>:</p>
+<ul>
+<li>Definiere eine <code>.gitlab-ci.yml</code>-Datei zur Automatisierung von Build, Test und Deployment.</li>
+<li>Beispiel: <code>dotnet build</code>, <code>dotnet test</code>, Deployment-Skripte.</li>
+</ul>
+</li>
+<li><p><strong>Branching und Merge Requests</strong>:</p>
+<ul>
+<li>Nutze Branches für Features/Tasks.</li>
+<li>Merge Requests für Code-Reviews und Integration.</li>
+</ul>
+</li>
+<li><p><strong>Code-Reviews</strong>:</p>
+<ul>
+<li>Verwende Merge Requests für Feedback und Code-Qualitätssicherung.</li>
+</ul>
+</li>
+<li><p><strong>Dokumentation</strong>:</p>
+<ul>
+<li>Nutze GitLab Wiki für Projektdokumentation.</li>
+<li>Achte auf eine detaillierte <code>README.md</code>-Datei.</li>
+</ul>
+</li>
+<li><p><strong>Aufgabenverwaltung</strong>:</p>
+<ul>
+<li>Verwende GitLab Issues zur Verwaltung von Aufgaben, Bugs und Features.</li>
+<li>Visualisiere den Fortschritt über Kanban-Board.</li>
+</ul>
+</li>
+<li><p><strong>Kollaboration und Kommunikation</strong>:</p>
+<ul>
+<li>Nutze GitLab Discussions für Teamkommunikation.</li>
+<li>Erstelle Teams für verschiedene Gruppen oder Aufgaben.</li>
+</ul>
+</li>
+<li><p><strong>Testing und Codequalität</strong>:</p>
+<ul>
+<li>Integriere Unit-Tests (z.B. mit xUnit, NUnit) in CI/CD.</li>
+<li>Verwende Tools wie SonarCloud zur Codequalität.</li>
+</ul>
+</li>
+<li><p><strong>Deployment</strong>:</p>
+<ul>
+<li>Automatisiere das Deployment mit GitLab CI/CD (z.B. auf Server oder Cloud).</li>
+<li>Docker-Integration für containerisierte Anwendungen.</li>
+</ul>
+</li>
+</ol>
+<p>Das sorgt für eine effiziente Zusammenarbeit und kontinuierliche Qualitätssicherung im Projekt.</p>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>GitLab ist ein exzellentes Tool für die Zusammenarbeit an Softwareprojekten und kann eine Gruppe optimal unterstützen, wenn sie gemeinsam an einem Webapp-Projekt mit z.B. .NET-Technologie arbeiten. Hier sind einige grundlegende Schritte und Best Practices, wie du GitLab für das Projekt nutzen kannst:</p>
+<h3 id="1.-Repository-einrichten">1. <strong>Repository einrichten</strong><a class="anchor-link" href="#1.-Repository-einrichten">¶</a></h3><ul>
+<li><strong>Erstelle ein GitLab-Repository</strong>: Zu Beginn des Projekts solltest du ein GitLab-Repository erstellen, in dem der gesamte Quellcode und die Ressourcen des Projekts gespeichert werden. Gehe dazu in dein GitLab-Profil und erstelle ein neues Projekt.</li>
+<li><strong>Repository-Struktur festlegen</strong>: Eine saubere und konsistente Struktur ist entscheidend. Eine typische Struktur für ein .NET-Webanwendungsprojekt könnte so aussehen:<pre><code>/src
+  /WebApp
+    /Controllers
+    /Models
+    /Views
+    /wwwroot
+/tests
+/docs
+</code></pre>
+<ul>
+<li><strong>/src</strong> für den Code der Webanwendung.</li>
+<li><strong>/tests</strong> für Unit-Tests oder Integrationstests.</li>
+<li><strong>/docs</strong> für die Projektdokumentation.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.-GitLab-CI/CD-f%C3%BCr-Automatisierung">2. <strong>GitLab CI/CD für Automatisierung</strong><a class="anchor-link" href="#2.-GitLab-CI/CD-f%C3%BCr-Automatisierung">¶</a></h3><p>GitLab CI/CD ermöglicht es, Build- und Deployment-Pipelines zu automatisieren.</p>
+<ul>
+<li><strong>CI/CD Pipeline einrichten</strong>: Du kannst eine <code>.gitlab-ci.yml</code> Datei anlegen, um deine Build- und Deployment-Prozesse zu definieren.</li>
+<li>Beispiel einer <code>.gitlab-ci.yml</code> für .NET-Projekte:<div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mcr.microsoft.com/dotnet/aspnet:6.0</span>
+
+<span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">DOTNET_CLI_HOME</span><span class="p">:</span><span class="w"> </span><span class="s">"/tmp"</span>
+
+<span class="nt">before_script</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apt-get update &amp;&amp; apt-get install -y unzip</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl -sSL https://aka.ms/InstallAzureCLIDeb | sudo bash</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet build WebApp/WebApp.csproj</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet test WebApp.Tests/WebApp.Tests.csproj</span>
+
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "Deploying to production..."</span>
+<span class="w">    </span><span class="c1"># Hier könnte ein Skript zum Deployen auf einen Server folgen</span>
+</pre></div>
+<ul>
+<li><strong>Build</strong>: Baut das .NET-Projekt.</li>
+<li><strong>Test</strong>: Führt Unit-Tests aus.</li>
+<li><strong>Deploy</strong>: Kann auf eine Serverumgebung oder auf Docker/Cloud-Services zielen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.-Branches-und-Merge-Requests">3. <strong>Branches und Merge Requests</strong><a class="anchor-link" href="#3.-Branches-und-Merge-Requests">¶</a></h3><ul>
+<li><strong>Branching-Strategie</strong>: Um die Arbeit an verschiedenen Features und Aufgaben zu organisieren, sollten Branches verwendet werden. Ein typisches Vorgehen ist:<ul>
+<li><strong>Main-Branch</strong>: Für die stabile Version des Projekts.</li>
+<li><strong>Feature-Branches</strong>: Jeder Student oder jedes Team arbeitet an einem Feature in einem eigenen Branch.</li>
+<li><strong>Merge Requests</strong>: Feature-Branches sollten über Merge Requests in den Main-Branch integriert werden, was es ermöglicht, Code-Reviews durchzuführen und sicherzustellen, dass der Code in die Hauptentwicklungslinie integriert wird.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.-Code-Reviews">4. <strong>Code-Reviews</strong><a class="anchor-link" href="#4.-Code-Reviews">¶</a></h3><ul>
+<li><strong>Merge Requests für Code-Reviews</strong>: Jeder Merge Request sollte von einem anderen Studenten oder Mentor überprüft werden. GitLab ermöglicht es, Kommentare direkt im Code zu hinterlassen und Diskussionen zu führen.</li>
+<li><strong>Regeln für Pull-Requests</strong>: Stelle sicher, dass der Code vor dem Mergen mit den festgelegten Codestandards übereinstimmt und Unit-Tests erfolgreich sind.</li>
+</ul>
+<h3 id="5.-Dokumentation">5. <strong>Dokumentation</strong><a class="anchor-link" href="#5.-Dokumentation">¶</a></h3><ul>
+<li><strong>Wikis nutzen</strong>: GitLab bietet ein integriertes Wiki, das für die Projektdokumentation genutzt werden kann (z.B. Architektur, Setup-Anweisungen).</li>
+<li><strong>README-Datei</strong>: Achte darauf, dass das Repository eine gut dokumentierte <code>README.md</code> Datei enthält, die den Studenten erklärt, wie sie das Projekt lokal einrichten und ausführen können.</li>
+</ul>
+<h3 id="6.-Aufgaben-und-Issues-verwalten">6. <strong>Aufgaben und Issues verwalten</strong><a class="anchor-link" href="#6.-Aufgaben-und-Issues-verwalten">¶</a></h3><ul>
+<li><strong>GitLab Issues</strong>: Nutze GitLab Issues, um Aufgaben, Bugs und Features zu verwalten. Du kannst Labels, Meilensteine und Assignees nutzen, um das Projekt zu organisieren.</li>
+<li><strong>Kanban-Board</strong>: GitLab bietet ein Kanban-Board, das dir hilft, Aufgaben und den Fortschritt des Projekts zu visualisieren. Du kannst Aufgaben nach "To Do", "In Progress" und "Done" organisieren.</li>
+</ul>
+<h3 id="7.-Kollaboration-und-Kommunikation">7. <strong>Kollaboration und Kommunikation</strong><a class="anchor-link" href="#7.-Kollaboration-und-Kommunikation">¶</a></h3><ul>
+<li><strong>GitLab Discussions</strong>: Ermutige die Studenten, Diskussionen in GitLab zu führen, wenn sie auf Probleme stoßen oder Fragen haben. Dies ist eine effektive Möglichkeit zur Zusammenarbeit.</li>
+<li><strong>Teams und Rollen</strong>: Falls du mehrere Gruppen von Studenten hast, kannst du verschiedene Gruppen von GitLab-Teams erstellen, um bestimmte Repositories oder Bereiche zu verwalten.</li>
+</ul>
+<h3 id="8.-Testing-und-Codequalit%C3%A4t">8. <strong>Testing und Codequalität</strong><a class="anchor-link" href="#8.-Testing-und-Codequalit%C3%A4t">¶</a></h3><ul>
+<li><strong>Unit-Tests mit xUnit oder NUnit</strong>: Stelle sicher, dass Unit-Tests mit .NET getestet werden. Dies kann durch Integration in die CI/CD-Pipeline erfolgen.</li>
+<li><strong>SonarCloud oder CodeClimate für Codequalität</strong>: Du kannst Tools wie SonarCloud verwenden, um die Codequalität zu überwachen und sicherzustellen, dass Best Practices eingehalten werden.</li>
+</ul>
+<h3 id="9.-Deployment">9. <strong>Deployment</strong><a class="anchor-link" href="#9.-Deployment">¶</a></h3><ul>
+<li><strong>Deployment in Cloud/Server</strong>: Du kannst GitLab CI/CD nutzen, um die Anwendung nach jedem Commit automatisch in eine Entwicklungs- oder Produktionsumgebung zu deployen.</li>
+<li><strong>Docker-Integration</strong>: Falls die Anwendung containerisiert wird, kannst du Docker und GitLab CI/CD verwenden, um das Deployment zu automatisieren.</li>
+</ul>
+<p>Durch diese Schritte wird GitLab zu einem effektiven Werkzeug für das Management und die Zusammenarbeit in einem .NET-basierten Webapp-Projekt. Es fördert das Teamwork, die Automatisierung und die Qualität des Codes.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Umgebungen-im-studentischen-Umfeld">Umgebungen im studentischen Umfeld<a class="anchor-link" href="#Umgebungen-im-studentischen-Umfeld">¶</a></h2><h3 id="Entwicklungsumgebungen-f%C3%BCr-Studenten">Entwicklungsumgebungen für Studenten<a class="anchor-link" href="#Entwicklungsumgebungen-f%C3%BCr-Studenten">¶</a></h3><ul>
+<li><strong>Visual Studio Code (VSCode)</strong>: Kostenlos, leichtgewichtig, unterstützt .NET, Docker, und DevContainers.</li>
+<li><strong>Visual Studio Community Edition</strong>: Vollständige IDE, kostenlos für Studenten, bietet erweiterte .NET-Features.</li>
+</ul>
+<h3 id="Kostenlose-Produktionsumgebungen">Kostenlose Produktionsumgebungen<a class="anchor-link" href="#Kostenlose-Produktionsumgebungen">¶</a></h3><ul>
+<li><strong>Azure for Students</strong>: Kostenloses Guthaben für Hosting von Web-Apps, Datenbanken, und mehr.</li>
+<li><strong>GitHub Pages</strong>: Kostenlos für statische Websites, geeignet für Blazor oder einfache .NET-Anwendungen.</li>
+<li><strong>Heroku</strong>: Kostenloser Plan für Web-Apps, einfaches Setup.</li>
+<li><strong>Vercel</strong>: Kostenloses Hosting für statische und serverseitig gerenderte Web-Apps.</li>
+<li><strong>Glitch</strong>: Kostenloses Hosting, einfache APIs und Web-Apps.</li>
+<li><strong>Netlify</strong>: Kostenloses Hosting für statische Seiten, automatische Deployments.</li>
+</ul>
+<h3 id="Cloud-Services-f%C3%BCr-Studenten">Cloud-Services für Studenten<a class="anchor-link" href="#Cloud-Services-f%C3%BCr-Studenten">¶</a></h3><ul>
+<li><strong>AWS Educate</strong>: Kostenloses Guthaben für Cloud-Dienste wie EC2 und RDS.</li>
+<li><strong>Google Cloud Platform (GCP)</strong>: Kostenlose Ressourcen für das Hosting von Anwendungen.</li>
+</ul>
+<h3 id="Docker-und-Containerization">Docker und Containerization<a class="anchor-link" href="#Docker-und-Containerization">¶</a></h3><ul>
+<li><strong>Docker Desktop</strong>: Lokal für Containerentwicklung, unterstützt Cloud-Deployment.</li>
+<li><strong>Docker Hub</strong>: Kostenloses Speichern von Container-Images.</li>
+</ul>
+<h3 id="CI/CD-und-Automatisierung">CI/CD und Automatisierung<a class="anchor-link" href="#CI/CD-und-Automatisierung">¶</a></h3><ul>
+<li><strong>GitLab CI/CD</strong>: Automatisiertes Build- und Deployment, Tests und Builds direkt im Repository.</li>
+<li><strong>GitHub Actions</strong>: Automatisierte Workflows für Builds, Tests und Deployments.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Im studentischen Umfeld gibt es viele kostengünstige oder sogar kostenlose Entwicklung- und Produktionsumgebungen, die ideal für Webanwendungen mit .NET-Technologie geeignet sind. Hier sind einige empfohlene Optionen:</p>
+<h3 id="1.-Entwicklungsumgebungen-(f%C3%BCr-lokale-Entwicklung)">1. <strong>Entwicklungsumgebungen (für lokale Entwicklung)</strong><a class="anchor-link" href="#1.-Entwicklungsumgebungen-(f%C3%BCr-lokale-Entwicklung)">¶</a></h3><ul>
+<li><p><strong>Visual Studio Code (VSCode)</strong>:</p>
+<ul>
+<li><strong>Kostenlos und Open-Source</strong>: Ideal für .NET Core-Projekte. VSCode unterstützt .NET durch die Erweiterung „C#“ und bietet eine leichtgewichtige, anpassbare Entwicklungsumgebung.</li>
+<li><strong>Features</strong>: Code-Completion, Debugging, Git-Integration und vieles mehr.</li>
+<li><strong>Docker Support</strong>: Unterstützt Docker-Container für die Entwicklung von Anwendungen in isolierten Umgebungen.</li>
+<li><strong>DevContainers</strong>: Mit DevContainers können die Studierenden eine vollständige Entwicklungsumgebung in einer Docker-Umgebung direkt im Editor starten.</li>
+</ul>
+</li>
+<li><p><strong>Visual Studio Community Edition</strong>:</p>
+<ul>
+<li><strong>Kostenlos für Studenten</strong>: Visual Studio bietet eine vollständige IDE für .NET-Entwickler, mit erweiterten Funktionen wie Debugging, Refactoring und Testmanagement.</li>
+<li><strong>Integration von Azure, Docker und anderen Tools</strong>: Besonders nützlich, wenn du mit Azure oder Docker arbeitest.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.-Produktionsumgebungen-(f%C3%BCr-das-Hosting-von-Webapps)">2. <strong>Produktionsumgebungen (für das Hosting von Webapps)</strong><a class="anchor-link" href="#2.-Produktionsumgebungen-(f%C3%BCr-das-Hosting-von-Webapps)">¶</a></h3><h4 id="Kostenlose-Optionen-f%C3%BCr-Hosting"><strong>Kostenlose Optionen für Hosting</strong><a class="anchor-link" href="#Kostenlose-Optionen-f%C3%BCr-Hosting">¶</a></h4><ul>
+<li><p><strong>Azure for Students</strong>:</p>
+<ul>
+<li><strong>Kostenloses Guthaben</strong>: Microsoft bietet ein spezielles Programm für Studenten, das kostenlosen Zugang zu Azure-Diensten, wie App Services, Virtual Machines und SQL-Datenbanken bietet.</li>
+<li><strong>Dienste</strong>: Du kannst Web-Apps, APIs, Datenbanken und viele andere Services auf Azure nutzen.</li>
+<li><strong>Nutzung für Produktions- und Entwicklungsumgebungen</strong>: Azure bietet sowohl Entwicklungs- als auch Produktionslösungen für deine .NET-basierte Web-App.</li>
+</ul>
+</li>
+<li><p><strong>GitHub Pages</strong>:</p>
+<ul>
+<li><strong>Kostenlos für statische Websites</strong>: Ideal, wenn du eine einfache statische Webanwendung mit .NET oder Blazor erstellen möchtest.</li>
+<li><strong>Deployment aus einem GitHub-Repository</strong>: Erlaube den Studierenden, direkt aus ihrem GitHub-Repo zu deployen.</li>
+</ul>
+</li>
+<li><p><strong>Heroku</strong>:</p>
+<ul>
+<li><strong>Kostenlose Web-Heroku Dynos</strong>: Heroku bietet eine kostenlose Stufe, bei der du Webanwendungen und APIs hosten kannst. Diese ist gut geeignet für kleinere Webanwendungen.</li>
+<li><strong>Einfaches Setup</strong>: Besonders für Studenten, die nicht mit komplexeren Infrastruktur-Anbietern arbeiten möchten.</li>
+<li><strong>.NET-Integration</strong>: Heroku bietet Unterstützung für .NET-Anwendungen über Docker.</li>
+</ul>
+</li>
+<li><p><strong>Vercel</strong>:</p>
+<ul>
+<li><strong>Kostenlos für Studenten</strong>: Vercel bietet einen einfach zu bedienenden Service für das Hosting von statischen und serverseitig gerenderten Webanwendungen. Wenn deine Anwendung ein Frontend mit React, Next.js oder Blazor hat, ist Vercel eine gute Wahl.</li>
+<li><strong>Integration mit GitHub</strong>: Automatische Deployments direkt aus einem GitHub-Repository.</li>
+</ul>
+</li>
+<li><p><strong>Glitch</strong>:</p>
+<ul>
+<li><strong>Kostenloses Hosting für Web-Apps</strong>: Glitch ist eine weitere einfache Möglichkeit für das Hosting von Webanwendungen, wobei Studenten schnelle Deployments durchführen können.</li>
+<li><strong>Einfache API-Verwaltung und Fullstack-Unterstützung</strong>.</li>
+</ul>
+</li>
+<li><p><strong>Netlify</strong>:</p>
+<ul>
+<li><strong>Kostenlose Hosting-Pläne für kleine Apps</strong>: Netlify bietet kostenlose Hosting-Pläne, die besonders gut für statische Seiten oder Jamstack-Architekturen geeignet sind.</li>
+<li><strong>Automatische Deployments</strong>: Direktes Deployment aus Git-Repositories (GitHub, GitLab, Bitbucket).</li>
+</ul>
+</li>
+</ul>
+<h4 id="Cloud-Services-f%C3%BCr-Studenten"><strong>Cloud-Services für Studenten</strong><a class="anchor-link" href="#Cloud-Services-f%C3%BCr-Studenten">¶</a></h4><ul>
+<li><p><strong>Amazon Web Services (AWS) Educate</strong>:</p>
+<ul>
+<li><strong>Kostenloses Guthaben</strong>: AWS bietet über das AWS Educate-Programm kostenlosen Zugang zu einer Vielzahl von Cloud-Diensten, die für das Hosting von Webanwendungen und Datenbanken genutzt werden können.</li>
+<li><strong>Dienste wie EC2, RDS und S3</strong>: Diese eignen sich gut für skalierbare Webanwendungen.</li>
+</ul>
+</li>
+<li><p><strong>Google Cloud Platform (GCP) for Education</strong>:</p>
+<ul>
+<li><strong>Kostenlose Ressourcen und Guthaben</strong>: Google bietet für Studierende kostenlose Cloud-Ressourcen, die du für das Hosting von .NET-Anwendungen nutzen kannst, inklusive Compute Engine und Firebase für Datenbanklösungen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.-Docker-und-Containerization-(lokale-und-Cloud-basierte-Entwicklung)">3. <strong>Docker und Containerization (lokale und Cloud-basierte Entwicklung)</strong><a class="anchor-link" href="#3.-Docker-und-Containerization-(lokale-und-Cloud-basierte-Entwicklung)">¶</a></h3><ul>
+<li><p><strong>Docker</strong>:</p>
+<ul>
+<li><strong>Lokal mit Docker Desktop</strong>: Docker eignet sich hervorragend für die Erstellung von Containerumgebungen, die die Entwicklung und das Testing von .NET-Anwendungen vereinfachen.</li>
+<li><strong>Cloud-Dienste wie AWS und Azure</strong> bieten umfassende Unterstützung für Docker-Container und ermöglichen eine einfache Bereitstellung in der Cloud.</li>
+</ul>
+</li>
+<li><p><strong>Docker Hub</strong>:</p>
+<ul>
+<li><strong>Kostenlose Repositories</strong>: Nutze Docker Hub, um Docker-Images zu speichern und in verschiedenen Umgebungen zu verwenden. Dies ist besonders hilfreich, um die Studenten an das Arbeiten mit Containern heranzuführen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.-CI/CD-und-Automatisierung-(f%C3%BCr-die-Integration-und-Bereitstellung)">4. <strong>CI/CD und Automatisierung (für die Integration und Bereitstellung)</strong><a class="anchor-link" href="#4.-CI/CD-und-Automatisierung-(f%C3%BCr-die-Integration-und-Bereitstellung)">¶</a></h3><ul>
+<li><p><strong>GitLab CI/CD</strong>:</p>
+<ul>
+<li><strong>Automatisiertes Deployment</strong>: Mit GitLab CI/CD können die Studenten die Anwendung sowohl lokal als auch in die Cloud (z.B. auf Azure, AWS oder Heroku) deployen, sobald sie Änderungen in ihren Repositories vornehmen.</li>
+<li><strong>Automatische Tests und Builds</strong>: Führe Tests und Builds direkt im GitLab-Repository durch, bevor du eine Version deployen kannst.</li>
+</ul>
+</li>
+<li><p><strong>GitHub Actions</strong>:</p>
+<ul>
+<li><strong>Automatisierte Workflows</strong>: Wenn das Projekt auf GitHub basiert, können GitHub Actions genutzt werden, um Builds, Tests und Deployments zu automatisieren. Es gibt vorgefertigte Actions für .NET, die du direkt verwenden kannst.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Für das studentische Umfeld bieten sich kostenlose oder kostengünstige Entwicklungs- und Produktionsumgebungen wie <strong>Azure for Students</strong>, <strong>Heroku</strong>, <strong>GitHub Pages</strong>, <strong>Vercel</strong> und <strong>Docker</strong> an. Diese Dienste ermöglichen eine einfache Einrichtung und Verwaltung von Webanwendungen und eignen sich hervorragend, um Studenten sowohl in der Entwicklung als auch im Deployment zu unterstützen. Ideal ist auch der Einsatz von CI/CD-Tools wie <strong>GitLab</strong> oder <strong>GitHub Actions</strong>, um die Prozesse zu automatisieren und eine professionelle Entwicklungsumgebung zu simulieren.</p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Gitlab-und-Azure-for-Students">Gitlab und Azure for Students<a class="anchor-link" href="#Gitlab-und-Azure-for-Students">¶</a></h2><h3 id="Zusammenfassung-des-Deployments-auf-Azure-for-Students-mit-GitLab-CI/CD">Zusammenfassung des Deployments auf Azure for Students mit GitLab CI/CD<a class="anchor-link" href="#Zusammenfassung-des-Deployments-auf-Azure-for-Students-mit-GitLab-CI/CD">¶</a></h3><ol>
+<li><p><strong>Azure Setup</strong>:</p>
+<ul>
+<li>Erstelle einen <strong>Azure App Service</strong> und ein <strong>Service Principal</strong> (mit den Berechtigungen <strong>Contributor</strong>).</li>
+<li>Hole dir die <strong>Azure Subscription ID</strong>, <strong>Tenant ID</strong>, <strong>Client ID</strong>, und <strong>Client Secret</strong> aus dem Azure-Portal.</li>
+</ul>
+</li>
+<li><p><strong>GitLab CI/CD Konfiguration</strong>:</p>
+<ul>
+<li><strong>Image</strong>: Verwende ein .NET Docker-Image (z.B. <code>mcr.microsoft.com/dotnet/aspnet:6.0</code>).</li>
+<li><strong>Stages</strong>: Definiere <code>build</code>, <code>test</code>, <code>deploy</code>.</li>
+<li><strong>Before Script</strong>: Installiere die <strong>Azure CLI</strong>.</li>
+<li><strong>Build Stage</strong>: Baue das .NET-Projekt.</li>
+<li><strong>Test Stage</strong>: Führe Unit-Tests aus.</li>
+<li><strong>Deploy Stage</strong>:<ul>
+<li>Logge dich mit dem Azure <strong>Service Principal</strong> ein (<code>az login</code>).</li>
+<li>Setze die Azure Subscription (<code>az account set</code>).</li>
+<li>Veröffentliche die Anwendung (<code>dotnet publish</code>).</li>
+<li>Deploye auf Azure App Service (<code>az webapp deploy</code>).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Secrets verwalten in GitLab</strong>:</p>
+<ul>
+<li>Gehe zu <strong>Settings</strong> → <strong>CI / CD</strong> → <strong>Variables</strong>.</li>
+<li>Füge die folgenden Variablen hinzu:<ul>
+<li><code>AZURE_SUBSCRIPTION_ID</code>, <code>AZURE_TENANT_ID</code>, <code>AZURE_CLIENT_ID</code>, <code>AZURE_CLIENT_SECRET</code>, <code>AZURE_APP_NAME</code>, <code>AZURE_RESOURCE_GROUP</code>, <code>AZURE_APP_SERVICE_NAME</code>.</li>
+</ul>
+</li>
+<li>Diese Variablen sind während des CI/CD-Prozesses verfügbar und schützen sensible Daten.</li>
+</ul>
+</li>
+<li><p><strong>Sicherheit</strong>:</p>
+<ul>
+<li>Speichere keine sensiblen Daten direkt in <code>.gitlab-ci.yml</code>.</li>
+<li>GitLab Secrets sind verschlüsselt und sicher während des Deployments verfügbar.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Beispiel-.gitlab-ci.yml:">Beispiel <code>.gitlab-ci.yml</code>:<a class="anchor-link" href="#Beispiel-.gitlab-ci.yml:">¶</a></h3><details>
+<div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mcr.microsoft.com/dotnet/aspnet:6.0</span>
+
+<span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">DOTNET_CLI_HOME</span><span class="p">:</span><span class="w"> </span><span class="s">"/tmp"</span>
+
+<span class="nt">before_script</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl -sSL https://aka.ms/InstallAzureCLIDeb | sudo bash</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet build src/WebApp/WebApp.csproj</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet test src/WebApp.Tests/WebApp.Tests.csproj</span>
+
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo $AZURE_CLIENT_SECRET | az login --service-principal --username $AZURE_CLIENT_ID --password stdin --tenant $AZURE_TENANT_ID</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">az account set --subscription $AZURE_SUBSCRIPTION_ID</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet publish src/WebApp/WebApp.csproj -c Release -o ./publish</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">az webapp deploy --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_APP_SERVICE_NAME --src-path ./publish --type zip</span>
+<span class="w">  </span><span class="nt">only</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
+</pre></div>
+</details>
+<h3 id="Fazit:">Fazit:<a class="anchor-link" href="#Fazit:">¶</a></h3><ul>
+<li><strong>CI/CD</strong> automatisiert das Builden, Testen und Deployen auf <strong>Azure</strong>.</li>
+<li><strong>Secrets</strong> werden sicher in GitLab verwaltet.</li>
+<li>Deployment erfolgt durch Azure CLI innerhalb der GitLab Pipeline.</li>
+</ul>
+<details><summary>Nochmal zum Nachlesen...</summary>
+<p>Das Deployment einer .NET-Anwendung auf <strong>Azure for Students</strong> über GitLab CI/CD erfordert einige grundlegende Schritte, um die Anwendung zu erstellen, zu testen und anschließend auf Azure zu deployen. Zusätzlich ist es wichtig, sensible Daten wie API-Keys oder Verbindungszeichenfolgen sicher zu verwalten. Hier ist eine detaillierte Anleitung, wie das in deiner <code>.gitlab-ci.yml</code> aussehen könnte und wie du <strong>Secrets</strong> sicher verwaltest.</p>
+<h3 id="1.-Azure-Setup">1. <strong>Azure-Setup</strong><a class="anchor-link" href="#1.-Azure-Setup">¶</a></h3><p>Bevor du mit dem Deployment beginnst, musst du sicherstellen, dass dein Azure-Account korrekt eingerichtet ist. Im Fall von <strong>Azure for Students</strong> erhältst du kostenloses Guthaben, aber du musst ein paar Dinge einrichten:</p>
+<ul>
+<li><strong>Azure App Service</strong>: Erstelle einen Azure App Service, um deine Anwendung zu hosten.</li>
+<li><strong>Azure Service Principal</strong>: Erstelle ein Service Principal (eine Identität, die von GitLab verwendet wird, um sich bei Azure zu authentifizieren), das GitLab die Berechtigung zum Deployment gibt.</li>
+</ul>
+<h3 id="2.-Azure-Service-Principal-erstellen">2. <strong>Azure Service Principal erstellen</strong><a class="anchor-link" href="#2.-Azure-Service-Principal-erstellen">¶</a></h3><p>Um deine Azure App in GitLab zu deployen, musst du ein Service Principal erstellen, das du in deiner GitLab CI/CD Pipeline nutzen kannst:</p>
 <ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
+<li>Melde dich bei deinem Azure-Portal an.</li>
+<li>Gehe zu <strong>Azure Active Directory</strong> → <strong>App Registrations</strong> → <strong>New registration</strong> und registriere eine neue Anwendung.</li>
+<li>Erstelle ein <strong>Secret</strong> für diese App unter <strong>Certificates &amp; Secrets</strong>.</li>
+<li>Vergib die Berechtigungen <strong>Contributor</strong> auf der Ressourcengruppe oder App Service Ebene.</li>
 </ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<p>Die <strong>Service Principal-Daten</strong> (App-ID, Tenant-ID und Secret) müssen sicher in GitLab hinterlegt werden.</p>
+<h3 id="3.-GitLab-CI/CD-Setup">3. <strong>GitLab CI/CD Setup</strong><a class="anchor-link" href="#3.-GitLab-CI/CD-Setup">¶</a></h3><p>In der <code>.gitlab-ci.yml</code> definierst du den gesamten CI/CD-Prozess, einschließlich des Builds, Tests und Deployments auf Azure.</p>
+<h4 id="Beispiel-einer-.gitlab-ci.yml-Datei:">Beispiel einer <code>.gitlab-ci.yml</code> Datei:<a class="anchor-link" href="#Beispiel-einer-.gitlab-ci.yml-Datei:">¶</a></h4><div class="highlight"><pre><span></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mcr.microsoft.com/dotnet/aspnet:6.0</span>
+
+<span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">DOTNET_CLI_HOME</span><span class="p">:</span><span class="w"> </span><span class="s">"/tmp"</span>
+<span class="w">  </span><span class="nt">AZURE_SUBSCRIPTION_ID</span><span class="p">:</span><span class="w"> </span><span class="s">"your-subscription-id"</span>
+<span class="w">  </span><span class="nt">AZURE_TENANT_ID</span><span class="p">:</span><span class="w"> </span><span class="s">"your-tenant-id"</span>
+<span class="w">  </span><span class="nt">AZURE_CLIENT_ID</span><span class="p">:</span><span class="w"> </span><span class="s">"your-client-id"</span>
+<span class="w">  </span><span class="nt">AZURE_CLIENT_SECRET</span><span class="p">:</span><span class="w"> </span><span class="s">"your-client-secret"</span>
+<span class="w">  </span><span class="nt">AZURE_APP_NAME</span><span class="p">:</span><span class="w"> </span><span class="s">"your-app-name"</span>
+<span class="w">  </span><span class="nt">AZURE_RESOURCE_GROUP</span><span class="p">:</span><span class="w"> </span><span class="s">"your-resource-group"</span>
+<span class="w">  </span><span class="nt">AZURE_APP_SERVICE_NAME</span><span class="p">:</span><span class="w"> </span><span class="s">"your-app-service-name"</span>
+
+<span class="nt">before_script</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">curl -sSL https://aka.ms/InstallAzureCLIDeb | sudo bash</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet build src/WebApp/WebApp.csproj</span>
+<span class="w">  </span><span class="nt">artifacts</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bin/</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet test src/WebApp.Tests/WebApp.Tests.csproj</span>
+
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Log into Azure</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo $AZURE_CLIENT_SECRET | az login --service-principal --username $AZURE_CLIENT_ID --password stdin --tenant $AZURE_TENANT_ID</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">az account set --subscription $AZURE_SUBSCRIPTION_ID</span>
+<span class="w">    </span><span class="c1"># Publish to Azure App Service</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dotnet publish src/WebApp/WebApp.csproj -c Release -o ./publish</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">az webapp deploy --resource-group $AZURE_RESOURCE_GROUP --name $AZURE_APP_SERVICE_NAME --src-path ./publish --type zip</span>
+<span class="w">  </span><span class="nt">only</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+<h4 id="Schritte-erkl%C3%A4rt:">Schritte erklärt:<a class="anchor-link" href="#Schritte-erkl%C3%A4rt:">¶</a></h4><ul>
+<li><strong>Image</strong>: Wir verwenden das offizielle .NET Docker-Image für die Build- und Test-Phasen.</li>
+<li><strong>Before Script</strong>: Installiert die Azure CLI, die für das Deployment notwendig ist.</li>
+<li><strong>Build Stage</strong>: Baut die .NET-Anwendung.</li>
+<li><strong>Test Stage</strong>: Führt Unit-Tests aus.</li>
+<li><strong>Deploy Stage</strong>: Loggt sich mit dem Service Principal in Azure ein, setzt die Azure Subscription und deployt die Anwendung auf den Azure App Service.</li>
 </ul>
-</li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
-</li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
+<h3 id="4.-Verwalten-von-Secrets-in-GitLab">4. <strong>Verwalten von Secrets in GitLab</strong><a class="anchor-link" href="#4.-Verwalten-von-Secrets-in-GitLab">¶</a></h3><p>Die sensiblen Daten wie <strong>Azure Client ID</strong>, <strong>Client Secret</strong>, <strong>Tenant ID</strong> und <strong>Subscription ID</strong> sollten nicht direkt in der <code>.gitlab-ci.yml</code> Datei gespeichert werden. Stattdessen speicherst du sie sicher in GitLab CI/CD <strong>Secrets</strong> (Umgebungsvariablen), die nur zur Laufzeit verfügbar sind.</p>
+<h4 id="Schritte,-um-Secrets-in-GitLab-zu-verwalten:">Schritte, um Secrets in GitLab zu verwalten:<a class="anchor-link" href="#Schritte,-um-Secrets-in-GitLab-zu-verwalten:">¶</a></h4><ol>
+<li>Gehe in deinem GitLab-Projekt auf <strong>Settings</strong> → <strong>CI / CD</strong> → <strong>Variables</strong>.</li>
+<li>Füge neue Variablen hinzu:<ul>
+<li><code>AZURE_SUBSCRIPTION_ID</code>: Deine Azure Subscription ID.</li>
+<li><code>AZURE_TENANT_ID</code>: Deine Azure Tenant ID.</li>
+<li><code>AZURE_CLIENT_ID</code>: Deine Azure Application (Client) ID.</li>
+<li><code>AZURE_CLIENT_SECRET</code>: Dein Azure Application Secret.</li>
+<li><code>AZURE_APP_NAME</code>: Dein Azure App Name.</li>
+<li><code>AZURE_RESOURCE_GROUP</code>: Die Ressourcengruppe für den Azure App Service.</li>
+<li><code>AZURE_APP_SERVICE_NAME</code>: Der Name des Azure App Services, auf dem die App läuft.</li>
 </ul>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
-</ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
-</ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<p>Die Werte für diese Variablen erhältst du aus dem Azure-Portal, wenn du den Service Principal einrichtest.</p>
+<h3 id="5.-Sicherheit">5. <strong>Sicherheit</strong><a class="anchor-link" href="#5.-Sicherheit">¶</a></h3><p>Achte darauf, dass du niemals sensible Daten direkt in deinem Code oder der <code>.gitlab-ci.yml</code> speicherst. GitLab CI/CD Secrets sind verschlüsselt und nur zur Laufzeit zugänglich, was die Sicherheit erhöht. Zudem solltest du darauf achten, dass nur die benötigten Personen oder Gruppen Zugriff auf die Secrets und das Projekt haben.</p>
+<h3 id="6.-%C3%9Cberpr%C3%BCfen-des-Deployments">6. <strong>Überprüfen des Deployments</strong><a class="anchor-link" href="#6.-%C3%9Cberpr%C3%BCfen-des-Deployments">¶</a></h3><p>Nachdem das Deployment abgeschlossen ist, kannst du in Azure unter deinem App Service überprüfen, ob die Anwendung erfolgreich deployed wurde. Du kannst auch Log-Daten und Fehlerprotokolle einsehen, um sicherzustellen, dass alles korrekt läuft.</p>
+<h3 id="Zusammenfassung">Zusammenfassung<a class="anchor-link" href="#Zusammenfassung">¶</a></h3><p>Mit dieser Konfiguration wird die .NET-Anwendung auf <strong>Azure for Students</strong> deployt, wobei GitLab CI/CD für die Automatisierung des Build-, Test- und Deployment-Prozesses genutzt wird. Die Nutzung von GitLab <strong>CI/CD Secrets</strong> stellt sicher, dass sensible Daten sicher verwaltet werden.</p>
+</details>
 </div>
 </div>
 </div>
