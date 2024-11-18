@@ -7516,278 +7516,131 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
-<ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<h1 id="Paperplane-Spiel">Paperplane Spiel<a class="anchor-link" href="#Paperplane-Spiel">¶</a></h1><img alt="No description has been provided for this image" src="Paperplane.webp" style="width:280px; height:280px;"/>
+<p>Hier ist die gesamte Beschreibung des <strong>Paper Plane Games</strong> mit den integrierten Rollen und Veränderungen der Produktanforderungen:</p>
+<hr/>
+<h3 id="Paper-Plane-Game-%E2%80%93-Agile-Simulation-mit-Rollen-und-Ver%C3%A4nderungen-der-Produktanforderungen"><strong>Paper Plane Game – Agile Simulation mit Rollen und Veränderungen der Produktanforderungen</strong><a class="anchor-link" href="#Paper-Plane-Game-%E2%80%93-Agile-Simulation-mit-Rollen-und-Ver%C3%A4nderungen-der-Produktanforderungen">¶</a></h3><h4 id="Ziele-des-Spiels:"><strong>Ziele des Spiels:</strong><a class="anchor-link" href="#Ziele-des-Spiels:">¶</a></h4><ul>
+<li><strong>Verständnis der agilen Prinzipien:</strong> Die Studierenden erleben die Vorteile von Iteration, Feedback und kontinuierlicher Verbesserung.</li>
+<li><strong>Simulation von Teamrollen:</strong> Einführung der wichtigsten agilen Rollen wie Product Owner, Frontend-Entwickler, Backend-Entwickler und Scrum Master.</li>
+<li><strong>Veränderung von Produktanforderungen:</strong> Simulieren von Änderungen während des Projekts, um das Management von sich ändernden Anforderungen zu erleben.</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbconvert in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (7.16.4)
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (4.12.3)
-Requirement already satisfied: bleach!=5.0.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (6.1.0)
-Requirement already satisfied: defusedxml in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.7.1)
-Requirement already satisfied: importlib-metadata&gt;=3.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (8.2.0)
-Requirement already satisfied: jinja2&gt;=3.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.1.4)
-Requirement already satisfied: jupyter-core&gt;=4.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.7.2)
-Requirement already satisfied: jupyterlab-pygments in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.3.0)
-Requirement already satisfied: markupsafe&gt;=2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.1.5)
-Requirement already satisfied: mistune&lt;4,&gt;=2.0.3 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (3.0.2)
-Requirement already satisfied: nbclient&gt;=0.5.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (0.10.0)
-Requirement already satisfied: nbformat&gt;=5.7 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.10.4)
-Requirement already satisfied: packaging in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (24.1)
-Requirement already satisfied: pandocfilters&gt;=1.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.5.1)
-Requirement already satisfied: pygments&gt;=2.4.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (2.18.0)
-Requirement already satisfied: tinycss2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (1.3.0)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbconvert) (5.14.3)
-Requirement already satisfied: six&gt;=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (1.16.0)
-Requirement already satisfied: webencodings in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from bleach!=5.0.0-&gt;nbconvert) (0.5.1)
-Requirement already satisfied: zipp&gt;=0.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from importlib-metadata&gt;=3.6-&gt;nbconvert) (3.19.2)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core&gt;=4.7-&gt;nbconvert) (4.2.2)
-Requirement already satisfied: jupyter-client&gt;=6.1.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbclient&gt;=0.5.0-&gt;nbconvert) (8.6.2)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat&gt;=5.7-&gt;nbconvert) (4.23.0)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4-&gt;nbconvert) (2.5)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat&gt;=5.7-&gt;nbconvert) (0.19.1)
-Requirement already satisfied: python-dateutil&gt;=2.8.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (2.9.0.post0)
-Requirement already satisfied: pyzmq&gt;=23.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (26.1.0)
-Requirement already satisfied: tornado&gt;=6.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-client&gt;=6.1.12-&gt;nbclient&gt;=0.5.0-&gt;nbconvert) (6.4.1)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: nbformat in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (5.10.4)
-Requirement already satisfied: fastjsonschema&gt;=2.15 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (2.20.0)
-Requirement already satisfied: jsonschema&gt;=2.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (4.23.0)
-Requirement already satisfied: jupyter-core!=5.0.*,&gt;=4.12 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.7.2)
-Requirement already satisfied: traitlets&gt;=5.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from nbformat) (5.14.3)
-Requirement already satisfied: attrs&gt;=22.2.0 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (24.1.0)
-Requirement already satisfied: jsonschema-specifications&gt;=2023.03.6 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (2023.12.1)
-Requirement already satisfied: referencing&gt;=0.28.4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.35.1)
-Requirement already satisfied: rpds-py&gt;=0.7.1 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jsonschema&gt;=2.6-&gt;nbformat) (0.19.1)
-Requirement already satisfied: platformdirs&gt;=2.5 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from jupyter-core!=5.0.*,&gt;=4.12-&gt;nbformat) (4.2.2)
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
+<h4 id="Ben%C3%B6tigte-Materialien:"><strong>Benötigte Materialien:</strong><a class="anchor-link" href="#Ben%C3%B6tigte-Materialien:">¶</a></h4><ul>
+<li>Papier (A4 oder ähnlich) für die Papierflieger.</li>
+<li>Stifte oder Marker zum Beschriften der Flieger.</li>
+<li>Maßband oder Lineal zur Messung der Flugdistanzen.</li>
+<li>(Optional) Notizkarten für Feedback.</li>
+<li>Materialien für verschiedene Designs (z.B. Klebeband, farbiges Papier, etc.).</li>
+</ul>
+<h4 id="Rollen-im-Spiel:"><strong>Rollen im Spiel:</strong><a class="anchor-link" href="#Rollen-im-Spiel:">¶</a></h4><ol>
+<li><p><strong>Product Owner (PO):</strong></p>
 <ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+<li>Verantwortlich für die Produktvision und Priorisierung der Anforderungen. Gibt die Anforderungen und Änderungen vor und stellt sicher, dass das Team auf das richtige Ziel hinarbeitet.</li>
 </ul>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
+<li><p><strong>Frontend-Entwickler (FE):</strong></p>
 <ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
+<li>Fokussiert sich auf das Design des Fliegers und die Benutzererfahrung. Sorgt dafür, dass der Flieger ästhetisch und ansprechend aussieht.</li>
 </ul>
 </li>
-<li><p><strong>Recursively Process Files</strong>:</p>
+<li><p><strong>Backend-Entwickler (BE):</strong></p>
 <ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
+<li>Verantwortlich für die Stabilität des Fliegers und die Flugeigenschaften. Stellt sicher, dass der Flieger stabil fliegt und strukturell gut funktioniert.</li>
+</ul>
+</li>
+<li><p><strong>Scrum Master (SM):</strong></p>
+<ul>
+<li>Moderiert das Team, hilft bei der Organisation des Prozesses und sorgt dafür, dass das Team effizient arbeitet und agile Prinzipien befolgt.</li>
 </ul>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<h4 id="Ablauf-des-Spiels:"><strong>Ablauf des Spiels:</strong><a class="anchor-link" href="#Ablauf-des-Spiels:">¶</a></h4><p><strong>1. Einführung und Rollenverteilung (20 Minuten)</strong></p>
+<ul>
+<li><strong>Ziele:</strong> Den Teilnehmern die agilen Rollen und ihre Verantwortlichkeiten erklären.</li>
+<li>Die Teilnehmer werden in Teams eingeteilt, wobei jede Rolle im Team besetzt wird (PO, FE, BE, SM).</li>
+<li>Klärung der Aufgaben der jeweiligen Rollen:<ul>
+<li><strong>PO:</strong> Gibt Anforderungen vor und priorisiert Änderungen.</li>
+<li><strong>FE:</strong> Arbeitet am Design des Fliegers.</li>
+<li><strong>BE:</strong> Stellt sicher, dass der Flieger funktional und stabil ist.</li>
+<li><strong>SM:</strong> Moderiert den Prozess und sorgt für eine effektive Zusammenarbeit.</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
+</li>
+</ul>
+<p><strong>2. Erste Iteration (15 Minuten)</strong></p>
+<ul>
+<li><strong>Aktivität:</strong><ul>
+<li>Die Teams haben 5 Minuten Zeit, um ihren ersten Papierflieger zu bauen.</li>
+<li><strong>PO:</strong> Gibt die grundlegende Anforderung vor (z.B. „Der Flieger muss gut fliegen und stabil sein“).</li>
+<li><strong>FE:</strong> Konzentriert sich darauf, den Flieger ästhetisch zu gestalten.</li>
+<li><strong>BE:</strong> Sorgt dafür, dass der Flieger stabil genug ist, um zu fliegen.</li>
+<li><strong>SM:</strong> Hilft dabei, den Prozess zu moderieren und stellt sicher, dass jeder in seiner Rolle bleibt.</li>
+</ul>
+</li>
+<li><strong>Flugversuch:</strong> Jedes Team lässt seinen Flieger fliegen und misst die Distanz.</li>
+</ul>
+<p><strong>3. Feedback und Anpassungen (10 Minuten)</strong></p>
+<ul>
+<li><strong>Aktivität:</strong><ul>
+<li>Jedes Team gibt sich gegenseitig Feedback über den Flieger.</li>
+<li><strong>PO:</strong> Priorisiert das Feedback und bestimmt, welche Änderungen für die nächste Iteration wichtig sind.</li>
+<li><strong>FE und BE:</strong> Überlegen, wie sie den Flieger entsprechend den Anforderungen des PO verbessern können.</li>
+<li><strong>SM:</strong> Moderiert die Diskussion und stellt sicher, dass die Verbesserungen schnell umgesetzt werden.</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. Einführung von Änderungen der Produktanforderungen (15 Minuten)</strong></p>
+<ul>
+<li><strong>Aktivität:</strong><ul>
+<li>Nach der ersten Iteration führt der <strong>PO</strong> eine Änderung der Produktanforderungen ein, z.B.:<ul>
+<li>„Der Flieger muss aus mindestens zwei verschiedenen Papierarten bestehen.“</li>
+<li>„Der Flieger muss ein Designmerkmal haben (z.B. eine Markierung oder ein Logo).“</li>
+</ul>
+</li>
+<li><strong>FE:</strong> Arbeitet an der ästhetischen Anpassung, um das Design zu ändern.</li>
+<li><strong>BE:</strong> Sorgt dafür, dass die Änderungen die Flugeigenschaften des Fliegers nicht beeinträchtigen.</li>
+<li><strong>SM:</strong> Stellt sicher, dass die Anforderungen klar sind und dass das Team effizient zusammenarbeitet, um die Änderungen umzusetzen.</li>
+</ul>
+</li>
+</ul>
+<p><strong>5. Weitere Iterationen (30 Minuten)</strong></p>
+<ul>
+<li><strong>Aktivität:</strong><ul>
+<li>Weitere Iterationen, bei denen neue Anforderungen oder Änderungen hinzugefügt werden. Jede Runde könnte eine neue Anforderung beinhalten:<ul>
+<li>„Der Flieger muss in der Lage sein, mindestens zwei Kurven in der Luft zu fliegen.“</li>
+<li>„Der Flieger muss in weniger als 5 Sekunden gefaltet werden.“</li>
+</ul>
+</li>
+<li>In jeder Iteration:<ul>
+<li><strong>PO:</strong> Gibt die neue Anforderung vor und sorgt dafür, dass das Team die richtigen Prioritäten setzt.</li>
+<li><strong>FE und BE:</strong> Passen ihre Arbeit an, um die neuen Anforderungen zu erfüllen.</li>
+<li><strong>SM:</strong> Moderiert den Prozess, achtet auf den Fortschritt und sorgt für einen effektiven Ablauf.</li>
+</ul>
+</li>
+<li><strong>Flugversuche:</strong> Nach jeder Iteration fliegen die Teams ihren Flieger erneut und messen die Distanz.</li>
+</ul>
+</li>
+</ul>
+<p><strong>6. Abschlussdiskussion (15 Minuten)</strong></p>
+<ul>
+<li><strong>Aktivität:</strong><ul>
+<li>Reflexion über die Erfahrung:<ul>
+<li>Wie haben die Teams auf die Änderungen reagiert?</li>
+<li>Welche Herausforderungen gab es bei der Anpassung der Flieger an die neuen Anforderungen?</li>
+<li>Wie haben sich die Teamrollen auf den Erfolg der Iterationen ausgewirkt?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>PO:</strong> Diskutiert, wie die Anforderungen priorisiert wurden und ob der Fokus richtig gesetzt war.</li>
+<li><strong>FE und BE:</strong> Teilen ihre Erfahrungen, wie sie zusammengearbeitet haben, um Design und Funktionalität in Einklang zu bringen.</li>
+<li><strong>SM:</strong> Reflektiert darüber, wie der agile Prozess während des Spiels unterstützt wurde.</li>
+</ul>
+<hr/>
+<h3 id="Schlussfolgerungen-und-Agile-Prinzipien"><strong>Schlussfolgerungen und Agile Prinzipien</strong><a class="anchor-link" href="#Schlussfolgerungen-und-Agile-Prinzipien">¶</a></h3><ul>
+<li><strong>Iterative Verbesserung:</strong> Die Teams haben gelernt, wie wichtig es ist, regelmäßig Feedback zu erhalten und den Flieger basierend auf diesem Feedback zu verbessern – ähnlich wie bei der kontinuierlichen Verbesserung in agilen Projekten.</li>
+<li><strong>Zusammenarbeit und Kommunikation:</strong> Die Simulation fördert die Bedeutung der Zusammenarbeit zwischen den verschiedenen Rollen. Der PO sorgt für die Priorisierung der Anforderungen, der FE kümmert sich um das Design, der BE um die Stabilität, und der SM sorgt für den reibungslosen Ablauf.</li>
+<li><strong>Veränderung der Anforderungen:</strong> Die Einführung von Änderungen der Produktanforderungen in jeder Runde zeigt, wie agile Teams mit wechselnden Anforderungen umgehen und schnell reagieren können.</li>
+</ul>
+<p>Mit dieser Simulation können die Studierenden die dynamische und kollaborative Natur agiler Methoden in einer praktischen, interaktiven Weise erleben.</p>
 </div>
 </div>
 </div>
@@ -7798,22 +7651,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
+<h2 id="Paperplane-Spiel-Begleitprogramm">Paperplane Spiel Begleitprogramm<a class="anchor-link" href="#Paperplane-Spiel-Begleitprogramm">¶</a></h2><p>Das folgende <strong>Agile Paper Plane Game</strong>-Programm simuliert den Einsatz agiler Methoden, indem Teams mit verschiedenen Rollen (z.B. Product Owner, Frontend- und Backend-Entwickler, Scrum Master) arbeiten, um Papierflieger zu bauen. In jeder Iteration haben die Teams 30 Sekunden Zeit, einen Flieger zu erstellen, der einer vorgegebenen Anforderung entspricht. Nach jeder Iteration erhalten sie Feedback und müssen ihren Flieger anpassen. Das Programm zeigt den gesamten Prozess, einschließlich der Anzeige von Anforderungen, eines Countdown-Timers für jede Iteration und der Möglichkeit, Feedback zu geben, was die Prinzipien der kontinuierlichen Verbesserung und Anpassung in agilen Projekten simuliert.</p>
 </div>
 </div>
 </div>
@@ -7822,10 +7660,106 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span> <span class="nn">ipywidgets</span> <span class="k">as</span> <span class="nn">widgets</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">clear_output</span>
+
+<span class="c1"># Define the roles</span>
+<span class="n">roles</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Product Owner"</span><span class="p">,</span> <span class="s2">"Frontend Engineer"</span><span class="p">,</span> <span class="s2">"Backend Engineer"</span><span class="p">,</span> <span class="s2">"Scrum Master"</span><span class="p">]</span>
+
+<span class="c1"># Define the possible changes in requirements</span>
+<span class="n">requirements_changes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"The paper plane must be made of at least two different types of paper."</span><span class="p">,</span>
+    <span class="s2">"The paper plane must have a design feature (e.g., a logo or a marking)."</span><span class="p">,</span>
+    <span class="s2">"The paper plane must perform at least two turns in the air."</span><span class="p">,</span>
+    <span class="s2">"The paper plane must be folded in less than 5 seconds."</span>
+<span class="p">]</span>
+
+<span class="c1"># Define the teams</span>
+<span class="n">teams</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"Team A"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"PO"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"FE"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"BE"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"SM"</span><span class="p">:</span> <span class="s2">""</span><span class="p">},</span>
+    <span class="s2">"Team B"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"PO"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"FE"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"BE"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">"SM"</span><span class="p">:</span> <span class="s2">""</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Create text widgets to input role names</span>
+<span class="n">role_inputs</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+    <span class="n">role_inputs</span><span class="p">[</span><span class="n">team</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">role</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">:</span>
+        <span class="n">role_inputs</span><span class="p">[</span><span class="n">team</span><span class="p">][</span><span class="n">role</span><span class="p">]</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span>
+            <span class="n">description</span><span class="o">=</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">role</span><span class="si">}</span><span class="s1"> for </span><span class="si">{</span><span class="n">team</span><span class="si">}</span><span class="s1">:'</span><span class="p">,</span> 
+            <span class="n">layout</span><span class="o">=</span><span class="n">widgets</span><span class="o">.</span><span class="n">Layout</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="s1">'300px'</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">role_inputs</span><span class="p">[</span><span class="n">team</span><span class="p">][</span><span class="n">role</span><span class="p">])</span>
+
+<span class="c1"># Time tracking for iterations with countdown</span>
+<span class="k">def</span> <span class="nf">time_iteration</span><span class="p">(</span><span class="n">duration</span><span class="p">):</span>
+    <span class="n">remaining_time</span> <span class="o">=</span> <span class="n">duration</span>
+    <span class="n">timer_label</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="sa">f</span><span class="s2">"Remaining time: </span><span class="si">{</span><span class="n">remaining_time</span><span class="si">}</span><span class="s2">s"</span><span class="p">)</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">timer_label</span><span class="p">)</span>
+    
+    <span class="k">def</span> <span class="nf">countdown</span><span class="p">():</span>
+        <span class="k">nonlocal</span> <span class="n">remaining_time</span>
+        <span class="k">while</span> <span class="n">remaining_time</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">remaining_time</span> <span class="o">-=</span> <span class="mi">1</span>
+            <span class="n">timer_label</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Remaining time: </span><span class="si">{</span><span class="n">remaining_time</span><span class="si">}</span><span class="s2">s"</span>
+        
+        <span class="c1"># Once time is up, display the message for feedback</span>
+        <span class="n">timer_label</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Time's up! You can now provide feedback."</span>
+        <span class="k">return</span> <span class="n">remaining_time</span>
+
+    <span class="n">countdown</span><span class="p">()</span>
+
+<span class="c1"># Function to start the game</span>
+<span class="k">def</span> <span class="nf">start_game</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Welcome to the Agile Paper Plane Game!</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="c1"># Get roles from inputs</span>
+    <span class="k">for</span> <span class="n">team</span> <span class="ow">in</span> <span class="n">teams</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">role</span> <span class="ow">in</span> <span class="n">roles</span><span class="p">:</span>
+            <span class="n">teams</span><span class="p">[</span><span class="n">team</span><span class="p">][</span><span class="n">role</span><span class="p">]</span> <span class="o">=</span> <span class="n">role_inputs</span><span class="p">[</span><span class="n">team</span><span class="p">][</span><span class="n">role</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+            
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Game Starting...</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="c1"># Start iterations</span>
+    <span class="k">for</span> <span class="n">iteration</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">--- Iteration </span><span class="si">{</span><span class="n">iteration</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> ---"</span><span class="p">)</span>
+        
+        <span class="c1"># Display the requirement for this iteration</span>
+        <span class="n">new_requirement</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">requirements_changes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">New Requirement: </span><span class="si">{</span><span class="n">new_requirement</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+        <span class="c1"># Simulate time taken to build the plane with a countdown</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You have 30 seconds to complete this iteration."</span><span class="p">)</span>
+        <span class="n">time_iteration</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>  <span class="c1"># 30 seconds countdown per iteration</span>
+        
+        <span class="c1"># Provide feedback after each iteration</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Feedback Time:"</span><span class="p">)</span>
+        <span class="n">feedback</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Feedback:"</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">feedback</span><span class="p">)</span>
+        
+        <span class="k">def</span> <span class="nf">on_submit_change</span><span class="p">(</span><span class="n">change</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Feedback: </span><span class="si">{</span><span class="n">feedback</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+        <span class="n">feedback</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">on_submit_change</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="s1">'value'</span><span class="p">)</span>
+        
+        <span class="c1"># Simulate time taken to build the plane with a countdown</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You have 10 seconds to complete the feedback."</span><span class="p">)</span>
+        <span class="n">time_iteration</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># 10 seconds countdown per feedback</span>
+        
+        <span class="c1"># After countdown and feedback, start the next iteration</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Starting next iteration...</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="c1">#clear_output(wait=True)  # Clears the output to keep it clean and show the next iteration</span>
+
+<span class="c1"># Button to start the game</span>
+<span class="n">start_button</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">"Start Game"</span><span class="p">)</span>
+<span class="n">start_button</span><span class="o">.</span><span class="n">on_click</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">start_game</span><span class="p">())</span>
+<span class="n">display</span><span class="p">(</span><span class="n">start_button</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7838,113 +7772,238 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
+<pre>Text(value='', description='Product Owner for Team A:', layout=Layout(width='300px'))</pre>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
+<pre>Text(value='', description='Frontend Engineer for Team A:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Backend Engineer for Team A:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Scrum Master for Team A:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Product Owner for Team B:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Frontend Engineer for Team B:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Backend Engineer for Team B:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Scrum Master for Team B:', layout=Layout(width='300px'))</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Button(description='Start Game', style=ButtonStyle())</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Welcome to the Agile Paper Plane Game!
+
+
+Game Starting...
+
+
+--- Iteration 1 ---
+
+New Requirement: The paper plane must perform at least two turns in the air.
+You have 30 seconds to complete this iteration.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 30s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Feedback Time:
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Feedback:')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>You have 10 seconds to complete the feedback.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 10s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Starting next iteration...
+
+
+--- Iteration 2 ---
+
+New Requirement: The paper plane must be made of at least two different types of paper.
+You have 30 seconds to complete this iteration.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 30s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Feedback Time:
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Feedback:')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>You have 10 seconds to complete the feedback.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 10s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Starting next iteration...
+
+
+--- Iteration 3 ---
+
+New Requirement: The paper plane must be folded in less than 5 seconds.
+You have 30 seconds to complete this iteration.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 30s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Feedback Time:
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Text(value='', description='Feedback:')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>You have 10 seconds to complete the feedback.
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Label(value='Remaining time: 10s')</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+Starting next iteration...
+
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: k
+Feedback: kj
+Feedback: kjj
+Feedback: kjjl
+Feedback: kjjlk
+Feedback: kjjlkj
+Feedback: kjjlk
+Feedback: kjjl
+Feedback: kjj
+Feedback: kj
+Feedback: k
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
+Feedback: 
 </pre>
 </div>
 </div>
@@ -7957,11 +8016,23 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
+<h3 id="Erkl%C3%A4rung:">Erklärung:<a class="anchor-link" href="#Erkl%C3%A4rung:">¶</a></h3><ol>
+<li><p><strong>Rollen und Teamaufbau:</strong>  Zu Beginn des Spiels müssen die Teilnehmer für jedes Team ihre Rollen festlegen (Product Owner, Frontend-Entwickler, Backend-Entwickler, Scrum Master). Jede Rolle hat spezifische Aufgaben:</p>
+<ul>
+<li>Der  <strong>Product Owner</strong>  legt die Anforderungen fest und priorisiert Änderungen.</li>
+<li>Der  <strong>Frontend-Entwickler</strong>  ist für das Design des Fliegers verantwortlich.</li>
+<li>Der  <strong>Backend-Entwickler</strong>  sorgt für die Flugeigenschaften und Stabilität des Fliegers.</li>
+<li>Der  <strong>Scrum Master</strong>  sorgt dafür, dass der Prozess reibungslos abläuft und unterstützt das Team bei der Zusammenarbeit.</li>
+</ul>
+</li>
+<li><p><strong>Iterationen und Anforderungen:</strong>  In jeder Iteration haben die Teams 30 Sekunden Zeit, um ihren Flieger zu bauen, wobei eine neue Anforderung durch den Product Owner vorgegeben wird. Diese Anforderungen können Änderungen im Design, der Funktionalität oder der Flugeigenschaft des Fliegers betreffen.</p>
+</li>
+<li><p><strong>Countdown:</strong>  Der Countdown zeigt die verbleibende Zeit für jede Iteration an. Nach Ablauf der Zeit müssen die Teams Feedback zu ihren Fliegern geben, das anschließend in die nächste Iteration integriert wird.</p>
+</li>
+<li><p><strong>Feedback:</strong>  Nach jeder Iteration können die Teams ihr Feedback zu den Anpassungen und dem Bau des Fliegers geben. Dies stellt sicher, dass die Teams auf das Feedback reagieren und die Anforderungen kontinuierlich verbessern.</p>
+</li>
 </ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
+<p>Das Spiel fördert die Zusammenarbeit im Team, das schnelle Reagieren auf Änderungen und das Anwenden von agilem Feedback in einem interaktiven und spielerischen Rahmen.</p>
 </div>
 </div>
 </div>
