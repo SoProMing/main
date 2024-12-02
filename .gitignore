@@ -399,5 +399,5 @@ FodyWeavers.xsd
 
 # embedded git clones
 notebooks/samples/eShopOnWeb
-notebooks/Software_Product_Mastering.html
-notebooks/Software_Product_Mastering.ipynb
+notebooks/SoProMing.html
+notebooks/SoProMing.ipynb
