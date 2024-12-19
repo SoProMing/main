@@ -7516,108 +7516,161 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
-<ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<p><a href="../../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../abstract/Contents.de.html">Inhaltsverzeichnis</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../Methods.de.html">Methoden</a> / <a href="../Deliberating_Structures.de.html">Deliberating structures</a> / <a href="../Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a></p>
+<h1 id="CI/CD">CI/CD<a class="anchor-link" href="#CI/CD">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="CICD.webp"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_CICD.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://docs.gitlab.com/ee/ci/" target="_blank">GitLab CI/CD Documentation</a><br/>
+<a href="https://www.jenkins.io/doc/" target="_blank">Jenkins Documentation</a><br/>
+<a href="https://aws.amazon.com/devops/continuous-delivery/" target="_blank">AWS Continuous Delivery</a><br/>
+<a href="https://circleci.com/docs/" target="_blank">CircleCI Documentation</a><br/>
+<a href="https://www.atlassian.com/continuous-delivery" target="_blank">Atlassian Guide to Continuous Delivery</a><br/>
+<a href="https://www.redhat.com/en/topics/devops/what-is-ci-cd" target="_blank">Red Hat: What is CI/CD?</a><br/>
+<a href="https://kubernetes.io/docs/concepts/cluster-administration/continuous-deployment/" target="_blank">Kubernetes Continuous Deployment</a><br/>
+<a href="https://spinnaker.io/docs/" target="_blank">Spinnaker Documentation</a><br/>
+<a href="https://developer.hashicorp.com/terraform/tutorials/ci-cd" target="_blank">Terraform CI/CD Tutorials</a><br/>
+<a href="https://martinfowler.com/articles/continuousIntegration.html" target="_blank">Martin Fowler: Continuous Integration</a>
+</td>
+</tr>
+</table>
+<p><strong>Continuous Integration (CI)</strong> und <strong>Continuous Deployment/Delivery (CD)</strong> sind zentrale Konzepte in modernen Softwareentwicklungsprozessen, die auf Automatisierung, Konsistenz und Geschwindigkeit abzielen. Die Integration von Tools wie <strong>GitLab CI</strong>, <strong>Jenkins</strong> oder anderen CI/CD-Pipelines ermöglicht es Teams, Software effizienter und zuverlässiger bereitzustellen. Hier ist eine detaillierte Erklärung:</p>
+<h3 id="1.-Continuous-Integration-(CI):"><strong>1. Continuous Integration (CI):</strong><a class="anchor-link" href="#1.-Continuous-Integration-(CI):">¶</a></h3><p>Continuous Integration ist ein Prozess, bei dem Codeänderungen kontinuierlich in ein zentrales Repository integriert und automatisch getestet werden. Ziel ist es, Probleme frühzeitig zu erkennen und die Qualität des Codes sicherzustellen.</p>
+<h4 id="Kernkonzepte-von-CI:"><strong>Kernkonzepte von CI:</strong><a class="anchor-link" href="#Kernkonzepte-von-CI:">¶</a></h4><ul>
+<li><strong>Frequente Code-Integrationen:</strong> Entwickler pushen ihre Änderungen regelmäßig (z. B. mehrmals täglich) in das gemeinsame Repository.</li>
+<li><strong>Automatische Builds:</strong> Nach jedem Push wird ein Build des Projekts erstellt, um sicherzustellen, dass der Code kompiliert werden kann.</li>
+<li><strong>Automatische Tests:</strong> Eine Suite von Unit-, Integrations- und eventuell End-to-End-Tests wird ausgeführt, um Fehler frühzeitig zu erkennen.</li>
+<li><strong>Feedback:</strong> Entwickler erhalten sofortiges Feedback, falls der Build fehlschlägt oder Tests nicht bestanden werden.</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
+<h4 id="Vorteile-von-CI:"><strong>Vorteile von CI:</strong><a class="anchor-link" href="#Vorteile-von-CI:">¶</a></h4><ul>
+<li>Früherkennung von Fehlern.</li>
+<li>Erleichtert die Integration von Änderungen, da Konflikte früh erkannt werden.</li>
+<li>Stellt sicher, dass der Code immer in einem ausführbaren Zustand ist.</li>
+</ul>
+<h3 id="2.-Continuous-Delivery-(CD):"><strong>2. Continuous Delivery (CD):</strong><a class="anchor-link" href="#2.-Continuous-Delivery-(CD):">¶</a></h3><p>Continuous Delivery erweitert CI, indem der getestete Code so vorbereitet wird, dass er jederzeit bereit ist, in eine produktive Umgebung ausgerollt zu werden. Dabei erfolgt der letzte Schritt des Deployments jedoch noch manuell.</p>
+<h4 id="Schritte-bei-CD:"><strong>Schritte bei CD:</strong><a class="anchor-link" href="#Schritte-bei-CD:">¶</a></h4><ol>
+<li><strong>Build-Pipeline:</strong> Der Code wird in der CI-Phase gebaut und getestet.</li>
+<li><strong>Release-Pipeline:</strong> Erfolgreich getestete Artefakte werden automatisch in eine Staging- oder QA-Umgebung überführt.</li>
+<li><strong>Manuelles Deployment:</strong> Das Deployment in die Produktionsumgebung erfolgt durch eine bewusste Entscheidung des Teams.</li>
 </ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<h4 id="Vorteile-von-CD:"><strong>Vorteile von CD:</strong><a class="anchor-link" href="#Vorteile-von-CD:">¶</a></h4><ul>
+<li>Verkürzt den Zeitraum zwischen Entwicklung und Bereitstellung.</li>
+<li>Minimiert das Risiko von Deployment-Fehlern, da die Pipeline den Code bereits validiert hat.</li>
+<li>Fördert eine kontinuierliche Freigabe kleinerer Updates, was die Qualität und Zuverlässigkeit der Software verbessert.</li>
+</ul>
+<h3 id="3.-Continuous-Deployment-(CD):"><strong>3. Continuous Deployment (CD):</strong><a class="anchor-link" href="#3.-Continuous-Deployment-(CD):">¶</a></h3><p>Continuous Deployment geht noch einen Schritt weiter als Continuous Delivery: Jedes erfolgreich durchlaufene Artefakt wird automatisch in die Produktionsumgebung ausgerollt, ohne manuelle Eingriffe.</p>
+<h4 id="Anforderungen:"><strong>Anforderungen:</strong><a class="anchor-link" href="#Anforderungen:">¶</a></h4><ul>
+<li>Eine vollständig automatisierte CI/CD-Pipeline.</li>
+<li>Robuste Tests, um sicherzustellen, dass keine fehlerhafte Software in die Produktion gelangt.</li>
+<li>Monitoring-Tools, um Probleme in der Produktionsumgebung schnell zu erkennen.</li>
+</ul>
+<h4 id="Vorteile-von-Continuous-Deployment:"><strong>Vorteile von Continuous Deployment:</strong><a class="anchor-link" href="#Vorteile-von-Continuous-Deployment:">¶</a></h4><ul>
+<li>Sofortige Bereitstellung neuer Features und Bugfixes.</li>
+<li>Schnellere Rückmeldungen von Nutzern.</li>
+<li>Reduktion von manuellen Arbeiten und Fehlerquellen.</li>
+</ul>
+<h3 id="4.-CI/CD-mit-Tools-wie-GitLab-CI-oder-Jenkins:"><strong>4. CI/CD mit Tools wie GitLab CI oder Jenkins:</strong><a class="anchor-link" href="#4.-CI/CD-mit-Tools-wie-GitLab-CI-oder-Jenkins:">¶</a></h3><h4 id="GitLab-CI:"><strong>GitLab CI:</strong><a class="anchor-link" href="#GitLab-CI:">¶</a></h4><p>GitLab CI/CD ist nahtlos in GitLab integriert und erlaubt die Erstellung von Pipelines direkt aus dem Repository. Es verwendet eine <code>.gitlab-ci.yml</code>-Datei, um Builds, Tests und Deployments zu definieren.</p>
+<ul>
+<li><strong>Beispiel für eine GitLab CI-Konfiguration:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="nt">stages</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+
+<span class="nt">build</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "Building the application..."</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make build</span>
+
+<span class="nt">test</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">test</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "Running tests..."</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make test</span>
+
+<span class="nt">deploy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">stage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy</span>
+<span class="w">  </span><span class="nt">script</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">echo "Deploying the application..."</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">make deploy</span>
+<span class="w">  </span><span class="nt">only</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+<h4 id="Jenkins:"><strong>Jenkins:</strong><a class="anchor-link" href="#Jenkins:">¶</a></h4><p>Jenkins ist ein flexibles Open-Source-Tool, das durch Plugins erweitert werden kann. Pipelines werden entweder über eine GUI oder in einer <code>Jenkinsfile</code> definiert.</p>
+<ul>
+<li><strong>Beispiel für eine Jenkins-Pipeline:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Building...'</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'./gradlew build'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Test'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Testing...'</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'./gradlew test'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Deploy'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Deploying...'</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'./deploy.sh'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
+<h4 id="Vergleich-von-GitLab-CI-und-Jenkins:"><strong>Vergleich von GitLab CI und Jenkins:</strong><a class="anchor-link" href="#Vergleich-von-GitLab-CI-und-Jenkins:">¶</a></h4><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>GitLab CI</th>
+<th>Jenkins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Integration</strong></td>
+<td>Integriert in GitLab</td>
+<td>Standalone, flexibel einsetzbar</td>
+</tr>
+<tr>
+<td><strong>Konfiguration</strong></td>
+<td><code>.gitlab-ci.yml</code>-Datei</td>
+<td><code>Jenkinsfile</code> oder GUI</td>
+</tr>
+<tr>
+<td><strong>Plugins</strong></td>
+<td>Eingeschränkt</td>
+<td>Große Plugin-Auswahl</td>
+</tr>
+<tr>
+<td><strong>Einarbeitung</strong></td>
+<td>Einfach für GitLab-Nutzer</td>
+<td>Komplexer für Einsteiger</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Zusammenfassung:"><strong>Zusammenfassung:</strong><a class="anchor-link" href="#Zusammenfassung:">¶</a></h3><ul>
+<li><strong>CI/CD</strong> ist ein wesentlicher Bestandteil moderner Softwareentwicklung, der auf Automatisierung und Qualitätssicherung abzielt.</li>
+<li><strong>Continuous Integration (CI):</strong> Automatisierte Tests und Builds bei jedem Code-Commit.</li>
+<li><strong>Continuous Delivery (CD):</strong> Bereitstellung von getesteten Artefakten zur manuellen Freigabe.</li>
+<li><strong>Continuous Deployment (CD):</strong> Vollständige Automatisierung der Freigabe in die Produktion.</li>
+<li>Tools wie <strong>GitLab CI</strong> und <strong>Jenkins</strong> helfen bei der Implementierung von CI/CD durch flexible und anpassbare Pipelines.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -7628,105 +7681,74 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Remove &lt;details&gt; and &lt;/details&gt; lines</span>
-    <span class="k">if</span> <span class="s2">"SoProMing"</span> <span class="ow">in</span> <span class="n">html_file</span><span class="p">:</span>
-        <span class="n">updated_content</span> <span class="o">=</span> <span class="n">remove_details_tags</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_details_tags</span><span class="p">(</span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Remove all lines containing &lt;details&gt; or &lt;/details&gt; tags."""</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">html_content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-    <span class="n">filtered_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="s1">'&lt;details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">'&lt;/details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
-    <span class="k">return</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_lines</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
+<h2 id="Weitere-Tipps">Weitere Tipps<a class="anchor-link" href="#Weitere-Tipps">¶</a></h2><p>Hier sind einige zusätzliche Aspekte, die CI/CD-Prozesse und ihre Umsetzung betreffen:</p>
+<h3 id="1.-Herausforderungen-bei-CI/CD:"><strong>1. Herausforderungen bei CI/CD:</strong><a class="anchor-link" href="#1.-Herausforderungen-bei-CI/CD:">¶</a></h3><p>Trotz der Vorteile von CI/CD gibt es auch Herausforderungen, die berücksichtigt werden müssen:</p>
+<h4 id="Technische-Herausforderungen:"><strong>Technische Herausforderungen:</strong><a class="anchor-link" href="#Technische-Herausforderungen:">¶</a></h4><ul>
+<li><strong>Testabdeckung:</strong> Unzureichende Tests können dazu führen, dass Fehler in die Produktion gelangen.</li>
+<li><strong>Pipeline-Geschwindigkeit:</strong> Langsame Builds und Tests können die Entwicklerproduktivität beeinträchtigen.</li>
+<li><strong>Komplexität der Infrastruktur:</strong> CI/CD erfordert eine robuste Infrastruktur (z. B. für Containerisierung und Orchestrierung).</li>
+</ul>
+<h4 id="Organisatorische-Herausforderungen:"><strong>Organisatorische Herausforderungen:</strong><a class="anchor-link" href="#Organisatorische-Herausforderungen:">¶</a></h4><ul>
+<li><strong>Kulturelle Akzeptanz:</strong> CI/CD erfordert eine DevOps-Kultur mit enger Zusammenarbeit zwischen Entwicklern und Operations-Teams.</li>
+<li><strong>Widerstand gegen Automatisierung:</strong> Teams könnten anfänglich skeptisch gegenüber der Automatisierung sein.</li>
+<li><strong>Kontinuierliches Lernen:</strong> CI/CD-Pipelines müssen regelmäßig überprüft und verbessert werden.</li>
+</ul>
+<h3 id="2.-Best-Practices-f%C3%BCr-CI/CD:"><strong>2. Best Practices für CI/CD:</strong><a class="anchor-link" href="#2.-Best-Practices-f%C3%BCr-CI/CD:">¶</a></h3><p>Um CI/CD effektiv einzusetzen, sollten folgende Best Practices beachtet werden:</p>
+<h4 id="F%C3%BCr-Continuous-Integration:"><strong>Für Continuous Integration:</strong><a class="anchor-link" href="#F%C3%BCr-Continuous-Integration:">¶</a></h4><ul>
+<li><strong>Kleine, frequente Commits:</strong> Änderungen sollten klein gehalten werden, um Merge-Konflikte zu minimieren.</li>
+<li><strong>Automatisierte Tests:</strong> Sicherstellen, dass jede Codeänderung durch umfassende Tests validiert wird.</li>
+<li><strong>Code Review:</strong> Änderungen sollten vor dem Merge geprüft werden, um die Codequalität zu erhöhen.</li>
+</ul>
+<h4 id="F%C3%BCr-Continuous-Deployment/Delivery:"><strong>Für Continuous Deployment/Delivery:</strong><a class="anchor-link" href="#F%C3%BCr-Continuous-Deployment/Delivery:">¶</a></h4><ul>
+<li><strong>Blue-Green-Deployments:</strong> Nutzung von zwei Produktionsumgebungen, um Rollbacks im Falle eines Fehlers zu erleichtern.</li>
+<li><strong>Canary Releases:</strong> Schrittweises Ausrollen neuer Features auf eine Teilmenge der Nutzer, um Probleme zu erkennen, bevor sie alle betreffen.</li>
+<li><strong>Feature Toggles:</strong> Neue Funktionen können über Schalter aktiviert/deaktiviert werden, ohne einen vollständigen Rollout durchzuführen.</li>
+</ul>
+<h3 id="3.-Containerisierung-und-CI/CD:"><strong>3. Containerisierung und CI/CD:</strong><a class="anchor-link" href="#3.-Containerisierung-und-CI/CD:">¶</a></h3><p>Moderne CI/CD-Prozesse setzen oft auf <strong>Containerisierung</strong> mit Tools wie <strong>Docker</strong> und <strong>Kubernetes</strong>. Vorteile:</p>
+<ul>
+<li>Einheitliche Entwicklungs- und Produktionsumgebungen.</li>
+<li>Schnelle Bereitstellung neuer Versionen durch containerisierte Artefakte.</li>
+<li>Unterstützung für skalierbare Architekturen (z. B. Microservices).</li>
+</ul>
+<h3 id="4.-Sicherheitsaspekte-in-CI/CD-(DevSecOps):"><strong>4. Sicherheitsaspekte in CI/CD (DevSecOps):</strong><a class="anchor-link" href="#4.-Sicherheitsaspekte-in-CI/CD-(DevSecOps):">¶</a></h3><p>Sicherheit ist ein oft übersehener, aber essenzieller Bestandteil von CI/CD:</p>
+<ul>
+<li><strong>Static Code Analysis (SCA):</strong> Automatische Prüfung des Codes auf Schwachstellen während der CI-Phase.</li>
+<li><strong>Secrets Management:</strong> Sicherstellen, dass Passwörter und API-Schlüssel nicht im Code gespeichert werden, sondern durch Tools wie <strong>HashiCorp Vault</strong> verwaltet werden.</li>
+<li><strong>Image Scanning:</strong> Überprüfung von Container-Images auf bekannte Schwachstellen (z. B. mit Tools wie Trivy oder Aqua Security).</li>
+<li><strong>Audit Logs:</strong> Lückenlose Protokollierung aller CI/CD-Aktionen für Revisionszwecke.</li>
+</ul>
+<h3 id="5.-Monitoring-und-Observability:"><strong>5. Monitoring und Observability:</strong><a class="anchor-link" href="#5.-Monitoring-und-Observability:">¶</a></h3><p>Ein guter CI/CD-Prozess hört nicht beim Deployment auf:</p>
+<ul>
+<li><strong>Monitoring:</strong> Tools wie <strong>Prometheus</strong> und <strong>Grafana</strong> helfen, die Anwendungsleistung und Infrastruktur in der Produktion zu überwachen.</li>
+<li><strong>Tracing:</strong> Mit <strong>Jaeger</strong> oder <strong>Zipkin</strong> können komplexe Anfragen in Microservice-Architekturen nachverfolgt werden.</li>
+<li><strong>Logging:</strong> Zentralisierte Log-Verwaltung mit <strong>Elasticsearch</strong> und <strong>Kibana</strong> (ELK-Stack) erleichtert das Debugging.</li>
+</ul>
+<h3 id="6.-Metriken-zur-Erfolgsmessung-von-CI/CD:"><strong>6. Metriken zur Erfolgsmessung von CI/CD:</strong><a class="anchor-link" href="#6.-Metriken-zur-Erfolgsmessung-von-CI/CD:">¶</a></h3><p>Teams sollten ihren CI/CD-Prozess kontinuierlich verbessern, indem sie relevante Metriken messen:</p>
+<ul>
+<li><strong>Deployment Frequency:</strong> Wie oft werden Änderungen erfolgreich ausgerollt?</li>
+<li><strong>Lead Time for Changes:</strong> Wie lange dauert es, bis eine Änderung in Produktion geht?</li>
+<li><strong>Change Failure Rate:</strong> Wie oft führen Änderungen zu Fehlern?</li>
+<li><strong>Mean Time to Recovery (MTTR):</strong> Wie schnell kann ein Fehler behoben werden?</li>
+</ul>
+<h3 id="7.-Tool-%C3%96kosystem-f%C3%BCr-CI/CD:"><strong>7. Tool-Ökosystem für CI/CD:</strong><a class="anchor-link" href="#7.-Tool-%C3%96kosystem-f%C3%BCr-CI/CD:">¶</a></h3><p>Neben <strong>GitLab CI</strong> und <strong>Jenkins</strong> gibt es viele weitere Tools, die je nach Anforderungen verwendet werden können:</p>
+<ul>
+<li><strong>GitHub Actions:</strong> Integriert in GitHub, ideal für Projekte, die bereits auf GitHub gehostet werden.</li>
+<li><strong>CircleCI:</strong> Cloud-basiertes CI/CD-Tool mit Fokus auf Benutzerfreundlichkeit.</li>
+<li><strong>Travis CI:</strong> Ehemals populär, besonders bei Open-Source-Projekten.</li>
+<li><strong>Bamboo:</strong> Von Atlassian, integriert mit Jira und Bitbucket.</li>
+<li><strong>Spinnaker:</strong> Ein Open-Source-CD-Tool, spezialisiert auf Multi-Cloud-Deployments.</li>
+</ul>
+<h3 id="8.-CI/CD-und-Infrastruktur-als-Code-(IaC):"><strong>8. CI/CD und Infrastruktur als Code (IaC):</strong><a class="anchor-link" href="#8.-CI/CD-und-Infrastruktur-als-Code-(IaC):">¶</a></h3><p>Mit IaC-Tools wie <strong>Terraform</strong> oder <strong>AWS CloudFormation</strong> können CI/CD-Pipelines die Bereitstellung und Verwaltung von Infrastruktur automatisieren. Dies unterstützt:</p>
+<ul>
+<li><strong>Reproduzierbarkeit:</strong> Infrastruktur ist versioniert und kann leicht wiederhergestellt werden.</li>
+<li><strong>Automatisierung:</strong> Neue Umgebungen können automatisch erstellt und konfiguriert werden.</li>
+</ul>
+<h3 id="9.-Weiterf%C3%BChrende-Themen:"><strong>9. Weiterführende Themen:</strong><a class="anchor-link" href="#9.-Weiterf%C3%BChrende-Themen:">¶</a></h3><ul>
+<li><strong>GitOps:</strong> Anwendung von Git-basierten Workflows auf Infrastruktur und CI/CD (z. B. mit <strong>ArgoCD</strong>).</li>
+<li><strong>Serverless CI/CD:</strong> Deployment von Funktionen statt ganzer Anwendungen, z. B. mit <strong>AWS Lambda</strong> oder <strong>Google Cloud Functions</strong>.</li>
+<li><strong>Hybrid Deployments:</strong> Kombination von CI/CD mit traditionellem und containerisiertem Deployment für legacy Systeme.</li>
+</ul>
+<p>Diese Aspekte zeigen, dass CI/CD weit mehr als nur ein automatisierter Prozess ist. Es erfordert eine ganzheitliche Betrachtung der Entwicklungs-, Test- und Bereitstellungsphasen sowie der zugrundeliegenden Infrastruktur.</p>
 </div>
 </div>
 </div>
@@ -7737,40 +7759,7 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
-</ul>
-</li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
-</ul>
-</li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
-</ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Combine-all-notebooks-to-one">Combine all notebooks to one<a class="anchor-link" href="#Combine-all-notebooks-to-one">¶</a></h1><p>Working script... Combines all following the Contents</p>
+<h2 id="Kleines-Quiz-zu-CI/CD">Kleines Quiz zu CI/CD<a class="anchor-link" href="#Kleines-Quiz-zu-CI/CD">¶</a></h2><p>Hier ist ein Python-Programm für ein Quiz, das spielerisch Wissen über CI/CD abfragt:</p>
 </div>
 </div>
 </div>
@@ -7782,165 +7771,99 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbformat.v4</span> <span class="kn">import</span> <span class="n">new_markdown_cell</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="k">def</span> <span class="nf">load_notebook</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load a Jupyter Notebook file."""</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">ask_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">question</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Wähle die richtige Antwort (1-4): "</span><span class="p">))</span>
+            <span class="k">if</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">answer</span> <span class="o">&lt;=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">answer</span> <span class="o">==</span> <span class="n">correct_answer</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte eine Zahl zwischen 1 und 4 eingeben."</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte eine gültige Zahl eingeben."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract links to other .ipynb files from Markdown cells."""</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">link_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\[.*?\]\((.*?)\)'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">link_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">links</span>
+<span class="k">def</span> <span class="nf">run_quiz</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum CI/CD-Quiz! Teste dein Wissen."</span><span class="p">)</span>
+    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was beschreibt Continuous Integration (CI)?"</span><span class="p">,</span>
+            <span class="s2">"options"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"Automatische Bereitstellung in die Produktion"</span><span class="p">,</span>
+                <span class="s2">"Regelmäßiges Integrieren von Code in ein zentrales Repository"</span><span class="p">,</span>
+                <span class="s2">"Manuelles Testen von Software"</span><span class="p">,</span>
+                <span class="s2">"Bereitstellung von Infrastruktur"</span>
+            <span class="p">],</span>
+            <span class="s2">"correct"</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welches Tool ist KEIN Beispiel für eine CI/CD-Pipeline?"</span><span class="p">,</span>
+            <span class="s2">"options"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"GitLab CI"</span><span class="p">,</span>
+                <span class="s2">"Jenkins"</span><span class="p">,</span>
+                <span class="s2">"Docker"</span><span class="p">,</span>
+                <span class="s2">"CircleCI"</span>
+            <span class="p">],</span>
+            <span class="s2">"correct"</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was ist ein Vorteil von Continuous Deployment?"</span><span class="p">,</span>
+            <span class="s2">"options"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"Erfordert keine Tests"</span><span class="p">,</span>
+                <span class="s2">"Manuelle Deployments sind schneller"</span><span class="p">,</span>
+                <span class="s2">"Schnellere Bereitstellung von Features"</span><span class="p">,</span>
+                <span class="s2">"Es ersetzt Continuous Integration"</span>
+            <span class="p">],</span>
+            <span class="s2">"correct"</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welche Datei wird typischerweise für GitLab CI verwendet?"</span><span class="p">,</span>
+            <span class="s2">"options"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"Jenkinsfile"</span><span class="p">,</span>
+                <span class="s2">"docker-compose.yml"</span><span class="p">,</span>
+                <span class="s2">".gitlab-ci.yml"</span><span class="p">,</span>
+                <span class="s2">"pipeline.yaml"</span>
+            <span class="p">],</span>
+            <span class="s2">"correct"</span><span class="p">:</span> <span class="mi">3</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was bedeutet Blue-Green-Deployment?"</span><span class="p">,</span>
+            <span class="s2">"options"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"Zwei Teams arbeiten parallel"</span><span class="p">,</span>
+                <span class="s2">"Zwei Produktionsumgebungen für einfachere Rollbacks"</span><span class="p">,</span>
+                <span class="s2">"Testen von Code auf verschiedenen Plattformen"</span><span class="p">,</span>
+                <span class="s2">"Automatische Versionskontrolle"</span>
+            <span class="p">],</span>
+            <span class="s2">"correct"</span><span class="p">:</span> <span class="mi">2</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Try to find a file in the given base path or its subdirectories.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">adjust_links</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Adjust links in Markdown cells and &lt;img&gt; tags to point to the correct locations."""</span>
-    <span class="k">def</span> <span class="nf">replace_markdown_link</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">text</span><span class="p">,</span> <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
-        <span class="n">link_clean</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">link_clean</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-            <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link_clean</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(#</span><span class="si">{</span><span class="n">section_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'-'</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">questions</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Frage </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">:"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ask_question</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="s2">"question"</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="s2">"options"</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="s2">"correct"</span><span class="p">]):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Richtig! 🎉"</span><span class="p">)</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">link_clean</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s2">)"</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Falsch. 😢"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">replace_img_tag</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">src</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s1">"'</span>
-
-    <span class="n">markdown_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\[.*?\])\((.*?)\)'</span><span class="p">)</span>
-    <span class="n">img_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;img\s+src=["</span><span class="se">\'</span><span class="s1">](.*?)["</span><span class="se">\'</span><span class="s1">]'</span><span class="p">)</span>
-
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">markdown_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_markdown_link</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">img_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_img_tag</span><span class="p">,</span> <span class="n">adjusted_source</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjusted_source</span>
-
-<span class="k">def</span> <span class="nf">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">):</span>
-    <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resolved_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: File </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> not found. Skipping."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span>
-
-    <span class="n">notebook_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">,</span> <span class="n">base_path</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">added</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Collect all links to notebooks in the order they appear.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">added</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">added</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    
-    <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-
-    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-    
-    <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="n">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-
-    <span class="n">all_links</span><span class="o">=</span><span class="p">[]</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-        <span class="n">all_links</span> <span class="o">=</span> <span class="p">[(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)]</span>
-        <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-            <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)])</span>
-            <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-            
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">added</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">all_links</span>
-
-<span class="k">def</span> <span class="nf">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">combined_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Combine all notebooks into one in the order of provided links.</span>
-<span class="sd">    """</span>
-    <span class="n">combined</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">combined_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined_dir</span> <span class="o">=</span> <span class="n">base_path</span>
-
-    <span class="k">for</span> <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-        <span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-
-        <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">page_break</span> <span class="o">=</span> <span class="s2">"""&lt;style&gt;</span>
-<span class="s2">@media print {</span>
-<span class="s2">/* Erzwingt einen Seitenumbruch vor diesem Abschnitt */</span>
-<span class="s2">.page-break-before {</span>
-<span class="s2">    page-break-before: always; /* Alternative: break-before: page; */</span>
-<span class="s2">}</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-
-<span class="s2">&lt;div class="page-break-before"&gt;</span>
-<span class="s2">                                    </span>
-<span class="s2">"""</span>
-
-        <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">page_break</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">##### </span><span class="si">{</span><span class="n">section_name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
-<span class="c1">#        combined.cells.append(new_markdown_cell(f"### {section_name}\n\n---\n"))</span>
-
-        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-            <span class="n">cell_copy</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-                <span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">adjust_links</span><span class="p">(</span><span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_copy</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">combined</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># Current working directory</span>
-    <span class="n">initial_notebook</span> <span class="o">=</span> <span class="s2">"abstract/Intro.de.ipynb"</span>  <span class="c1"># Replace with the initial notebook's path relative to base_path</span>
-
-    <span class="n">links</span> <span class="o">=</span> <span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">initial_notebook</span><span class="p">)</span>
-    <span class="n">combined_notebook</span> <span class="o">=</span> <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
-
-    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">"SoProMing.ipynb"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_notebook</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined notebook saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Du hast </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> von </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span><span class="si">}</span><span class="s2"> Fragen richtig beantwortet."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Perfekt! Du bist ein CI/CD-Meister! 🏆"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Gut gemacht! Es gibt noch Raum für Verbesserung. 💡"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Du solltest dein Wissen über CI/CD noch vertiefen. 📚"</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+    <span class="n">run_quiz</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7953,191 +7876,57 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Combined notebook saved to /Users/starkj/Documents/2hands/Soproming/Repo/main/notebooks/SoProMing.ipynb
+<pre>Willkommen zum CI/CD-Quiz! Teste dein Wissen.
+
+Frage 1:
+
+Welche Datei wird typischerweise für GitLab CI verwendet?
+1. Jenkinsfile
+2. docker-compose.yml
+3. .gitlab-ci.yml
+4. pipeline.yaml
+Richtig! 🎉
+
+Frage 2:
+
+Was beschreibt Continuous Integration (CI)?
+1. Automatische Bereitstellung in die Produktion
+2. Regelmäßiges Integrieren von Code in ein zentrales Repository
+3. Manuelles Testen von Software
+4. Bereitstellung von Infrastruktur
+Falsch. 😢
+
+Frage 3:
+
+Welches Tool ist KEIN Beispiel für eine CI/CD-Pipeline?
+1. GitLab CI
+2. Jenkins
+3. Docker
+4. CircleCI
+Richtig! 🎉
+
+Frage 4:
+
+Was ist ein Vorteil von Continuous Deployment?
+1. Erfordert keine Tests
+2. Manuelle Deployments sind schneller
+3. Schnellere Bereitstellung von Features
+4. Es ersetzt Continuous Integration
+Richtig! 🎉
+
+Frage 5:
+
+Was bedeutet Blue-Green-Deployment?
+1. Zwei Teams arbeiten parallel
+2. Zwei Produktionsumgebungen für einfachere Rollbacks
+3. Testen von Code auf verschiedenen Plattformen
+4. Automatische Versionskontrolle
+Richtig! 🎉
+
+Du hast 4 von 5 Fragen richtig beantwortet.
+Gut gemacht! Es gibt noch Raum für Verbesserung. 💡
 </pre>
 </div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbformat/__init__.py:132: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
-  validate(nb)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
-</ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
 </div>
 </div>
 </div>

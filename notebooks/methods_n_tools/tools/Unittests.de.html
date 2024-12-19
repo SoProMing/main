@@ -7516,250 +7516,164 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
-<ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
-</ol>
-<p>You can use the following libraries:</p>
+<p><a href="../../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../abstract/Contents.de.html">Inhaltsverzeichnis</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../Methods.de.html">Methoden</a> / <a href="../Deliberating_Structures.de.html">Deliberating structures</a> / <a href="../Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a></p>
+<h1 id="Unittests">Unittests<a class="anchor-link" href="#Unittests">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="Unittests.webp"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Unittests.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://docs.python.org/3/library/unittest.html" target="_blank">Python unittest Documentation</a><br/>
+<a href="https://pytest.org/" target="_blank">pytest Documentation</a><br/>
+<a href="https://martinfowler.com/bliki/TestPyramid.html" target="_blank">Martin Fowler: The Test Pyramid</a><br/>
+<a href="https://testdriven.io/" target="_blank">TestDriven.io: Learning TDD and Testing</a><br/>
+<a href="https://docs.microsoft.com/en-us/dotnet/core/testing/" target="_blank">Microsoft .NET Testing Guide</a><br/>
+<a href="https://junit.org/" target="_blank">JUnit Official Website</a><br/>
+<a href="https://go.dev/blog/test" target="_blank">Testing in Go: Official Blog</a><br/>
+<a href="https://en.wikipedia.org/wiki/Test-driven_development" target="_blank">Wikipedia: Test-Driven Development</a><br/>
+<a href="https://www.tutorialspoint.com/software_testing/software_testing_unit_testing.htm" target="_blank">TutorialsPoint: Unit Testing Overview</a><br/>
+<a href="https://www.pluralsight.com/blog/software-development/how-to-test-like-a-unit-testing-pro" target="_blank">Pluralsight: Unit Testing Best Practices</a>
+</td>
+</tr>
+</table>
+<h2 id="Was-sind-Unittests?">Was sind Unittests?<a class="anchor-link" href="#Was-sind-Unittests?">¶</a></h2><p>Unittests sind eine Art von <strong>Softwaretests</strong>, die darauf abzielen, <strong>kleinste, isolierte Funktionseinheiten</strong> eines Programms zu überprüfen. Diese Funktionseinheiten (Units) können Funktionen, Methoden oder Klassen sein, die in einem Softwaremodul enthalten sind. Ziel ist es, sicherzustellen, dass jede Komponente für sich genommen <strong>korrekt</strong> arbeitet.</p>
+<h3 id="Eigenschaften-von-Unittests">Eigenschaften von Unittests<a class="anchor-link" href="#Eigenschaften-von-Unittests">¶</a></h3><ol>
+<li><p><strong>Isoliertheit</strong>:</p>
 <ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
+<li>Unittests prüfen nur eine einzelne Komponente und nicht deren Abhängigkeiten oder die Integration mit anderen Komponenten.</li>
+<li>Externe Abhängigkeiten wie Datenbanken, APIs oder Dateien werden häufig durch <strong>Mocks</strong> oder <strong>Stubs</strong> ersetzt.</li>
 </ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
+</li>
+<li><p><strong>Automatisierbarkeit</strong>:</p>
+<ul>
+<li>Unittests werden häufig als automatisierte Tests ausgeführt, die direkt in die Entwicklungsumgebung integriert sind.</li>
+<li>Entwickler können die Tests nach jeder Änderung ausführen, um sicherzustellen, dass keine bestehenden Funktionen beeinträchtigt werden.</li>
+</ul>
+</li>
+<li><p><strong>Schnelligkeit</strong>:</p>
+<ul>
+<li>Da nur kleine, isolierte Einheiten geprüft werden, laufen Unittests in der Regel sehr schnell und können häufig ausgeführt werden.</li>
+</ul>
+</li>
+<li><p><strong>Wiederholbarkeit</strong>:</p>
+<ul>
+<li>Unittests sind deterministisch und liefern bei gleichen Bedingungen immer das gleiche Ergebnis, unabhängig von der Umgebung.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Vorteile-von-Unittests">Vorteile von Unittests<a class="anchor-link" href="#Vorteile-von-Unittests">¶</a></h3><ul>
+<li><p><strong>Frühes Auffinden von Fehlern</strong>:</p>
+<ul>
+<li>Probleme werden frühzeitig erkannt, noch bevor die Software integriert oder veröffentlicht wird.</li>
+</ul>
+</li>
+<li><p><strong>Verbesserte Codequalität</strong>:</p>
+<ul>
+<li>Entwickler schreiben oft sauberen und modularen Code, da dieser einfacher zu testen ist.</li>
+</ul>
+</li>
+<li><p><strong>Erleichterte Wartung</strong>:</p>
+<ul>
+<li>Änderungen im Code können sicher durchgeführt werden, da Unittests sicherstellen, dass die bestehenden Funktionen weiterhin korrekt arbeiten.</li>
+</ul>
+</li>
+<li><p><strong>Dokumentation des Codes</strong>:</p>
+<ul>
+<li>Unittests dienen oft als zusätzliche Dokumentation, da sie zeigen, wie ein bestimmter Code verwendet werden sollte.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Struktur-eines-typischen-Unittests">Struktur eines typischen Unittests<a class="anchor-link" href="#Struktur-eines-typischen-Unittests">¶</a></h3><p>Ein Unittest folgt oft der <strong>Arrange-Act-Assert</strong>-Struktur:</p>
 <ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
+<li><p><strong>Arrange</strong>:</p>
+<ul>
+<li>Vorbereitung der Testumgebung, z. B. Initialisierung von Objekten, Setzen von Eingabewerten.</li>
+</ul>
+</li>
+<li><p><strong>Act</strong>:</p>
+<ul>
+<li>Ausführung der zu testenden Funktion oder Methode.</li>
+</ul>
+</li>
+<li><p><strong>Assert</strong>:</p>
+<ul>
+<li>Überprüfung des Ergebnisses gegen die erwarteten Werte.</li>
+</ul>
+</li>
 </ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<p>Beispiel in Python:</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unittest</span>
 
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
+<span class="c1"># Beispielcode</span>
+<span class="k">def</span> <span class="nf">addiere</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Remove &lt;details&gt; and &lt;/details&gt; lines</span>
-    <span class="k">if</span> <span class="s2">"SoProMing"</span> <span class="ow">in</span> <span class="n">html_file</span><span class="p">:</span>
-        <span class="n">updated_content</span> <span class="o">=</span> <span class="n">remove_details_tags</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_details_tags</span><span class="p">(</span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Remove all lines containing &lt;details&gt; or &lt;/details&gt; tags."""</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">html_content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-    <span class="n">filtered_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="s1">'&lt;details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">'&lt;/details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
-    <span class="k">return</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_lines</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
+<span class="c1"># Unittest</span>
+<span class="k">class</span> <span class="nc">TestAddiere</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_addiere_positive_zahlen</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Arrange</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+        
+        <span class="c1"># Act</span>
+        <span class="n">ergebnis</span> <span class="o">=</span> <span class="n">addiere</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+        
+        <span class="c1"># Assert</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">ergebnis</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
+<h3 id="Best-Practices-f%C3%BCr-Unittests">Best Practices für Unittests<a class="anchor-link" href="#Best-Practices-f%C3%BCr-Unittests">¶</a></h3><ol>
+<li><p><strong>Tests sollten unabhängig sein</strong>:</p>
 <ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+<li>Jeder Test sollte isoliert und unabhängig von anderen Tests ausführbar sein.</li>
 </ul>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
+<li><p><strong>Kleine, klare Tests schreiben</strong>:</p>
 <ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
+<li>Ein Test sollte genau eine spezifische Funktionalität überprüfen.</li>
 </ul>
 </li>
-<li><p><strong>Recursively Process Files</strong>:</p>
+<li><p><strong>Sinnvolle Namen verwenden</strong>:</p>
 <ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
+<li>Die Namen der Testmethoden sollten beschreiben, was sie testen.</li>
+</ul>
+</li>
+<li><p><strong>Testabdeckung (Coverage)</strong>:</p>
+<ul>
+<li>Sicherstellen, dass möglichst viele Codepfade durch Tests abgedeckt werden.</li>
+</ul>
+</li>
+<li><p><strong>Negative Tests nicht vergessen</strong>:</p>
+<ul>
+<li>Auch ungültige Eingaben und Fehlerszenarien sollten getestet werden.</li>
 </ul>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<h3 id="Einschr%C3%A4nkungen-von-Unittests">Einschränkungen von Unittests<a class="anchor-link" href="#Einschr%C3%A4nkungen-von-Unittests">¶</a></h3><ol>
+<li><p><strong>Keine Integrationstests</strong>:</p>
+<ul>
+<li>Unittests prüfen nur isolierte Einheiten und können keine Probleme in der Integration von Modulen erkennen.</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
+</li>
+<li><p><strong>Hoher Initialaufwand</strong>:</p>
+<ul>
+<li>Das Schreiben und Pflegen einer umfangreichen Test-Suite kann zeitaufwendig sein.</li>
+</ul>
+</li>
+<li><p><strong>Erkennt keine UI- oder Usability-Probleme</strong>:</p>
+<ul>
+<li>Unittests prüfen keine Benutzeroberflächen oder Interaktionen.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Unittests sind ein zentraler Bestandteil moderner Softwareentwicklung und gehören zu den Grundlagen des Testens. Sie bieten eine zuverlässige Methode, um die <strong>Korrektheit einzelner Komponenten</strong> sicherzustellen, und tragen wesentlich zur Qualität, Stabilität und Wartbarkeit von Software bei.</p>
 </div>
 </div>
 </div>
@@ -7770,7 +7684,151 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Combine-all-notebooks-to-one">Combine all notebooks to one<a class="anchor-link" href="#Combine-all-notebooks-to-one">¶</a></h1><p>Working script... Combines all following the Contents</p>
+<h2 id="Weitere-Tipps">Weitere Tipps<a class="anchor-link" href="#Weitere-Tipps">¶</a></h2><p>Unittests sind ein umfangreiches Thema, und es gibt viele zusätzliche Aspekte, die du kennen solltest, um sie effektiv einzusetzen. Hier sind weiterführende Informationen:</p>
+<h3 id="1.-Werkzeuge-und-Frameworks">1. <strong>Werkzeuge und Frameworks</strong><a class="anchor-link" href="#1.-Werkzeuge-und-Frameworks">¶</a></h3><p>Unittests werden mit speziellen Frameworks oder Tools durchgeführt, die das Schreiben, Organisieren und Ausführen erleichtern. Beliebte Frameworks sind:</p>
+<ul>
+<li><strong>Python</strong>: <code>unittest</code>, <code>pytest</code></li>
+<li><strong>Java</strong>: JUnit, TestNG</li>
+<li><strong>C#</strong>: MSTest, NUnit, xUnit</li>
+<li><strong>JavaScript</strong>: Jest, Mocha, Jasmine</li>
+<li><strong>Go</strong>: Eingebautes Testing-Package <code>testing</code></li>
+</ul>
+<p>Diese Frameworks bieten viele Funktionen wie das Gruppieren von Tests, Setup- und Teardown-Methoden sowie Mocking.</p>
+<h3 id="2.-Mocking-und-Faking">2. <strong>Mocking und Faking</strong><a class="anchor-link" href="#2.-Mocking-und-Faking">¶</a></h3><p>Unittests sollten isoliert sein, aber viele Komponenten hängen von externen Ressourcen ab (z. B. Datenbanken oder APIs). Diese werden oft durch folgende Techniken ersetzt:</p>
+<ul>
+<li><p><strong>Mocks</strong>:</p>
+<ul>
+<li>Simulieren das Verhalten von echten Objekten und prüfen auch, ob Methodenaufrufe korrekt erfolgen.</li>
+<li>Beispiel: Prüfen, ob eine Datenbankmethode aufgerufen wurde.</li>
+</ul>
+</li>
+<li><p><strong>Fakes</strong>:</p>
+<ul>
+<li>Einfachere Implementierungen, die eine ähnliche Funktionalität bieten wie die echte Ressource.</li>
+<li>Beispiel: Eine Fake-Datenbank, die nur im Speicher arbeitet.</li>
+</ul>
+</li>
+<li><p><strong>Stubs</strong>:</p>
+<ul>
+<li>Platzhalter für Objekte, die vordefinierte Antworten liefern.</li>
+<li>Beispiel: Ein Stub für einen HTTP-Client, der immer denselben API-Response liefert.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.-Test-Driven-Development-(TDD)">3. <strong>Test Driven Development (TDD)</strong><a class="anchor-link" href="#3.-Test-Driven-Development-(TDD)">¶</a></h3><p>Unittests sind ein Kernbestandteil von TDD. Hierbei wird zuerst ein Test geschrieben, bevor die eigentliche Funktionalität implementiert wird. Der Prozess:</p>
+<ol>
+<li>Schreibe einen Unittest, der fehlschlägt (<strong>Rot</strong>).</li>
+<li>Implementiere die minimal notwendige Funktionalität, damit der Test besteht (<strong>Grün</strong>).</li>
+<li>Refaktorisiere den Code, um ihn zu verbessern, während der Test weiterhin besteht.</li>
+</ol>
+<p>Vorteile von TDD:</p>
+<ul>
+<li>Fördert ein tiefes Verständnis der Anforderungen.</li>
+<li>Führt zu modularerem und testbarem Code.</li>
+</ul>
+<h3 id="4.-Testabdeckung-(Coverage)">4. <strong>Testabdeckung (Coverage)</strong><a class="anchor-link" href="#4.-Testabdeckung-(Coverage)">¶</a></h3><p>Die Testabdeckung misst, wie viel Prozent des Codes durch Tests geprüft werden. Es gibt verschiedene Arten von Coverage:</p>
+<ul>
+<li><strong>Line Coverage</strong>: Wie viele Zeilen des Codes wurden ausgeführt?</li>
+<li><strong>Branch Coverage</strong>: Wurden alle Codepfade in Verzweigungen getestet?</li>
+<li><strong>Function Coverage</strong>: Wurden alle Funktionen mindestens einmal aufgerufen?</li>
+</ul>
+<p>100% Coverage ist zwar ideal, aber nicht immer praktisch. Der Fokus sollte darauf liegen, <strong>kritische und fehleranfällige Bereiche</strong> zu testen.</p>
+<h3 id="5.-Strategien-zur-Organisation-von-Tests">5. <strong>Strategien zur Organisation von Tests</strong><a class="anchor-link" href="#5.-Strategien-zur-Organisation-von-Tests">¶</a></h3><p>Eine gut organisierte Teststruktur ist entscheidend für die Wartbarkeit. Übliche Ansätze:</p>
+<ul>
+<li><p><strong>Namenskonventionen</strong>:</p>
+<ul>
+<li>Tests sollten beschreiben, was sie testen. Beispiel: <code>test_ueberweisung_mit_ungueltigem_betrag</code>.</li>
+</ul>
+</li>
+<li><p><strong>Testklassen</strong>:</p>
+<ul>
+<li>Gruppiere Tests nach Modulen oder Klassen.</li>
+</ul>
+</li>
+<li><p><strong>Setup- und Teardown-Methoden</strong>:</p>
+<ul>
+<li>Initialisiere und bereinige Testumgebungen mit Methoden wie <code>setUp()</code> und <code>tearDown()</code> (oder Äquivalenten).</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.-Best-Practices-f%C3%BCr-Unittests">6. <strong>Best Practices für Unittests</strong><a class="anchor-link" href="#6.-Best-Practices-f%C3%BCr-Unittests">¶</a></h3><ul>
+<li><p><strong>Teste Grenzwerte</strong>:</p>
+<ul>
+<li>Teste sowohl normale als auch extreme Eingabewerte (z. B. 0, negative Werte, Maximalwerte).</li>
+</ul>
+</li>
+<li><p><strong>Schreibe unabhängige Tests</strong>:</p>
+<ul>
+<li>Tests sollten keine Abhängigkeiten voneinander haben.</li>
+</ul>
+</li>
+<li><p><strong>Vermeide komplexe Logik in Tests</strong>:</p>
+<ul>
+<li>Tests sollten so einfach wie möglich sein. Komplexe Logik kann eigene Fehler einführen.</li>
+</ul>
+</li>
+<li><p><strong>Nutze parametrisierte Tests</strong>:</p>
+<ul>
+<li>Mit Parametrisierung kannst du denselben Test mit verschiedenen Eingaben und erwarteten Ergebnissen ausführen.</li>
+</ul>
+</li>
+</ul>
+<h3 id="7.-Unittests-vs.-Andere-Testarten">7. <strong>Unittests vs. Andere Testarten</strong><a class="anchor-link" href="#7.-Unittests-vs.-Andere-Testarten">¶</a></h3><p>Unittests sind nur eine von mehreren Testarten. Es ist wichtig zu verstehen, wie sie sich abgrenzen:</p>
+<ul>
+<li><p><strong>Integrationstests</strong>:</p>
+<ul>
+<li>Testen mehrere Komponenten zusammen, um sicherzustellen, dass sie korrekt interagieren.</li>
+</ul>
+</li>
+<li><p><strong>Systemtests</strong>:</p>
+<ul>
+<li>Prüfen die gesamte Anwendung als Einheit.</li>
+</ul>
+</li>
+<li><p><strong>Akzeptanztests</strong>:</p>
+<ul>
+<li>Validieren, ob das System den Anforderungen der Benutzer entspricht.</li>
+</ul>
+</li>
+</ul>
+<p>Unittests bilden die Grundlage für eine Teststrategie, decken aber nicht alle Aspekte ab.</p>
+<h3 id="8.-Herausforderungen-und-Probleme">8. <strong>Herausforderungen und Probleme</strong><a class="anchor-link" href="#8.-Herausforderungen-und-Probleme">¶</a></h3><ul>
+<li><p><strong>Falsches Vertrauen</strong>:</p>
+<ul>
+<li>Nur weil Unittests erfolgreich sind, bedeutet das nicht, dass die Software fehlerfrei ist. Bugs können in der Integration oder der Logik auftreten, die nicht durch Unittests abgedeckt wurde.</li>
+</ul>
+</li>
+<li><p><strong>Wartungskosten</strong>:</p>
+<ul>
+<li>Tests müssen bei Änderungen im Code oft angepasst werden. Ein instabiles Testset kann frustrierend und zeitaufwendig sein.</li>
+</ul>
+</li>
+<li><p><strong>Test-Anti-Patterns</strong>:</p>
+<ul>
+<li><strong>Fragile Tests</strong>: Tests, die häufig bei kleinen Änderungen fehlschlagen.</li>
+<li><strong>Over-Mocking</strong>: Zu viele Mock-Objekte machen Tests schwer nachvollziehbar.</li>
+</ul>
+</li>
+</ul>
+<h3 id="9.-Continuous-Integration-(CI)">9. <strong>Continuous Integration (CI)</strong><a class="anchor-link" href="#9.-Continuous-Integration-(CI)">¶</a></h3><p>Unittests sind oft Teil von <strong>CI-Pipelines</strong>, die automatisch bei jeder Codeänderung ausgeführt werden. Dies hilft, Fehler frühzeitig zu erkennen. Tools wie Jenkins, GitHub Actions oder GitLab CI/CD können hierfür verwendet werden.</p>
+<h3 id="10.-Testdatenmanagement">10. <strong>Testdatenmanagement</strong><a class="anchor-link" href="#10.-Testdatenmanagement">¶</a></h3><p>Für Unittests wird häufig ein Satz von <strong>Testdaten</strong> verwendet. Diese sollten:</p>
+<ul>
+<li>Klar definierte Szenarien abdecken.</li>
+<li>Leicht zu ändern und zu erweitern sein.</li>
+<li>So klein wie möglich gehalten werden.</li>
+</ul>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Unittests sind ein mächtiges Werkzeug, das zu einer robusteren und wartbaren Software führt. Sie sind jedoch kein Allheilmittel und sollten durch andere Testarten ergänzt werden. Der Erfolg hängt davon ab, wie gut sie in den Entwicklungsprozess integriert werden und ob Best Practices eingehalten werden.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Kleines-Quiz-zu-Unittests">Kleines Quiz zu Unittests<a class="anchor-link" href="#Kleines-Quiz-zu-Unittests">¶</a></h2><p>Hier ist ein Python-Quiz, mit dem man spielerisch sein Wissen über Unittests testen kann. Es verwendet eine einfache Eingabemechanik und liefert direkt Feedback zu den Antworten:</p>
 </div>
 </div>
 </div>
@@ -7782,165 +7840,72 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbformat.v4</span> <span class="kn">import</span> <span class="n">new_markdown_cell</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">quiz</span><span class="p">():</span>
+    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"1. Was ist das Ziel von Unittests?</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"a) Die gesamte Anwendung zu testen</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"b) Einzelne, isolierte Funktionseinheiten zu testen</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"c) Benutzerfreundlichkeit zu testen</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"d) Nur die Benutzeroberfläche zu testen</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"b"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"2. Welche Struktur folgt ein typischer Unittest?</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"a) Arrange-Act-Assert</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"b) Plan-Execute-Evaluate</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"c) Setup-Test-Teardown</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"d) None of the above</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"a"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"3. Was ist der Vorteil von Mocking in Unittests?</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"a) Es macht den Code schneller</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"b) Es ersetzt externe Abhängigkeiten</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"c) Es testet die Integration aller Komponenten</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"d) Es reduziert die Anzahl der Tests</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"b"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"4. Welches Framework wird typischerweise in Python für Unittests verwendet?</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"a) pytest</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"b) JUnit</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"c) NUnit</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"d) Mocha</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"a"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"5. Welche Art von Abdeckung (Coverage) misst, ob alle Verzweigungen im Code getestet wurden?</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"a) Line Coverage</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"b) Branch Coverage</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"c) Function Coverage</span><span class="se">\n</span><span class="s2">"</span>
+                        <span class="s2">"d) Class Coverage</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span>
+            <span class="s2">"answer"</span><span class="p">:</span> <span class="s2">"b"</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
 
-<span class="k">def</span> <span class="nf">load_notebook</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load a Jupyter Notebook file."""</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum Unittest-Quiz! Beantworte die folgenden Fragen:"</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract links to other .ipynb files from Markdown cells."""</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">link_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\[.*?\]\((.*?)\)'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">link_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">links</span>
-
-<span class="k">def</span> <span class="nf">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Try to find a file in the given base path or its subdirectories.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">None</span>
-
-<span class="k">def</span> <span class="nf">adjust_links</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Adjust links in Markdown cells and &lt;img&gt; tags to point to the correct locations."""</span>
-    <span class="k">def</span> <span class="nf">replace_markdown_link</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">text</span><span class="p">,</span> <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
-        <span class="n">link_clean</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">link_clean</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-            <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link_clean</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(#</span><span class="si">{</span><span class="n">section_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'-'</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">q</span><span class="p">[</span><span class="s2">"question"</span><span class="p">])</span>
+        <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a, b, c, d): "</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">user_answer</span> <span class="o">==</span> <span class="n">q</span><span class="p">[</span><span class="s2">"answer"</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Richtig! 🎉</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">link_clean</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s2">)"</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Falsch! Die richtige Antwort war: </span><span class="si">{</span><span class="n">q</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">replace_img_tag</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">src</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s1">"'</span>
-
-    <span class="n">markdown_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\[.*?\])\((.*?)\)'</span><span class="p">)</span>
-    <span class="n">img_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;img\s+src=["</span><span class="se">\'</span><span class="s1">](.*?)["</span><span class="se">\'</span><span class="s1">]'</span><span class="p">)</span>
-
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">markdown_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_markdown_link</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">img_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_img_tag</span><span class="p">,</span> <span class="n">adjusted_source</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjusted_source</span>
-
-<span class="k">def</span> <span class="nf">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">):</span>
-    <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resolved_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: File </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> not found. Skipping."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span>
-
-    <span class="n">notebook_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">,</span> <span class="n">base_path</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">added</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Collect all links to notebooks in the order they appear.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">added</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">added</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    
-    <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-
-    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-    
-    <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="n">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-
-    <span class="n">all_links</span><span class="o">=</span><span class="p">[]</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-        <span class="n">all_links</span> <span class="o">=</span> <span class="p">[(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)]</span>
-        <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-            <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)])</span>
-            <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-            
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">added</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">all_links</span>
-
-<span class="k">def</span> <span class="nf">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">combined_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Combine all notebooks into one in the order of provided links.</span>
-<span class="sd">    """</span>
-    <span class="n">combined</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">combined_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined_dir</span> <span class="o">=</span> <span class="n">base_path</span>
-
-    <span class="k">for</span> <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-        <span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-
-        <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">page_break</span> <span class="o">=</span> <span class="s2">"""&lt;style&gt;</span>
-<span class="s2">@media print {</span>
-<span class="s2">/* Erzwingt einen Seitenumbruch vor diesem Abschnitt */</span>
-<span class="s2">.page-break-before {</span>
-<span class="s2">    page-break-before: always; /* Alternative: break-before: page; */</span>
-<span class="s2">}</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-
-<span class="s2">&lt;div class="page-break-before"&gt;</span>
-<span class="s2">                                    </span>
-<span class="s2">"""</span>
-
-        <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">page_break</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">##### </span><span class="si">{</span><span class="n">section_name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
-<span class="c1">#        combined.cells.append(new_markdown_cell(f"### {section_name}\n\n---\n"))</span>
-
-        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-            <span class="n">cell_copy</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-                <span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">adjust_links</span><span class="p">(</span><span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_copy</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">combined</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># Current working directory</span>
-    <span class="n">initial_notebook</span> <span class="o">=</span> <span class="s2">"abstract/Intro.de.ipynb"</span>  <span class="c1"># Replace with the initial notebook's path relative to base_path</span>
-
-    <span class="n">links</span> <span class="o">=</span> <span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">initial_notebook</span><span class="p">)</span>
-    <span class="n">combined_notebook</span> <span class="o">=</span> <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
-
-    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">"SoProMing.ipynb"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_notebook</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined notebook saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Quiz beendet! Du hast </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2"> von </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span><span class="si">}</span><span class="s2"> Fragen richtig beantwortet."</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Perfekte Leistung! 🎯"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Gut gemacht! 👏"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Es gibt noch Raum für Verbesserungen. 🚀"</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+    <span class="n">quiz</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7953,191 +7918,51 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Combined notebook saved to /Users/starkj/Documents/2hands/Soproming/Repo/main/notebooks/SoProMing.ipynb
+<pre>Willkommen zum Unittest-Quiz! Beantworte die folgenden Fragen:
+1. Was ist das Ziel von Unittests?
+a) Die gesamte Anwendung zu testen
+b) Einzelne, isolierte Funktionseinheiten zu testen
+c) Benutzerfreundlichkeit zu testen
+d) Nur die Benutzeroberfläche zu testen
+
+Richtig! 🎉
+
+2. Welche Struktur folgt ein typischer Unittest?
+a) Arrange-Act-Assert
+b) Plan-Execute-Evaluate
+c) Setup-Test-Teardown
+d) None of the above
+
+Falsch! Die richtige Antwort war: a.
+
+3. Was ist der Vorteil von Mocking in Unittests?
+a) Es macht den Code schneller
+b) Es ersetzt externe Abhängigkeiten
+c) Es testet die Integration aller Komponenten
+d) Es reduziert die Anzahl der Tests
+
+Richtig! 🎉
+
+4. Welches Framework wird typischerweise in Python für Unittests verwendet?
+a) pytest
+b) JUnit
+c) NUnit
+d) Mocha
+
+Richtig! 🎉
+
+5. Welche Art von Abdeckung (Coverage) misst, ob alle Verzweigungen im Code getestet wurden?
+a) Line Coverage
+b) Branch Coverage
+c) Function Coverage
+d) Class Coverage
+
+Falsch! Die richtige Antwort war: b.
+
+Quiz beendet! Du hast 3 von 5 Fragen richtig beantwortet.
+Gut gemacht! 👏
 </pre>
 </div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbformat/__init__.py:132: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
-  validate(nb)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
-</ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
 </div>
 </div>
 </div>

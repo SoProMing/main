@@ -7516,250 +7516,185 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-portable-version">Create portable version<a class="anchor-link" href="#Create-portable-version">¶</a></h1><img alt="No description has been provided for this image" src="Export_jupiter.webp" style="width:280px; height:280px;"/>
-<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project portable.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Recursive-HTML-exporting-and-link-replacement">Recursive HTML exporting and link replacement<a class="anchor-link" href="#Recursive-HTML-exporting-and-link-replacement">¶</a></h1><p>This one is in use right now to create linked and working html pages.</p>
-<p>To achieve this, you can write a Python script that:</p>
+<p><a href="../../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../abstract/Contents.de.html">Inhaltsverzeichnis</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../Methods.de.html">Methoden</a> / <a href="../Deliberating_Structures.de.html">Deliberating structures</a> / <a href="../Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a></p>
+<h1 id="IDEs---Integrierte-Entwicklungsumgebungen">IDEs - Integrierte Entwicklungsumgebungen<a class="anchor-link" href="#IDEs---Integrierte-Entwicklungsumgebungen">¶</a></h1><table border="0">
+<tr>
+<td>
+<img alt="No description has been provided for this image" src="IDE.webp"/>
+</td>
+<td rowspan="2">
+<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_IDE.jpg"/></a>
+</td>
+</tr>
+<tr>
+<td>
+<a href="https://visualstudio.microsoft.com/">Visual Studio</a><br/>
+<a href="https://code.visualstudio.com/">Visual Studio Code</a><br/>
+<a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a><br/>
+<a href="https://www.jetbrains.com/pycharm/">PyCharm</a><br/>
+<a href="https://www.eclipse.org/">Eclipse</a><br/>
+</td>
+</tr>
+</table>
+<h3 id="Was-ist-eine-IDE?">Was ist eine IDE?<a class="anchor-link" href="#Was-ist-eine-IDE?">¶</a></h3><p>Eine <strong>IDE (Integrated Development Environment)</strong> ist eine Softwareanwendung, die Programmierer unterstützt, Code effizient zu schreiben, zu testen und zu debuggen. Sie kombiniert mehrere Werkzeuge in einer einzigen Benutzeroberfläche, um den Entwicklungsprozess zu erleichtern. Zu den wichtigsten Komponenten einer IDE gehören:</p>
 <ol>
-<li>Recursively searches for <code>.ipynb</code> files in a directory.</li>
-<li>Exports each <code>.ipynb</code> file to an HTML file.</li>
-<li>Replaces links within the HTML files that point to <code>.ipynb</code> files with <code>.html</code> links (so that the links work correctly in a browser).</li>
+<li><strong>Code-Editor:</strong> Zum Schreiben und Bearbeiten von Quellcode mit Funktionen wie Syntax-Highlighting, Autovervollständigung und Code-Vorlagen.</li>
+<li><strong>Debugger:</strong> Zur Identifikation und Behebung von Fehlern im Code durch schrittweises Testen und Überprüfen der Programmlogik.</li>
+<li><strong>Compiler oder Interpreter:</strong> Zum Übersetzen des Codes in ausführbare Programme.</li>
+<li><strong>Versionierungsintegration:</strong> Unterstützung von Tools wie Git für die Versionskontrolle.</li>
+<li><strong>Build-Tools:</strong> Automatisieren von Kompilierungs- und Testprozessen.</li>
 </ol>
-<p>You can use the following libraries:</p>
-<ul>
-<li><code>os</code> or <code>pathlib</code> for file traversal.</li>
-<li><code>nbconvert</code> for converting <code>.ipynb</code> to <code>.html</code>.</li>
-<li><code>re</code> for regular expressions to replace links in HTML content.</li>
-</ul>
-<h2 id="Prerequesits">Prerequesits<a class="anchor-link" href="#Prerequesits">¶</a></h2><h3 id="Install-the-Required-Modules">Install the Required Modules<a class="anchor-link" href="#Install-the-Required-Modules">¶</a></h3><p>You can install the necessary modules using the following commands in your terminal or command prompt.</p>
-<ol>
-<li><strong>Install  <code>nbconvert</code></strong>: This module is used to convert Jupyter notebooks to HTML.</li>
+<p>Beispiele für bekannte IDEs sind Visual Studio, Visual Studio Code, IntelliJ IDEA, Eclipse, PyCharm und NetBeans.</p>
+<h3 id="Nutzung-von-Visual-Studio">Nutzung von <strong>Visual Studio</strong><a class="anchor-link" href="#Nutzung-von-Visual-Studio">¶</a></h3><h4 id="%C3%9Cbersicht:">Übersicht:<a class="anchor-link" href="#%C3%9Cbersicht:">¶</a></h4><p>Visual Studio ist eine umfassende IDE von Microsoft, speziell für die Entwicklung von Anwendungen in .NET, C#, C++, Python und anderen Sprachen. Es bietet leistungsstarke Tools für Windows-, Web- und Cloud-Anwendungen.</p>
+<h4 id="Installation:">Installation:<a class="anchor-link" href="#Installation:">¶</a></h4><ol>
+<li>Besuche die Website <a href="https://visualstudio.microsoft.com/">Visual Studio</a>.</li>
+<li>Lade die gewünschte Edition herunter (Community, Professional oder Enterprise).</li>
+<li>Während der Installation kannst du Arbeitslasten (z. B. .NET Desktopentwicklung, Webentwicklung) auswählen.</li>
 </ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbconvert</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li><strong>Install  <code>nbformat</code></strong>: This module is used to read and write Jupyter notebook files.</li>
-</ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nbformat</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> A new release of pip is available: <span class="ansi-red-fg">24.2</span> -&gt; <span class="ansi-green-fg">24.3.1</span>
-<span class="ansi-bold">[</span><span class="ansi-blue-fg">notice</span><span class="ansi-bold">]</span> To update, run: <span class="ansi-green-fg">pip3.9 install --upgrade pip</span>
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Here's an outline of the script:</p>
-<h3 id="Script:-Convert-and-Modify-Links-in-HTML">Script: Convert and Modify Links in HTML<a class="anchor-link" href="#Script:-Convert-and-Modify-Links-in-HTML">¶</a></h3>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbconvert</span> <span class="kn">import</span> <span class="n">HTMLExporter</span>
-<span class="kn">import</span> <span class="nn">re</span>
-
-<span class="k">def</span> <span class="nf">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">):</span>
-    <span class="c1"># Load the notebook</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-    
-    <span class="c1"># Convert to HTML</span>
-    <span class="n">html_exporter</span> <span class="o">=</span> <span class="n">HTMLExporter</span><span class="p">()</span>
-    <span class="p">(</span><span class="n">body</span><span class="p">,</span> <span class="n">resources</span><span class="p">)</span> <span class="o">=</span> <span class="n">html_exporter</span><span class="o">.</span><span class="n">from_notebook_node</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-    
-    <span class="c1"># Define the HTML filename</span>
-    <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_file</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-
-    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">html_filename</span><span class="p">):</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
-    
-    <span class="c1"># Write the HTML file in the same directory as the ipynb file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_filename</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">html_filename</span>
-
-<span class="k">def</span> <span class="nf">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    
-    <span class="c1"># Replace .ipynb links with relative .html links</span>
-    <span class="n">updated_content</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span>
-        <span class="sa">r</span><span class="s1">'(?&lt;=href=["</span><span class="se">\'</span><span class="s1">])(.*?\.ipynb)(#.*)?(?=["</span><span class="se">\'</span><span class="s1">])'</span><span class="p">,</span> 
-        <span class="k">lambda</span> <span class="n">match</span><span class="p">:</span> <span class="n">make_relative_html_link</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">root_dir</span><span class="p">),</span> 
-        <span class="n">content</span>
-    <span class="p">)</span>
-    
-    <span class="c1"># Remove &lt;details&gt; and &lt;/details&gt; lines</span>
-    <span class="k">if</span> <span class="s2">"SoProMing"</span> <span class="ow">in</span> <span class="n">html_file</span><span class="p">:</span>
-        <span class="n">updated_content</span> <span class="o">=</span> <span class="n">remove_details_tags</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-    
-    <span class="c1"># Write the updated content back to the file</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">updated_content</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">remove_details_tags</span><span class="p">(</span><span class="n">html_content</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Remove all lines containing &lt;details&gt; or &lt;/details&gt; tags."""</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">html_content</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-    <span class="n">filtered_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span> <span class="k">if</span> <span class="s1">'&lt;details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">'&lt;/details&gt;'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">]</span>
-    <span class="k">return</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filtered_lines</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">make_relative_html_link</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">,</span> <span class="n">anchor</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Convert .ipynb link to corresponding .html link</span>
-    <span class="n">html_link</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">ipynb_link</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">'.html'</span>
-    
-    <span class="c1"># Get the absolute path of the html link</span>
-    <span class="n">absolute_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">html_link</span><span class="p">)</span>
-    
-    <span class="c1"># Remove the root directory (CWD) from the absolute path to make it relative</span>
-    <span class="n">relative_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">absolute_html_path</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">root_dir</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">anchor</span><span class="p">:</span>
-        <span class="n">relative_html_path</span> <span class="o">+=</span> <span class="n">anchor</span>
-    
-    <span class="k">return</span> <span class="n">relative_html_path</span>
-
-<span class="k">def</span> <span class="nf">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-    <span class="c1"># Recursively find .ipynb files</span>
-    <span class="k">for</span> <span class="n">subdir</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">root_dir</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                <span class="n">ipynb_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">subdir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-                
-                <span class="c1"># Convert to HTML and save it in the same directory</span>
-                <span class="n">html_file</span> <span class="o">=</span> <span class="n">convert_ipynb_to_html</span><span class="p">(</span><span class="n">ipynb_path</span><span class="p">)</span>
-                
-                <span class="c1"># Replace .ipynb links with relative .html links, removing the cwd from the path</span>
-                <span class="n">replace_ipynb_links_in_html</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="n">root_dir</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="c1"># Use the current working directory as the root directory</span>
-    <span class="n">root_directory</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
-    
-    <span class="n">recursive_convert_and_replace_links</span><span class="p">(</span><span class="n">root_directory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="How-the-Script-Works:">How the Script Works:<a class="anchor-link" href="#How-the-Script-Works:">¶</a></h3><ol>
-<li><p><strong>Convert <code>.ipynb</code> to <code>.html</code></strong>:</p>
-<ul>
-<li>The <code>convert_ipynb_to_html</code> function uses <code>nbconvert</code> to convert a Jupyter Notebook (<code>.ipynb</code>) to an HTML file and saves it in the <code>output_dir</code>.</li>
+<h4 id="Nutzung:">Nutzung:<a class="anchor-link" href="#Nutzung:">¶</a></h4><ol>
+<li><strong>Projekte erstellen:</strong><ul>
+<li>Nach dem Start: <em>"Neues Projekt erstellen"</em> auswählen.</li>
+<li>Vorlage und Programmiersprache (z. B. C#, ASP.NET) auswählen.</li>
 </ul>
 </li>
-<li><p><strong>Replace <code>.ipynb</code> Links with <code>.html</code> Links</strong>:</p>
-<ul>
-<li>The <code>replace_ipynb_links_in_html</code> function reads the generated HTML file, finds any links to <code>.ipynb</code> files, and replaces them with <code>.html</code> links.</li>
-<li>This is done using a regular expression that matches the links in the HTML content.</li>
+<li><strong>Code schreiben:</strong><ul>
+<li>Code im Editorfenster schreiben.</li>
+<li>Nutzen von IntelliSense für Autovervollständigung und Syntax-Highlights.</li>
 </ul>
 </li>
-<li><p><strong>Recursively Process Files</strong>:</p>
-<ul>
-<li>The <code>recursive_convert_and_replace_links</code> function walks through the directory tree (<code>os.walk</code>) and processes all <code>.ipynb</code> files. It calls the conversion and replacement functions for each file found.</li>
+<li><strong>Debugging:</strong><ul>
+<li>Haltepunkte setzen und den Debugger verwenden.</li>
+<li>Schrittweises Ausführen des Codes mit F10/F11.</li>
+</ul>
+</li>
+<li><strong>Build und Ausführung:</strong><ul>
+<li>Drücke F5, um das Projekt zu kompilieren und auszuführen.</li>
+<li>Fehler und Warnungen im Fehlerfenster prüfen.</li>
+</ul>
+</li>
+<li><strong>Versionskontrolle:</strong><ul>
+<li>Integrierte Git-Unterstützung nutzen, um Code mit Repositories zu synchronisieren.</li>
 </ul>
 </li>
 </ol>
-<h3 id="Notes:">Notes:<a class="anchor-link" href="#Notes:">¶</a></h3><ul>
-<li><strong>File Paths</strong>: Make sure to update the <code>root_directory</code> and <code>output_directory</code> variables to match your desired input and output paths.</li>
-<li><strong>Dependencies</strong>: You may need to install <code>nbconvert</code> and <code>nbformat</code> via <code>pip install nbconvert nbformat</code>.</li>
+<h4 id="Einsatzbereiche:">Einsatzbereiche:<a class="anchor-link" href="#Einsatzbereiche:">¶</a></h4><ul>
+<li>Entwicklung von Windows-Anwendungen mit WPF oder WinForms.</li>
+<li>Webentwicklung mit ASP.NET Core.</li>
+<li>Spieleentwicklung mit Unity (C#-Integration).</li>
 </ul>
-<p>This script will help you convert all <code>.ipynb</code> files to HTML and ensure that the links between notebooks are correctly pointing to the corresponding <code>.html</code> files.</p>
+<h3 id="Nutzung-von-Visual-Studio-Code">Nutzung von <strong>Visual Studio Code</strong><a class="anchor-link" href="#Nutzung-von-Visual-Studio-Code">¶</a></h3><h4 id="%C3%9Cbersicht:">Übersicht:<a class="anchor-link" href="#%C3%9Cbersicht:">¶</a></h4><p>Visual Studio Code (VS Code) ist ein leichtgewichtiger, plattformübergreifender Code-Editor, ideal für Webentwicklung, Python, JavaScript und kleinere Projekte. Es bietet Erweiterungen für nahezu jede Sprache oder Technologie.</p>
+<h4 id="Installation:">Installation:<a class="anchor-link" href="#Installation:">¶</a></h4><ol>
+<li>Besuche die Website <a href="https://code.visualstudio.com/">Visual Studio Code</a>.</li>
+<li>Lade die Version für dein Betriebssystem herunter.</li>
+<li>Installiere zusätzliche Plugins über den integrierten Marktplatz.</li>
+</ol>
+<h4 id="Nutzung:">Nutzung:<a class="anchor-link" href="#Nutzung:">¶</a></h4><ol>
+<li><strong>Projekte öffnen:</strong><ul>
+<li>Ein Verzeichnis öffnen oder direkt einzelne Dateien bearbeiten.</li>
+</ul>
+</li>
+<li><strong>Erweiterungen installieren:</strong><ul>
+<li>Über das Extensions-Symbol (links) z. B. für Python, Docker, Git, oder C# installieren.</li>
+</ul>
+</li>
+<li><strong>Code schreiben:</strong><ul>
+<li>IntelliSense bietet Autovervollständigung und Vorschläge.</li>
+<li>Anpassung durch Themes und eigene Tastenkürzel.</li>
+</ul>
+</li>
+<li><strong>Debugging:</strong><ul>
+<li>Debugger einrichten (z. B. Node.js, Python).</li>
+<li>Haltepunkte setzen und Variablen im Debug-Fenster prüfen.</li>
+</ul>
+</li>
+<li><strong>Terminal:</strong><ul>
+<li>Eingebautes Terminal nutzen, um Befehle wie <code>git</code>, <code>npm</code>, oder <code>dotnet</code> auszuführen.</li>
+</ul>
+</li>
+</ol>
+<h4 id="Einsatzbereiche:">Einsatzbereiche:<a class="anchor-link" href="#Einsatzbereiche:">¶</a></h4><ul>
+<li>Webentwicklung mit HTML, CSS, JavaScript oder Frameworks wie React/Angular.</li>
+<li>DevOps mit Docker oder Kubernetes.</li>
+<li>Schnelltests für Skripte in Python oder Bash.</li>
+</ul>
+<h3 id="Nutzung-von-IntelliJ-IDEA">Nutzung von <strong>IntelliJ IDEA</strong><a class="anchor-link" href="#Nutzung-von-IntelliJ-IDEA">¶</a></h3><h4 id="%C3%9Cbersicht:">Übersicht:<a class="anchor-link" href="#%C3%9Cbersicht:">¶</a></h4><p>IntelliJ IDEA von JetBrains ist eine mächtige IDE, die speziell für Java und Kotlin entwickelt wurde. Es unterstützt jedoch auch andere Sprachen wie Python, PHP und JavaScript.</p>
+<h4 id="Installation:">Installation:<a class="anchor-link" href="#Installation:">¶</a></h4><ol>
+<li>Besuche die Website <a href="https://www.jetbrains.com/idea/">JetBrains IntelliJ IDEA</a>.</li>
+<li>Wähle die Community- (kostenlos) oder die Ultimate-Edition (kostenpflichtig).</li>
+<li>Lade die entsprechende Version für dein Betriebssystem herunter.</li>
+</ol>
+<h4 id="Nutzung:">Nutzung:<a class="anchor-link" href="#Nutzung:">¶</a></h4><ol>
+<li><strong>Projekte erstellen:</strong><ul>
+<li>Neues Projekt erstellen und eine Sprache (z. B. Java, Kotlin) sowie das Build-Tool (z. B. Maven, Gradle) auswählen.</li>
+<li>Alternativ ein bestehendes Projekt importieren.</li>
+</ul>
+</li>
+<li><strong>Code schreiben:</strong><ul>
+<li>IntelliJ bietet intelligentere Autovervollständigung als die meisten IDEs.</li>
+<li>Automatische Code-Refactorings nutzen.</li>
+</ul>
+</li>
+<li><strong>Debugging:</strong><ul>
+<li>Haltepunkte setzen und mithilfe der integrierten Werkzeuge testen.</li>
+</ul>
+</li>
+<li><strong>Versionskontrolle:</strong><ul>
+<li>Git, SVN oder andere Tools direkt in der IDE nutzen.</li>
+</ul>
+</li>
+<li><strong>Plugins installieren:</strong><ul>
+<li>Zusätzliche Features wie Docker, Spring Boot oder JavaFX hinzufügen.</li>
+</ul>
+</li>
+</ol>
+<h4 id="Einsatzbereiche:">Einsatzbereiche:<a class="anchor-link" href="#Einsatzbereiche:">¶</a></h4><ul>
+<li>Entwicklung von Java-Anwendungen (Desktop, Web, Enterprise).</li>
+<li>Nutzung von Frameworks wie Spring oder Hibernate.</li>
+<li>Entwickeln von Kotlin-Anwendungen (z. B. Android-Apps).</li>
+</ul>
+<h3 id="Vergleich-der-Tools">Vergleich der Tools<a class="anchor-link" href="#Vergleich-der-Tools">¶</a></h3><table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Visual Studio</strong></th>
+<th><strong>VS Code</strong></th>
+<th><strong>IntelliJ IDEA</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Schwerpunkt</strong></td>
+<td>.NET und Windows</td>
+<td>Leichtgewichtig, flexibel</td>
+<td>Java, Kotlin, Web</td>
+</tr>
+<tr>
+<td><strong>Leistung</strong></td>
+<td>Schwerfällig</td>
+<td>Schnell und leicht</td>
+<td>Mittelschwer</td>
+</tr>
+<tr>
+<td><strong>Einstieg</strong></td>
+<td>Für große Projekte</td>
+<td>Einfacher Einstieg</td>
+<td>Mittel</td>
+</tr>
+<tr>
+<td><strong>Kosten</strong></td>
+<td>Community kostenlos</td>
+<td>Kostenlos</td>
+<td>Community kostenlos</td>
+</tr>
+<tr>
+<td><strong>Erweiterungen</strong></td>
+<td>Wenig flexibel</td>
+<td>Sehr flexibel</td>
+<td>Viele Plugins</td>
+</tr>
+</tbody>
+</table>
+<p>Jede IDE hat ihre Stärken, und die Wahl hängt stark von deinen Anforderungen und dem Projektumfang ab.</p>
 </div>
 </div>
 </div>
@@ -7770,7 +7705,85 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Combine-all-notebooks-to-one">Combine all notebooks to one<a class="anchor-link" href="#Combine-all-notebooks-to-one">¶</a></h1><p>Working script... Combines all following the Contents</p>
+<h2 id="Weitere-Tipps">Weitere Tipps<a class="anchor-link" href="#Weitere-Tipps">¶</a></h2><p>Im Kontext von IDEs und ihrer Nutzung gibt es noch viele weitere Aspekte, die vertieft werden können. Hier einige wichtige Punkte und Ergänzungen:</p>
+<h3 id="1.-Abgrenzung-von-IDEs-zu-Code-Editoren">1. <strong>Abgrenzung von IDEs zu Code-Editoren</strong><a class="anchor-link" href="#1.-Abgrenzung-von-IDEs-zu-Code-Editoren">¶</a></h3><ul>
+<li><strong>Code-Editoren</strong> wie Visual Studio Code oder Sublime Text bieten vor allem grundlegende Funktionen zum Bearbeiten von Quellcode. Sie sind oft modular und auf Erweiterungen angewiesen, um Funktionen wie Debugging oder Build-Tools bereitzustellen.</li>
+<li><strong>IDEs</strong> wie Visual Studio oder IntelliJ IDEA sind „All-in-One“-Lösungen mit integrierten Tools, die speziell für komplexere Projekte und professionelle Entwicklung optimiert sind.</li>
+</ul>
+<h3 id="2.-Trends-und-moderne-Entwicklungen">2. <strong>Trends und moderne Entwicklungen</strong><a class="anchor-link" href="#2.-Trends-und-moderne-Entwicklungen">¶</a></h3><ul>
+<li><strong>Cloud-basierte IDEs:</strong> Tools wie GitHub Codespaces und AWS Cloud9 ermöglichen es, Entwicklungsumgebungen direkt in der Cloud auszuführen. Vorteile sind:<ul>
+<li>Zugriff von überall.</li>
+<li>Einheitliche Entwicklungsumgebung für Teams.</li>
+<li>Ressourcen- und Skalierbarkeit in der Cloud.</li>
+</ul>
+</li>
+<li><strong>AI-gestützte Features:</strong> Viele IDEs und Code-Editoren integrieren KI-Tools wie GitHub Copilot oder IntelliCode, die intelligente Code-Vervollständigungen, automatisches Debugging und Optimierungsvorschläge bieten.</li>
+<li><strong>DevOps-Integration:</strong> Moderne IDEs bieten tiefgehende Integrationen mit CI/CD-Tools, Containerisierung (z. B. Docker) und Orchestrierung (z. B. Kubernetes), was die End-to-End-Entwicklung erheblich beschleunigt.</li>
+</ul>
+<h3 id="3.-Vorteile-und-Herausforderungen-beim-Einsatz-von-IDEs">3. <strong>Vorteile und Herausforderungen beim Einsatz von IDEs</strong><a class="anchor-link" href="#3.-Vorteile-und-Herausforderungen-beim-Einsatz-von-IDEs">¶</a></h3><h4 id="Vorteile:">Vorteile:<a class="anchor-link" href="#Vorteile:">¶</a></h4><ul>
+<li><strong>Produktivität:</strong> Funktionen wie Refactoring, Debugging und Syntaxprüfung sparen viel Zeit.</li>
+<li><strong>Qualität:</strong> Durch Live-Fehlerprüfungen und unterstützende Tools werden Fehler frühzeitig erkannt.</li>
+<li><strong>Integration:</strong> IDEs bieten standardmäßig Unterstützung für Versionskontrollsysteme, Datenbanken und Build-Systeme.</li>
+</ul>
+<h4 id="Herausforderungen:">Herausforderungen:<a class="anchor-link" href="#Herausforderungen:">¶</a></h4><ul>
+<li><strong>Einarbeitung:</strong> Für Einsteiger können große IDEs wie Visual Studio überwältigend sein.</li>
+<li><strong>Performance:</strong> Umfangreiche IDEs benötigen oft mehr Ressourcen, was auf schwächeren Rechnern zu Problemen führen kann.</li>
+<li><strong>Overengineering:</strong> Für kleine Projekte oder Skripte kann eine umfassende IDE zu aufwendig sein.</li>
+</ul>
+<h3 id="4.-Wichtige-Kriterien-f%C3%BCr-die-Auswahl-einer-IDE">4. <strong>Wichtige Kriterien für die Auswahl einer IDE</strong><a class="anchor-link" href="#4.-Wichtige-Kriterien-f%C3%BCr-die-Auswahl-einer-IDE">¶</a></h3><ul>
+<li><strong>Programmiersprache:</strong> Visual Studio eignet sich hervorragend für C# und .NET, während IntelliJ IDEA für Java und Kotlin optimiert ist.</li>
+<li><strong>Projektgröße:</strong> Große, modulare Projekte profitieren von umfassenden IDEs, während kleinere Projekte oft von leichtgewichtigen Editoren profitieren.</li>
+<li><strong>Teamarbeit:</strong> IDEs mit Cloud- oder Kollaborationsfunktionen (z. B. CodeSpaces, JetBrains Space) sind ideal für Teams.</li>
+<li><strong>Kosten:</strong> Einige IDEs wie IntelliJ IDEA (Ultimate Edition) sind kostenpflichtig und eignen sich primär für Unternehmen.</li>
+</ul>
+<h3 id="5.-Anwendungsf%C3%A4lle-f%C3%BCr-Visual-Studio,-Visual-Studio-Code-und-IntelliJ">5. <strong>Anwendungsfälle für Visual Studio, Visual Studio Code und IntelliJ</strong><a class="anchor-link" href="#5.-Anwendungsf%C3%A4lle-f%C3%BCr-Visual-Studio,-Visual-Studio-Code-und-IntelliJ">¶</a></h3><ul>
+<li><p><strong>Visual Studio:</strong></p>
+<ul>
+<li>Erstellung komplexer .NET- oder Windows-Anwendungen.</li>
+<li>Entwicklung für Unity oder Xamarin.</li>
+<li>Perfekt für C++, wenn Windows-spezifische Anwendungen oder Treiber entwickelt werden.</li>
+</ul>
+</li>
+<li><p><strong>Visual Studio Code:</strong></p>
+<ul>
+<li>Flexibel für Webentwicklung (React, Angular, Vue.js).</li>
+<li>DevOps-Workflows mit Docker, Kubernetes und Terraform.</li>
+<li>Schnelles Bearbeiten von Skripten oder kleinen Projekten.</li>
+</ul>
+</li>
+<li><p><strong>IntelliJ IDEA:</strong></p>
+<ul>
+<li>Standard für Java- und Kotlin-Entwicklung (z. B. Spring Boot, Android-Apps).</li>
+<li>Exzellent für Microservices-Entwicklung mit Gradle/Maven.</li>
+<li>Nutzung in datengetriebenen Anwendungen durch Tools wie JPA oder Hibernate.</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.-Alternative-IDEs-und-spezialisierte-Tools">6. <strong>Alternative IDEs und spezialisierte Tools</strong><a class="anchor-link" href="#6.-Alternative-IDEs-und-spezialisierte-Tools">¶</a></h3><ul>
+<li><strong>PyCharm:</strong> Optimiert für Python-Entwicklung.</li>
+<li><strong>Eclipse:</strong> Open-Source-IDE mit starkem Fokus auf Java, aber weniger benutzerfreundlich als IntelliJ.</li>
+<li><strong>NetBeans:</strong> Kostenlos und für Java geeignet, bietet aber weniger moderne Features.</li>
+<li><strong>Rider (von JetBrains):</strong> Hervorragende Alternative zu Visual Studio für .NET-Entwicklung.</li>
+</ul>
+<h3 id="7.-Best-Practices-beim-Einsatz-von-IDEs">7. <strong>Best Practices beim Einsatz von IDEs</strong><a class="anchor-link" href="#7.-Best-Practices-beim-Einsatz-von-IDEs">¶</a></h3><ul>
+<li><strong>Konfiguration:</strong> Passe deine IDE an deine Bedürfnisse an (z. B. Tastenkürzel, Themes, Plugins).</li>
+<li><strong>Versionierung:</strong> Nutze die integrierte Unterstützung für Git oder andere Systeme.</li>
+<li><strong>Automatisierung:</strong> Integriere Build-Systeme wie Maven, Gradle oder MSBuild, um Prozesse zu beschleunigen.</li>
+<li><strong>Erweiterungen:</strong> Installiere nur wirklich benötigte Plugins, um die Performance hoch zu halten.</li>
+<li><strong>Debugging nutzen:</strong> Debugging-Funktionen helfen, den Code effizienter zu analysieren und zu verstehen.</li>
+</ul>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Die Wahl der richtigen IDE hängt stark von deinen Anforderungen ab. Visual Studio glänzt in der Windows-Entwicklung, IntelliJ IDEA ist der Goldstandard für Java, und VS Code punktet mit Flexibilität und Erweiterbarkeit. Mit den aktuellen Trends in Richtung Cloud, KI und Kollaboration stehen Entwicklern heute Werkzeuge zur Verfügung, die den Entwicklungsprozess auf ein neues Level heben.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="F%C3%BCr-IDEs-spielerisch-entscheiden">Für IDEs spielerisch entscheiden<a class="anchor-link" href="#F%C3%BCr-IDEs-spielerisch-entscheiden">¶</a></h2><p>Hier ist ein interaktives Python-Programm, das durch eine Reihe von Fragen führt, um basierend auf den Vorlieben und Bedürfnissen des Benutzers die passende IDE zu empfehlen.</p>
 </div>
 </div>
 </div>
@@ -7782,165 +7795,95 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">nbformat</span>
-<span class="kn">from</span> <span class="nn">nbformat.v4</span> <span class="kn">import</span> <span class="n">new_markdown_cell</span>
-<span class="kn">import</span> <span class="nn">re</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ide_quiz</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Willkommen zum IDE-Finder! Beantworte die folgenden Fragen, um herauszufinden, welche IDE am besten zu dir passt.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">load_notebook</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Load a Jupyter Notebook file."""</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">as_version</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="c1"># Punkte für jede IDE</span>
+    <span class="n">points</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"Visual Studio"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"Visual Studio Code"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"IntelliJ IDEA"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"PyCharm"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">"Eclipse"</span><span class="p">:</span> <span class="mi">0</span>
+    <span class="p">}</span>
 
-<span class="k">def</span> <span class="nf">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Extract links to other .ipynb files from Markdown cells."""</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">link_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'\[.*?\]\((.*?)\)'</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-            <span class="n">matches</span> <span class="o">=</span> <span class="n">link_pattern</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="n">matches</span><span class="p">:</span>
-                <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                <span class="k">if</span> <span class="n">link</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">links</span>
+    <span class="c1"># Fragen</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"1. Welche Sprache programmierst du am häufigsten?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   a) C#, C++ oder .NET</span><span class="se">\n</span><span class="s2">   b) Webentwicklung (HTML, CSS, JavaScript, Python)</span><span class="se">\n</span><span class="s2">   c) Java oder Kotlin</span><span class="se">\n</span><span class="s2">   d) Python</span><span class="se">\n</span><span class="s2">   e) Andere Sprachen wie Scala, PHP"</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a/b/c/d/e): "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"a"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"b"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio Code"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"c"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"IntelliJ IDEA"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"d"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"PyCharm"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"e"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Eclipse"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
 
-<span class="k">def</span> <span class="nf">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Try to find a file in the given base path or its subdirectories.</span>
-<span class="sd">    """</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span> <span class="o">==</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">relative_path</span><span class="p">):</span>
-                <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
-    <span class="k">return</span> <span class="kc">None</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">2. Bevorzugst du eine umfangreiche, aber mächtige IDE oder etwas Leichtgewichtiges?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   a) Umfangreich und mächtig</span><span class="se">\n</span><span class="s2">   b) Leichtgewichtig und flexibel"</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a/b): "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"a"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"IntelliJ IDEA"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"PyCharm"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"b"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio Code"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Eclipse"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">def</span> <span class="nf">adjust_links</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""Adjust links in Markdown cells and &lt;img&gt; tags to point to the correct locations."""</span>
-    <span class="k">def</span> <span class="nf">replace_markdown_link</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">text</span><span class="p">,</span> <span class="n">link</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">groups</span><span class="p">()</span>
-        <span class="n">link_clean</span> <span class="o">=</span> <span class="n">link</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'#'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'?'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">link_clean</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb'</span><span class="p">):</span>
-            <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">link_clean</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(#</span><span class="si">{</span><span class="n">section_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="s1">'-'</span><span class="p">)</span><span class="si">}</span><span class="s2">)"</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">link_clean</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">(</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s2">)"</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">3. Wie wichtig ist dir die Integration von Plugins und Erweiterungen?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   a) Sehr wichtig</span><span class="se">\n</span><span class="s2">   b) Nicht so wichtig"</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a/b): "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"a"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio Code"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"IntelliJ IDEA"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"b"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"PyCharm"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="k">def</span> <span class="nf">replace_img_tag</span><span class="p">(</span><span class="n">match</span><span class="p">):</span>
-        <span class="n">src</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="n">adjusted_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">notebook_dir</span><span class="p">,</span> <span class="n">src</span><span class="p">),</span> <span class="n">combined_dir</span><span class="p">)</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">'&lt;img src="</span><span class="si">{</span><span class="n">adjusted_path</span><span class="si">}</span><span class="s1">"'</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">4. Entwickelst du primär für Windows, Web oder Cross-Plattform?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   a) Windows</span><span class="se">\n</span><span class="s2">   b) Web</span><span class="se">\n</span><span class="s2">   c) Cross-Plattform"</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a/b/c): "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"a"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"b"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio Code"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"c"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"IntelliJ IDEA"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"PyCharm"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="n">markdown_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(\[.*?\])\((.*?)\)'</span><span class="p">)</span>
-    <span class="n">img_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">'&lt;img\s+src=["</span><span class="se">\'</span><span class="s1">](.*?)["</span><span class="se">\'</span><span class="s1">]'</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">5. Was ist dir wichtiger: Geschwindigkeit oder Funktionalität?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"   a) Geschwindigkeit</span><span class="se">\n</span><span class="s2">   b) Funktionalität"</span><span class="p">)</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (a/b): "</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"a"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio Code"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">2</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Eclipse"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">answer</span> <span class="o">==</span> <span class="s2">"b"</span><span class="p">:</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"Visual Studio"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"IntelliJ IDEA"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">points</span><span class="p">[</span><span class="s2">"PyCharm"</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">markdown_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_markdown_link</span><span class="p">,</span> <span class="n">source</span><span class="p">)</span>
-    <span class="n">adjusted_source</span> <span class="o">=</span> <span class="n">img_pattern</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">replace_img_tag</span><span class="p">,</span> <span class="n">adjusted_source</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">adjusted_source</span>
+    <span class="c1"># Ergebnis</span>
+    <span class="n">recommended_ide</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">points</span><span class="o">.</span><span class="n">get</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Basierend auf deinen Antworten empfehlen wir dir die folgende IDE:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="s2">*** </span><span class="si">{</span><span class="n">recommended_ide</span><span class="si">}</span><span class="s2"> ***</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">):</span>
-    <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">find_file</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">resolved_path</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Warning: File </span><span class="si">{</span><span class="n">notebook_path</span><span class="si">}</span><span class="s2"> not found. Skipping."</span><span class="p">)</span>
-        <span class="k">return</span> <span class="s2">""</span><span class="p">,</span> <span class="s2">""</span>
+    <span class="c1"># Erklärung</span>
+    <span class="n">explanations</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">"Visual Studio"</span><span class="p">:</span> <span class="s2">"Ideal für Windows-Entwicklung, .NET und C#. Perfekt für große Projekte."</span><span class="p">,</span>
+        <span class="s2">"Visual Studio Code"</span><span class="p">:</span> <span class="s2">"Ein leichter, flexibler Code-Editor für Webentwicklung und plattformübergreifende Projekte."</span><span class="p">,</span>
+        <span class="s2">"IntelliJ IDEA"</span><span class="p">:</span> <span class="s2">"Hervorragend für Java- und Kotlin-Entwicklung, besonders bei komplexen Projekten."</span><span class="p">,</span>
+        <span class="s2">"PyCharm"</span><span class="p">:</span> <span class="s2">"Die beste Wahl für Python-Entwicklung mit exzellenten Debugging- und Testing-Tools."</span><span class="p">,</span>
+        <span class="s2">"Eclipse"</span><span class="p">:</span> <span class="s2">"Ein Open-Source-Allrounder, ideal für Java und andere Sprachen wie Scala oder PHP."</span>
+    <span class="p">}</span>
 
-    <span class="n">notebook_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">,</span> <span class="n">base_path</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">explanations</span><span class="p">[</span><span class="n">recommended_ide</span><span class="p">])</span>
 
-    <span class="k">return</span> <span class="p">(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">,</span> <span class="n">visited</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">added</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Collect all links to notebooks in the order they appear.</span>
-<span class="sd">    """</span>
-    <span class="k">if</span> <span class="n">visited</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">added</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">added</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-    
-    <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">notebook_path</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="o">==</span> <span class="s2">""</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-    
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">[]</span>
-
-    <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-    
-    <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-    <span class="n">links</span> <span class="o">=</span> <span class="n">extract_links</span><span class="p">(</span><span class="n">notebook</span><span class="p">)</span>
-
-    <span class="n">all_links</span><span class="o">=</span><span class="p">[]</span>
-
-    <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-        <span class="n">all_links</span> <span class="o">=</span> <span class="p">[(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)]</span>
-        <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="o">=</span> <span class="n">get_link_data</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">notebook_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">added</span><span class="p">:</span>
-            <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">([(</span><span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span><span class="p">)])</span>
-            <span class="n">added</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">)</span>
-            
-    <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">all_links</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">link</span><span class="p">,</span> <span class="n">visited</span><span class="p">,</span> <span class="n">added</span><span class="p">))</span>
-    
-    <span class="k">return</span> <span class="n">all_links</span>
-
-<span class="k">def</span> <span class="nf">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">,</span> <span class="n">combined_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">"""</span>
-<span class="sd">    Combine all notebooks into one in the order of provided links.</span>
-<span class="sd">    """</span>
-    <span class="n">combined</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">v4</span><span class="o">.</span><span class="n">new_notebook</span><span class="p">()</span>
-
-    <span class="k">if</span> <span class="n">combined_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">combined_dir</span> <span class="o">=</span> <span class="n">base_path</span>
-
-    <span class="k">for</span> <span class="n">notebook_key</span><span class="p">,</span> <span class="n">resolved_path</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
-        <span class="n">notebook</span> <span class="o">=</span> <span class="n">load_notebook</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-        <span class="n">notebook_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">resolved_path</span><span class="p">)</span>
-
-        <span class="n">section_name</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">notebook_key</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">page_break</span> <span class="o">=</span> <span class="s2">"""&lt;style&gt;</span>
-<span class="s2">@media print {</span>
-<span class="s2">/* Erzwingt einen Seitenumbruch vor diesem Abschnitt */</span>
-<span class="s2">.page-break-before {</span>
-<span class="s2">    page-break-before: always; /* Alternative: break-before: page; */</span>
-<span class="s2">}</span>
-<span class="s2">}</span>
-<span class="s2">&lt;/style&gt;</span>
-
-<span class="s2">&lt;div class="page-break-before"&gt;</span>
-<span class="s2">                                    </span>
-<span class="s2">"""</span>
-
-        <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_markdown_cell</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="se">\n</span><span class="si">{</span><span class="n">page_break</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">##### </span><span class="si">{</span><span class="n">section_name</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">---</span><span class="se">\n</span><span class="s2">&lt;/div&gt;</span><span class="se">\n</span><span class="s2">"</span><span class="p">))</span>
-<span class="c1">#        combined.cells.append(new_markdown_cell(f"### {section_name}\n\n---\n"))</span>
-
-        <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">notebook</span><span class="o">.</span><span class="n">cells</span><span class="p">:</span>
-            <span class="n">cell_copy</span> <span class="o">=</span> <span class="n">nbformat</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">cell_type</span> <span class="o">==</span> <span class="s1">'markdown'</span><span class="p">:</span>
-                <span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="n">adjust_links</span><span class="p">(</span><span class="n">cell_copy</span><span class="o">.</span><span class="n">source</span><span class="p">,</span> <span class="n">notebook_dir</span><span class="p">,</span> <span class="n">combined_dir</span><span class="p">)</span>
-            <span class="n">combined</span><span class="o">.</span><span class="n">cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cell_copy</span><span class="p">)</span>
-    
-    <span class="k">return</span> <span class="n">combined</span>
-
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">base_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>  <span class="c1"># Current working directory</span>
-    <span class="n">initial_notebook</span> <span class="o">=</span> <span class="s2">"abstract/Intro.de.ipynb"</span>  <span class="c1"># Replace with the initial notebook's path relative to base_path</span>
-
-    <span class="n">links</span> <span class="o">=</span> <span class="n">collect_links</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">initial_notebook</span><span class="p">)</span>
-    <span class="n">combined_notebook</span> <span class="o">=</span> <span class="n">combine_notebooks</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="n">links</span><span class="p">)</span>
-
-    <span class="n">output_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base_path</span><span class="p">,</span> <span class="s2">"SoProMing.ipynb"</span><span class="p">)</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_path</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">nbformat</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">combined_notebook</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Combined notebook saved to </span><span class="si">{</span><span class="n">output_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-
+<span class="c1"># Programm starten</span>
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">main</span><span class="p">()</span>
+    <span class="n">ide_quiz</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -7953,191 +7896,40 @@ Note: you may need to restart the kernel to use updated packages.
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Combined notebook saved to /Users/starkj/Documents/2hands/Soproming/Repo/main/notebooks/SoProMing.ipynb
+<pre>
+Willkommen zum IDE-Finder! Beantworte die folgenden Fragen, um herauszufinden, welche IDE am besten zu dir passt.
+
+1. Welche Sprache programmierst du am häufigsten?
+   a) C#, C++ oder .NET
+   b) Webentwicklung (HTML, CSS, JavaScript, Python)
+   c) Java oder Kotlin
+   d) Python
+   e) Andere Sprachen wie Scala, PHP
+
+2. Bevorzugst du eine umfangreiche, aber mächtige IDE oder etwas Leichtgewichtiges?
+   a) Umfangreich und mächtig
+   b) Leichtgewichtig und flexibel
+
+3. Wie wichtig ist dir die Integration von Plugins und Erweiterungen?
+   a) Sehr wichtig
+   b) Nicht so wichtig
+
+4. Entwickelst du primär für Windows, Web oder Cross-Plattform?
+   a) Windows
+   b) Web
+   c) Cross-Plattform
+
+5. Was ist dir wichtiger: Geschwindigkeit oder Funktionalität?
+   a) Geschwindigkeit
+   b) Funktionalität
+
+Basierend auf deinen Antworten empfehlen wir dir die folgende IDE:
+
+*** Visual Studio Code ***
+
+Ein leichter, flexibler Code-Editor für Webentwicklung und plattformübergreifende Projekte.
 </pre>
 </div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages/nbformat/__init__.py:132: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
-  validate(nb)
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Create-PDF-with-beautiful-soup-and-pdfkit">Create PDF with beautiful soup and pdfkit<a class="anchor-link" href="#Create-PDF-with-beautiful-soup-and-pdfkit">¶</a></h1><p>Does not work so well.</p>
-<h3 id="1.--Extract-Headlines-from-HTML-Files:">1.  <strong>Extract Headlines from HTML Files:</strong><a class="anchor-link" href="#1.--Extract-Headlines-from-HTML-Files:">¶</a></h3><ul>
-<li>You'll need to parse the HTML files to extract the headline tags (<code>&lt;h1&gt;</code>,  <code>&lt;h2&gt;</code>, etc.) and use them to generate the table of contents.</li>
-<li>The  <code>BeautifulSoup</code>  library from  <code>bs4</code>  is perfect for parsing HTML.</li>
-</ul>
-<h3 id="2.--Create-the-Table-of-Contents:">2.  <strong>Create the Table of Contents:</strong><a class="anchor-link" href="#2.--Create-the-Table-of-Contents:">¶</a></h3><ul>
-<li>Use the extracted headlines to create a TOC in HTML format, with links to the corresponding sections.</li>
-</ul>
-<h3 id="3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">3.  <strong>Insert the TOC at the Beginning of the Combined HTML File:</strong><a class="anchor-link" href="#3.--Insert-the-TOC-at-the-Beginning-of-the-Combined-HTML-File:">¶</a></h3><ul>
-<li>Add the generated TOC to the beginning of your combined HTML file before converting it to PDF.</li>
-</ul>
-<h3 id="4.--Convert-to-PDF:">4.  <strong>Convert to PDF:</strong><a class="anchor-link" href="#4.--Convert-to-PDF:">¶</a></h3><ul>
-<li>Once you have the HTML with the TOC, convert it to PDF as before.</li>
-</ul>
-<p>Here’s a Python script that implements these steps:</p>
-<h4 id="Step-1:-Install-Necessary-Libraries"><strong>Step 1: Install Necessary Libraries</strong><a class="anchor-link" href="#Step-1:-Install-Necessary-Libraries">¶</a></h4><p>You’ll need to install the required libraries:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">beautifulsoup4</span> <span class="n">pdfkit</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Defaulting to user installation because normal site-packages is not writeable
-Requirement already satisfied: beautifulsoup4 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (4.12.3)
-Collecting pdfkit
-  Downloading pdfkit-1.0.0-py3-none-any.whl.metadata (9.3 kB)
-Requirement already satisfied: soupsieve&gt;1.2 in /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages (from beautifulsoup4) (2.5)
-Downloading pdfkit-1.0.0-py3-none-any.whl (12 kB)
-Installing collected packages: pdfkit
-Successfully installed pdfkit-1.0.0
-Note: you may need to restart the kernel to use updated packages.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">Step 2: Python Script to Generate TOC and Convert HTML to PDF<a class="anchor-link" href="#Step-2:-Python-Script-to-Generate-TOC-and-Convert-HTML-to-PDF">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">import</span> <span class="nn">pdfkit</span>
-
-<span class="c1"># Function to extract headlines from HTML</span>
-<span class="k">def</span> <span class="nf">extract_headlines</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="n">file_index</span><span class="p">):</span>
-    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_content</span><span class="p">,</span> <span class="s1">'html.parser'</span><span class="p">)</span>
-    <span class="n">headlines</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'h1'</span><span class="p">,</span> <span class="s1">'h2'</span><span class="p">,</span> <span class="s1">'h3'</span><span class="p">,</span> <span class="s1">'h4'</span><span class="p">,</span> <span class="s1">'h5'</span><span class="p">,</span> <span class="s1">'h6'</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">header</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">tag</span><span class="p">):</span>
-            <span class="c1"># Create an anchor link for each headline</span>
-            <span class="n">anchor</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"section_</span><span class="si">{</span><span class="n">file_index</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
-            <span class="n">header</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="n">anchor</span>
-            <span class="n">headlines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">header</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">headlines</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)</span>
-
-<span class="c1"># Function to gather all HTML files recursively</span>
-<span class="k">def</span> <span class="nf">gather_html_files</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-    <span class="n">html_files</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">directory</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">'.ipynb.html'</span><span class="p">):</span>
-                <span class="n">html_files</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">html_files</span><span class="p">)</span>  <span class="c1"># Sorting ensures the order is preserved</span>
-
-<span class="c1"># Specify the top-level folder containing the HTML files</span>
-<span class="n">top_level_folder</span> <span class="o">=</span> <span class="s1">'csharp'</span>
-<span class="n">output_html</span> <span class="o">=</span> <span class="s1">'combined_with_toc.html'</span>
-
-<span class="c1"># Gather all HTML files recursively</span>
-<span class="n">html_files</span> <span class="o">=</span> <span class="n">gather_html_files</span><span class="p">(</span><span class="n">top_level_folder</span><span class="p">)</span>
-
-<span class="n">toc_entries</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="s2">"&lt;html&gt;&lt;head&gt;&lt;title&gt;Document with TOC&lt;/title&gt;&lt;/head&gt;&lt;body&gt;"</span>
-
-<span class="c1"># Generate the TOC and combine HTML files</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">html_files</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">infile</span><span class="p">:</span>
-        <span class="n">content</span> <span class="o">=</span> <span class="n">infile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">headlines</span><span class="p">,</span> <span class="n">updated_html</span> <span class="o">=</span> <span class="n">extract_headlines</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="n">toc_entries</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">headlines</span><span class="p">)</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="n">updated_html</span>
-        <span class="n">full_html_content</span> <span class="o">+=</span> <span class="s1">'&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Create the TOC HTML structure</span>
-<span class="n">toc_html</span> <span class="o">=</span> <span class="s1">'&lt;h1&gt;Table of Contents&lt;/h1&gt;&lt;ul&gt;'</span>
-<span class="k">for</span> <span class="n">text</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">toc_entries</span><span class="p">:</span>
-    <span class="n">toc_html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'&lt;li&gt;&lt;a href="#</span><span class="si">{</span><span class="n">anchor</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;'</span>
-<span class="n">toc_html</span> <span class="o">+=</span> <span class="s1">'&lt;/ul&gt;&lt;div style="page-break-after: always;"&gt;&lt;/div&gt;'</span>
-
-<span class="c1"># Add the TOC to the beginning of the document</span>
-<span class="n">full_html_content</span> <span class="o">=</span> <span class="n">toc_html</span> <span class="o">+</span> <span class="n">full_html_content</span> <span class="o">+</span> <span class="s2">"&lt;/body&gt;&lt;/html&gt;"</span>
-
-<span class="c1"># Write the combined HTML with TOC to a file</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'w'</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
-    <span class="n">outfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">full_html_content</span><span class="p">)</span>
-
-<span class="c1"># Convert the combined HTML file with TOC to PDF</span>
-<span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">output_html</span><span class="p">,</span> <span class="s1">'output_with_toc.pdf'</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">"PDF with Table of Contents has been generated as 'output_with_toc.pdf'."</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>PDF with Table of Contents has been generated as 'output_with_toc.pdf'.
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Requirements:"><strong>Requirements:</strong><a class="anchor-link" href="#Requirements:">¶</a></h3><ol>
-<li><strong>wkhtmltopdf:</strong>  Make sure  <code>wkhtmltopdf</code>  is installed on your system for  <code>pdfkit</code>  to work. You can download it from  wkhtmltopdf.org.</li>
-<li><strong>HTML Structure:</strong>  Ensure that your HTML files are well-formed, with proper heading tags for the TOC to be generated accurately.</li>
-</ol>
-<p>This script will produce a PDF with a generated Table of Contents at the beginning, linking to all the headlines within your HTML files.</p>
 </div>
 </div>
 </div>
