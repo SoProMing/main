@@ -2,10 +2,6 @@
 
 SoProMing stands for Software Product Mastering, parts of it are also lectured at the HTW Berlin, which are lectures in german, so some content in here is addressed to the students and for that matter also in german.
 
-## TODO
-
-* Git cheatsheet hinzugüfen
-
 ## Lehre an der HTW (lecture @HTW)
 
 Hier findest Du die Unterlagen zu meiner Veranstaltung in Umweltinformatik an der HTW Berlin.
