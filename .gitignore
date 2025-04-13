@@ -393,6 +393,7 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+.env
 
 # JetBrains Rider
 *.sln.iml
@@ -401,3 +402,9 @@ FodyWeavers.xsd
 notebooks/samples/eShopOnWeb
 notebooks/SoProMing.html
 notebooks/SoProMing.ipynb
+
+notebooks/website
+*.pdf
+*.txt
+
+*.env

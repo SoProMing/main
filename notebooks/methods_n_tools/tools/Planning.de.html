@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -8014,7 +8015,7 @@ Bevor wir auf die spezifischen Tools eingehen, sind hier einige universelle Prin
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_user_input</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_user_input</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -8030,7 +8031,7 @@ Bevor wir auf die spezifischen Tools eingehen, sind hier einige universelle Prin
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte gib eine gültige Zahl ein."</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">recommend_tool</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">recommend_tool</span><span class="p">(</span><span class="n">answers</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s1">'team_size'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Klein (1-5 Personen)"</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">answers</span><span class="p">[</span><span class="s1">'focus'</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"Einfachheit"</span><span class="p">:</span>
             <span class="k">return</span> <span class="s2">"Trello oder Notion"</span>
@@ -8050,7 +8051,7 @@ Bevor wir auf die spezifischen Tools eingehen, sind hier einige universelle Prin
     <span class="k">return</span> <span class="s2">"Keine klare Empfehlung, bitte evaluiere mehrere Tools."</span>
 
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum Tool-Auswahl-Assistenten!</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 
     <span class="n">team_size</span> <span class="o">=</span> <span class="n">get_user_input</span><span class="p">(</span>

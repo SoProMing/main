@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7826,8 +7827,8 @@ a.anchor-link {
 <span class="c1"># Ziel: Benutzerfreundliche Entscheidungsfindung für eine Webanwendungsarchitektur</span>
 
 <span class="c1"># Import notwendiger Bibliotheken</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">widgets</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Markdown</span>
 
 <span class="c1"># Begrüßung und Einführung</span>
 <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="s2">"### Willkommen zur spielerischen Auswahl einer Webanwendungsarchitektur!"</span><span class="p">))</span>
@@ -7857,7 +7858,7 @@ a.anchor-link {
     <span class="n">display</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 
 <span class="c1"># Architekturentscheidungslogik</span>
-<span class="k">def</span> <span class="nf">recommend_architecture</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">recommend_architecture</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="c1"># Antwortwerte sammeln</span>
     <span class="n">user_answers</span> <span class="o">=</span> <span class="p">[</span><span class="n">answer</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answers</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
     

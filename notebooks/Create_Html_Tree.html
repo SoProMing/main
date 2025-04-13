@@ -7517,224 +7517,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="../../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../abstract/Contents.de.html">Inhaltsverzeichnis</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../Methods.de.html">Methoden</a> / <a href="../Deliberating_Structures.de.html">Deliberating structures</a> / <a href="../Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a> / <a href="Software_analysis.de.html">Software Analyse Tools</a></p>
-<h1 id="Linting">Linting<a class="anchor-link" href="#Linting">¶</a></h1><table border="0">
-<tr>
-<td>
-<img alt="No description has been provided for this image" src="Linting.webp"/>
-</td>
-<td rowspan="2">
-<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Linting.jpg"/></a>
-</td>
-</tr>
-<tr>
-<td>
-<a href="https://eslint.org/" target="_blank">ESLint (JavaScript/TypeScript)</a><br/>
-<a href="https://pylint.pycqa.org/" target="_blank">Pylint (Python)</a><br/>
-<a href="https://checkstyle.sourceforge.io/" target="_blank">Checkstyle (Java)</a><br/>
-<a href="https://stylelint.io/" target="_blank">Stylelint (CSS)</a><br/>
-<a href="https://github.com/psf/black" target="_blank">Black (Python Formatter)</a><br/>
-<a href="https://clang.llvm.org/extra/clang-tidy/" target="_blank">Clang-Tidy (C/C++)</a><br/>
-<a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview" target="_blank">Roslyn Analyzers (C#)</a><br/>
-<a href="https://sonarqube.org/" target="_blank">SonarQube (Static Code Analysis)</a><br/>
-<a href="https://github.com/oxsecurity/megalinter" target="_blank">MegaLinter (Cross-Stack Linting)</a><br/>
-<a href="https://prettier.io/" target="_blank">Prettier (Code Formatter)</a><br/>
-<a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint Extension für VSCode</a><br/>
-<a href="https://flake8.pycqa.org/en/latest/" target="_blank">Flake8 (Python)</a><br/>
-<a href="https://stylecop.analyzers.github.io/" target="_blank">StyleCop (C#)</a><br/>
-<a href="https://jshint.com/" target="_blank">JSHint (JavaScript)</a><br/>
-<a href="https://github.com/DockStation/dockerlint" target="_blank">DockerLint (Docker)</a><br/>
-<a href="https://github.com/editorconfig-checker/editorconfig-checker" target="_blank">EditorConfig Checker</a><br/>
-</td>
-</tr>
-</table>
-<p><strong>Linting</strong> ist der Prozess, bei dem der Quellcode eines Programms analysiert wird, um mögliche Fehler, Stilprobleme, inkonsistente Formatierungen oder potenziell problematischen Code zu identifizieren. Ein Linter ist ein Tool, das diese Analyse durchführt und Entwicklern dabei hilft, die Qualität und Lesbarkeit ihres Codes zu verbessern. Der Begriff stammt von einem frühen Tool namens "Lint", das für die Programmiersprache C entwickelt wurde.</p>
-<h3 id="Warum-Linting-wichtig-ist"><strong>Warum Linting wichtig ist</strong><a class="anchor-link" href="#Warum-Linting-wichtig-ist">¶</a></h3><ol>
-<li><strong>Fehlerprävention</strong>: Es hilft, Bugs und potenzielle Fehler frühzeitig zu erkennen, bevor der Code kompiliert oder ausgeführt wird.</li>
-<li><strong>Konsistenz</strong>: Es stellt sicher, dass ein einheitlicher Stil in einem Codebase eingehalten wird, was die Lesbarkeit verbessert.</li>
-<li><strong>Wartbarkeit</strong>: Gut formatierter und fehlerfreier Code ist leichter zu verstehen und zu pflegen.</li>
-<li><strong>Best Practices</strong>: Es fördert die Einhaltung von bewährten Programmierpraktiken.</li>
-</ol>
-<h3 id="Funktionen-eines-Linters"><strong>Funktionen eines Linters</strong><a class="anchor-link" href="#Funktionen-eines-Linters">¶</a></h3><p>Ein Linter kann folgende Arten von Problemen aufdecken:</p>
-<ol>
-<li><strong>Syntaxfehler</strong>: Identifikation von ungültiger Syntax, die den Code unkompilierbar macht.</li>
-<li><strong>Typfehler</strong>: In stark typisierten Sprachen können Linter auf Probleme mit Datentypen hinweisen.</li>
-<li><strong>Stilprobleme</strong>: Z. B. inkonsistente Einrückungen, fehlende Leerzeichen oder nicht einheitliche Namenskonventionen.</li>
-<li><strong>Veralteter Code</strong>: Warnungen vor der Nutzung von Funktionen oder Bibliotheken, die obsolet sind.</li>
-<li><strong>Logikprobleme</strong>: Z. B. ungenutzte Variablen, unerreichbarer Code oder redundante Bedingungen.</li>
-<li><strong>Sicherheitsprobleme</strong>: Hinweise auf potenziell unsicheren Code, z. B. SQL-Injections oder Cross-Site-Scripting (XSS).</li>
-</ol>
-<h3 id="Wie-funktioniert-Linting?"><strong>Wie funktioniert Linting?</strong><a class="anchor-link" href="#Wie-funktioniert-Linting?">¶</a></h3><ol>
-<li><strong>Analyse des Codes</strong>: Der Linter liest den Quellcode ein und analysiert ihn.</li>
-<li><strong>Vergleich mit Regeln</strong>: Der Code wird mit einer vordefinierten Regelmenge (oft Teil eines Konfigurationsfiles) verglichen.</li>
-<li><strong>Berichtserstellung</strong>: Gefundene Probleme werden als Warnungen oder Fehler ausgegeben.</li>
-</ol>
-<p>Die Regeln können oft angepasst werden, um den spezifischen Anforderungen eines Projekts oder Teams zu entsprechen.</p>
-<h3 id="Beispiele-f%C3%BCr-Linter"><strong>Beispiele für Linter</strong><a class="anchor-link" href="#Beispiele-f%C3%BCr-Linter">¶</a></h3><h4 id="F%C3%BCr-verschiedene-Sprachen-gibt-es-spezialisierte-Tools:">Für verschiedene Sprachen gibt es spezialisierte Tools:<a class="anchor-link" href="#F%C3%BCr-verschiedene-Sprachen-gibt-es-spezialisierte-Tools:">¶</a></h4><ul>
-<li><strong>JavaScript</strong>: <a href="https://eslint.org/">ESLint</a>, JSHint</li>
-<li><strong>Python</strong>: pylint, flake8, black (für Formatierung)</li>
-<li><strong>Java</strong>: Checkstyle, PMD</li>
-<li><strong>C#</strong>: StyleCop, Roslyn Analyzer</li>
-<li><strong>HTML/CSS</strong>: HTMLHint, stylelint</li>
-</ul>
-<h3 id="Beispiel-mit-ESLint-(JavaScript)"><strong>Beispiel mit ESLint (JavaScript)</strong><a class="anchor-link" href="#Beispiel-mit-ESLint-(JavaScript)">¶</a></h3><h4 id="Problematischer-Code:">Problematischer Code:<a class="anchor-link" href="#Problematischer-Code:">¶</a></h4><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'John'</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello, '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-<h4 id="M%C3%B6gliche-Warnungen-durch-ESLint:">Mögliche Warnungen durch ESLint:<a class="anchor-link" href="#M%C3%B6gliche-Warnungen-durch-ESLint:">¶</a></h4><ol>
-<li>Fehlendes Semikolon (Syntax-Stilregel).</li>
-<li>Inkonsistente Einrückung im <code>if</code>-Block.</li>
-<li>Keine String-Interpolation verwendet (Best Practice).</li>
-</ol>
-<h4 id="Nach-Linting-(korrigierter-Code):">Nach Linting (korrigierter Code):<a class="anchor-link" href="#Nach-Linting-(korrigierter-Code):">¶</a></h4><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'John'</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
-</pre></div>
-<h3 id="Automatisierung-von-Linting"><strong>Automatisierung von Linting</strong><a class="anchor-link" href="#Automatisierung-von-Linting">¶</a></h3><p>Linting kann in Entwicklungs-Workflows integriert werden:</p>
-<ol>
-<li><strong>IDE/Editoren</strong>: Moderne Entwicklungsumgebungen wie VSCode, IntelliJ oder PyCharm bieten direkte Integration von Linting-Tools.</li>
-<li><strong>CI/CD-Pipelines</strong>: Automatische Codeüberprüfung beim Hochladen auf ein Repository.</li>
-<li><strong>Pre-Commit Hooks</strong>: Überprüft Code vor dem Commit in ein Versionskontrollsystem wie Git (z. B. mit Husky).</li>
-</ol>
-<h3 id="Vorteile-und-Herausforderungen"><strong>Vorteile und Herausforderungen</strong><a class="anchor-link" href="#Vorteile-und-Herausforderungen">¶</a></h3><h4 id="Vorteile:">Vorteile:<a class="anchor-link" href="#Vorteile:">¶</a></h4><ul>
-<li>Automatisierte Code-Qualitätsprüfungen.</li>
-<li>Spart Zeit beim Code-Review.</li>
-<li>Reduziert technische Schulden.</li>
-</ul>
-<h4 id="Herausforderungen:">Herausforderungen:<a class="anchor-link" href="#Herausforderungen:">¶</a></h4><ul>
-<li><strong>Überwältigende Anzahl an Warnungen</strong>: Bei bestehendem Legacy-Code kann Linting viele Warnungen generieren.</li>
-<li><strong>Anpassung an Teams</strong>: Die Konfiguration muss oft an die Vorlieben und Standards des Teams angepasst werden.</li>
-<li><strong>Fehlalarme</strong>: Manche Linter können unnötige oder falsche Warnungen generieren.</li>
-</ul>
-<p>Linting ist ein essenzieller Bestandteil moderner Softwareentwicklung, um hohe Codequalität sicherzustellen und langfristig wartbaren Code zu schreiben.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Weitere-Tipps">Weitere Tipps<a class="anchor-link" href="#Weitere-Tipps">¶</a></h2><p>Hier sind weitere Aspekte, die Linting ergänzen und vertiefen:</p>
-<h3 id="Erweiterungen-von-Linting"><strong>Erweiterungen von Linting</strong><a class="anchor-link" href="#Erweiterungen-von-Linting">¶</a></h3><ol>
-<li><p><strong>Code Formatting vs. Linting</strong>:</p>
-<ul>
-<li><strong>Code Formatter</strong> (z. B. Prettier, Black) konzentrieren sich ausschließlich auf die Formatierung des Codes, ohne sich um potenzielle Fehler oder Logikprobleme zu kümmern.</li>
-<li><strong>Linter</strong> prüfen neben der Formatierung auch logische und syntaktische Probleme.</li>
-</ul>
-<p>Oft werden Formatter und Linter gemeinsam genutzt, um sowohl die Code-Qualität als auch die Formatierung zu gewährleisten.</p>
-</li>
-<li><p><strong>Static Code Analysis</strong>:</p>
-<ul>
-<li>Linting ist ein Teilbereich der statischen Codeanalyse. Tools wie SonarQube oder CodeScene führen tiefere Analysen durch, z. B. Metriken zu Codekomplexität, Testabdeckung oder potenziellen Sicherheitslücken.</li>
-</ul>
-</li>
-<li><p><strong>Intelligentes Linting</strong>:</p>
-<ul>
-<li>Moderne Linter verwenden teilweise maschinelles Lernen, um wiederkehrende Muster in Codeproblemen zu erkennen und Vorschläge basierend auf historischen Daten zu machen.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Praxisbeispiele"><strong>Praxisbeispiele</strong><a class="anchor-link" href="#Praxisbeispiele">¶</a></h3><ol>
-<li><p><strong>Teamstandards durchsetzen</strong>:</p>
-<ul>
-<li>Linting kann sicherstellen, dass Teams einheitliche Konventionen verwenden, z. B. Tabs vs. Spaces, CamelCase vs. snake_case.</li>
-<li>Dies reduziert Konflikte bei Code-Reviews.</li>
-</ul>
-</li>
-<li><p><strong>Legacy-Code verbessern</strong>:</p>
-<ul>
-<li>Bei älteren Codebasen kann ein schrittweises Linting helfen, technische Schulden abzubauen.</li>
-</ul>
-</li>
-<li><p><strong>Onboarding von Entwicklern</strong>:</p>
-<ul>
-<li>Neue Teammitglieder lernen durch Linter-Regeln schneller, welche Standards im Projekt gelten.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Integration-in-moderne-Workflows"><strong>Integration in moderne Workflows</strong><a class="anchor-link" href="#Integration-in-moderne-Workflows">¶</a></h3><ol>
-<li><p><strong>GitHub Actions und andere CI/CD-Tools</strong>:</p>
-<ul>
-<li>Linter können in CI/CD-Pipelines integriert werden, um Code vor dem Mergen zu prüfen. Fehlerhafter Code wird automatisch blockiert.</li>
-</ul>
-</li>
-<li><p><strong>Prettier + ESLint</strong>:</p>
-<ul>
-<li>Ein beliebtes Setup für JavaScript: Prettier formatiert den Code, und ESLint überprüft Logik und Qualität.</li>
-</ul>
-</li>
-<li><p><strong>Cross-Stack Linting</strong>:</p>
-<ul>
-<li>Tools wie <code>Mega-Linter</code> unterstützen mehrere Technologien und Frameworks in einem einzigen Repository.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Herausforderungen-im-Detail"><strong>Herausforderungen im Detail</strong><a class="anchor-link" href="#Herausforderungen-im-Detail">¶</a></h3><ol>
-<li><p><strong>Initialer Aufwand</strong>:</p>
-<ul>
-<li>Das Einführen eines Linters in bestehende Projekte kann zeitaufwändig sein, insbesondere wenn viele Verstöße gefunden werden. Eine Strategie ist, neue Linting-Regeln nur auf neu geschriebenen Code anzuwenden.</li>
-</ul>
-</li>
-<li><p><strong>Feinabstimmung der Regeln</strong>:</p>
-<ul>
-<li>Unterschiedliche Teams oder Projekte haben unterschiedliche Anforderungen. Die Regeln eines Linters müssen oft angepasst werden, um die Balance zwischen Nützlichkeit und Überregulierung zu finden.</li>
-</ul>
-</li>
-<li><p><strong>Performance</strong>:</p>
-<ul>
-<li>Bei großen Projekten kann Linting während des Entwicklungsprozesses zu Performance-Problemen führen. Tools mit "on-save" Linting müssen sorgfältig konfiguriert werden.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Beispiele-f%C3%BCr-Regeln"><strong>Beispiele für Regeln</strong><a class="anchor-link" href="#Beispiele-f%C3%BCr-Regeln">¶</a></h3><h4 id="JavaScript/TypeScript-mit-ESLint:">JavaScript/TypeScript mit ESLint:<a class="anchor-link" href="#JavaScript/TypeScript-mit-ESLint:">¶</a></h4><ul>
-<li>Keine ungenutzten Variablen: <code>no-unused-vars</code>.</li>
-<li>Verbot von <code>var</code>-Deklarationen zugunsten von <code>let</code> und <code>const</code>: <code>no-var</code>.</li>
-<li>Konsistenter Gebrauch von Semikolons: <code>semi</code>.</li>
-</ul>
-<h4 id="Python-mit-pylint:">Python mit pylint:<a class="anchor-link" href="#Python-mit-pylint:">¶</a></h4><ul>
-<li>Zu lange Methoden: <code>too-many-statements</code>.</li>
-<li>Vermeidung globaler Variablen: <code>global-variable</code>.</li>
-<li>Prüfung von Docstrings: <code>missing-docstring</code>.</li>
-</ul>
-<h4 id="C%23-mit-StyleCop:">C# mit StyleCop:<a class="anchor-link" href="#C%23-mit-StyleCop:">¶</a></h4><ul>
-<li>Regelkonformes Kommentieren von öffentlichen Methoden.</li>
-<li>Konsistente Klammer- und Einrückungsstile.</li>
-<li>Warnungen bei komplexen Methoden mit hoher zyklomatischer Komplexität.</li>
-</ul>
-<h3 id="Zuk%C3%BCnftige-Trends-im-Linting"><strong>Zukünftige Trends im Linting</strong><a class="anchor-link" href="#Zuk%C3%BCnftige-Trends-im-Linting">¶</a></h3><ol>
-<li><p><strong>KI-gestütztes Linting</strong>:</p>
-<ul>
-<li>Tools wie GitHub Copilot oder Tabnine kombinieren Linting mit Vorschlägen für bessere Codequalität in Echtzeit.</li>
-</ul>
-</li>
-<li><p><strong>IDE-Integration</strong>:</p>
-<ul>
-<li>Immer mehr IDEs integrieren Linter direkt und bieten nahtlose Nutzererfahrungen. Beispiel: JetBrains-Produkte oder Visual Studio.</li>
-</ul>
-</li>
-<li><p><strong>Regeln für Nachhaltigkeit und Barrierefreiheit</strong>:</p>
-<ul>
-<li>Zunehmend werden Linter erweitert, um auf ressourcenschonenden Code (z. B. Energieverbrauch) oder barrierefreie Webanwendungen zu prüfen.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Fazit"><strong>Fazit</strong><a class="anchor-link" href="#Fazit">¶</a></h3><p>Linting ist nicht nur ein Werkzeug zur Fehlervermeidung, sondern auch ein strategisches Mittel, um Codequalität, Wartbarkeit und Teamzusammenarbeit zu verbessern. Ein gut konfigurierter Linter ist ein unverzichtbarer Bestandteil moderner Softwareentwicklung, der langfristig Zeit spart und die Codebasis nachhaltig stärkt.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Kleines-Quiz-zu-Linting">Kleines Quiz zu Linting<a class="anchor-link" href="#Kleines-Quiz-zu-Linting">¶</a></h2><p>Hier ist ein Python-Quiz, das spielerisch das Wissen über Linting testet. Es verwendet einfache Fragen und Multiple-Choice-Antworten:</p>
+<h1 id="Create-as-webpage">Create as webpage<a class="anchor-link" href="#Create-as-webpage">¶</a></h1><img alt="No description has been provided for this image" src="Create_Webpage.webp" style="width:280px; height:280px;"/>
+<p>This page describes and actually impliments, how to make the jupyter notebooks of the whole project a working web page. Please note the prerequisite of having generated all needed html files, by executing the according scripts in <a href="Create_pdf.en.html">Create PDF</a>.</p>
+<h2 id="Copy-all-resources">Copy all resources<a class="anchor-link" href="#Copy-all-resources">¶</a></h2><p>In this step all html files and all needed assets are copied to a temporary folder.</p>
 </div>
 </div>
 </div>
@@ -7743,97 +7528,95 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">linting_quiz</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum Linting-Quiz! Teste dein Wissen über Linting."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Beantworte jede Frage mit der passenden Nummer (1, 2, 3 oder 4)."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was ist ein Linter?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Ein Werkzeug zum Testen von Code-Laufzeitfehlern"</span><span class="p">,</span>
-                <span class="s2">"2. Ein Werkzeug zum Analysieren von Code auf Stil- und Syntaxprobleme"</span><span class="p">,</span>
-                <span class="s2">"3. Ein Tool zum automatischen Debuggen von Programmen"</span><span class="p">,</span>
-                <span class="s2">"4. Eine Funktion zur Verbesserung der Performance"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">2</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welches ist KEIN bekanntes Linter-Tool?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. ESLint"</span><span class="p">,</span>
-                <span class="s2">"2. pylint"</span><span class="p">,</span>
-                <span class="s2">"3. Black"</span><span class="p">,</span>
-                <span class="s2">"4. DockerLint"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was ist der Hauptvorteil von Linting?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Es optimiert die Performance des Codes"</span><span class="p">,</span>
-                <span class="s2">"2. Es führt automatische Unit-Tests aus"</span><span class="p">,</span>
-                <span class="s2">"3. Es hilft, Fehler und Stilprobleme im Code zu erkennen"</span><span class="p">,</span>
-                <span class="s2">"4. Es reduziert die Laufzeit des Programms"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welche Regel könnte ein Linter prüfen?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Maximale Methode-Länge"</span><span class="p">,</span>
-                <span class="s2">"2. Nutzung von Tabulatoren statt Leerzeichen"</span><span class="p">,</span>
-                <span class="s2">"3. Unbenutzte Variablen"</span><span class="p">,</span>
-                <span class="s2">"4. Alle oben genannten"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">4</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Wie können Linter in modernen Projekten verwendet werden?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Integration in CI/CD-Pipelines"</span><span class="p">,</span>
-                <span class="s2">"2. Automatisches Überprüfen bei jedem Git-Commit"</span><span class="p">,</span>
-                <span class="s2">"3. Direkt in der IDE während der Entwicklung"</span><span class="p">,</span>
-                <span class="s2">"4. Alle oben genannten"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">4</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
+<span class="c1"># Exclusion lists</span>
+<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"SoProMing.html"</span><span class="p">]</span>  <span class="c1"># Add filenames to exclude</span>
+<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">,</span> <span class="s2">"drafts"</span><span class="p">]</span>            <span class="c1"># Add directory names to exclude</span>
 
-    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1"># Function to ensure a directory exists</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ensure_dir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Frage </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">q</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">q</span><span class="p">[</span><span class="s1">'choices'</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>
+<span class="c1"># Function to create an index.html with a redirect</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_redirect_index_html</span><span class="p">(</span><span class="n">target_file</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
+    <span class="n">index_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="s2">"index.html"</span><span class="p">)</span>
 
-        <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (1-4): "</span><span class="p">)</span>
-        <span class="k">while</span> <span class="n">user_answer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte gib eine gültige Nummer zwischen 1 und 4 ein."</span><span class="p">)</span>
-            <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (1-4): "</span><span class="p">)</span>
+    <span class="n">redirect_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">    &lt;!DOCTYPE html&gt;</span>
+<span class="s2">    &lt;html lang="en"&gt;</span>
+<span class="s2">    &lt;head&gt;</span>
+<span class="s2">        &lt;meta charset="UTF-8"&gt;</span>
+<span class="s2">        &lt;meta http-equiv="refresh" content="0; url=</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span>
+<span class="s2">        &lt;title&gt;Redirecting...&lt;/title&gt;</span>
+<span class="s2">    &lt;/head&gt;</span>
+<span class="s2">    &lt;body&gt;</span>
+<span class="s2">        &lt;p&gt;Redirecting to &lt;a href="</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">"&gt;</span><span class="si">{</span><span class="n">target_file</span><span class="si">}</span><span class="s2">&lt;/a&gt;...&lt;/p&gt;</span>
+<span class="s2">    &lt;/body&gt;</span>
+<span class="s2">    &lt;/html&gt;</span>
+<span class="s2">    """</span>
 
-        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_answer</span><span class="p">)</span> <span class="o">==</span> <span class="n">q</span><span class="p">[</span><span class="s2">"answer"</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"✅ Richtig!"</span><span class="p">)</span>
-            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"❌ Falsch! Die richtige Antwort war: </span><span class="si">{</span><span class="n">q</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">index_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">index_file</span><span class="p">:</span>
+        <span class="n">index_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">redirect_content</span><span class="p">)</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dein Ergebnis: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"🎉 Hervorragend! Du bist ein Linting-Profi!"</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"👍 Gut gemacht! Du weißt schon viel über Linting."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"📚 Übung macht den Meister. Lies mehr über Linting, um besser zu werden!"</span><span class="p">)</span>
+<span class="c1"># Function to copy all HTML files and their resources, excluding specific files and directories</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">copy_all_html_and_resources</span><span class="p">(</span><span class="n">src_dir</span><span class="p">,</span> <span class="n">dst_dir</span><span class="p">):</span>
+    <span class="n">ensure_dir</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">src_dir</span><span class="p">):</span>
+        <span class="c1"># Exclude directories</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="c1"># Skip excluded files</span>
+            <span class="k">if</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="k">continue</span>
+
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">):</span>
+                <span class="n">src_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+
+                <span class="c1"># Copy HTML file</span>
+                <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">src_dir</span><span class="p">)</span>
+                <span class="n">target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dst_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span>
+                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">target_dir</span><span class="p">)</span>
+
+                <span class="n">dst_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="n">dst_html_path</span><span class="p">)</span>
+
+                <span class="c1"># Analyze and copy resources</span>
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">src_html_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">html_file</span><span class="p">:</span>
+                    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+                    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">"img"</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">img</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"src"</span><span class="p">):</span>
+                            <span class="n">original_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
+                            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">original_path</span><span class="p">):</span>
+                                <span class="n">resource_target_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">]))</span>
+                                <span class="n">ensure_dir</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">)</span>
+                                <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">original_path</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">resource_target_dir</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="s2">"src"</span><span class="p">])))</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">linting_quiz</span><span class="p">()</span>
+    <span class="c1"># Variables for source directory, destination directory, and HTML file</span>
+    <span class="n">source_directory</span> <span class="o">=</span> <span class="s2">"."</span>
+    <span class="n">destination_directory</span> <span class="o">=</span> <span class="s2">"./website"</span>
+    <span class="n">source_html_file</span> <span class="o">=</span> <span class="s2">"./abstract/Intro.de.html"</span>
+
+    <span class="n">source_html_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">source_html_file</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">source_directory</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Das Quellverzeichnis existiert nicht."</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">source_html_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Die angegebene Quelldatei existiert nicht."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">shutil</span><span class="o">.</span><span class="n">rmtree</span><span class="p">(</span><span class="n">destination_directory</span><span class="p">)</span>
+        <span class="n">copy_all_html_and_resources</span><span class="p">(</span><span class="n">source_directory</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
+        <span class="n">create_redirect_index_html</span><span class="p">(</span><span class="n">source_html_file</span><span class="p">,</span> <span class="n">destination_directory</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Kopieren und Redirect abgeschlossen."</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7846,51 +7629,689 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Willkommen zum Linting-Quiz! Teste dein Wissen über Linting.
-Beantworte jede Frage mit der passenden Nummer (1, 2, 3 oder 4).
+<pre>Kopieren und Redirect abgeschlossen.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Create-menu-and-search">Create menu and search<a class="anchor-link" href="#Create-menu-and-search">¶</a></h2><p>In this step a menu is created from the titles of the html pages and the folder structure they are in.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-Frage 1: Was ist ein Linter?
-1. Ein Werkzeug zum Testen von Code-Laufzeitfehlern
-2. Ein Werkzeug zum Analysieren von Code auf Stil- und Syntaxprobleme
-3. Ein Tool zum automatischen Debuggen von Programmen
-4. Eine Funktion zur Verbesserung der Performance
+<span class="c1"># Configuration</span>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">"./website"</span>  <span class="c1"># Base directory containing the HTML files</span>
+<span class="n">SEARCH_INDEX_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span>
+<span class="n">STYLE_FILE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span>
+<span class="n">URL_PREFIX</span> <span class="o">=</span> <span class="s2">"/SoProMing/Main/"</span>  <span class="c1"># Set the static prefix for URLs (e.g., "/subdir/")</span>
 
-✅ Richtig!
 
-Frage 2: Welches ist KEIN bekanntes Linter-Tool?
-1. ESLint
-2. pylint
-3. Black
-4. DockerLint
+<span class="k">def</span><span class="w"> </span><span class="nf">normalize_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Normalize URLs by removing ../ and resolving redundant parts."""</span>
+    <span class="c1"># Remove "../" and normalize the path</span>
+    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">normpath</span><span class="p">(</span><span class="n">url</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+    <span class="n">clean_url</span> <span class="o">=</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"../"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span>
+    <span class="c1"># Ensure the URL starts with the configured prefix</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">clean_url</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">URL_PREFIX</span><span class="p">):</span>
+        <span class="n">clean_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">URL_PREFIX</span><span class="si">}{</span><span class="n">clean_url</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">clean_url</span>
 
-❌ Falsch! Die richtige Antwort war: 3.
 
-Frage 3: Was ist der Hauptvorteil von Linting?
-1. Es optimiert die Performance des Codes
-2. Es führt automatische Unit-Tests aus
-3. Es hilft, Fehler und Stilprobleme im Code zu erkennen
-4. Es reduziert die Laufzeit des Programms
+<span class="c1"># Exclusion lists</span>
+<span class="n">EXCLUDE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"index.html"</span><span class="p">,</span> <span class="s2">"exclude.html"</span><span class="p">]</span>  <span class="c1"># Add filenames you want to exclude</span>
+<span class="n">EXCLUDE_DIRS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"website"</span><span class="p">]</span>                      <span class="c1"># Add directory names you want to exclude</span>
 
-❌ Falsch! Die richtige Antwort war: 3.
 
-Frage 4: Welche Regel könnte ein Linter prüfen?
-1. Maximale Methode-Länge
-2. Nutzung von Tabulatoren statt Leerzeichen
-3. Unbenutzte Variablen
-4. Alle oben genannten
+<span class="k">def</span><span class="w"> </span><span class="nf">sanitize_title</span><span class="p">(</span><span class="n">title</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Remove unwanted symbols like ¶ from the title."""</span>
+    <span class="k">if</span> <span class="n">title</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">title</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"¶"</span><span class="p">,</span> <span class="s2">""</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">title</span>
 
-✅ Richtig!
 
-Frage 5: Wie können Linter in modernen Projekten verwendet werden?
-1. Integration in CI/CD-Pipelines
-2. Automatisches Überprüfen bei jedem Git-Commit
-3. Direkt in der IDE während der Entwicklung
-4. Alle oben genannten
+<span class="k">def</span><span class="w"> </span><span class="nf">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Extract the text of the first &lt;h1&gt; tag in the HTML file and sanitize it."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+            <span class="n">h1</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"h1"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">sanitize_title</span><span class="p">(</span><span class="n">h1</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span> <span class="k">if</span> <span class="n">h1</span> <span class="k">else</span> <span class="kc">None</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error reading </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">None</span>
 
-✅ Richtig!
 
-Dein Ergebnis: 3/5
-👍 Gut gemacht! Du weißt schon viel über Linting.
+<span class="k">def</span><span class="w"> </span><span class="nf">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Extract readable text from an HTML file, ignoring non-visible elements."""</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">"html.parser"</span><span class="p">)</span>
+            <span class="c1"># Remove script and style elements</span>
+            <span class="k">for</span> <span class="n">script_or_style</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">([</span><span class="s2">"script"</span><span class="p">,</span> <span class="s2">"style"</span><span class="p">]):</span>
+                <span class="n">script_or_style</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+
+            <span class="c1"># Extract visible text</span>
+            <span class="k">return</span> <span class="n">soup</span><span class="o">.</span><span class="n">get_text</span><span class="p">(</span><span class="n">separator</span><span class="o">=</span><span class="s2">" "</span><span class="p">,</span> <span class="n">strip</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Error extracting text from </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="s2">""</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_menu_tree</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Build a nested dictionary representing the menu structure."""</span>
+    <span class="n">menu_tree</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="n">rel_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">base_dir</span><span class="p">)</span>
+        <span class="n">current_level</span> <span class="o">=</span> <span class="n">menu_tree</span>
+
+        <span class="c1"># Navigate to the current directory level in the tree</span>
+        <span class="k">if</span> <span class="n">rel_dir</span> <span class="o">!=</span> <span class="s2">"."</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">rel_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+                <span class="n">current_level</span> <span class="o">=</span> <span class="n">current_level</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">part</span><span class="p">,</span> <span class="p">{})</span>
+
+        <span class="c1"># Add files to the current level</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">files</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
+                    <span class="n">current_level</span><span class="p">[</span><span class="n">file</span><span class="p">]</span> <span class="o">=</span> <span class="n">title</span>
+
+    <span class="k">return</span> <span class="n">menu_tree</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span> <span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">relative_to</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generate HTML for the menu structure recursively with relative links."""</span>
+    <span class="n">indent</span> <span class="o">=</span> <span class="n">level</span> <span class="o">*</span> <span class="mi">20</span>  <span class="c1"># Indent for CSS</span>
+    <span class="n">html</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">'&lt;ul class="menu" style="padding-left: </span><span class="si">{</span><span class="n">indent</span><span class="si">}</span><span class="s1">px;"&gt;</span><span class="se">\n</span><span class="s1">'</span>
+    <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">menu_tree</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>  <span class="c1"># File</span>
+            <span class="n">rel_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+            <span class="n">relative_link</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">rel_path</span><span class="p">,</span> <span class="n">relative_to</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li&gt;&lt;a href="</span><span class="si">{</span><span class="n">relative_link</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">value</span><span class="si">}</span><span class="s1">&lt;/a&gt;&lt;/li&gt;</span><span class="se">\n</span><span class="s1">'</span>
+        <span class="k">else</span><span class="p">:</span>  <span class="c1"># Directory</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">'  &lt;li&gt;</span><span class="se">\n</span><span class="s1">    &lt;details&gt;</span><span class="se">\n</span><span class="s1">      &lt;summary&gt;</span><span class="si">{</span><span class="n">title</span><span class="si">}</span><span class="s1">&lt;/summary&gt;</span><span class="se">\n</span><span class="s1">'</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="n">generate_menu_html</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_path</span><span class="p">,</span> <span class="n">key</span><span class="p">),</span> <span class="n">relative_to</span><span class="p">,</span> <span class="n">level</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">html</span> <span class="o">+=</span> <span class="s2">"    &lt;/details&gt;</span><span class="se">\n</span><span class="s2">  &lt;/li&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="n">html</span> <span class="o">+=</span> <span class="s2">"&lt;/ul&gt;</span><span class="se">\n</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="n">html</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_search_index</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Generate a JSON file for the search index."""</span>
+    <span class="n">search_index</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">absolute_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">),</span> <span class="n">base_dir</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">title</span> <span class="o">=</span> <span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">title</span><span class="p">:</span>  <span class="c1"># Only include files with a valid &lt;h1&gt; title</span>
+                    <span class="n">readable_text</span> <span class="o">=</span> <span class="n">extract_readable_text</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+                    <span class="n">search_index</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s2">"url"</span><span class="p">:</span> <span class="n">normalize_url</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">absolute_path</span><span class="si">}</span><span class="s2">"</span><span class="p">),</span>  <span class="c1"># Normalize the URL</span>
+                        <span class="s2">"title"</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                        <span class="s2">"content"</span><span class="p">:</span> <span class="n">readable_text</span>  <span class="c1"># Use readable text only</span>
+                    <span class="p">})</span>
+
+    <span class="c1"># Save the search index</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">SEARCH_INDEX_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">search_index</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Search index created: </span><span class="si">{</span><span class="n">SEARCH_INDEX_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_style</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""Generate a CSS file for styling."""</span>
+    <span class="n">style_content</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">    body {</span>
+<span class="s2">        font-family: Arial, sans-serif;</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">        display: flex;</span>
+<span class="s2">    }</span>
+<span class="s2">    nav {</span>
+<span class="s2">        background-color: #333;</span>
+<span class="s2">        color: #fff;</span>
+<span class="s2">        width: 250px;</span>
+<span class="s2">        height: 100vh;</span>
+<span class="s2">        padding: 10px;</span>
+<span class="s2">        box-sizing: border-box;</span>
+<span class="s2">        overflow-y: auto;</span>
+<span class="s2">    }</span>
+<span class="s2">    nav h1 {</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">        font-size: 18px;</span>
+<span class="s2">        text-align: center;</span>
+<span class="s2">        margin-bottom: 20px;</span>
+<span class="s2">        padding: 10px 0;</span>
+<span class="s2">        border-bottom: 1px solid #555;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu {</span>
+<span class="s2">        list-style: none;</span>
+<span class="s2">        padding: 0;</span>
+<span class="s2">        margin: 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu li {</span>
+<span class="s2">        margin: 5px 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    .menu a {</span>
+<span class="s2">        text-decoration: none;</span>
+<span class="s2">        color: #fff;</span>
+<span class="s2">    }</span>
+<span class="s2">    .content {</span>
+<span class="s2">        flex: 1;</span>
+<span class="s2">        padding: 20px;</span>
+<span class="s2">    }</span>
+<span class="s2">    #search-container {</span>
+<span class="s2">        margin-top: 20px;</span>
+<span class="s2">    }</span>
+<span class="s2">    input[type="text"] {</span>
+<span class="s2">        width: 100%;</span>
+<span class="s2">        padding: 5px;</span>
+<span class="s2">        font-size: 16px;</span>
+<span class="s2">        margin-bottom: 10px;</span>
+<span class="s2">    }</span>
+<span class="s2">    #searchResults div {</span>
+<span class="s2">        margin: 5px 0;</span>
+<span class="s2">    }</span>
+<span class="s2">    """</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">STYLE_FILE</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">style_content</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"CSS created: </span><span class="si">{</span><span class="n">STYLE_FILE</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">inject_menu_and_search</span><span class="p">(</span><span class="n">base_dir</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Inject the menu and search functionality into each HTML file."""</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">base_dir</span><span class="p">):</span>
+        <span class="c1"># Remove excluded directories from traversal</span>
+        <span class="n">dirs</span><span class="p">[:]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span> <span class="k">if</span> <span class="n">d</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_DIRS</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">".html"</span><span class="p">)</span> <span class="ow">and</span> <span class="n">file</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">EXCLUDE_FILES</span><span class="p">:</span>
+                <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+                <span class="n">relative_to</span> <span class="o">=</span> <span class="n">root</span>
+
+                <span class="c1"># Generate menu HTML specific to the current file</span>
+                <span class="n">menu_html</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                &lt;h1&gt;Software Product Mastering&lt;/h1&gt;</span>
+<span class="s2">                </span><span class="si">{</span><span class="n">generate_menu_html</span><span class="p">(</span><span class="n">menu_tree</span><span class="p">,</span><span class="w"> </span><span class="n">current_path</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span><span class="w"> </span><span class="n">relative_to</span><span class="o">=</span><span class="n">relative_to</span><span class="p">)</span><span class="si">}</span>
+<span class="s2">                """</span>
+
+                <span class="c1"># Adjust paths for style and search index</span>
+                <span class="n">relative_path_to_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+                <span class="n">style_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"style.css"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+                <span class="n">search_index_path</span> <span class="o">=</span> <span class="n">normalize_url</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">relative_path_to_base</span><span class="p">,</span> <span class="s2">"search-index.json"</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">))</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+                <span class="c1"># Add the menu and search functionality to the HTML file</span>
+                <span class="n">new_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">                &lt;!DOCTYPE html&gt;</span>
+<span class="s2">                &lt;html lang="en"&gt;</span>
+<span class="s2">                &lt;head&gt;</span>
+<span class="s2">                    &lt;meta charset="UTF-8"&gt;</span>
+<span class="s2">                    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
+<span class="s2">                    &lt;link rel="stylesheet" href="</span><span class="si">{</span><span class="n">style_path</span><span class="si">}</span><span class="s2">"&gt;</span>
+<span class="s2">                    &lt;title&gt;</span><span class="si">{</span><span class="n">get_title_from_h1</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="s2">"Untitled"</span><span class="si">}</span><span class="s2">&lt;/title&gt;</span>
+<span class="s2">                &lt;/head&gt;</span>
+<span class="s2">                &lt;body&gt;</span>
+<span class="s2">                    &lt;nav&gt;</span>
+<span class="s2">                        </span><span class="si">{</span><span class="n">menu_html</span><span class="si">}</span>
+<span class="s2">                        &lt;div id="search-container"&gt;</span>
+<span class="s2">                            &lt;input type="text" id="searchInput" placeholder="Search..."&gt;</span>
+<span class="s2">                            &lt;div id="searchResults"&gt;&lt;/div&gt;</span>
+<span class="s2">                        &lt;/div&gt;</span>
+<span class="s2">                    &lt;/nav&gt;</span>
+<span class="s2">                    &lt;div class="content"&gt;</span>
+<span class="s2">                        </span><span class="si">{</span><span class="n">content</span><span class="si">}</span>
+<span class="s2">                    &lt;/div&gt;</span>
+<span class="s2">                    &lt;script&gt;</span>
+<span class="s2">                        document.getElementById("searchInput").addEventListener("input", async function () </span><span class="se">{{</span>
+<span class="s2">                            try </span><span class="se">{{</span>
+<span class="s2">                                const query = this.value.toLowerCase();</span>
+<span class="s2">                                const response = await fetch("</span><span class="si">{</span><span class="n">search_index_path</span><span class="si">}</span><span class="s2">");</span>
+<span class="s2">                                const pages = await response.json();</span>
+<span class="s2">                                const resultsContainer = document.getElementById("searchResults");</span>
+<span class="s2">                                resultsContainer.innerHTML = "";</span>
+
+<span class="s2">                                const results = pages.filter(page =&gt;</span>
+<span class="s2">                                    page.title.toLowerCase().includes(query) || page.content.toLowerCase().includes(query)</span>
+<span class="s2">                                );</span>
+
+<span class="s2">                                results.forEach(result =&gt; </span><span class="se">{{</span>
+<span class="s2">                                    const resultElement = document.createElement("div");</span>
+<span class="s2">                                    resultElement.innerHTML = `&lt;a href="$</span><span class="se">{{</span><span class="s2">result.url</span><span class="se">}}</span><span class="s2">"&gt;$</span><span class="se">{{</span><span class="s2">result.title</span><span class="se">}}</span><span class="s2">&lt;/a&gt;`;</span>
+<span class="s2">                                    resultsContainer.appendChild(resultElement);</span>
+<span class="s2">                                </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">                            </span><span class="se">}}</span><span class="s2"> catch (error) </span><span class="se">{{</span>
+<span class="s2">                                console.error("Search error:", error);</span>
+<span class="s2">                            </span><span class="se">}}</span>
+<span class="s2">                        </span><span class="se">}}</span><span class="s2">);</span>
+<span class="s2">                    &lt;/script&gt;</span>
+<span class="s2">                &lt;/body&gt;</span>
+<span class="s2">                &lt;/html&gt;</span>
+<span class="s2">                """</span>
+
+                <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">new_content</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Menu and search added: </span><span class="si">{</span><span class="n">file_path</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The directory </span><span class="si">{</span><span class="n">BASE_DIR</span><span class="si">}</span><span class="s2"> does not exist. Please create or adjust it."</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">generate_style</span><span class="p">()</span>
+        <span class="n">menu_tree</span> <span class="o">=</span> <span class="n">build_menu_tree</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+        <span class="n">generate_search_index</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">)</span>
+        <span class="n">inject_menu_and_search</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">menu_tree</span><span class="p">)</span>
+        <span class="c1"># Copy SoftwareProductMastering.pdf to the website directory</span>
+        <span class="n">pdf_source</span> <span class="o">=</span> <span class="s2">"../SoftwareProductMastering.pdf"</span>
+        <span class="n">pdf_destination</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s2">"SoftwareProductMastering.pdf"</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pdf_source</span><span class="p">):</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">pdf_source</span><span class="p">,</span> <span class="n">pdf_destination</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PDF copied to </span><span class="si">{</span><span class="n">pdf_destination</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"PDF source file </span><span class="si">{</span><span class="n">pdf_source</span><span class="si">}</span><span class="s2"> does not exist."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>CSS created: ./website/style.css
+Search index created: ./website/search-index.json
+Menu and search added: ./website/Create_pdf.en.html
+Menu and search added: ./website/Create_Html_Tree.html
+Menu and search added: ./website/abstract/Intro.de.html
+Menu and search added: ./website/abstract/Contents.de.html
+Menu and search added: ./website/theory/Project_Products.de.html
+Menu and search added: ./website/theory/Complexity_over_the_years.de.html
+Menu and search added: ./website/theory/Cynefin_model.de.html
+Menu and search added: ./website/theory/Software_the_invisable_beast.de.html
+Menu and search added: ./website/theory/Conways_law.de.html
+Menu and search added: ./website/theory/Conclusion.de.html
+Menu and search added: ./website/theory/Software_n_Knowledge.de.html
+Menu and search added: ./website/theory/Stacey_Matrix.de.html
+Menu and search added: ./website/theory/What_and_How.de.html
+Menu and search added: ./website/samples/eShopOnWeb.de.html
+Menu and search added: ./website/samples/bootstrap.de.html
+Menu and search added: ./website/methods_n_tools/Icebreaker_kickoff.de.html
+Menu and search added: ./website/methods_n_tools/Techstack_Architecture.de.html
+Menu and search added: ./website/methods_n_tools/IT_Projekte_Methoden_und_Werkzeuge.de.html
+Menu and search added: ./website/methods_n_tools/Workitems_Concepts.de.html
+Menu and search added: ./website/methods_n_tools/Systemic_Approach.de.html
+Menu and search added: ./website/methods_n_tools/Methods.de.html
+Menu and search added: ./website/methods_n_tools/CICD_gitlab.de.html
+Menu and search added: ./website/methods_n_tools/Tools_Automation.de.html
+Menu and search added: ./website/methods_n_tools/Deliberating_Structures.de.html
+Menu and search added: ./website/methods_n_tools/tools/Software_analysis.de.html
+Menu and search added: ./website/methods_n_tools/tools/Static_code.de.html
+Menu and search added: ./website/methods_n_tools/tools/SCM.de.html
+Menu and search added: ./website/methods_n_tools/tools/Unittests.de.html
+Menu and search added: ./website/methods_n_tools/tools/Linting.de.html
+Menu and search added: ./website/methods_n_tools/tools/CICD_jenkins.de.html
+Menu and search added: ./website/methods_n_tools/tools/Planning.de.html
+Menu and search added: ./website/methods_n_tools/tools/CICD.de.html
+Menu and search added: ./website/methods_n_tools/tools/IDE.de.html
+Menu and search added: ./website/methods_n_tools/Methods/Scrum.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Paperplane_game.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Crossteam_daily.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Retrospective.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Daily_standup.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Refinement.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Planning.de.html
+Menu and search added: ./website/methods_n_tools/deliberating_structures/Review.de.html
+Menu and search added: ./website/methods_n_tools/scm/Pullrequest.de.html
+Menu and search added: ./website/culture/Agile_Values.de.html
+Menu and search added: ./website/culture/Management_styles.de.html
+Menu and search added: ./website/culture/Roles.de.html
+Menu and search added: ./website/culture/Error_Culture.de.html
+Menu and search added: ./website/culture/Roles/Devteam.de.html
+Menu and search added: ./website/culture/Roles/Scrum_Master.de.html
+Menu and search added: ./website/culture/Roles/Product_Owner.de.html
+PDF copied to ./website/SoftwareProductMastering.pdf
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">paramiko</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">null</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Note: you may need to restart the kernel to use updated packages.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Upload-to-website">Upload to website<a class="anchor-link" href="#Upload-to-website">¶</a></h2><p>In this final step all data is transfered according to settings in a <code>.env</code> file.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">paramiko</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="c1"># Load environment variables</span>
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># Configuration</span>
+<span class="n">SFTP_HOST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_HOST"</span><span class="p">)</span>
+<span class="n">SFTP_PORT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PORT"</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>  <span class="c1"># Default port 22</span>
+<span class="n">SFTP_USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_USERNAME"</span><span class="p">)</span>
+<span class="n">SFTP_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SFTP_PASSWORD"</span><span class="p">)</span>
+<span class="n">REMOTE_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"REMOTE_DIR"</span><span class="p">)</span>
+<span class="n">LOCAL_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"LOCAL_DIR"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Ensure that the remote directory exists, creating it if necessary.</span>
+<span class="sd">    """</span>
+    <span class="n">directories</span> <span class="o">=</span> <span class="n">remote_path</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)</span>
+    <span class="n">current_dir</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">directories</span><span class="p">:</span>
+        <span class="n">current_dir</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"/</span><span class="si">{</span><span class="n">directory</span><span class="si">}</span><span class="s2">"</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">current_dir</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">,</span> <span class="n">remote_dir</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Upload the contents of a local directory to a remote SFTP directory.</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">local_dir</span><span class="p">):</span>
+        <span class="c1"># Calculate the relative path and corresponding remote path</span>
+        <span class="n">relative_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">relpath</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">local_dir</span><span class="p">)</span>
+        <span class="n">remote_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_dir</span><span class="p">,</span> <span class="n">relative_path</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+
+        <span class="c1"># Ensure the remote directory exists</span>
+        <span class="n">ensure_remote_dir</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">remote_path</span><span class="p">)</span>
+
+        <span class="c1"># Upload files</span>
+        <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+            <span class="n">local_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+            <span class="n">remote_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">remote_path</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">"</span><span class="se">\\</span><span class="s2">"</span><span class="p">,</span> <span class="s2">"/"</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading </span><span class="si">{</span><span class="n">local_file</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">remote_file</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">local_file</span><span class="p">,</span> <span class="n">remote_file</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Main function to handle the SFTP upload process.</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">([</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">SFTP_PASSWORD</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">]):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Error: Missing required environment variables in .env file."</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Establish SFTP connection</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connecting to SFTP server..."</span><span class="p">)</span>
+        <span class="n">transport</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">Transport</span><span class="p">((</span><span class="n">SFTP_HOST</span><span class="p">,</span> <span class="n">SFTP_PORT</span><span class="p">))</span>
+        <span class="n">transport</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">SFTP_USERNAME</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">SFTP_PASSWORD</span><span class="p">)</span>
+
+        <span class="n">sftp</span> <span class="o">=</span> <span class="n">paramiko</span><span class="o">.</span><span class="n">SFTPClient</span><span class="o">.</span><span class="n">from_transport</span><span class="p">(</span><span class="n">transport</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection established."</span><span class="p">)</span>
+
+        <span class="c1"># Upload the directory</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Uploading contents of </span><span class="si">{</span><span class="n">LOCAL_DIR</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">REMOTE_DIR</span><span class="si">}</span><span class="s2">..."</span><span class="p">)</span>
+        <span class="n">upload_directory</span><span class="p">(</span><span class="n">sftp</span><span class="p">,</span> <span class="n">LOCAL_DIR</span><span class="p">,</span> <span class="n">REMOTE_DIR</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Upload complete."</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"An error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'sftp'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="n">sftp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="k">if</span> <span class="s1">'transport'</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
+            <span class="n">transport</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Connection closed."</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Connecting to SFTP server...
+Connection established.
+Uploading contents of ./website to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main...
+Uploading ./website/index.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./index.html...
+Uploading ./website/Create_Webpage.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./Create_Webpage.webp...
+Uploading ./website/SoftwareProductMastering.pdf to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./SoftwareProductMastering.pdf...
+Uploading ./website/search-index.json to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./search-index.json...
+Uploading ./website/Create_pdf.en.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./Create_pdf.en.html...
+Uploading ./website/style.css to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./style.css...
+Uploading ./website/Export_jupiter.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./Export_jupiter.webp...
+Uploading ./website/Create_Html_Tree.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/./Create_Html_Tree.html...
+Uploading ./website/abstract/Intro.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/abstract/Intro.de.html...
+Uploading ./website/abstract/Contents.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/abstract/Contents.de.html...
+Uploading ./website/abstract/Software_Product_Mastering.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/abstract/Software_Product_Mastering.webp...
+Uploading ./website/theory/Software_2010.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_2010.png...
+Uploading ./website/theory/Dave_snowden.jpeg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Dave_snowden.jpeg...
+Uploading ./website/theory/Radar_Design_n_Knowledge.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Design_n_Knowledge.jpg...
+Uploading ./website/theory/What_and_How.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/What_and_How.webp...
+Uploading ./website/theory/Radar_Conways_law.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Conways_law.de.jpg...
+Uploading ./website/theory/Software_complaexity_since1980.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_complaexity_since1980.webp...
+Uploading ./website/theory/Radar_Product_Project.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Product_Project.de.jpg...
+Uploading ./website/theory/Cynefin_Options.de.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Cynefin_Options.de.png...
+Uploading ./website/theory/Cynefin_model.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Cynefin_model.webp...
+Uploading ./website/theory/Ralph_Stacey.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Ralph_Stacey.jpg...
+Uploading ./website/theory/Stacey_matrix.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Stacey_matrix.webp...
+Uploading ./website/theory/conways_law.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/conways_law.png...
+Uploading ./website/theory/Radar_What_n_How.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_What_n_How.de.jpg...
+Uploading ./website/theory/Software_2000.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_2000.png...
+Uploading ./website/theory/Project_Products.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Project_Products.de.html...
+Uploading ./website/theory/realorg.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/realorg.jpg...
+Uploading ./website/theory/What_and_How.de.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/What_and_How.de.png...
+Uploading ./website/theory/Complexity_over_the_years.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Complexity_over_the_years.de.html...
+Uploading ./website/theory/Radar_Complexity.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Complexity.de.jpg...
+Uploading ./website/theory/Radar_Cynefin.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Cynefin.de.jpg...
+Uploading ./website/theory/Projects_Products.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Projects_Products.webp...
+Uploading ./website/theory/Conwayslaw_what_how.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Conwayslaw_what_how.webp...
+Uploading ./website/theory/Cynefin_model.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Cynefin_model.de.html...
+Uploading ./website/theory/Stacey_Options.de.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Stacey_Options.de.png...
+Uploading ./website/theory/Software_1980.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_1980.png...
+Uploading ./website/theory/SoProMing.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/SoProMing.webp...
+Uploading ./website/theory/Software_n_Knowldge.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_n_Knowldge.webp...
+Uploading ./website/theory/Software_the_invisable_beast.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_the_invisable_beast.de.html...
+Uploading ./website/theory/organizational_charts.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/organizational_charts.png...
+Uploading ./website/theory/What_and_How2.de.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/What_and_How2.de.png...
+Uploading ./website/theory/Conways_law.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Conways_law.de.html...
+Uploading ./website/theory/Software_1990.png to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_1990.png...
+Uploading ./website/theory/Conclusion.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Conclusion.de.html...
+Uploading ./website/theory/Radar_Stacey_Matrix.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Stacey_Matrix.de.jpg...
+Uploading ./website/theory/Conways_law.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Conways_law.webp...
+Uploading ./website/theory/Software_n_Knowledge.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Software_n_Knowledge.de.html...
+Uploading ./website/theory/Stacey_Matrix.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Stacey_Matrix.de.html...
+Uploading ./website/theory/What_and_How.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/What_and_How.de.html...
+Uploading ./website/theory/Invisible_complexity.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Invisible_complexity.webp...
+Uploading ./website/theory/Radar_Invisible_Beast.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Invisible_Beast.jpg...
+Uploading ./website/theory/Radar_Conclusion.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Radar_Conclusion.de.jpg...
+Uploading ./website/theory/Stacey_Cynefin.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/theory/Stacey_Cynefin.webp...
+Uploading ./website/samples/eShopOnWeb.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/samples/eShopOnWeb.de.html...
+Uploading ./website/samples/bootstrap.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/samples/bootstrap.de.html...
+Uploading ./website/samples/bootstrap/index.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/samples/bootstrap/index.html...
+Uploading ./website/methods_n_tools/Tools_Automation.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Tools_Automation.webp...
+Uploading ./website/methods_n_tools/Radar_CICD_Gitlab.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_CICD_Gitlab.de.jpg...
+Uploading ./website/methods_n_tools/Icebreaker_kickoff.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Icebreaker_kickoff.de.html...
+Uploading ./website/methods_n_tools/Techstack_Architecture.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Techstack_Architecture.de.html...
+Uploading ./website/methods_n_tools/Techstack_Architecture.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Techstack_Architecture.webp...
+Uploading ./website/methods_n_tools/IT_Projekte_Methoden_und_Werkzeuge.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/IT_Projekte_Methoden_und_Werkzeuge.de.html...
+Uploading ./website/methods_n_tools/Icebreaker.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Icebreaker.webp...
+Uploading ./website/methods_n_tools/deliberating_structures.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures.webp...
+Uploading ./website/methods_n_tools/Workitems_Concepts.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Workitems_Concepts.de.html...
+Uploading ./website/methods_n_tools/Radar_Deliberating_Structures.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_Deliberating_Structures.de.jpg...
+Uploading ./website/methods_n_tools/methods.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/methods.webp...
+Uploading ./website/methods_n_tools/methods_n_tools.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/methods_n_tools.webp...
+Uploading ./website/methods_n_tools/Systemic_Approach.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Systemic_Approach.de.html...
+Uploading ./website/methods_n_tools/Radar_Workitems.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_Workitems.de.jpg...
+Uploading ./website/methods_n_tools/Workitems_Concepts.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Workitems_Concepts.webp...
+Uploading ./website/methods_n_tools/Methods.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Methods.de.html...
+Uploading ./website/methods_n_tools/Radar_Methods.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_Methods.de.jpg...
+Uploading ./website/methods_n_tools/Radar_Techstack.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_Techstack.de.jpg...
+Uploading ./website/methods_n_tools/CICD_gitlab.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/CICD_gitlab.de.html...
+Uploading ./website/methods_n_tools/Radar_Tools_n_Automation.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Radar_Tools_n_Automation.de.jpg...
+Uploading ./website/methods_n_tools/Tools_Automation.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Tools_Automation.de.html...
+Uploading ./website/methods_n_tools/Gitlab.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Gitlab.webp...
+Uploading ./website/methods_n_tools/Systemic.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Systemic.webp...
+Uploading ./website/methods_n_tools/Deliberating_Structures.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Deliberating_Structures.de.html...
+Uploading ./website/methods_n_tools/tools/Radar_SCM.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_SCM.jpg...
+Uploading ./website/methods_n_tools/tools/Static_code.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Static_code.webp...
+Uploading ./website/methods_n_tools/tools/IDE.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/IDE.webp...
+Uploading ./website/methods_n_tools/tools/Git_cheatsheet.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Git_cheatsheet.jpg...
+Uploading ./website/methods_n_tools/tools/Software_analysis.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Software_analysis.de.html...
+Uploading ./website/methods_n_tools/tools/Static_code.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Static_code.de.html...
+Uploading ./website/methods_n_tools/tools/Planning.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Planning.webp...
+Uploading ./website/methods_n_tools/tools/Radar_Planning.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_Planning.jpg...
+Uploading ./website/methods_n_tools/tools/Jenkins.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Jenkins.webp...
+Uploading ./website/methods_n_tools/tools/SCM.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/SCM.de.html...
+Uploading ./website/methods_n_tools/tools/Radar_Linting.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_Linting.jpg...
+Uploading ./website/methods_n_tools/tools/Radar_static_code.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_static_code.jpg...
+Uploading ./website/methods_n_tools/tools/Unittests.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Unittests.de.html...
+Uploading ./website/methods_n_tools/tools/Linting.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Linting.de.html...
+Uploading ./website/methods_n_tools/tools/CICD_jenkins.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/CICD_jenkins.de.html...
+Uploading ./website/methods_n_tools/tools/Radar_Softwareanalysis.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_Softwareanalysis.jpg...
+Uploading ./website/methods_n_tools/tools/Planning.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Planning.de.html...
+Uploading ./website/methods_n_tools/tools/CICD.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/CICD.de.html...
+Uploading ./website/methods_n_tools/tools/Softwareanalysis.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Softwareanalysis.webp...
+Uploading ./website/methods_n_tools/tools/Radar_Unittests.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_Unittests.jpg...
+Uploading ./website/methods_n_tools/tools/Radar_CICD.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_CICD.jpg...
+Uploading ./website/methods_n_tools/tools/SCM.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/SCM.webp...
+Uploading ./website/methods_n_tools/tools/Radar_Jenkins.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_Jenkins.jpg...
+Uploading ./website/methods_n_tools/tools/CICD.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/CICD.webp...
+Uploading ./website/methods_n_tools/tools/Linting.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Linting.webp...
+Uploading ./website/methods_n_tools/tools/Unittests.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Unittests.webp...
+Uploading ./website/methods_n_tools/tools/IDE.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/IDE.de.html...
+Uploading ./website/methods_n_tools/tools/Radar_IDE.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/tools/Radar_IDE.jpg...
+Uploading ./website/methods_n_tools/Methods/Scrum.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Methods/Scrum.de.html...
+Uploading ./website/methods_n_tools/Methods/Radar_Scrum.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Methods/Radar_Scrum.de.jpg...
+Uploading ./website/methods_n_tools/Methods/Scrum.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/Methods/Scrum.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Paperplane_game.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Paperplane_game.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Refinement.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Refinement.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Retrospective_Helper.en.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Retrospective_Helper.en.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Crossteam_daily.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Crossteam_daily.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Planning.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Planning.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Review.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Review.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Retrospective.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Retrospective.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Daily.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Daily.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Review.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Review.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Daily_standup.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Daily_standup.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Retrospective.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Retrospective.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Refinement.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Refinement.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Crossteam_Daily.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Crossteam_Daily.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Paperplane_Game.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Paperplane_Game.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Planning.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Planning.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Daily_standup.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Daily_standup.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Refinement.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Refinement.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Planning.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Planning.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Crossteam_daily.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Crossteam_daily.webp...
+Uploading ./website/methods_n_tools/deliberating_structures/Review.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Review.de.html...
+Uploading ./website/methods_n_tools/deliberating_structures/Radar_Retrospective.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Radar_Retrospective.de.jpg...
+Uploading ./website/methods_n_tools/deliberating_structures/Paperplane.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/deliberating_structures/Paperplane.webp...
+Uploading ./website/methods_n_tools/scm/Pullrequest.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/scm/Pullrequest.de.html...
+Uploading ./website/methods_n_tools/scm/Radar_Pullrequest.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/scm/Radar_Pullrequest.jpg...
+Uploading ./website/methods_n_tools/scm/Pullrequest.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/methods_n_tools/scm/Pullrequest.webp...
+Uploading ./website/assets/Radar_generic.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/assets/Radar_generic.de.jpg...
+Uploading ./website/culture/Radar_Error_Culture.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Radar_Error_Culture.de.jpg...
+Uploading ./website/culture/Agile_Values.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Agile_Values.de.html...
+Uploading ./website/culture/Radar_Roles.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Radar_Roles.de.jpg...
+Uploading ./website/culture/Management_styles.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Management_styles.de.html...
+Uploading ./website/culture/Management_styles.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Management_styles.webp...
+Uploading ./website/culture/Roles.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles.de.html...
+Uploading ./website/culture/Error_Culture.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Error_Culture.de.html...
+Uploading ./website/culture/Radar_Management_Styles.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Radar_Management_Styles.jpg...
+Uploading ./website/culture/error_culture.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/error_culture.webp...
+Uploading ./website/culture/Radar_Agile_Values.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Radar_Agile_Values.de.jpg...
+Uploading ./website/culture/Roles.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles.webp...
+Uploading ./website/culture/agile_values.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/agile_values.webp...
+Uploading ./website/culture/Roles/Devteam.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Devteam.webp...
+Uploading ./website/culture/Roles/Radar_PO.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Radar_PO.de.jpg...
+Uploading ./website/culture/Roles/Radar_Devteam.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Radar_Devteam.de.jpg...
+Uploading ./website/culture/Roles/Scrum_Master.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Scrum_Master.webp...
+Uploading ./website/culture/Roles/Product_Owner.webp to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Product_Owner.webp...
+Uploading ./website/culture/Roles/Radar_Scrummaster.de.jpg to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Radar_Scrummaster.de.jpg...
+Uploading ./website/culture/Roles/Devteam.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Devteam.de.html...
+Uploading ./website/culture/Roles/Scrum_Master.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Scrum_Master.de.html...
+Uploading ./website/culture/Roles/Product_Owner.de.html to /customers/9/d/3/2hands.de/httpd.www/www8/SoProMing/Main/culture/Roles/Product_Owner.de.html...
+Upload complete.
+Connection closed.
 </pre>
 </div>
 </div>

@@ -7517,382 +7517,358 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="../../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../abstract/Contents.de.html">Inhaltsverzeichnis</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../Methods.de.html">Methoden</a> / <a href="../Deliberating_Structures.de.html">Deliberating structures</a> / <a href="../Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a> / <a href="Software_analysis.de.html">Software Analyse Tools</a></p>
-<h1 id="Linting">Linting<a class="anchor-link" href="#Linting">¶</a></h1><table border="0">
+<p><a href="../abstract/Contents.de.html">Software Product Mastering</a> / <a href="../../theory/Project_Products.de.html">Produkt &amp; Projekt</a> / <a href="../../methods_n_tools/Methods.de.html">Methoden</a> / <a href="Deliberating_Structures.de.html">Deliberating structures</a> / <a href="Tools_Automation.de.html">Werkzeuge &amp; Automatisierung</a></p>
+<h1 id="Software-Projekt-mit-jenkins">Software-Projekt mit jenkins<a class="anchor-link" href="#Software-Projekt-mit-jenkins">¶</a></h1><table border="0">
 <tr>
 <td>
-<img alt="No description has been provided for this image" src="Linting.webp"/>
+<img alt="No description has been provided for this image" src="Jenkins.webp"/>
 </td>
 <td rowspan="2">
-<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Linting.jpg"/></a>
+<a href="https://miro.com/app/board/uXjVLKHGo6E=/?moveToWidget=3458764605541796363&amp;cot=14"><img alt="No description has been provided for this image" src="Radar_Jenkins.jpg"/></a>
 </td>
 </tr>
 <tr>
 <td>
-<a href="https://eslint.org/" target="_blank">ESLint (JavaScript/TypeScript)</a><br/>
-<a href="https://pylint.pycqa.org/" target="_blank">Pylint (Python)</a><br/>
-<a href="https://checkstyle.sourceforge.io/" target="_blank">Checkstyle (Java)</a><br/>
-<a href="https://stylelint.io/" target="_blank">Stylelint (CSS)</a><br/>
-<a href="https://github.com/psf/black" target="_blank">Black (Python Formatter)</a><br/>
-<a href="https://clang.llvm.org/extra/clang-tidy/" target="_blank">Clang-Tidy (C/C++)</a><br/>
-<a href="https://docs.microsoft.com/en-us/visualstudio/code-quality/roslyn-analyzers-overview" target="_blank">Roslyn Analyzers (C#)</a><br/>
-<a href="https://sonarqube.org/" target="_blank">SonarQube (Static Code Analysis)</a><br/>
-<a href="https://github.com/oxsecurity/megalinter" target="_blank">MegaLinter (Cross-Stack Linting)</a><br/>
-<a href="https://prettier.io/" target="_blank">Prettier (Code Formatter)</a><br/>
-<a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank">ESLint Extension für VSCode</a><br/>
-<a href="https://flake8.pycqa.org/en/latest/" target="_blank">Flake8 (Python)</a><br/>
-<a href="https://stylecop.analyzers.github.io/" target="_blank">StyleCop (C#)</a><br/>
-<a href="https://jshint.com/" target="_blank">JSHint (JavaScript)</a><br/>
-<a href="https://github.com/DockStation/dockerlint" target="_blank">DockerLint (Docker)</a><br/>
-<a href="https://github.com/editorconfig-checker/editorconfig-checker" target="_blank">EditorConfig Checker</a><br/>
+<a href="https://www.jenkins.io/doc/" target="_blank">Offizielle Jenkins-Dokumentation</a><br/>
+<a href="https://plugins.jenkins.io/" target="_blank">Jenkins Plugin Index</a><br/>
+<a href="https://www.jenkins.io/doc/book/pipeline/" target="_blank">Einführung in Jenkins Pipelines</a><br/>
+<a href="https://www.jenkins.io/doc/book/pipeline/docker/" target="_blank">Jenkins Pipelines mit Docker</a><br/>
+<a href="https://kubernetes.io/docs/home/" target="_blank">Offizielle Kubernetes-Dokumentation</a><br/>
+<a href="https://www.docker.com/" target="_blank">Docker Website</a><br/>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-continuous-integration-pipelines-in-jenkins" target="_blank">How to Set Up CI Pipelines in Jenkins (DigitalOcean)</a><br/>
+<a href="https://www.cloudbees.com/jenkins/what-is-jenkins" target="_blank">Was ist Jenkins? (CloudBees)</a><br/>
+<a href="https://www.jenkins.io/doc/book/managing/security/" target="_blank">Jenkins Sicherheitsleitfaden</a><br/>
+<a href="https://docs.docker.com/get-started/" target="_blank">Docker Einstiegshilfe</a><br/>
+<a href="https://www.baeldung.com/ops/jenkins-pipeline" target="_blank">Jenkins Pipeline Tutorial (Baeldung)</a><br/>
+<a href="https://github.com/jenkinsci/pipeline-examples" target="_blank">Jenkins Pipeline-Beispiele (GitHub)</a><br/>
+<a href="https://www.jenkins.io/solutions/docker/" target="_blank">Jenkins Docker Integration</a><br/>
+<a href="https://kubernetes.io/docs/tutorials/" target="_blank">Kubernetes Tutorials</a><br/>
 </td>
 </tr>
 </table>
-<p><strong>Linting</strong> ist der Prozess, bei dem der Quellcode eines Programms analysiert wird, um mögliche Fehler, Stilprobleme, inkonsistente Formatierungen oder potenziell problematischen Code zu identifizieren. Ein Linter ist ein Tool, das diese Analyse durchführt und Entwicklern dabei hilft, die Qualität und Lesbarkeit ihres Codes zu verbessern. Der Begriff stammt von einem frühen Tool namens "Lint", das für die Programmiersprache C entwickelt wurde.</p>
-<h3 id="Warum-Linting-wichtig-ist"><strong>Warum Linting wichtig ist</strong><a class="anchor-link" href="#Warum-Linting-wichtig-ist">¶</a></h3><ol>
-<li><strong>Fehlerprävention</strong>: Es hilft, Bugs und potenzielle Fehler frühzeitig zu erkennen, bevor der Code kompiliert oder ausgeführt wird.</li>
-<li><strong>Konsistenz</strong>: Es stellt sicher, dass ein einheitlicher Stil in einem Codebase eingehalten wird, was die Lesbarkeit verbessert.</li>
-<li><strong>Wartbarkeit</strong>: Gut formatierter und fehlerfreier Code ist leichter zu verstehen und zu pflegen.</li>
-<li><strong>Best Practices</strong>: Es fördert die Einhaltung von bewährten Programmierpraktiken.</li>
+<div style="border:2px solid #008CBA; padding:10px; background-color:#E0F7FA;">
+<h3 id="%F0%9F%92%A1-Samples">💡 Samples<a class="anchor-link" href="#%F0%9F%92%A1-Samples">¶</a></samples/bootstrap.de.html">bootstrap sample</a></p>
+</div>
+<h3 id="Einf%C3%BChrung-in-Jenkins-und-Grundlagen">Einführung in Jenkins und Grundlagen<a class="anchor-link" href="#Einf%C3%BChrung-in-Jenkins-und-Grundlagen">¶</a></h3><p><strong>Jenkins</strong> ist ein Open-Source-Tool zur Automatisierung von Software-Entwicklungsprozessen. Es wird häufig für <strong>Continuous Integration (CI)</strong> und <strong>Continuous Delivery/Deployment (CD)</strong> eingesetzt. Jenkins ermöglicht die Integration von Tests, Build-Prozessen und Deployment in einer einzigen Plattform.</p>
+<h3 id="Kernkonzepte-von-Jenkins">Kernkonzepte von Jenkins<a class="anchor-link" href="#Kernkonzepte-von-Jenkins">¶</a></h3><ol>
+<li><p><strong>Pipeline</strong>:</p>
+<ul>
+<li>Eine Jenkins-Pipeline ist eine Abfolge von Schritten, die der Automatisierungsprozess durchläuft.</li>
+<li>Sie kann mit einer <code>Jenkinsfile</code> definiert werden, einer Datei im Projektrepository, die die Pipeline beschreibt.</li>
+</ul>
+</li>
+<li><p><strong>Stages und Steps</strong>:</p>
+<ul>
+<li><strong>Stages</strong> unterteilen die Pipeline in logische Abschnitte (z. B. Build, Test, Deploy).</li>
+<li><strong>Steps</strong> sind konkrete Aktionen innerhalb einer Stage (z. B. Shell-Kommandos ausführen, Docker-Container starten).</li>
+</ul>
+</li>
+<li><p><strong>Agents</strong>:</p>
+<ul>
+<li>Ein Agent ist ein Jenkins-Node (Server oder VM), auf dem die Pipeline ausgeführt wird.</li>
+<li><code>agent any</code> bedeutet, dass die Pipeline auf einem beliebigen verfügbaren Agenten ausgeführt wird.</li>
+</ul>
+</li>
+<li><p><strong>Umgebungsvariablen</strong>:</p>
+<ul>
+<li>In der Pipeline kannst du Umgebungsvariablen verwenden, um Werte wie Docker-Image-Tags oder Anmeldedaten zu speichern.</li>
+</ul>
+</li>
+<li><p><strong>Post-Aktionen</strong>:</p>
+<ul>
+<li>Nach Abschluss der Pipeline können bestimmte Aktionen durchgeführt werden, z. B. das Aufräumen temporärer Dateien oder das Versenden von Benachrichtigungen.</li>
+</ul>
+</li>
 </ol>
-<h3 id="Funktionen-eines-Linters"><strong>Funktionen eines Linters</strong><a class="anchor-link" href="#Funktionen-eines-Linters">¶</a></h3><p>Ein Linter kann folgende Arten von Problemen aufdecken:</p>
+<h3 id="Aufbau-einer-einfachen-Jenkinsfile">Aufbau einer einfachen Jenkinsfile<a class="anchor-link" href="#Aufbau-einer-einfachen-Jenkinsfile">¶</a></h3><p>Eine <code>Jenkinsfile</code> ist eine textbasierte Konfigurationsdatei, die in der Groovy-Skriptsprache geschrieben ist. Sie definiert die Schritte, die Jenkins ausführen soll.</p>
+<h4 id="Beispiel:-Minimalistische-Jenkinsfile">Beispiel: Minimalistische Jenkinsfile<a class="anchor-link" href="#Beispiel:-Minimalistische-Jenkinsfile">¶</a></h4><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Hello World'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Hello, Jenkins!'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<ul>
+<li><strong>agent any</strong>: Die Pipeline kann auf jedem verfügbaren Node ausgeführt werden.</li>
+<li><strong>stage('Hello World')</strong>: Definiert einen logischen Schritt.</li>
+<li><strong>steps { echo '...' }</strong>: Führt den Schritt aus (hier: Ausgabe einer Nachricht).</li>
+</ul>
+<h3 id="Jenkins-und-Docker">Jenkins und Docker<a class="anchor-link" href="#Jenkins-und-Docker">¶</a></h3><p>Jenkins kann Docker direkt steuern, um Container zu bauen, zu testen und bereitzustellen. Hier sind die wichtigsten Schritte:</p>
 <ol>
-<li><strong>Syntaxfehler</strong>: Identifikation von ungültiger Syntax, die den Code unkompilierbar macht.</li>
-<li><strong>Typfehler</strong>: In stark typisierten Sprachen können Linter auf Probleme mit Datentypen hinweisen.</li>
-<li><strong>Stilprobleme</strong>: Z. B. inkonsistente Einrückungen, fehlende Leerzeichen oder nicht einheitliche Namenskonventionen.</li>
-<li><strong>Veralteter Code</strong>: Warnungen vor der Nutzung von Funktionen oder Bibliotheken, die obsolet sind.</li>
-<li><strong>Logikprobleme</strong>: Z. B. ungenutzte Variablen, unerreichbarer Code oder redundante Bedingungen.</li>
-<li><strong>Sicherheitsprobleme</strong>: Hinweise auf potenziell unsicheren Code, z. B. SQL-Injections oder Cross-Site-Scripting (XSS).</li>
-</ol>
-<h3 id="Wie-funktioniert-Linting?"><strong>Wie funktioniert Linting?</strong><a class="anchor-link" href="#Wie-funktioniert-Linting?">¶</a></h3><ol>
-<li><strong>Analyse des Codes</strong>: Der Linter liest den Quellcode ein und analysiert ihn.</li>
-<li><strong>Vergleich mit Regeln</strong>: Der Code wird mit einer vordefinierten Regelmenge (oft Teil eines Konfigurationsfiles) verglichen.</li>
-<li><strong>Berichtserstellung</strong>: Gefundene Probleme werden als Warnungen oder Fehler ausgegeben.</li>
-</ol>
-<p>Die Regeln können oft angepasst werden, um den spezifischen Anforderungen eines Projekts oder Teams zu entsprechen.</p>
-<h3 id="Beispiele-f%C3%BCr-Linter"><strong>Beispiele für Linter</strong><a class="anchor-link" href="#Beispiele-f%C3%BCr-Linter">¶</a></h3><h4 id="F%C3%BCr-verschiedene-Sprachen-gibt-es-spezialisierte-Tools:">Für verschiedene Sprachen gibt es spezialisierte Tools:<a class="anchor-link" href="#F%C3%BCr-verschiedene-Sprachen-gibt-es-spezialisierte-Tools:">¶</a></h4><ul>
-<li><strong>JavaScript</strong>: <a href="https://eslint.org/">ESLint</a>, JSHint</li>
-<li><strong>Python</strong>: pylint, flake8, black (für Formatierung)</li>
-<li><strong>Java</strong>: Checkstyle, PMD</li>
-<li><strong>C#</strong>: StyleCop, Roslyn Analyzer</li>
-<li><strong>HTML/CSS</strong>: HTMLHint, stylelint</li>
+<li><p><strong>Docker Build</strong>:</p>
+<ul>
+<li>Jenkins kann Docker-Befehle ausführen, um ein Image aus einer <code>Dockerfile</code> zu bauen.</li>
 </ul>
-<h3 id="Beispiel-mit-ESLint-(JavaScript)"><strong>Beispiel mit ESLint (JavaScript)</strong><a class="anchor-link" href="#Beispiel-mit-ESLint-(JavaScript)">¶</a></h3><h4 id="Problematischer-Code:">Problematischer Code:<a class="anchor-link" href="#Problematischer-Code:">¶</a></h4><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'John'</span>
-<span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Hello, '</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">name</span><span class="p">);</span>
-<span class="p">}</span>
+<div class="highlight"><pre><span></span><span class="n">sh</span><span class="w"> </span><span class="s1">'docker build -t my-image:latest .'</span>
 </pre></div>
-<h4 id="M%C3%B6gliche-Warnungen-durch-ESLint:">Mögliche Warnungen durch ESLint:<a class="anchor-link" href="#M%C3%B6gliche-Warnungen-durch-ESLint:">¶</a></h4><ol>
-<li>Fehlendes Semikolon (Syntax-Stilregel).</li>
-<li>Inkonsistente Einrückung im <code>if</code>-Block.</li>
-<li>Keine String-Interpolation verwendet (Best Practice).</li>
+</li>
+<li><p><strong>Docker Run</strong>:</p>
+<ul>
+<li>Ein Image kann ausgeführt werden, um Tests oder andere Aktionen auszuführen.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">sh</span><span class="w"> </span><span class="s1">'docker run --rm my-image:latest'</span>
+</pre></div>
+</li>
+<li><p><strong>Docker Push</strong>:</p>
+<ul>
+<li>Jenkins kann Docker-Images zu einem Registry pushen.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">sh</span><span class="w"> </span><span class="s1">'docker push my-image:latest'</span>
+</pre></div>
+</li>
 </ol>
-<h4 id="Nach-Linting-(korrigierter-Code):">Nach Linting (korrigierter Code):<a class="anchor-link" href="#Nach-Linting-(korrigierter-Code):">¶</a></h4><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'John'</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hello, </span><span class="si">${</span><span class="nx">name</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
-<span class="p">}</span>
+<h3 id="Erweiterte-Konzepte:-Parameterisierte-Pipelines">Erweiterte Konzepte: Parameterisierte Pipelines<a class="anchor-link" href="#Erweiterte-Konzepte:-Parameterisierte-Pipelines">¶</a></h3><p>Du kannst Jenkins-Pipelines interaktiv gestalten, indem du Parameter definierst.</p>
+<h4 id="Beispiel:-Parameterisierte-Jenkinsfile">Beispiel: Parameterisierte Jenkinsfile<a class="anchor-link" href="#Beispiel:-Parameterisierte-Jenkinsfile">¶</a></h4><div class="highlight"><pre><span></span><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span>
+<span class="w">    </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">booleanParam</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'RUN_TESTS'</span><span class="o">,</span><span class="w"> </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="kc">true</span><span class="o">,</span><span class="w"> </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Soll die Pipeline Tests ausführen?'</span><span class="o">)</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Build'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Building the project...'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Test'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">when</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">expression</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">params</span><span class="o">.</span><span class="na">RUN_TESTS</span><span class="w"> </span><span class="o">}</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">echo</span><span class="w"> </span><span class="s1">'Running tests...'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
 </pre></div>
-<h3 id="Automatisierung-von-Linting"><strong>Automatisierung von Linting</strong><a class="anchor-link" href="#Automatisierung-von-Linting">¶</a></h3><p>Linting kann in Entwicklungs-Workflows integriert werden:</p>
+<ul>
+<li><strong>parameters</strong>: Ermöglicht das Hinzufügen von Benutzereingaben, z. B. Schalter oder Textfelder.</li>
+<li><strong>when</strong>: Führt eine Stage nur aus, wenn die Bedingung erfüllt ist.</li>
+</ul>
+<h3 id="Pipeline-verstehen">Pipeline verstehen<a class="anchor-link" href="#Pipeline-verstehen">¶</a></h3><p>In der von mir erstellten Pipeline:</p>
 <ol>
-<li><strong>IDE/Editoren</strong>: Moderne Entwicklungsumgebungen wie VSCode, IntelliJ oder PyCharm bieten direkte Integration von Linting-Tools.</li>
-<li><strong>CI/CD-Pipelines</strong>: Automatische Codeüberprüfung beim Hochladen auf ein Repository.</li>
-<li><strong>Pre-Commit Hooks</strong>: Überprüft Code vor dem Commit in ein Versionskontrollsystem wie Git (z. B. mit Husky).</li>
-</ol>
-<h3 id="Vorteile-und-Herausforderungen"><strong>Vorteile und Herausforderungen</strong><a class="anchor-link" href="#Vorteile-und-Herausforderungen">¶</a></h3><h4 id="Vorteile:">Vorteile:<a class="anchor-link" href="#Vorteile:">¶</a></h4><ul>
-<li>Automatisierte Code-Qualitätsprüfungen.</li>
-<li>Spart Zeit beim Code-Review.</li>
-<li>Reduziert technische Schulden.</li>
-</ul>
-<h4 id="Herausforderungen:">Herausforderungen:<a class="anchor-link" href="#Herausforderungen:">¶</a></h4><ul>
-<li><strong>Überwältigende Anzahl an Warnungen</strong>: Bei bestehendem Legacy-Code kann Linting viele Warnungen generieren.</li>
-<li><strong>Anpassung an Teams</strong>: Die Konfiguration muss oft an die Vorlieben und Standards des Teams angepasst werden.</li>
-<li><strong>Fehlalarme</strong>: Manche Linter können unnötige oder falsche Warnungen generieren.</li>
-</ul>
-<p>Linting ist ein essenzieller Bestandteil moderner Softwareentwicklung, um hohe Codequalität sicherzustellen und langfristig wartbaren Code zu schreiben.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Weitere-Tipps">Weitere Tipps<a class="anchor-link" href="#Weitere-Tipps">¶</a></h2><p>Hier sind weitere Aspekte, die Linting ergänzen und vertiefen:</p>
-<h3 id="Erweiterungen-von-Linting"><strong>Erweiterungen von Linting</strong><a class="anchor-link" href="#Erweiterungen-von-Linting">¶</a></h3><ol>
-<li><p><strong>Code Formatting vs. Linting</strong>:</p>
+<li><p><strong>Umgebungsvariablen</strong>:</p>
 <ul>
-<li><strong>Code Formatter</strong> (z. B. Prettier, Black) konzentrieren sich ausschließlich auf die Formatierung des Codes, ohne sich um potenzielle Fehler oder Logikprobleme zu kümmern.</li>
-<li><strong>Linter</strong> prüfen neben der Formatierung auch logische und syntaktische Probleme.</li>
+<li>Diese definieren wichtige Werte wie Docker-Image-Name oder Cluster-Konfigurationsdateien.</li>
 </ul>
-<p>Oft werden Formatter und Linter gemeinsam genutzt, um sowohl die Code-Qualität als auch die Formatierung zu gewährleisten.</p>
-</li>
-<li><p><strong>Static Code Analysis</strong>:</p>
-<ul>
-<li>Linting ist ein Teilbereich der statischen Codeanalyse. Tools wie SonarQube oder CodeScene führen tiefere Analysen durch, z. B. Metriken zu Codekomplexität, Testabdeckung oder potenziellen Sicherheitslücken.</li>
-</ul>
-</li>
-<li><p><strong>Intelligentes Linting</strong>:</p>
-<ul>
-<li>Moderne Linter verwenden teilweise maschinelles Lernen, um wiederkehrende Muster in Codeproblemen zu erkennen und Vorschläge basierend auf historischen Daten zu machen.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Praxisbeispiele"><strong>Praxisbeispiele</strong><a class="anchor-link" href="#Praxisbeispiele">¶</a></h3><ol>
-<li><p><strong>Teamstandards durchsetzen</strong>:</p>
-<ul>
-<li>Linting kann sicherstellen, dass Teams einheitliche Konventionen verwenden, z. B. Tabs vs. Spaces, CamelCase vs. snake_case.</li>
-<li>Dies reduziert Konflikte bei Code-Reviews.</li>
-</ul>
-</li>
-<li><p><strong>Legacy-Code verbessern</strong>:</p>
-<ul>
-<li>Bei älteren Codebasen kann ein schrittweises Linting helfen, technische Schulden abzubauen.</li>
-</ul>
-</li>
-<li><p><strong>Onboarding von Entwicklern</strong>:</p>
-<ul>
-<li>Neue Teammitglieder lernen durch Linter-Regeln schneller, welche Standards im Projekt gelten.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Integration-in-moderne-Workflows"><strong>Integration in moderne Workflows</strong><a class="anchor-link" href="#Integration-in-moderne-Workflows">¶</a></h3><ol>
-<li><p><strong>GitHub Actions und andere CI/CD-Tools</strong>:</p>
-<ul>
-<li>Linter können in CI/CD-Pipelines integriert werden, um Code vor dem Mergen zu prüfen. Fehlerhafter Code wird automatisch blockiert.</li>
-</ul>
-</li>
-<li><p><strong>Prettier + ESLint</strong>:</p>
-<ul>
-<li>Ein beliebtes Setup für JavaScript: Prettier formatiert den Code, und ESLint überprüft Logik und Qualität.</li>
-</ul>
-</li>
-<li><p><strong>Cross-Stack Linting</strong>:</p>
-<ul>
-<li>Tools wie <code>Mega-Linter</code> unterstützen mehrere Technologien und Frameworks in einem einzigen Repository.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Herausforderungen-im-Detail"><strong>Herausforderungen im Detail</strong><a class="anchor-link" href="#Herausforderungen-im-Detail">¶</a></h3><ol>
-<li><p><strong>Initialer Aufwand</strong>:</p>
-<ul>
-<li>Das Einführen eines Linters in bestehende Projekte kann zeitaufwändig sein, insbesondere wenn viele Verstöße gefunden werden. Eine Strategie ist, neue Linting-Regeln nur auf neu geschriebenen Code anzuwenden.</li>
-</ul>
-</li>
-<li><p><strong>Feinabstimmung der Regeln</strong>:</p>
-<ul>
-<li>Unterschiedliche Teams oder Projekte haben unterschiedliche Anforderungen. Die Regeln eines Linters müssen oft angepasst werden, um die Balance zwischen Nützlichkeit und Überregulierung zu finden.</li>
-</ul>
-</li>
-<li><p><strong>Performance</strong>:</p>
-<ul>
-<li>Bei großen Projekten kann Linting während des Entwicklungsprozesses zu Performance-Problemen führen. Tools mit "on-save" Linting müssen sorgfältig konfiguriert werden.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Beispiele-f%C3%BCr-Regeln"><strong>Beispiele für Regeln</strong><a class="anchor-link" href="#Beispiele-f%C3%BCr-Regeln">¶</a></h3><h4 id="JavaScript/TypeScript-mit-ESLint:">JavaScript/TypeScript mit ESLint:<a class="anchor-link" href="#JavaScript/TypeScript-mit-ESLint:">¶</a></h4><ul>
-<li>Keine ungenutzten Variablen: <code>no-unused-vars</code>.</li>
-<li>Verbot von <code>var</code>-Deklarationen zugunsten von <code>let</code> und <code>const</code>: <code>no-var</code>.</li>
-<li>Konsistenter Gebrauch von Semikolons: <code>semi</code>.</li>
-</ul>
-<h4 id="Python-mit-pylint:">Python mit pylint:<a class="anchor-link" href="#Python-mit-pylint:">¶</a></h4><ul>
-<li>Zu lange Methoden: <code>too-many-statements</code>.</li>
-<li>Vermeidung globaler Variablen: <code>global-variable</code>.</li>
-<li>Prüfung von Docstrings: <code>missing-docstring</code>.</li>
-</ul>
-<h4 id="C%23-mit-StyleCop:">C# mit StyleCop:<a class="anchor-link" href="#C%23-mit-StyleCop:">¶</a></h4><ul>
-<li>Regelkonformes Kommentieren von öffentlichen Methoden.</li>
-<li>Konsistente Klammer- und Einrückungsstile.</li>
-<li>Warnungen bei komplexen Methoden mit hoher zyklomatischer Komplexität.</li>
-</ul>
-<h3 id="Zuk%C3%BCnftige-Trends-im-Linting"><strong>Zukünftige Trends im Linting</strong><a class="anchor-link" href="#Zuk%C3%BCnftige-Trends-im-Linting">¶</a></h3><ol>
-<li><p><strong>KI-gestütztes Linting</strong>:</p>
-<ul>
-<li>Tools wie GitHub Copilot oder Tabnine kombinieren Linting mit Vorschlägen für bessere Codequalität in Echtzeit.</li>
-</ul>
-</li>
-<li><p><strong>IDE-Integration</strong>:</p>
-<ul>
-<li>Immer mehr IDEs integrieren Linter direkt und bieten nahtlose Nutzererfahrungen. Beispiel: JetBrains-Produkte oder Visual Studio.</li>
-</ul>
-</li>
-<li><p><strong>Regeln für Nachhaltigkeit und Barrierefreiheit</strong>:</p>
-<ul>
-<li>Zunehmend werden Linter erweitert, um auf ressourcenschonenden Code (z. B. Energieverbrauch) oder barrierefreie Webanwendungen zu prüfen.</li>
-</ul>
-</li>
-</ol>
-<h3 id="Fazit"><strong>Fazit</strong><a class="anchor-link" href="#Fazit">¶</a></h3><p>Linting ist nicht nur ein Werkzeug zur Fehlervermeidung, sondern auch ein strategisches Mittel, um Codequalität, Wartbarkeit und Teamzusammenarbeit zu verbessern. Ein gut konfigurierter Linter ist ein unverzichtbarer Bestandteil moderner Softwareentwicklung, der langfristig Zeit spart und die Codebasis nachhaltig stärkt.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Kleines-Quiz-zu-Linting">Kleines Quiz zu Linting<a class="anchor-link" href="#Kleines-Quiz-zu-Linting">¶</a></h2><p>Hier ist ein Python-Quiz, das spielerisch das Wissen über Linting testet. Es verwendet einfache Fragen und Multiple-Choice-Antworten:</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">linting_quiz</span><span class="p">():</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum Linting-Quiz! Teste dein Wissen über Linting."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Beantworte jede Frage mit der passenden Nummer (1, 2, 3 oder 4)."</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
-
-    <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was ist ein Linter?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Ein Werkzeug zum Testen von Code-Laufzeitfehlern"</span><span class="p">,</span>
-                <span class="s2">"2. Ein Werkzeug zum Analysieren von Code auf Stil- und Syntaxprobleme"</span><span class="p">,</span>
-                <span class="s2">"3. Ein Tool zum automatischen Debuggen von Programmen"</span><span class="p">,</span>
-                <span class="s2">"4. Eine Funktion zur Verbesserung der Performance"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">2</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welches ist KEIN bekanntes Linter-Tool?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. ESLint"</span><span class="p">,</span>
-                <span class="s2">"2. pylint"</span><span class="p">,</span>
-                <span class="s2">"3. Black"</span><span class="p">,</span>
-                <span class="s2">"4. DockerLint"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Was ist der Hauptvorteil von Linting?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Es optimiert die Performance des Codes"</span><span class="p">,</span>
-                <span class="s2">"2. Es führt automatische Unit-Tests aus"</span><span class="p">,</span>
-                <span class="s2">"3. Es hilft, Fehler und Stilprobleme im Code zu erkennen"</span><span class="p">,</span>
-                <span class="s2">"4. Es reduziert die Laufzeit des Programms"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">3</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Welche Regel könnte ein Linter prüfen?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Maximale Methode-Länge"</span><span class="p">,</span>
-                <span class="s2">"2. Nutzung von Tabulatoren statt Leerzeichen"</span><span class="p">,</span>
-                <span class="s2">"3. Unbenutzte Variablen"</span><span class="p">,</span>
-                <span class="s2">"4. Alle oben genannten"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">4</span>
-        <span class="p">},</span>
-        <span class="p">{</span>
-            <span class="s2">"question"</span><span class="p">:</span> <span class="s2">"Wie können Linter in modernen Projekten verwendet werden?"</span><span class="p">,</span>
-            <span class="s2">"choices"</span><span class="p">:</span> <span class="p">[</span>
-                <span class="s2">"1. Integration in CI/CD-Pipelines"</span><span class="p">,</span>
-                <span class="s2">"2. Automatisches Überprüfen bei jedem Git-Commit"</span><span class="p">,</span>
-                <span class="s2">"3. Direkt in der IDE während der Entwicklung"</span><span class="p">,</span>
-                <span class="s2">"4. Alle oben genannten"</span>
-            <span class="p">],</span>
-            <span class="s2">"answer"</span><span class="p">:</span> <span class="mi">4</span>
-        <span class="p">}</span>
-    <span class="p">]</span>
-
-    <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Frage </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">q</span><span class="p">[</span><span class="s1">'question'</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">choice</span> <span class="ow">in</span> <span class="n">q</span><span class="p">[</span><span class="s1">'choices'</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>
-
-        <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (1-4): "</span><span class="p">)</span>
-        <span class="k">while</span> <span class="n">user_answer</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte gib eine gültige Nummer zwischen 1 und 4 ein."</span><span class="p">)</span>
-            <span class="n">user_answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Deine Antwort (1-4): "</span><span class="p">)</span>
-
-        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">user_answer</span><span class="p">)</span> <span class="o">==</span> <span class="n">q</span><span class="p">[</span><span class="s2">"answer"</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">"✅ Richtig!"</span><span class="p">)</span>
-            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"❌ Falsch! Die richtige Antwort war: </span><span class="si">{</span><span class="n">q</span><span class="p">[</span><span class="s1">'answer'</span><span class="p">]</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">()</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Dein Ergebnis: </span><span class="si">{</span><span class="n">score</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"🎉 Hervorragend! Du bist ein Linting-Profi!"</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"👍 Gut gemacht! Du weißt schon viel über Linting."</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"📚 Übung macht den Meister. Lies mehr über Linting, um besser zu werden!"</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-    <span class="n">linting_quiz</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><span class="n">environment</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">DOCKER_IMAGE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'soproming/bootstrap-sample:latest'</span>
+<span class="o">}</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Willkommen zum Linting-Quiz! Teste dein Wissen über Linting.
-Beantworte jede Frage mit der passenden Nummer (1, 2, 3 oder 4).
-
-Frage 1: Was ist ein Linter?
-1. Ein Werkzeug zum Testen von Code-Laufzeitfehlern
-2. Ein Werkzeug zum Analysieren von Code auf Stil- und Syntaxprobleme
-3. Ein Tool zum automatischen Debuggen von Programmen
-4. Eine Funktion zur Verbesserung der Performance
-
-✅ Richtig!
-
-Frage 2: Welches ist KEIN bekanntes Linter-Tool?
-1. ESLint
-2. pylint
-3. Black
-4. DockerLint
-
-❌ Falsch! Die richtige Antwort war: 3.
-
-Frage 3: Was ist der Hauptvorteil von Linting?
-1. Es optimiert die Performance des Codes
-2. Es führt automatische Unit-Tests aus
-3. Es hilft, Fehler und Stilprobleme im Code zu erkennen
-4. Es reduziert die Laufzeit des Programms
-
-❌ Falsch! Die richtige Antwort war: 3.
-
-Frage 4: Welche Regel könnte ein Linter prüfen?
-1. Maximale Methode-Länge
-2. Nutzung von Tabulatoren statt Leerzeichen
-3. Unbenutzte Variablen
-4. Alle oben genannten
-
-✅ Richtig!
-
-Frage 5: Wie können Linter in modernen Projekten verwendet werden?
-1. Integration in CI/CD-Pipelines
-2. Automatisches Überprüfen bei jedem Git-Commit
-3. Direkt in der IDE während der Entwicklung
-4. Alle oben genannten
-
-✅ Richtig!
-
-Dein Ergebnis: 3/5
-👍 Gut gemacht! Du weißt schon viel über Linting.
-</pre>
-</div>
+</li>
+<li><p><strong>Stages</strong>:</p>
+<ul>
+<li>Jede Stage führt eine logische Aktion durch:<ul>
+<li><strong>Checkout</strong>: Code aus dem Git-Repository holen.</li>
+<li><strong>Build Docker Image</strong>: Docker-Image erstellen.</li>
+<li><strong>Test Docker Image Locally</strong>: Tests im Container ausführen.</li>
+<li><strong>Push to Docker Registry</strong>: Image in eine Registry hochladen (optional).</li>
+<li><strong>Deploy to Cluster</strong>: Auf Kubernetes-Cluster ausrollen (optional).</li>
+<li><strong>Run Locally</strong>: Container lokal starten (optional).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Post-Aktionen</strong>:</p>
+<ul>
+<li>Nach der Pipeline werden Ressourcen aufgeräumt (z. B. mit <code>docker system prune -f</code>).</li>
+</ul>
+</li>
+</ol>
+<h3 id="Voraussetzungen-f%C3%BCr-die-Pipeline">Voraussetzungen für die Pipeline<a class="anchor-link" href="#Voraussetzungen-f%C3%BCr-die-Pipeline">¶</a></h3><ol>
+<li><p><strong>Docker installiert</strong>:</p>
+<ul>
+<li>Stelle sicher, dass Jenkins-Agents Zugriff auf Docker haben.</li>
+</ul>
+</li>
+<li><p><strong>Cluster-Konfiguration</strong>:</p>
+<ul>
+<li>Falls Kubernetes verwendet wird, muss die <code>kubeconfig.yaml</code> korrekt konfiguriert sein.</li>
+</ul>
+</li>
+<li><p><strong>Jenkins-Setup</strong>:</p>
+<ul>
+<li>Stelle sicher, dass Jenkins mit den Plugins <strong>Pipeline</strong>, <strong>Git</strong>, und (falls Kubernetes verwendet wird) <strong>Kubernetes CLI</strong> ausgestattet ist.</li>
+</ul>
+</li>
+<li><p><strong>Anmeldedaten</strong>:</p>
+<ul>
+<li>Docker-Registry-Zugangsdaten müssen in Jenkins hinterlegt sein, falls ein Push zu einer Registry vorgesehen ist.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Vertiefung">Vertiefung<a class="anchor-link" href="#Vertiefung">¶</a></h2><h3 id="1.-Jenkins-Architektur">1. <strong>Jenkins-Architektur</strong><a class="anchor-link" href="#1.-Jenkins-Architektur">¶</a></h3><ul>
+<li><strong>Master-Agent-Architektur</strong>:<ul>
+<li>Der Jenkins-Master steuert die Jobs, während die Arbeit auf Jenkins-Agents ausgeführt wird.</li>
+<li>Agents können physische Server, virtuelle Maschinen oder Container sein.</li>
+</ul>
+</li>
+<li><strong>Pipeline-as-Code</strong>:<ul>
+<li>Eine <code>Jenkinsfile</code> ermöglicht es, Pipelines direkt im Code-Repository zu speichern, wodurch CI/CD-Prozesse versioniert und nachvollziehbar bleiben.</li>
+</ul>
+</li>
+</ul>
+<h3 id="2.-Fehlerbehebung-und-Debugging">2. <strong>Fehlerbehebung und Debugging</strong><a class="anchor-link" href="#2.-Fehlerbehebung-und-Debugging">¶</a></h3><ul>
+<li><strong>Log-Ansicht</strong>:<ul>
+<li>Jenkins zeigt detaillierte Logs für jede Pipeline-Ausführung an. Überprüfe diese bei Problemen.</li>
+</ul>
+</li>
+<li><strong>Replays</strong>:<ul>
+<li>Mit Jenkins kannst du eine Pipeline im Debug-Modus erneut ausführen, um schrittweise Fehler zu finden.</li>
+</ul>
+</li>
+<li><strong>Shell-Kommandos testen</strong>:<ul>
+<li>Kommandos wie <code>sh 'docker build ...'</code> können lokal ausgeführt werden, um Fehler vor der Pipeline-Ausführung zu identifizieren.</li>
+</ul>
+</li>
+</ul>
+<h3 id="3.-Erweiterungen-mit-Plugins">3. <strong>Erweiterungen mit Plugins</strong><a class="anchor-link" href="#3.-Erweiterungen-mit-Plugins">¶</a></h3><p>Jenkins hat eine große Auswahl an Plugins. Hier sind einige nützliche für die Pipeline:</p>
+<ul>
+<li><strong>Git Plugin</strong>:<ul>
+<li>Ermöglicht das Klonen und Verwalten von Git-Repositories.</li>
+</ul>
+</li>
+<li><strong>Docker Pipeline Plugin</strong>:<ul>
+<li>Vereinfacht das Arbeiten mit Docker in Jenkins-Pipelines.</li>
+</ul>
+</li>
+<li><strong>Kubernetes Plugin</strong>:<ul>
+<li>Integriert Kubernetes direkt in Jenkins für dynamische Agenten oder Deployment.</li>
+</ul>
+</li>
+<li><strong>Parameterized Build Plugin</strong>:<ul>
+<li>Fügt erweiterte Parameter für flexible Pipeline-Ausführungen hinzu.</li>
+</ul>
+</li>
+</ul>
+<h3 id="4.-Sicherheit">4. <strong>Sicherheit</strong><a class="anchor-link" href="#4.-Sicherheit">¶</a></h3><ul>
+<li><strong>Credentials Management</strong>:<ul>
+<li>Speichere sensible Daten (z. B. Docker-Registry-Anmeldedaten) sicher in Jenkins unter "Credentials" und greife über <code>credentialsId</code> darauf zu.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">withCredentials</span><span class="o">([</span><span class="n">usernamePassword</span><span class="o">(</span><span class="nl">credentialsId:</span><span class="w"> </span><span class="s1">'docker-registry-creds'</span><span class="o">,</span><span class="w"> </span><span class="nl">usernameVariable:</span><span class="w"> </span><span class="s1">'DOCKER_USER'</span><span class="o">,</span><span class="w"> </span><span class="nl">passwordVariable:</span><span class="w"> </span><span class="s1">'DOCKER_PASS'</span><span class="o">)])</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">sh</span><span class="w"> </span><span class="s2">"docker login -u $DOCKER_USER -p $DOCKER_PASS"</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+<li><strong>Sandbox-Modus</strong>:<ul>
+<li>Jenkins erlaubt die Ausführung von Pipelines im "Sandbox"-Modus, um unsichere Groovy-Skripte zu verhindern.</li>
+</ul>
+</li>
+<li><strong>Agent-Sicherheit</strong>:<ul>
+<li>Vermeide die Ausführung von Pipelines auf dem Master-Node. Nutze dedizierte Agents für Builds.</li>
+</ul>
+</li>
+</ul>
+<h3 id="5.-Effizienz-steigern">5. <strong>Effizienz steigern</strong><a class="anchor-link" href="#5.-Effizienz-steigern">¶</a></h3><ul>
+<li><strong>Caching</strong>:<ul>
+<li>Docker-Build-Prozesse können durch Zwischenspeicherung beschleunigt werden.<div class="highlight"><pre><span></span><span class="n">sh</span><span class="w"> </span><span class="s1">'docker build --cache-from=my-image:latest -t my-image:latest .'</span>
+</pre></div>
+</li>
+</ul>
+</li>
+<li><strong>Parallelisierung</strong>:<ul>
+<li>Du kannst Stages parallel ausführen, um Zeit zu sparen.<div class="highlight"><pre><span></span><span class="n">stage</span><span class="o">(</span><span class="s1">'Parallel Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">parallel</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Unit Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'run-unit-tests'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">        </span><span class="n">stage</span><span class="o">(</span><span class="s1">'Integration Tests'</span><span class="o">)</span><span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span>
+<span class="w">                </span><span class="n">sh</span><span class="w"> </span><span class="s1">'run-integration-tests'</span>
+<span class="w">            </span><span class="o">}</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="6.-Deployment-mit-Kubernetes">6. <strong>Deployment mit Kubernetes</strong><a class="anchor-link" href="#6.-Deployment-mit-Kubernetes">¶</a></h3><p>Falls du Kubernetes für Cluster-Deployments verwendest:</p>
+<ul>
+<li><strong>Manifeste und Helm</strong>:<ul>
+<li>Verwalte Deployments mit <code>kubectl apply -f</code> oder Helm-Charts.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">sh</span><span class="w"> </span><span class="s2">"kubectl --kubeconfig=${CLUSTER_CONFIG} apply -f deployment.yaml"</span>
+</pre></div>
+</li>
+<li><strong>Dynamic Jenkins Agents</strong>:<ul>
+<li>Kubernetes kann dynamisch Jenkins-Agenten als Pods bereitstellen.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">agent {</span>
+<span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">kubernetes {</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">yaml """</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">kind</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Pod</span>
+<span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">spec</span><span class="p p-Indicator">:</span>
+<span class="w">          </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jnlp</span>
+<span class="w">            </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jenkins/inbound-agent</span>
+<span class="w w-Error">        </span><span class="s">"""</span>
+<span class="w">    </span><span class="s">}</span>
+<span class="s">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="7.-Pipeline-Parameter-erweitern">7. <strong>Pipeline-Parameter erweitern</strong><a class="anchor-link" href="#7.-Pipeline-Parameter-erweitern">¶</a></h3><p>Mehrere Parameter-Typen können verwendet werden, um die Pipeline flexibler zu gestalten:</p>
+<ul>
+<li><strong>Choice Parameter</strong>:<div class="highlight"><pre><span></span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">choice</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'DEPLOY_ENV'</span><span class="o">,</span><span class="w"> </span><span class="nl">choices:</span><span class="w"> </span><span class="o">[</span><span class="s1">'dev'</span><span class="o">,</span><span class="w"> </span><span class="s1">'staging'</span><span class="o">,</span><span class="w"> </span><span class="s1">'prod'</span><span class="o">],</span><span class="w"> </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Deployment Environment'</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+<li><strong>String Parameter</strong>:<div class="highlight"><pre><span></span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">string</span><span class="o">(</span><span class="nl">name:</span><span class="w"> </span><span class="s1">'DOCKER_TAG'</span><span class="o">,</span><span class="w"> </span><span class="nl">defaultValue:</span><span class="w"> </span><span class="s1">'latest'</span><span class="o">,</span><span class="w"> </span><span class="nl">description:</span><span class="w"> </span><span class="s1">'Tag for Docker image'</span><span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+</ul>
+<h3 id="8.-Monitoring-und-Feedback">8. <strong>Monitoring und Feedback</strong><a class="anchor-link" href="#8.-Monitoring-und-Feedback">¶</a></h3><ul>
+<li><strong>Build Notifications</strong>:<ul>
+<li>Sende Benachrichtigungen per Slack, E-Mail oder andere Tools.</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">post</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="n">success</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">mail</span><span class="w"> </span><span class="nl">to:</span><span class="w"> </span><span class="s1">'team@example.com'</span><span class="o">,</span><span class="w"> </span><span class="nl">subject:</span><span class="w"> </span><span class="s1">'Build Success'</span><span class="o">,</span><span class="w"> </span><span class="nl">body:</span><span class="w"> </span><span class="s1">'The build was successful!'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">    </span><span class="n">failure</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="n">mail</span><span class="w"> </span><span class="nl">to:</span><span class="w"> </span><span class="s1">'team@example.com'</span><span class="o">,</span><span class="w"> </span><span class="nl">subject:</span><span class="w"> </span><span class="s1">'Build Failed'</span><span class="o">,</span><span class="w"> </span><span class="nl">body:</span><span class="w"> </span><span class="s1">'The build failed. Check Jenkins logs for details.'</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</li>
+<li><strong>Metrics</strong>:<ul>
+<li>Nutze Plugins wie "Prometheus Plugin" oder "Build Pipeline Plugin" für Monitoring und Metriken.</li>
+</ul>
+</li>
+</ul>
+<h3 id="9.-Best-Practices">9. <strong>Best Practices</strong><a class="anchor-link" href="#9.-Best-Practices">¶</a></h3><ul>
+<li><strong>Atomic Builds</strong>:<ul>
+<li>Jeder Build sollte unabhängig sein und keine externen Zustände (wie Dateien auf dem Agenten) benötigen.</li>
+</ul>
+</li>
+<li><strong>Commit-Driven Pipelines</strong>:<ul>
+<li>Nutze <code>git commit</code>-Trigger, um Pipelines automatisch bei Änderungen auszuführen.</li>
+</ul>
+</li>
+<li><strong>Code-Reviews für Pipelines</strong>:<ul>
+<li>Behandle die <code>Jenkinsfile</code> wie jede andere Code-Datei und führe Code-Reviews durch.</li>
+</ul>
+</li>
+</ul>
+<h3 id="10.-Alternativen-zu-Jenkins">10. <strong>Alternativen zu Jenkins</strong><a class="anchor-link" href="#10.-Alternativen-zu-Jenkins">¶</a></h3><p>Wenn du nach modernen Alternativen oder Ergänzungen zu Jenkins suchst:</p>
+<ul>
+<li><strong>GitHub Actions</strong>: Nahtlose Integration mit GitHub.</li>
+<li><strong>GitLab CI/CD</strong>: Perfekt für Projekte, die GitLab verwenden.</li>
+<li><strong>Tekton</strong>: Kubernetes-native CI/CD-Lösung.</li>
+<li><strong>CircleCI</strong>: Benutzerfreundlich und Cloud-nativ.</li>
+</ul>
+<h3 id="Fazit">Fazit<a class="anchor-link" href="#Fazit">¶</a></h3><p>Jenkins ist ein mächtiges Tool, aber durch die Vielzahl an Funktionen und Erweiterungsmöglichkeiten kann es komplex werden. Mit diesen zusätzlichen Informationen kannst du deine Pipeline optimieren, effizienter gestalten und sicherstellen, dass sie robust und flexibel bleibt.</p>
 </div>
 </div>
 </div>

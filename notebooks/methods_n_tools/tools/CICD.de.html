@@ -7312,6 +7312,7 @@ a.anchor-link {
                     processEnvironments: true
                 },
                 displayAlign: 'center',
+                messageStyle: 'none',
                 CommonHTML: {
                     linebreaks: {
                     automatic: true
@@ -7771,9 +7772,9 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
-<span class="k">def</span> <span class="nf">ask_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ask_question</span><span class="p">(</span><span class="n">question</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">correct_answer</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> <span class="n">question</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">option</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">option</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
@@ -7788,7 +7789,7 @@ a.anchor-link {
         <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Bitte eine gültige Zahl eingeben."</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">run_quiz</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">run_quiz</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Willkommen zum CI/CD-Quiz! Teste dein Wissen."</span><span class="p">)</span>
     <span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">{</span>
